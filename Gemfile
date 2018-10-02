@@ -14,6 +14,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'simple_form'
+gem 'figaro'
+gem 'cloudinary'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
