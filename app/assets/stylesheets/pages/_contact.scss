@@ -60,20 +60,20 @@
   }
 }
 
-@media all and (max-width: 1280px) {
+@media screen and (max-width: 1280px) {
 
 
 
 }
 
 
-@media(max-width: 992px) {
+@media screen and (max-width: 992px) {
 
 
 
   }
 
-@media(max-width: 768px) {
+@media screen and (max-width: 768px) {
 
   .photo-and-text {
     flex-direction: column;
@@ -95,7 +95,7 @@
 
   }
 
-@media(max-width: 480px) {
+@media screen and (max-width: 480px) {
 
   .personal-links {
     justify-content: center;
