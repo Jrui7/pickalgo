@@ -4,7 +4,7 @@
     <%= render 'pages/navigation', page: @page %>
     <div class="content-box">
       <div class="photo-and-text">
-        <%= cl_image_tag("1wh4IX4g.jpg", :radius=>"max", :crop=>"crop", class: "user-photo") %>
+        <%= cl_image_tag("1wh4IX4g.jpg", :width=>150, :height=>150, :gravity=>"face", :dpr=>2.0, :radius=>"max", :crop=>"fill", class: "user-photo") %>
         <div class="text">
           <h2>Bonjour, je suis Jorge, foundateur de Pickalgo,</h2>
           <p>Vos retrours sont capitaux pour améliorer votre expérience d'utilisation. Si vous avez une remarque, des suggestions, des difficultés, n'hésitez pas à me contacter personnellement, je ferai mon possible pour vous répondre au plus vite.</p>
