@@ -1,0 +1,26 @@
+<div class="navigation-menu">
+  <%= link_to faq_path do %>
+    <div class="menu <%= 'selected-category' if page == 'faq' %>">
+      <div class="filter-icon glyphicon glyphicon-question-sign"></div>
+      <p>FAQ</p>
+    </div>
+  <% end %>
+  <%= link_to contact_path do %>
+    <div class="menu <%= 'selected-category' if page == 'contact' %>">
+      <div class="filter-icon glyphicon glyphicon-envelope"></div>
+      <p>Contact</p>
+    </div>
+  <% end %>
+  <%= link_to mentions_legales_path do %>
+    <div class="menu <%= 'selected-category' if page == 'mentions_legales' %>">
+      <div class="filter-icon glyphicon glyphicon-info-sign"></div>
+      <p>Mention légales</p>
+    </div>
+  <% end %>
+  <%= link_to cgu_path do %>
+      <div class="menu <%= 'selected-category' if page == 'cgu' %>">
+        <div class="filter-icon glyphicon glyphicon-folder-open"></div>
+        <p>CGU-CGV</p>
+    </div>
+  <% end %>
+</div>

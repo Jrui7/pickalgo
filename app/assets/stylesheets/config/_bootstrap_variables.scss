@@ -1,0 +1,185 @@
+// This is where you override default Bootstrap variables
+// 1. All Bootstrap variables are here => https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss
+// 2. These variables are defined with default value (see https://robots.thoughtbot.com/sass-default)
+// 3. You can override them below!
+
+// General style
+$font-family-sans-serif:  $body-font;
+$headings-font-family:    $headers-font;
+$body-bg:                 #FFFFFF;
+$font-size-base: 16px;
+$text-color: #4d4d5e;
+
+// Colors
+$gray-base:       $gray;
+$brand-primary:   $blue;
+$brand-success:   $green;
+$brand-info:      $yellow;
+$brand-danger:    $red;
+$brand-warning:   $orange;
+
+// Buttons & inputs' radius
+$border-radius-base:  2px;
+$border-radius-large: 2px;
+$border-radius-small: 2px;
+
+// Override other variables below!
+
+body {
+  background-color: #FAFAFA !important;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+.dropdown-menu {
+  padding: 6px 0 0 !important;
+}
+
+/* :focus {
+  outline: none !important;
+} */
+
+
+
+.nav-tabs > li.active > a {
+  border: none !important;
+}
+
+.recover-form {
+  h2 {
+    color: white;
+  }
+}
+
+#new_user {
+ .form-actions {
+  text-align: center;
+  margin-top: 30px;
+ }
+}
+
+.alert-danger-custom {
+  background-color: $red;
+  padding: 15px;
+  border-radius: 2px;
+  text-align: center;
+  color: white;
+  margin-bottom: 22px;
+}
+
+.has-error {
+  label, span {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin: 0px 10px;
+    display: flex;
+  }
+}
+
+.modal {
+  text-align: center;
+  padding: 0!important;
+
+  h3 {
+    text-align: center;
+  }
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+
+
+.modal-content {
+  border-radius: 10px !important;
+  border: none !important;
+}
+
+.modal-body{
+  padding: 15px !important;
+  h5 {
+    line-height: 1.5;
+    text-align: justify;
+  }
+}
+
+
+.modal-footer{
+  border-top: none !important;
+}
+
+.modal-header{
+  background: -webkit-linear-gradient(left, #487FC0, #1FC1B1 100%);
+  background: -o-linear-gradient(left, #487FC0, #1FC1B1 100%);
+  background: linear-gradient(to right, #487FC0, #1FC1B1 100%);  color: #FFFFFF;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+  .modal-title{
+    text-align: center;
+    font-size: 25px;
+  }
+
+
+.modal-dialog {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+  margin: 0;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+  .page-container {
+      width: 100% !important;
+  }
+
+}
+@media screen and (max-width: 992px) {
+  .page-container {
+      width: 100% !important;
+  }
+
+}
+@media screen and (max-width: 768px) {
+  .page-container {
+      width: 100% !important;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+    .page-container {
+      width: 100% !important;
+  }
+
+
+  .modal-dialog {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .modal-header {
+    border-radius: 0;
+  }
+
+  .modal-content {
+    border-radius: 0 !important;
+  }
+}
+
+

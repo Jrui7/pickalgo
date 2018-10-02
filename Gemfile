@@ -13,9 +13,14 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'bootstrap-sass'
+gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'figaro'
 gem 'cloudinary'
+gem 'mailjet'
+gem 'cookies_eu'
+gem 'gibbon'
+gem 'jquery-rails'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 

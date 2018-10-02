@@ -1,0 +1,35 @@
+.attachinary_container {
+  display: flex;
+
+  .picture-upload {
+    position: relative;
+    img {
+      border-radius: 10px;
+    }
+
+    a {
+      color: white;
+      background-color: #b7b5b5;
+      position: absolute;
+      top: -11px;
+      right: -11px;
+      border: solid 1px;
+      padding: 3px;
+      border-radius: 50%;
+      font-size: 0.2em;
+
+    }
+
+  }
+
+
+
+}
+
+@media(max-width: 480px) {
+
+  .attachinary_container .picture-upload a {
+      font-size: 16px;
+  }
+
+}

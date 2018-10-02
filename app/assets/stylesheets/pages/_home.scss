@@ -1,0 +1,609 @@
+.forgot-modal {
+    height: 0px;
+  }
+
+
+
+
+.nav-and-banner {
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+   -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 95%, 0 90%);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 95%, 0 90%);
+}
+
+.header-home {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: 80px;
+
+}
+
+.logo-and-log {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.logo-beta {
+  font-weight: bold;
+  font-size: 14px;
+  color: #c1c1c1;
+}
+
+
+#logo {
+  height: 40px;
+}
+
+
+
+
+.right-links{
+  display: flex;
+  font-size: 15px;
+  a , .connect-button {
+    color: $blue;
+    margin: 0 20px;
+    text-transform: uppercase;
+    text-decoration: underline;
+    &:hover {
+      color: $orange;
+      cursor: pointer;
+    }
+  }
+
+  .connexion-xs{
+    text-decoration: underline;
+  }
+}
+
+
+
+
+.banner-container {
+    width: 90%;
+    margin: 0 auto;
+    min-height: calc(90vh - 80px);
+    display: flex;
+    justify-content: center;
+  }
+
+  .banner-content{
+    margin-top: 75px;
+
+
+    h1 {
+      line-height: 1.3em;
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 50px;
+      color: $blue;
+      text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    }
+
+  }
+
+
+  .concept {
+    margin: 10px auto 20px auto;
+    font-size: 22px;
+    text-align: justify;
+    width: 60%;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  }
+
+
+  .cta-links{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 60px;
+  }
+
+  .go-to{
+    margin-right: 30px;
+    text-transform: uppercase;
+    font-size: 20px;
+  }
+
+  .cta-link{
+    text-transform: uppercase;
+    font-size: 20px;
+  }
+
+
+
+
+  .conclusion-cases {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &:focus {
+      outline: none !important;
+    }
+
+    li{
+      list-style-type: none;
+    }
+  }
+
+  .icon-and-text{
+    text-align: center;
+    flex: 0 0 30%;
+    padding: 20px;
+    border-radius: 10px;
+    // box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.3);
+    // background-color: #f1f3f7;
+    .quote {
+      color: $orange;
+    }
+
+  }
+
+
+
+  .action-image{
+    max-height: 150px;
+  }
+
+  .quote{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: $blue;
+  }
+
+  .quote-text{
+    margin-top: 20px;
+  }
+
+  #conclusion-container {
+    background-color: #f1f3f7;
+    text-align: center;
+  }
+
+
+
+
+  .conclusion {
+    background-color: #f1f3f7;
+    text-align: center;
+    padding: 60px 0;
+  }
+
+
+  #cheers {
+    display: flex;
+    margin: auto;
+  }
+
+
+  .works-link {
+    padding: 80px 0;
+    background-color: #f1f3f7;
+    display: flex;
+    justify-content: center;
+    button {
+      border: none;
+      padding: 10px 30px;
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 20px;
+      color: #FFF;
+      cursor: pointer;
+      text-shadow: 0 1px 0 #ce870c;
+      background: linear-gradient(#f5af19, #ff6d43);
+      box-shadow: 0 7px 13px -3px rgba(45, 35, 66, 0.3), 0 2px 4px 0 rgba(45, 35, 66, 0.4), inset 0 -2px 0 0 #ce870c;
+      transition: box-shadow 0.15s ease, transform 0.15s ease, -webkit-transform 0.15s ease;
+      &:hover {
+        box-shadow: 0 5px 8px -1px rgba(45, 35, 66, 0.3), 0 4px 5px 0 rgba(45, 35, 66, 0.4), inset 0 -2px 0 0 #ce870c;
+        -webkit-transform: translateY(-1px);
+        transform: translateY(-1px);
+        color: white;
+      }
+    }
+  }
+
+   .outcome-and-text{
+    flex: 0 0 20%;
+  }
+
+  .outcome {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-style: italic;
+  }
+
+  #features-container {
+    &:focus {
+      outline: none;
+    }
+  }
+
+
+  .how-it-works{
+    text-align: center;
+    padding: 40px 0;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+
+  .steps{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+  }
+
+
+
+  .icon-and-text-no-shaddow{
+    text-align: center;
+    flex: 0 0 30%;
+    padding: 20px;
+  }
+
+  .conclusion-box{
+    background-color: rgba(241, 243, 247, 1);
+    border-radius: 10px;
+    padding: 30px 20px;
+    color: $text-color;
+    margin-top: 20px;
+
+    h4 {
+      margin-bottom: 35px;
+    }
+  }
+
+
+  #blue-background {
+    &:focus {
+      outline: none;
+    }
+  }
+
+
+
+  .testimonies-container{
+    background-color: #FFF;
+  }
+
+  .testimony-box{
+    width: 80%;
+    padding: 80px 0;
+    margin: 0 auto;
+
+    h2 {
+      width: 80%;
+      text-align: center;
+      line-height: 0.1em;
+      margin: 0 auto;
+    }
+
+    .cta {
+      display: flex;
+      justify-content: center;
+      .btn-orange {
+        font-size: 20px;
+        text-transform: uppercase;
+        padding: 10px 30px;
+      }
+    }
+
+
+
+    .testimonies{
+      margin: 80px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .testimony{
+      flex: 0 0 30%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .user-photo{
+      height: 160px;
+      width: 160px;
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 2px 26px 0 rgba(0,0,0,0.2)
+    }
+
+    .testimony-title{
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 15px;
+    }
+
+    .testimony-text{
+      text-align: center;
+      font-style: italic;
+    }
+  }
+
+
+  #forgot-p {
+    margin: 15px 0 30px;
+    font-size: 16px;
+  }
+
+  #reset-password-button {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0 20px;
+  }
+
+
+
+  @media all and (max-width: 1280px) {
+
+
+    .conclusion-cases {
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    .icon-and-text {
+      flex: 0 0 30%;
+      margin: 0 auto 40px auto;
+    }
+
+    .how-it-works {
+      width: 100%;
+    }
+
+    .outcome-and-text {
+        flex: 0 0 45%;
+        margin-bottom: 30px;
+    }
+
+    .testimony-box {
+      width: 95%;
+      .testimony-title {
+        text-align: center;
+      }
+    }
+  }
+
+  @media all and (max-width: 980px) {
+    .banner-container {
+      padding-bottom: 50px;
+    }
+
+    .concept {
+      width: 90%;
+    }
+
+    .icon-and-text {
+      flex: 0 0 70%;
+      margin: 0 auto 30px auto;
+    }
+
+    .steps {
+      display: block;
+    }
+
+    .icon-and-text-no-shaddow {
+        padding: 40px 100px 40px;
+    }
+
+
+    .testimony-box {
+
+      .testimonies {
+        display: block;
+      }
+
+      .testimony {
+        width: 50%;
+        margin: 0 auto 40px auto;
+      }
+
+      .cta {
+        margin-top: 40px;
+      }
+
+      h2 {
+        width: 100%;
+        border-bottom: none;
+      }
+
+      }
+
+
+
+    .how-it-works {
+      width: 90%;
+      h3 {
+        width: 100%;
+        }
+    }
+
+
+  }
+
+
+
+  @media screen and (max-width: 480px) {
+
+    .banner-container {
+        h1{
+          font-size: 35px;
+          margin-bottom: 20px;
+        }
+      }
+
+      #logo {
+        height: 35px;
+      }
+
+      .nav-and-banner {
+        background-position: right bottom;
+      }
+      .banner-content{
+        margin-top: 25px;
+        width: auto;
+        p {
+          font-size: 15px;
+        }
+      }
+
+      .concept {
+        margin: 10px auto 0px auto;
+        width: 100%;
+
+        p {
+          font-size: 15px;
+          background: rgba(0, 0, 0, 0.2);
+          padding: 10px 5px;
+          text-align: justify;
+        }
+      }
+
+      .right-links{
+        font-size: 13px;
+        a{
+          margin: 0 0 0 5px;
+        }
+      }
+
+      .cta-links {
+        margin-top: 30px;
+      }
+
+
+      .cta-link{
+        font-size: 15px;
+        padding: 7px 20px;
+      }
+
+      .go-to{
+        padding: 7px 30px;
+        font-size: 15px;
+        margin-right: 20px;
+      }
+
+      .conclusion-cases{
+        display: block;
+        height: auto;
+        padding: 15px 0;
+      }
+
+      .icon-and-text{
+        margin-bottom: 20px;
+        padding: 10px;
+      }
+
+
+
+      .quote{
+        font-size: 24px;
+      }
+
+      .how-it-works {
+        h3 {
+          font-size: 15px;
+          }
+      }
+
+      .conclusion {
+        padding: 60px 10px;
+      }
+
+
+      .outcome-box{
+        display: block;
+        li{
+          font-size:13px;
+        }
+      }
+
+      .outcome-and-text{
+        display: block;
+        margin-top:30px;
+      }
+
+      .outcome{
+        margin-top:0;
+        margin-bottom:2px;
+      }
+
+      .testimony-box {
+        padding: 40px 0;
+        h2 {
+          width: 100%;
+          border-bottom: none;
+          font-size: 23px;
+        }
+
+        h2 span {
+          padding: 0;
+        }
+
+        .testimonies {
+          margin: 50px 0 15px 0;
+        }
+
+        .testimony {
+          width: 90%;
+          padding: 0;
+
+        }
+      }
+
+
+      .statement-and-text {
+        padding: 20px 5px;
+      }
+
+      .action-image{
+        max-height: 110px;
+      }
+
+      .icon-and-text-no-shaddow {
+          padding: 20px 20px 40px;
+      }
+
+      .outcome-box {
+        display: block;
+      }
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

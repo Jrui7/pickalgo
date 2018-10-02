@@ -1,0 +1,155 @@
+.page-sections {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 0px;
+    width: 1100px;
+    padding: 50px 0;
+  }
+
+  .pick-details-container {
+    padding: 40px 0 40px 0;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+  }
+
+  .paiement-container {
+    padding-top: 30px;
+    width: 100%;
+    min-height: calc(100vh - 70px);
+    margin-bottom: 50px;
+  }
+
+  .recap {
+    flex: 0 0 31%;
+    background-color: #FFF;
+    box-shadow: 0 0 1px rgba(0,0,0,0.5);
+    border-radius: 5px;
+    h3 {
+      margin: 0;
+      padding: 7px 20px;
+      background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e4e4e9));
+      background: linear-gradient(#fff, #e4e4e9);
+      color: #243763;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+  }
+
+
+
+@media all and (max-width: 1280px) {
+  .navbar-container, .sub-container {
+    padding: 0 50px;
+  }
+
+
+
+.pick-details-container, .infos-container {
+  padding: 50px;
+}
+
+.paiement-container {
+  padding: 50px;
+}
+
+  .page-sections {
+    padding: 50px;
+  }
+
+  .page-section {
+    padding: 0 50px;
+  }
+
+  .seed-feed {
+    padding: 50px !important;
+  }
+
+
+}
+
+@media all and (max-width: 980px) {
+
+  .page-sections {
+    padding: 0 50px 50px;
+  }
+
+  .booking-confirmation h2 {
+      margin-bottom: 25px;
+      font-size: 22px;
+      padding: 0 10px;
+  }
+  .recap-and-form {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .input-form .address-form {
+    border-radius: 0;
+  }
+
+  .recap {
+    border-radius: 0;
+    flex: 0 0 100%;
+  }
+
+  .recap h3 {
+    font-size: 20px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+
+  .input-form h3 {
+    border-top-right-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+    font-size: 20px;
+  }
+
+  .input-form .info-and-inputs {
+      padding: 10px 15px 20px !important;
+  }
+
+  .card-container {
+    padding: 0 15px 20px;
+  }
+
+  .stripe {
+    margin-top: 0;
+  }
+
+
+}
+
+@media all and (max-width: 736px) {
+  .seed-feed {
+    padding: 0 !important;
+  }
+
+  .page-sections, .infos-container {
+    padding: 0 50px 50px;
+  }
+
+  .paiement-container {
+      padding: 0;
+      margin: 0;
+    }
+
+
+
+ }
+
+@media all and (max-width: 480px) {
+
+  .navbar-container, .infos-container {
+    padding: 0 5px;
+  }
+  .page-sections {
+      padding: 0 ;
+  }
+
+
+
+}

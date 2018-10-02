@@ -1,1 +1,79 @@
-<h1>Home</h1>
+<%= render 'cookies_eu/consent_banner' %>
+<div class="page-container">
+  <div class="nav-and-banner" style="background-image: linear-gradient(rgba(241, 243, 247,1) 50%, transparent 100%), url('https://res.cloudinary.com/djmp0ivep/image/upload/v1538480440/tags.jpg');">
+    <header class="header-home">
+      <div class="logo-and-log">
+        <div class="logo-beta"><%= image_tag "logo.png", id: "logo" %><br>©Beta 2018
+        </div>
+      </div>
+    </header>
+    <div class="banner-container">
+      <div class="banner-content">
+        <h1>Devenez testeur de promos !</h1>
+        <p class="concept">Avec Pickalgo, décidez vous-même du prix des promos... et bénficiez-en avant tout le monde !
+        Grâce à vous nous définissons le meilleur prix pour que la promo soit bénéfique aux clients et au vendeur.
+        </p>
+        <div class="cta-links">
+          <a href="#features-container">
+            <div class="btn-white go-to">Concept</div>
+          </a>
+          <%= link_to new_user_registration_path, class:"btn-orange cta-link" do %>
+            Découvrir
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="how-it-works" id="features-container">
+    <h3>Proposez votre prix maximum<br>Bénéficiez du prix minimum</h3>
+    <div class="steps">
+      <div class="icon-and-text-no-shaddow" id="first">
+        <%= image_tag "opinion.svg", class: "action-image" %>
+        <div class="quote">Vous réfléchissez</div>
+        <div class="step-text">
+          Déterminez votre prix plafond. A partir de quel montant la promo commencerait selon vous à être intéressante ?
+        </div>
+      </div>
+      <div class="icon-and-text-no-shaddow" id="second">
+        <%= image_tag "choose.svg", class: "action-image" %>
+        <div class="quote">Vous proposez</div>
+        <div class="step-text">
+          Vous avez 7 jours pour formuler une proposition d'achat correspondant au montant de votre prix plafond
+        </div>
+      </div>
+      <div class="icon-and-text-no-shaddow" id="third">
+        <%= image_tag "analyze.svg", class: "action-image" %>
+        <div class="quote">Nous calculons</div>
+        <div class="step-text">
+         Nous étudions toutes les propositions pour calculer la meilleure promo dont nous pouvons vous faire bénéficier
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="conclusion">
+    <h3>Exemple pour un produit à 200 €</h3>
+    <div class="conclusion-cases">
+      <div class="icon-and-text">
+        <h3 class="quote">C'est gagné !</h3>
+        <ul style="padding-left: 0">
+          <li>Vous proposiez une promo à 180 €</li>
+          <li>La promo obtimale calculée est à 140 €</li>
+          <li>Vous obtenez le produit pour 140 €</li>
+        </ul>
+      </div>
+      <div class="icon-and-text">
+        <%= image_tag "successful_purchase.svg", class: "action-image" %>
+      </div>
+      <div class="icon-and-text">
+        <h3 class="quote">Rien de perdu</h3>
+        <ul style="padding-left: 0">
+          <li>Vous proposiez une promo à 135 €</li>
+          <li>La promo optimale calculée est de 140 €</li>
+          <li>Vous ne pouvez pas profiter de la promo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <%= render 'shared/footer' %>
+
+</div>
