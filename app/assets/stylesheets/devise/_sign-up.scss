@@ -11,9 +11,47 @@
 
 h1 {
   margin: 0 0 100px 0;
+  text-align: center;
+}
+
+.form-inputs {
+  width: 80%;
+  margin: auto;
+  .fas {
+    color: #B5BBC5;
+  }
+
+  .form-group {
+    margin-bottom: 0;
+  }
+
+  input {
+  padding: 8px 9px 8px 38px;
+  border-radius: 7px;
+  }
+
+}
+
+#input-and-icon-first-name, #input-and-icon-last-name, #input-and-icon-email, #input-and-icon-password {
+  position: relative;
+}
+
+#icon-firstname, #icon-lastname, #icon-envelope, #icon-lock {
+  &:before {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+  }
 }
 
 
+#user_terms_of_service {
+  margin-right: 5px;
+}
+
+#registration-cta {
+  margin: 50px auto;
+}
 
 .image-and-text {
   flex: 0 0 50%;
@@ -21,3 +59,5 @@ h1 {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+
