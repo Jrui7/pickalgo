@@ -76,11 +76,14 @@
 
   .banner-content{
     margin-top: 75px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
 
 
     h1 {
       line-height: 1.3em;
-      text-align: center;
+      text-align: left;
       margin-bottom: 25px;
       font-size: 50px;
       color: $blue;
@@ -91,10 +94,9 @@
 
 
   .concept {
-    margin: 10px auto 20px auto;
+    margin: 10px 0 20px 0;
     font-size: 22px;
     text-align: justify;
-    width: 60%;
     text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
   }
 
@@ -141,9 +143,6 @@
     text-align: center;
     flex: 0 0 30%;
     padding: 20px;
-    border-radius: 10px;
-    // box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.3);
-    // background-color: #f1f3f7;
     .quote {
       color: $orange;
     }
@@ -353,6 +352,11 @@
   @media all and (max-width: 1280px) {
 
 
+  .banner-content {
+    width: 70%;
+  }
+
+
     .conclusion-cases {
       flex-wrap: wrap;
       width: 100%;
@@ -360,17 +364,13 @@
 
     .icon-and-text {
       flex: 0 0 30%;
-      margin: 0 auto 40px auto;
+      padding: 20px 0 0 0;
     }
 
     .how-it-works {
       width: 100%;
     }
 
-    .outcome-and-text {
-        flex: 0 0 45%;
-        margin-bottom: 30px;
-    }
 
     .testimony-box {
       width: 95%;
@@ -385,9 +385,10 @@
       padding-bottom: 50px;
     }
 
-    .concept {
-      width: 90%;
+    .banner-content {
+      width: 95%;
     }
+
 
     .icon-and-text {
       flex: 0 0 70%;
@@ -489,11 +490,11 @@
 
       .cta-link{
         font-size: 15px;
-        padding: 7px 20px;
+        padding: 7px 20px !important;
       }
 
       .go-to{
-        padding: 7px 30px;
+        padding: 7px 20px !important;
         font-size: 15px;
         margin-right: 20px;
       }
@@ -517,12 +518,15 @@
 
       .how-it-works {
         h3 {
-          font-size: 15px;
+          font-size: 18px;
           }
       }
 
       .conclusion {
         padding: 60px 10px;
+        h3 {
+          font-size: 18px;
+        }
       }
 
 
