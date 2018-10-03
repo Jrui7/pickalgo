@@ -3,4 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  validates :terms_of_service, acceptance: { message: "Merci de valider les conditions d'utilisation" }
+  validates :terms_of_service, presence: { message: "Merci de valider les conditions d'utilisation" }
+  validates :first_name, presence: { message: "Merci de renseigner votre prénom" }
+  validates :last_name, presence: { message: "Merci de renseigner votre nom" }
+  validates :email, presence: { message: "Merci de renseigner votre email" }
+  validates :email, uniqueness: true
 end
