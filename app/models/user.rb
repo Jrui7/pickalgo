@@ -20,9 +20,9 @@ class User < ApplicationRecord
     # UserMailer.welcome(self.id).deliver_later(wait_until: 1.day.from_now)
   end
 
-  def subscribe_to_newsletter
-    AddUserToMarketingListJob.perform_later(self.id)
-  end
+  # def subscribe_to_newsletter
+  #   AddUserToMarketingListJob.perform_later(self.id)
+  # end
 
 
 
