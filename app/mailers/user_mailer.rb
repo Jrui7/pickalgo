@@ -25,7 +25,7 @@ class UserMailer < ApplicationMailer
       'TemplateLanguage'=> true,
       'Subject'=> "Bienvenue dans la communauté Pickalgo",
       'Variables'=> {
-        "pseudo" => "#{@user.pseudo}"
+        "pseudo" => "#{@user.first_name}"
       }
     }])
     p variable.attributes['Messages']
