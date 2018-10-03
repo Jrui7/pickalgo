@@ -17,10 +17,14 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'figaro'
 gem 'cloudinary'
-gem 'mailjet'
+
 gem 'cookies_eu'
 gem 'gibbon'
 gem 'jquery-rails'
+
+gem 'mailjet'
+gem "letter_opener", group: :development
+
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
