@@ -1,18 +1,33 @@
-<h2>Forgot your password?</h2>
+<div class="page-container">
+  <div class="form-and-image">
+    <div class="registration-form">
+      <div class="logo-beta logo-form"><%= image_tag "logo.png", id: "logo" %><br>©Beta 2018
+      </div>
+      <div class="form-elements">
+        <h1>
+          <span>
+          <%= link_to new_user_session_path do %>
+            <i class="fas fa-arrow-left"></i>
+          <% end %>
+          </span>
+          Saleté de mot de passe !</h1>
+        <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+          <p class="reset-instructions">Saisissez l'adresse email que vous nous avez indiquée lors de votre inscription. Nous allons vous envoyer un lien pour choisir un nouveau mot de passe.</p>
 
-<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= f.error_notification %>
+          <div class="form-inputs">
+            <div id="input-and-icon-email">
+              <%= f.input :email, required: true, label: false, autofocus: true, placeholder:'Email' %>
+              <span id="icon-envelope" class="fas fa-envelope"></span>
+            </div>
+          </div>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
+          <div id="reset-password-button">
+            <%= f.button :submit, "Envoyer", id: "reset-password-cta", class: "btn-orange" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="image-background" style="background-image: linear-gradient(rgba(241, 243, 247, 0.6) 50%, transparent 100%), url('https://res.cloudinary.com/djmp0ivep/image/upload/v1538480440/tags.jpg');">
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
