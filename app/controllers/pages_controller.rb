@@ -16,6 +16,10 @@ class PagesController < ApplicationController
   def cgu
   end
 
+  def welcome
+    @welcome = "Bonjour #{current_user.first_name}"
+  end
+
   def set_page_action
     @page = params["action"]
   end

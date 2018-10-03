@@ -2,10 +2,6 @@
   border-bottom: 1px solid #d3d3d3;
 }
 
-.navbar:before, .navbar:after {
-    content: none;
-}
-
 .navbar {
   max-width: 1100px;
   margin: 0 auto;
@@ -14,196 +10,28 @@
   justify-content: space-between;
   height: 70px;
   margin-bottom: 0px;
-}
 
-
-.menu-links {
-  display: flex;
-  justify-content: space-between;
-  font-size: 18px;
-
-
- a {
-  text-decoration: none;
-  color: $blue;
-
-    &:hover {
-    color: $blue;
-    text-decoration: none;
-    }
+  &:before , &:after{
+    display: none;
   }
 }
-
-#top-link {
-  &:focus {
-    outline: none;
-  }
-}
-
-
-
-/* Right section */
-.navbar-right {
-  color: $blue;
-  display: flex;
-  align-items: center;
-  margin-right: 0;
-}
-
-.sign-links {
-  padding: 5px 10px;
-  color: $blue;
-
-  &:hover{
-    color: $blue;
-  }
-}
-
-
-.menu-links-text{
-  font-size:15px;
-}
-
-.my-picks {
-  margin: 0 10px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-
-  .tooltiptext {
-    visibility: hidden;
-    background-color: white;
-    color: $blue;
-    border: 1px solid $blue;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px;
-    position: absolute;
-    z-index: 1;
-    top: 90%;
-    min-width: 90px;
-    font-size: 15px;
-  }
-
-  .tooltiptext::after {
-      visibility: visible;
-  }
-
-  &:hover .tooltiptext {
-      visibility: visible;
-  }
-}
-
-.pending {
-  position: relative;
-  display: flex;
-  height: 22px;
-
-}
-
-
-.picks-pending {
-  position: absolute;
-  left: 12px;
-  bottom: 2px;
-  min-width: 20px;
-  min-height: 20px;
-  margin: 0;
-  font-size: 12px;
-  font-weight: bold;
-  color: white;
-  background-color: #EE5F5B;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-}
-
-.fa-plus {
-  font-size: 25px;
-  padding: 10px;
-  color: $blue;
-
-  a {
-  text-decoration: none;
-   &:hover{
-    text-decoration: none;
-    color: $blue;
-   }
-  }
-}
-
-.user-menu {
-  cursor: pointer;
-  margin: 0 10px;
-}
-
-#dropdown-photo {
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-}
-
-
-/* User Avatar */
 
 .user-menu{
   .fa-user {
-  font-size: 17px;
-  background-color: white;
-  border-radius: 50%;
-  padding: 10px;
-  color: $blue;
-
-  a {
-  text-decoration: none;
-   &:hover{
+    font-size: 17px;
+    background-color: $blue;
+    border-radius: 50%;
+    padding: 10px;
+    color: #FFF;
+    a {
     text-decoration: none;
-    color: $blue;
-   }
-  }
-
-}
-
-}
-
-
-
-.fa-user-plus {
-  font-size: 20px;
-  padding: 10px;
-  color: $blue;
-
-  a {
-  text-decoration: none;
-   &:hover{
-    text-decoration: none;
-   }
-  }
-
-}
-
-.glyphicon-option-vertical {
-  padding: 10px;
-  color: $blue;
-  font-size: 17px;
-}
-
-.drop-item {
-  display: flex;
-  align-items: center;
-  i {
-    width: 20px
-  }
-  p {
-    margin: 0;
+     &:hover{
+      text-decoration: none;
+      color: $blue;
+     }
+    }
   }
 }
-
 
 /* Dropdown */
 .navbar-dropdown-menu {
@@ -230,129 +58,14 @@
   width: 10px;
   position: absolute;
   right: 10px;
-  top: -6px;
+  top: 0px;
   background-color: white;
   transform: rotate(45deg);
   border-left: 1px solid rgba(0, 0, 0, 0.15);
   border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-.sub-container{
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background-color: $blue;
-}
 
-.sub-nav {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 50px;
-  margin-bottom: 0px;
-
-}
-
-.filter-icon {
-  margin-right: 10px;
-  font-size: 18px;
-}
-
-
-.cat {
-  display: flex;
-  align-items: center;
-  color: #FFF;
-  text-transform: uppercase;
-
-  a {
-    text-decoration: none;
-  }
-  p {
-    margin: 0;
-    font-size: 16px;
-    border-bottom: 2px solid transparent;
-    transition: all .4s ease-in;
-  }
-
-  &:hover {
-    color: white;
-    p{
-      border-bottom: 2px solid white;
-    }
-  }
-
-}
-
-.selected {
-  color: white;
-  p {
-    border-bottom: 2px solid white;
-  }
-}
-
-
-@media screen and (max-width: 768px) {
-
-}
-
-
-@media screen and (max-width: 480px) {
-
-  .navbar {
-    padding: 5px;
-  }
-
-  .user-menu {
-    padding: 0 10px 0 0;
-  }
-
-  /* User Avatar */
-
-
-  .dropdown-menu {
-    a{
-
-      .fa-plus {
-        font-size: 15px;
-        color: $blue;
-        padding: 0;
-
-      }
-
-      .fa-hand-lizard {
-        font-size: 15px;
-        color: $blue;
-        padding: 0;
-      }
-
-      &:hover {
-        .fa-plus {
-          background: transparent !important;
-          color: black !important;
-        }
-
-        .fa-hand-lizard {
-          background: transparent !important;
-          color: black !important;
-        }
-      }
-    }
-
-  }
-
-  .sign-links {
-    padding: 5px 5px 5px 0px;
-    font-size: 14px;
-  }
-
-
-
-
-
-
-
-}
 
 
 

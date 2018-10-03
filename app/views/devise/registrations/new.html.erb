@@ -26,6 +26,9 @@
             </div>
              <div class="checkbox-and-text"><%= f.check_box :terms_of_service %>J'accepte les <%= link_to "conditions d'utilisation", cgu_path %>
              </div>
+             <div class="sign-link">
+               Déjà un compte sur Pickalgo ? <%= link_to "Se connecter", new_user_session_path %>
+             </div>
           </div>
           <%= f.button :submit, "Je m'inscris", class: "btn-orange", id:"registration-cta" %>
         <% end %>
