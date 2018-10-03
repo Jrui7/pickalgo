@@ -5,13 +5,16 @@
 
 .registration-form {
   flex: 0 0 50%;
-  padding: 60px 0 0 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 20px 40px;
 }
 
 
+.form-elements {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
+}
 
 h1 {
   margin: 0px 0 20px 0;
@@ -26,6 +29,10 @@ h1 {
   color: rgba(51,51,51,0.5);
   text-align: center;
   margin: 20px 0 60px 0;
+}
+
+#new_user {
+  width: 70%;
 }
 
 .form-inputs {
@@ -71,7 +78,7 @@ h1 {
 }
 
 #registration-cta {
-  margin: 50px auto;
+  margin: 50px auto 0 auto;
 }
 
 .image-background {
@@ -106,8 +113,24 @@ h1 {
 
 @media screen and (max-width: 480px) {
 
+  .logo-form {
+    margin: 0;
+  }
+
+  .form-elements {
+    margin-top: 50px;
+  }
+
   .registration-form {
     padding: 20px;
+  }
+
+  #new_user {
+    width: 100%;
+  }
+
+  #registration-cta {
+    padding: 10px 30px;
   }
 
 }

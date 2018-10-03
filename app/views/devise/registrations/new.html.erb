@@ -1,8 +1,8 @@
 <div class="page-container">
   <div class="form-and-image">
-    <div class="image-background" style="background-image: linear-gradient(rgba(241, 243, 247, 0.6) 50%, transparent 100%), url('https://res.cloudinary.com/djmp0ivep/image/upload/v1538480440/tags.jpg');">
-    </div>
     <div class="registration-form">
+      <div class="logo-beta logo-form"><%= image_tag "logo.png", id: "logo" %><br>©Beta 2018
+      </div>
       <div class="form-elements">
         <h1>Pickalgo, c'est pour bientôt</h1>
         <p id="beta-limit">Inscriptions ouvertes aux 1000 premiers membres</p>
@@ -30,6 +30,8 @@
           <%= f.button :submit, "Je m'inscris", class: "btn-orange", id:"registration-cta" %>
         <% end %>
       </div>
+    </div>
+    <div class="image-background" style="background-image: linear-gradient(rgba(241, 243, 247, 0.6) 50%, transparent 100%), url('https://res.cloudinary.com/djmp0ivep/image/upload/v1538480440/tags.jpg');">
     </div>
   </div>
 </div>
