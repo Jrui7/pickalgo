@@ -11,7 +11,7 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
 
   after_create :send_welcome_email
-  after_create :subscribe_to_newsletter
+  # after_create :subscribe_to_newsletter
 
   private
 
