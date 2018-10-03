@@ -67,6 +67,7 @@ h1 {
 
 .checkbox-and-text {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   a {
     margin-left: 5px;
