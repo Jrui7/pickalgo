@@ -1,8 +1,5 @@
-
+<%= render 'shared/navbar' %>
 <div class="page-container">
-  <%= link_to destroy_user_session_path, method: :delete do %>
-    <i class="fa fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Déconnecter") %>
-  <% end %>
   <div class="infos-container">
     <%= render 'pages/navigation', page: @page %>
     <div class="content-box">
@@ -234,6 +231,7 @@
     </div>
   </div>
 </div>
+<%= render 'shared/footer' %>
 
 
 
