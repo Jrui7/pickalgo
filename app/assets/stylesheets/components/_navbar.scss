@@ -1,5 +1,6 @@
 .navbar-container {
   border-bottom: 1px solid #d3d3d3;
+  background-color: #FFF;
 }
 
 .navbar:before, .navbar:after {
@@ -75,11 +76,23 @@
 }
 
 
+@media all and (max-width: 1280px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+}
+
+
+@media all and (max-width: 980px) {
+
+}
+
+
 
 
 @media screen and (max-width: 768px) {
   .navbar {
-    padding: 10px;
+    padding: 10px 20px;
   }
 
 }
