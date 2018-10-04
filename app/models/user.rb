@@ -1,4 +1,22 @@
 class User < ApplicationRecord
+  extend FriendlyId
+  friendly_id :slug_candidates, use: :slugged
+  def slug_candidates
+    [
+      :first_name,
+      [:first_name, :last_name],
+      [:first_name, :last_name, :insert_id],
+    ]
+  end
+
+  def insert_id
+    nb = User.count
+    nb > 0 ?  sequence = User.last.id + 1 : sequence = 1
+    "#{sequence}"
+  end
+
+
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
