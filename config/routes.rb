@@ -5,6 +5,11 @@ Rails.application.routes.draw do
       root 'pages#welcome', as: :authenticated_root
   end
 
+  require "sidekiq/web"
+  authenticate :user, lambda { |u| u.admin } do
+      mount Sidekiq::Web => '/sidekiq'
+  end
+
   root to: 'pages#home'
 
   get 'home', to: 'pages#home'

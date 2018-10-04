@@ -24,6 +24,9 @@ gem 'jquery-rails'
 
 gem 'mailjet'
 gem "letter_opener", group: :development
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
+gem 'redis'
 
 
 gem 'bootsnap', '>= 1.1.0', require: false
