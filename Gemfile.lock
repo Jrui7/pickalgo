@@ -89,6 +89,8 @@ GEM
       thor (~> 0.14)
     font-awesome-sass (5.0.13)
       sassc (>= 1.11)
+    friendly_id (5.2.4)
+      activerecord (>= 4.0.0)
     gibbon (3.2.0)
       faraday (>= 0.9.1)
       multi_json (>= 1.11.0)
@@ -260,6 +262,7 @@ DEPENDENCIES
   devise
   figaro
   font-awesome-sass
+  friendly_id (~> 5.2.0)
   gibbon
   jbuilder (~> 2.5)
   jquery-rails
