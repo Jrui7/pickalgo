@@ -27,7 +27,7 @@
     <h3>Un produit vous plaît ?</h3>
     <div class="steps">
       <div class="icon-and-text-no-shaddow" id="first">
-        <%= image_tag "opinion.svg", class: "action-image", alt: "icon image think svg" %>
+        <%= image_tag "determine.svg", class: "action-image", alt: "icon image think svg" %>
         <div class="quote">Déterminez...</div>
         <div class="step-text">
           le prix maximal auquel la promo serait pour vous encore intéressante
@@ -49,61 +49,39 @@
       </div>
     </div>
   </div>
-  <div class="how-it-works" id="conclusion">
-    <h3>Comment ça marche ?</h3>
-    <div class="steps">
-      <div class="icon-and-text-no-shaddow">
-        <%= image_tag "analyze.svg", class: "action-image", alt: "icon image analyse svg" %>
-        <div class="quote">Nous calculons...</div>
-        <div class="step-text">
-          la promo optimale qui au prix minimal qui permet au vendeur de compenser la remise par une augmentation des ventes
+  <div id="conclusion">
+    <div class="how-it-works">
+      <h3>Comment ça marche ?</h3>
+      <div class="steps">
+        <div class="icon-and-text-no-shaddow">
+          <%= image_tag "analyze.svg", class: "action-image", alt: "icon image analyse svg" %>
+          <div class="quote-orange">Nous calculons...</div>
+          <div class="step-text">
+            la promo optimale au prix minimal qui permet au vendeur de compenser la remise par une augmentation des ventes
+          </div>
         </div>
-      </div>
-      <div class="icon-and-text-no-shaddow">
-        <%= image_tag "choose.svg", class: "action-image", alt: "icon image act svg" %>
-        <div class="quote">C'est gagné si...</div>
-        <div class="step-text">
-          <ul style="padding-left: 0">
-            <li>Vous proposiez une promo à 180 €</li>
-            <li>La promo obtimale calculée est à 140 €</li>
-            <li>Vous obtenez le produit pour 140 €</li>
-          </ul>
+        <div class="icon-and-text-no-shaddow">
+          <%= image_tag "win.svg", class: "action-image", alt: "icon image win svg" %>
+          <div class="quote-orange">C'est gagné si</div>
+          <div class="step-text">
+            <ul style="padding-left: 0">
+              <li>Vous proposiez une promo à 180 €</li>
+              <li>La promo obtimale calculée est à 140 €</li>
+              <li>Vous obtenez le produit pour 140 €</li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div class="icon-and-text-no-shaddow">
-        <%= image_tag "successful_purchase.svg", class: "action-image", alt: "icon image successful purchase svg" %>
-        <div class="quote">Rien de perdu si...</div>
-        <div class="step-text">
-          <ul style="padding-left: 0">
-            <li>Vous proposiez une promo à 135 €</li>
-            <li>La promo optimale calculée est de 140 €</li>
-            <li>Vous ne pouvez pas profiter de la promo</li>
-          </ul>
+        <div class="icon-and-text-no-shaddow">
+          <%= image_tag "no_win.svg", class: "action-image", alt: "icon image successful purchase svg" %>
+          <div class="quote-orange">Rien de perdu</div>
+          <div class="step-text">
+            <ul style="padding-left: 0">
+              <li>Vous proposiez une promo à 135 €</li>
+              <li>La promo optimale calculée est de 140 €</li>
+              <li>Vous ne pouvez pas profiter de la promo</li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="conclusion">
-    <h3>Comment ça marche ?</h3>
-    <div class="conclusion-cases">
-      <div class="icon-and-text">
-        <h3 class="quote">C'est gagné !</h3>
-        <ul style="padding-left: 0">
-          <li>Vous proposiez une promo à 180 €</li>
-          <li>La promo obtimale calculée est à 140 €</li>
-          <li>Vous obtenez le produit pour 140 €</li>
-        </ul>
-      </div>
-      <div class="icon-and-text">
-        <%= image_tag "analyze.svg", class: "action-image", alt: "icon image analyse svg" %>
-      </div>
-      <div class="icon-and-text">
-        <h3 class="quote">Rien de perdu</h3>
-        <ul style="padding-left: 0">
-          <li>Vous proposiez une promo à 135 €</li>
-          <li>La promo optimale calculée est de 140 €</li>
-          <li>Vous ne pouvez pas profiter de la promo</li>
-        </ul>
       </div>
     </div>
   </div>
