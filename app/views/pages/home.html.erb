@@ -3,7 +3,7 @@
   <div class="nav-and-banner" style="background-image: linear-gradient(rgba(241, 243, 247,1) 50%, transparent 100%), url('https://res.cloudinary.com/djmp0ivep/image/upload/v1538480440/tags.jpg');">
     <header class="header-home">
       <div class="logo-and-log">
-        <div class="logo-beta"><%= image_tag "logo.png", id: "logo" %><br>©Beta 2018
+        <div class="logo-beta"><%= image_tag "logo.png", id: "logo", alt: "logo pickalgo color" %><br>©Beta 2018
         </div>
       </div>
     </header>
@@ -27,21 +27,21 @@
     <h3>Proposez votre prix maximum<br>Bénéficiez du prix minimum</h3>
     <div class="steps">
       <div class="icon-and-text-no-shaddow" id="first">
-        <%= image_tag "opinion.svg", class: "action-image" %>
+        <%= image_tag "opinion.svg", class: "action-image", alt: "icon image think svg" %>
         <div class="quote">Vous réfléchissez</div>
         <div class="step-text">
           Déterminez votre prix plafond. A partir de quel montant la promo commencerait selon vous à être intéressante ?
         </div>
       </div>
       <div class="icon-and-text-no-shaddow" id="second">
-        <%= image_tag "choose.svg", class: "action-image" %>
+        <%= image_tag "choose.svg", class: "action-image", alt: "icon image act svg" %>
         <div class="quote">Vous proposez</div>
         <div class="step-text">
           Vous avez 7 jours pour formuler une proposition d'achat correspondant au montant de votre prix plafond
         </div>
       </div>
       <div class="icon-and-text-no-shaddow" id="third">
-        <%= image_tag "analyze.svg", class: "action-image" %>
+        <%= image_tag "analyze.svg", class: "action-image", alt: "icon image analyse svg" %>
         <div class="quote">Nous calculons</div>
         <div class="step-text">
          Nous étudions toutes les propositions pour calculer la meilleure promo dont nous pouvons vous faire bénéficier
@@ -61,7 +61,7 @@
         </ul>
       </div>
       <div class="icon-and-text">
-        <%= image_tag "successful_purchase.svg", class: "action-image" %>
+        <%= image_tag "successful_purchase.svg", class: "action-image", alt: "icon image successful purchase svg" %>
       </div>
       <div class="icon-and-text">
         <h3 class="quote">Rien de perdu</h3>
@@ -81,21 +81,21 @@
 
       <div class="testimonies">
         <div class="testimony">
-          <%= cl_image_tag("1wh4IX4g.jpg", :width=>150, :height=>150, :gravity=>"face", :dpr=>2.0, :radius=>"max", :crop=>"fill", class: "user-photo") %>
+          <%= cl_image_tag("1wh4IX4g.jpg", :width=>150, :height=>150, :gravity=>"face", :dpr=>2.0, :radius=>"max", :crop=>"fill", class: "user-photo", alt: "picture photo Jorge Pickalgo founder") %>
           <h4 class="testimony-title">Jorge, fondateur de Pickalgo</h4>
           <div class="testimony-text">
             "Aider les vendeurs à réussir leurs promos, et vous en faire bénéficier avant tout le monde"
           </div>
         </div>
         <div class="testimony">
-          <%= cl_image_tag("1wh4IX4g.jpg", :width=>150, :height=>150, :gravity=>"face", :dpr=>2.0, :radius=>"max", :crop=>"fill", class: "user-photo") %>
+          <%= cl_image_tag("1wh4IX4g.jpg", :width=>150, :height=>150, :gravity=>"face", :dpr=>2.0, :radius=>"max", :crop=>"fill", class: "user-photo", alt: "picture photo Jenny founder PetitVoyou") %>
           <h4 class="testimony-title">Jenny, fondatrice de <a href="https://petitvoyou.com" target="_blank">PetitVoyou</a></h4>
           <div class="testimony-text">
             "Avec Pickalgo tout le monde y gagne. Je n'envisagerai plus mes promos de la même façon"
           </div>
         </div>
         <div class="testimony">
-          <%= cl_image_tag("1wh4IX4g.jpg", :width=>150, :height=>150, :gravity=>"face", :dpr=>2.0, :radius=>"max", :crop=>"fill", class: "user-photo") %>
+          <%= cl_image_tag("1wh4IX4g.jpg", :width=>150, :height=>150, :gravity=>"face", :dpr=>2.0, :radius=>"max", :crop=>"fill", class: "user-photo", alt: "picture photo Mr P Pickalgo earlybird") %>
           <h4 class="testimony-title">Mr P, "oiseau précoce" de Pickalgo</h4>
           <div class="testimony-text">
             "Utiliser mon avis pour mieux me satisfaire, ça c'est bonne idée !"
