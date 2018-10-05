@@ -17,7 +17,7 @@ class PagesController < ApplicationController
   end
 
   def welcome
-    @welcome = "Bonjour #{current_user.first_name}"
+    @user = current_user
   end
 
   def set_page_action
