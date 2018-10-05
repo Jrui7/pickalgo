@@ -9,8 +9,8 @@
   min-height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
-   -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 95%, 0 90%);
-  clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 95%, 0 90%);
+   -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
 }
 
 .header-home {
