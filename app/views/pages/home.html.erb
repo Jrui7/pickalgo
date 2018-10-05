@@ -10,7 +10,7 @@
     <div class="banner-container">
       <div class="banner-content">
         <h1>Devenez testeur de promos !</h1>
-        <p class="concept">Avec Pickalgo, décidez vous-même du prix des promos. Grâce à vous nous définissons le meilleur prix pour que la promo soit bénéfique aux clients et au vendeur... et vous en faisons bénficier avant tout le monde !
+        <p class="concept">Parce qu'un vendeur a souvent du mal à trouver le meilleur prix pour sa promo, il y a Pickalgo... et vous ! Avec Pickalgo devenez testeur de promos et bénéficiez du meilleur prix avant tout le monde.
         </p>
         <div class="cta-links">
           <a href="#features-container">
@@ -24,52 +24,64 @@
     </div>
   </div>
   <div class="how-it-works" id="features-container">
-    <h3>Proposez votre prix maximum<br>Bénéficiez du prix minimum</h3>
+    <h3>Un produit vous plaît ?</h3>
     <div class="steps">
       <div class="icon-and-text-no-shaddow" id="first">
-        <%= image_tag "opinion.svg", class: "action-image", alt: "icon image think svg" %>
-        <div class="quote">Vous réfléchissez</div>
+        <%= image_tag "determine.svg", class: "action-image", alt: "icon image think svg" %>
+        <div class="quote">Déterminez...</div>
         <div class="step-text">
-          Déterminez votre prix plafond. A partir de quel montant la promo commencerait selon vous à être intéressante ?
+          le prix maximal auquel la promo serait pour vous encore intéressante
         </div>
       </div>
       <div class="icon-and-text-no-shaddow" id="second">
         <%= image_tag "choose.svg", class: "action-image", alt: "icon image act svg" %>
-        <div class="quote">Vous proposez</div>
+        <div class="quote">Validez...</div>
         <div class="step-text">
-          Vous avez 7 jours pour formuler une proposition d'achat correspondant au montant de votre prix plafond
+          une proposition d'achat du montant maximal que vous avez déterminé
         </div>
       </div>
       <div class="icon-and-text-no-shaddow" id="third">
-        <%= image_tag "analyze.svg", class: "action-image", alt: "icon image analyse svg" %>
-        <div class="quote">Nous calculons</div>
+        <%= image_tag "successful_purchase.svg", class: "action-image", alt: "icon image successful purchase svg" %>
+        <div class="quote">Profitez...</div>
         <div class="step-text">
-         Nous étudions toutes les propositions pour calculer la meilleure promo dont nous pouvons vous faire bénéficier
+          d'un prix encore plus bas que celui que vous aviez initialement proposé
         </div>
       </div>
     </div>
   </div>
-  <div class="conclusion">
-    <h3>Exemple pour un produit à 200 €</h3>
-    <div class="conclusion-cases">
-      <div class="icon-and-text">
-        <h3 class="quote">C'est gagné !</h3>
-        <ul style="padding-left: 0">
-          <li>Vous proposiez une promo à 180 €</li>
-          <li>La promo obtimale calculée est à 140 €</li>
-          <li>Vous obtenez le produit pour 140 €</li>
-        </ul>
-      </div>
-      <div class="icon-and-text">
-        <%= image_tag "successful_purchase.svg", class: "action-image", alt: "icon image successful purchase svg" %>
-      </div>
-      <div class="icon-and-text">
-        <h3 class="quote">Rien de perdu</h3>
-        <ul style="padding-left: 0">
-          <li>Vous proposiez une promo à 135 €</li>
-          <li>La promo optimale calculée est de 140 €</li>
-          <li>Vous ne pouvez pas profiter de la promo</li>
-        </ul>
+  <div id="conclusion">
+    <div class="how-it-works">
+      <h3>Comment ça marche ?</h3>
+      <div class="steps">
+        <div class="icon-and-text-no-shaddow">
+          <%= image_tag "analyze.svg", class: "action-image", alt: "icon image analyse svg" %>
+          <div class="quote-orange">Nous calculons...</div>
+          <div class="step-text">
+            la promo optimale qui au prix minimal permet de compenser la remise octroyée par une augmentation des ventes
+          </div>
+        </div>
+        <div class="icon-and-text-no-shaddow">
+          <%= image_tag "win.svg", class: "action-image", alt: "icon image win svg" %>
+          <div class="quote-orange">C'est gagné si</div>
+          <div class="step-text">
+            <ul style="padding-left: 0">
+              <li>Vous proposiez une promo à 180 €</li>
+              <li>La promo obtimale est à 140 €</li>
+              <li>Vous obtenez le produit pour 140 €</li>
+            </ul>
+          </div>
+        </div>
+        <div class="icon-and-text-no-shaddow">
+          <%= image_tag "no_win.svg", class: "action-image", alt: "icon image successful purchase svg" %>
+          <div class="quote-orange">Rien de perdu</div>
+          <div class="step-text">
+            <ul style="padding-left: 0">
+              <li>Vous proposiez une promo à 135 €</li>
+              <li>La promo optimale est à 140 €</li>
+              <li>Vous ne pouvez pas profiter de la promo</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -84,14 +96,14 @@
           <%= cl_image_tag("1wh4IX4g.jpg", :width=>150, :height=>150, :gravity=>"face", :dpr=>2.0, :radius=>"max", :crop=>"fill", class: "user-photo", alt: "picture photo Jorge Pickalgo founder") %>
           <h4 class="testimony-title">Jorge, fondateur de Pickalgo</h4>
           <div class="testimony-text">
-            "Aider les vendeurs à réussir leurs promos, et vous en faire bénéficier avant tout le monde"
+            "Aider les vendeurs à trouver le meilleur prix pour leurs promos et faire bénéficier nos testeurs des meilleurs prix avant les autres"
           </div>
         </div>
         <div class="testimony">
           <%= cl_image_tag("1wh4IX4g.jpg", :width=>150, :height=>150, :gravity=>"face", :dpr=>2.0, :radius=>"max", :crop=>"fill", class: "user-photo", alt: "picture photo Jenny founder PetitVoyou") %>
           <h4 class="testimony-title">Jenny, fondatrice de <a href="https://petitvoyou.com" target="_blank">PetitVoyou</a></h4>
           <div class="testimony-text">
-            "Avec Pickalgo tout le monde y gagne. Je n'envisagerai plus mes promos de la même façon"
+            "Prix promo trop haut ? Trop bas ? Avec Pickalgo je sais quel pirx ma promo doit offrir pour atteindre mes objectifs et satisfaire mes clients"
           </div>
         </div>
         <div class="testimony">
