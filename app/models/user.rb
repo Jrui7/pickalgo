@@ -33,8 +33,8 @@ class User < ApplicationRecord
   private
 
   def send_welcome_email
-    UserMailer.welcome(self.id).deliver_later
-    # UserMailer.welcome(self.id).deliver_later(wait_until: 1.day.from_now)
+    # UserMailer.welcome(self.id).deliver_later
+    UserMailer.welcome(self.id).deliver_later(wait_until: 1.day.from_now)
   end
 
   def subscribe_to_newsletter
