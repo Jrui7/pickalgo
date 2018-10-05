@@ -1,4 +1,30 @@
 <%= render 'shared/navbar' %>
 <div class="page-container">
+  <div class="content-container">
+    <div class="launching-infos">
+      <h1 id="welcome-title"><%= @user.first_name %>, vous ne raterez pas le lancement !</h1>
+      <%= image_tag 'lift-off.svg', id: 'lift-off', alt: 'lift-off image' %>
+        <%= render "pages/timer"  %>
+        <div id="clockdiv">
+          <div class="dynamic-timer">
+             <span class="days"></span>
+             <div class="smalltext">j</div>
+           </div>
+           <div class="dynamic-timer">
+             <span class="hours"></span>
+             <div class="smalltext">h</div>
+           </div>
+           <div class="dynamic-timer">
+             <span class="minutes"></span>
+             <div class="smalltext">m</div>
+           </div>
+           <div class="dynamic-timer">
+             <span class="seconds"></span>
+             <div class="smalltext">s</div>
+           </div>
+        </div>
+        <p id="welcome-text"><span>Inscription confirmée</span><br>Vous faites partie des 500 premiers testeurs à avoir accès en exclusivité à Pickalgo lors de son lancement. Encore un peu de patience…</p>
+    </div>
+  </div>
 </div>
 <%= render 'shared/footer' %>

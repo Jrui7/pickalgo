@@ -1,0 +1,80 @@
+
+.launching-infos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#welcome-title {
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
+#lift-off {
+  max-width: 300px;
+}
+
+#clockdiv {
+  display: flex;
+  margin-top: 50px;
+}
+
+.dynamic-timer {
+  color: $blue;
+  background-color: transparent;
+  border: 1px dashed $blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  margin: 0 5px;
+  font-size: 25px;
+}
+
+#welcome-text {
+  max-width: 450px;
+  margin: 40px 0 0 0;
+  font-size: 18px;
+  span {
+    color: $orange;
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
+
+@media all and (max-width: 1280px) {
+
+  .launching-infos {
+    padding: 10px 20px;
+  }
+}
+
+
+@media all and (max-width: 980px) {
+
+}
+
+@media screen and (max-width: 768px) {
+
+
+}
+
+@media screen and (max-width: 480px) {
+
+  .launching-infos {
+    padding: 20px;
+  }
+
+  #welcome-title {
+    font-size: 25px;
+  }
+
+  #welcome-text {
+    font-size: 16px;
+  }
+
+
+}
