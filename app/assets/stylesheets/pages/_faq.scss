@@ -89,20 +89,6 @@
     text-align: justify;
   }
 
-  .words {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .word-column {
-    flex: 0 0 50%;
-    padding: 0 10px;
-    span {
-      font-weight: bold;
-      text-decoration: underline;
-    }
-  }
-
 
 }
 
@@ -211,54 +197,7 @@
   }
  }
 
- .custom-table {
-   margin-top: 20px;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: space-between;
- }
 
- .regroup {
-   padding: 5px 10px;
-   background-color: #f1f8fc;
-   border-radius: 5px;
-   background: linear-gradient(#fff, #e4e4e9);
-   box-shadow: 0 2px -1px -1px rgba(45, 35, 66, 0.3), 0 1px 2px 0 rgba(45, 35, 66, 0.4), inset 0 -2px 0 0 #cfd1e3;
-   transition: box-shadow 0.15s ease, transform 0.15s ease, -webkit-transform 0.15s ease;
-   flex: 0 0 45%;
-   margin: 10px 0;
-   cursor: pointer;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   &:hover {
-    box-shadow: 0 7px 14px -3px rgba(45,35,66,0.3), 0 2px 4px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 #cfd1e3;
-        transition: box-shadow 0.15s ease, transform 0.15s ease, -webkit-transform 0.15s ease;
-   }
- }
-
- .idea {
-   color: $blue;
-   font-weight: bold;
-   text-align: center;
- }
-
- .problem {
-  display: none;
-  padding: 10px;
-  text-align: justify;
- }
-
-
-  .panel-default > .panel-heading {
-    background-color: $blue;
-    color: white;
-  }
-
-  .panel-group .panel-heading + .panel-collapse > .panel-body, .panel-group .panel-heading + .panel-collapse > .list-group {
-    border: none;
-  }
 
 
 @media screen and (max-width: 768px) {
