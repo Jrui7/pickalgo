@@ -2,19 +2,19 @@
   <div class="nav-and-banner" style="background-image: linear-gradient(rgba(241, 243, 247,1) 50%, transparent 100%), url('https://res.cloudinary.com/djmp0ivep/image/upload/v1538480440/tags.jpg');">
     <header class="header-home">
       <div class="logo-and-log">
-        <%= link_to home_path do %>
+        <%= link_to root_path do %>
           <div class="logo-beta"><%= image_tag "logo.png", id: "logo", alt: "logo pickalgo color" %><br>©Beta 2018
           </div>
         <% end %>
       </div>
       <div class="right-links">
-        <%= link_to "Testeurs", home_path %>
+        <%= link_to "Testeurs", root_path %>
         <%= link_to "Contact", contact_path %>
         <%= link_to "Espace-pro", new_user_session_path %>
       </div>
     </header>
     <div class="banner-container">
-      <div class="banner-content">
+      <div class="banner-content" id="banner-content-partners">
         <h1>Le prix d'une promo ne s'invente pas, il se découvre.</h1>
         <p class="concept">Acquisition, fidélisation, déstockage, volumes, CA, marge… Sur Pickalgo découvrez quel prix permettra à votre promo d'atteindre l'objectif que vous vous êtes fixé.
         </p>
