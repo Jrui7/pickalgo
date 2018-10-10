@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get 'home', to: 'pages#home'
+  get 'partners', to: 'pages#partners'
   get 'faq', to: 'pages#faq'
   get 'contact', to: 'pages#contact'
   get 'mentions_legales', to: 'pages#mentions_legales'

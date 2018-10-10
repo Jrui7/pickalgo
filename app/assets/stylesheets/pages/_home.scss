@@ -1,14 +1,8 @@
-.forgot-modal {
-    height: 0px;
-  }
-
-
-
 
 .nav-and-banner {
-  min-height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
   clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
 }
@@ -17,6 +11,7 @@
   width: 90%;
   margin: 0 auto;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   height: 80px;
 
@@ -47,14 +42,19 @@
 .right-links{
   display: flex;
   font-size: 15px;
-  a , .connect-button {
-    color: $blue;
+  a {
+    color: #4d4d5e;
     margin: 0 20px;
     text-transform: uppercase;
-    text-decoration: underline;
+    padding: 15px;
+    letter-spacing: 1.6px;
+    font-size: 16px;
+    border-radius: 15px;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+
     &:hover {
-      color: $orange;
       cursor: pointer;
+      background-color: #f9fafc;
     }
   }
 
@@ -63,19 +63,24 @@
   }
 }
 
+.right-links-menu {
+  display: none;
+}
+
 
 
 
 .banner-container {
     width: 90%;
     margin: 0 auto;
-    min-height: calc(90vh - 80px);
     display: flex;
     justify-content: center;
+    min-height: calc(70vh - 80px)
   }
 
   .banner-content{
-    margin-top: 75px;
+    margin-top: 100px;
+    margin-bottom: 75px;
     width: 50%;
     margin-left: auto;
     margin-right: auto;
@@ -335,6 +340,17 @@
 
 
   }
+
+  @media screen and (max-width: 768px) {
+    .right-links {
+      display: none;
+    }
+
+    .right-links-menu {
+      display: block;
+    }
+
+   }
 
 
 
