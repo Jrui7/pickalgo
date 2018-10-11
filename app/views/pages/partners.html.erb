@@ -12,6 +12,7 @@
         <%= link_to "Contact", contact_path %>
         <%= link_to " Mon Compte pro", new_user_session_path %>
       </div>
+      <%= render "pages/right-links-pro" %>
     </header>
     <div class="banner-container">
       <div class="banner-content" id="banner-content-partners">
@@ -23,7 +24,7 @@
             <div class="btn-white go-to">Concept</div>
           </a>
           <%= link_to new_user_registration_path, class:"btn-orange cta-link" do %>
-            S'inscrire
+            Créér un compte pro
           <% end %>
         </div>
       </div>
@@ -115,7 +116,7 @@
       </div>
       <%= link_to new_user_registration_path do %>
         <div class="cta">
-          <div class="btn-orange">S'inscrire</div>
+          <div class="btn-orange">Créér un compte pro</div>
         </div>
       <% end %>
     </div>
