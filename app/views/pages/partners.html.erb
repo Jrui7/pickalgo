@@ -1,3 +1,4 @@
+<%= render 'right-links-pro' %>
 <div class="page-container">
   <div class="nav-and-banner" style="background-image: linear-gradient(rgba(241, 243, 247,1) 50%, transparent 100%), url('https://res.cloudinary.com/djmp0ivep/image/upload/v1538480440/tags.jpg');">
     <header class="header-home">
@@ -12,7 +13,9 @@
         <%= link_to "Contact", contact_path %>
         <%= link_to " Mon Compte pro", new_user_session_path %>
       </div>
-      <%= render "pages/right-links-pro" %>
+      <div class="right-links-menu">
+        <i class="fas fa-bars"></i>
+      </div>
     </header>
     <div class="banner-container">
       <div class="banner-content" id="banner-content-partners">
