@@ -9,9 +9,9 @@
         <% end %>
       </div>
       <div class="right-links">
-        <%= link_to "Partenaires", partners_path %>
+        <%= link_to "Espace Pro", partners_path %>
         <%= link_to "Contact", contact_path %>
-        <%= link_to "Connexion", new_user_session_path %>
+        <%= link_to "Mon Compte", new_user_session_path %>
       </div>
       <%= render "pages/right-links-small" %>
     </header>
@@ -21,7 +21,7 @@
         <p class="concept">Parce qu'il est difficile pour un vendeur de trouver le meilleur prix pour sa promo, il y a Pickalgo... et vous ! Avec Pickalgo devenez testeur de promos et bénéficiez du meilleur prix avant tout le monde.
         </p>
         <div class="cta-links">
-          <a href="#features-container">
+          <a href="#how-it-works">
             <div class="btn-white go-to">Concept</div>
           </a>
           <%= link_to new_user_registration_path, class:"btn-orange cta-link" do %>
@@ -31,9 +31,8 @@
       </div>
     </div>
   </div>
-  <div class="how-it-works" id="features-container">
+  <div class="how-it-works" id="how-it-works">
     <h3>Un produit vous plaît ?
-    <br>Décidez du prix de sa promo
     </h3>
     <div class="steps">
       <div class="icon-and-text-no-shaddow" id="first">
@@ -54,7 +53,7 @@
         <%= image_tag "successful_purchase.svg", class: "action-image", alt: "icon image successful purchase svg" %>
         <div class="quote">Profitez...</div>
         <div class="step-text">
-          du meilleur prix promotionnel que nous avons calculé
+          avant tout le monde du prix promotionnel qui aura été calculé
         </div>
       </div>
     </div>
@@ -67,7 +66,7 @@
           <%= image_tag "analyze.svg", class: "action-image", alt: "icon image analyse svg" %>
           <div class="quote-orange">Nous calculons...</div>
           <div class="step-text">
-            la promo optimale qui permet de compenser la meilleure réduction du prix par une augmentation des ventes
+            la promo qui permet de compenser la meilleure réduction du prix par une augmentation des ventes
           </div>
         </div>
         <div class="icon-and-text-no-shaddow">
@@ -76,7 +75,7 @@
           <div class="step-text">
             <ul style="padding-left: 0">
               <li>Vous proposiez une promo à 180 €</li>
-              <li>La promo optimale est à 140 €</li>
+              <li>La promo est fixée à 140 €</li>
               <li>Vous obtenez le produit pour 140 €</li>
             </ul>
           </div>
@@ -87,7 +86,7 @@
           <div class="step-text">
             <ul style="padding-left: 0">
               <li>Vous proposiez une promo à 135 €</li>
-              <li>La promo optimale est à 140 €</li>
+              <li>La promo est fixée à 140 €</li>
               <li>Vous ne pouvez pas profiter de la promo</li>
             </ul>
           </div>

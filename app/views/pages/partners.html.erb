@@ -8,9 +8,9 @@
         <% end %>
       </div>
       <div class="right-links">
-        <%= link_to "Testeurs", root_path %>
+        <%= link_to "Espace Testeurs", home_path %>
         <%= link_to "Contact", contact_path %>
-        <%= link_to "Espace-pro", new_user_session_path %>
+        <%= link_to " Mon Compte pro", new_user_session_path %>
       </div>
     </header>
     <div class="banner-container">
@@ -30,64 +30,55 @@
     </div>
   </div>
   <div class="how-it-works" id="features-container">
-    <h3>Un produit vous plaît ?
-    <br>Décidez du prix de sa promo
+    <h3>Comment ça marche ?
     </h3>
     <div class="steps">
       <div class="icon-and-text-no-shaddow" id="first">
-        <%= image_tag "determine.svg", class: "action-image", alt: "icon image think svg" %>
-        <div class="quote">Déterminez...</div>
+        <%= image_tag "account.svg", class: "action-image", alt: "icon image create partner account svg" %>
+        <div class="quote">Compte</div>
         <div class="step-text">
-          le prix maximal vous seriez prêt à payer pour en faire l'acquisition dès à présent
+          Crééz gratuitement et en moins de 2 minutes, votre compte partenaire sur Pickalgo
         </div>
       </div>
       <div class="icon-and-text-no-shaddow" id="second">
-        <%= image_tag "choose.svg", class: "action-image", alt: "icon image act svg" %>
-        <div class="quote">Validez...</div>
+        <%= image_tag "launch.svg", class: "action-image", alt: "icon image launch campaign svg" %>
+        <div class="quote">Campagne</div>
         <div class="step-text">
-          une proposition d'achat du montant maximal que vous avez déterminé
+          Lancez une campagne en présentant le produit pour lequel vous souhaitez proposer une promo
         </div>
       </div>
       <div class="icon-and-text-no-shaddow" id="third">
-        <%= image_tag "successful_purchase.svg", class: "action-image", alt: "icon image successful purchase svg" %>
-        <div class="quote">Profitez...</div>
+        <%= image_tag "collect.svg", class: "action-image", alt: "icon image collect svg" %>
+        <div class="quote">Collecte</div>
         <div class="step-text">
-          du meilleur prix promotionnel que nous avons calculé
+          Nous collectons pendant 7 jours les propositions des testeurs intéressés par votre produit
         </div>
       </div>
     </div>
   </div>
   <div id="conclusion">
     <div class="how-it-works">
-      <h3>Comment ça marche ?</h3>
+      <h3>Et ensuite ?</h3>
       <div class="steps">
         <div class="icon-and-text-no-shaddow">
-          <%= image_tag "analyze.svg", class: "action-image", alt: "icon image analyse svg" %>
-          <div class="quote-orange">Nous calculons...</div>
+          <%= image_tag "dashboard.svg", class: "action-image", alt: "icon image  dashboard analyse svg" %>
+          <div class="quote-orange">Analyse</div>
           <div class="step-text">
-            la promo optimale qui permet de compenser la meilleure réduction du prix par une augmentation des ventes
+            Nous vous fournissons les données et les analyses relatives à la campagne
           </div>
         </div>
         <div class="icon-and-text-no-shaddow">
           <%= image_tag "win.svg", class: "action-image", alt: "icon image win svg" %>
-          <div class="quote-orange">C'est gagné si</div>
+          <div class="quote-orange">Décision</div>
           <div class="step-text">
-            <ul style="padding-left: 0">
-              <li>Vous proposiez une promo à 180 €</li>
-              <li>La promo optimale est à 140 €</li>
-              <li>Vous obtenez le produit pour 140 €</li>
-            </ul>
+            Grace aux analyses, décidez du prix qui vous permet d'atteindre l'objectif souhaité
           </div>
         </div>
         <div class="icon-and-text-no-shaddow">
           <%= image_tag "no_win.svg", class: "action-image", alt: "icon image successful purchase svg" %>
-          <div class="quote-orange">Rien de perdu</div>
+          <div class="quote-orange">Commandes</div>
           <div class="step-text">
-            <ul style="padding-left: 0">
-              <li>Vous proposiez une promo à 135 €</li>
-              <li>La promo optimale est à 140 €</li>
-              <li>Vous ne pouvez pas profiter de la promo</li>
-            </ul>
+            Validez les commandes de nos testeurs au prix que vous aurez déterminé
           </div>
         </div>
       </div>
