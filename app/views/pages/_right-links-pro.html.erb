@@ -1,0 +1,19 @@
+<div id="myNav" class="overlay">
+
+  <!-- Button to close the overlay navigation -->
+  <a href="javascript:void(0)" class="closebtn fas fa-times"></a>
+
+  <!-- Overlay content -->
+  <div class="overlay-content">
+    <%= link_to home_path do %>
+      <i class="fas fa-user-circle"></i> <%= t(".testeur", default: "Espace testeur") %>
+    <% end %>
+    <%= link_to contact_path do %>
+      <i class="fas fa-envelope"></i> <%= t(".contact", default: "Contact") %>
+    <% end %>
+    <%= link_to new_user_session_path do %>
+      <i class="fas fa-store"></i> <%= t(".legal", default: "Mon compte pro") %>
+    <% end %>
+  </div>
+
+</div>
