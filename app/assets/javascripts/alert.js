@@ -1,3 +1,7 @@
 $(document).ready(function(){
-  $(".alert" ).fadeOut(5000);
+
+  setTimeout(function(){
+    $(".alert" ).slideUp("slow");
+  }, 3000);
+
 })

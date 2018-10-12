@@ -8,16 +8,16 @@
         <%= simple_form_for(resource, as: resource_name, html: {id: :registrate }, url: session_path(resource_name)) do |f| %>
           <div class="form-inputs">
             <div class="regroup-elements">
-              <div id="input-and-icon-email">
+              <div class="input-and-icon">
                 <%= f.input :email, required: true, label: false, autofocus: true, placeholder:'Email' %>
-                <span id="icon-envelope" class="fas fa-envelope"></span>
+                <span class="icon fas fa-envelope"></span>
               </div>
               <%= f.input :remember_me, label: 'Se souvenir de moi', as: :boolean if devise_mapping.rememberable? %>
             </div>
             <div class="regroup-elements">
-              <div id="input-and-icon-password">
+              <div class="input-and-icon">
                 <%= f.input :password, required: true, label: false, placeholder: 'Mot de passe' %>
-                <span id="icon-lock" class="fas fa-lock"></span>
+                <span class="icon fas fa-lock"></span>
               </div>
               <%= link_to "Mot de passe oublié ?", new_user_password_path, id: 'forgot-password' %>
             </div>

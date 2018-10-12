@@ -22,5 +22,8 @@ Rails.application.routes.draw do
 
 
   resources :users, only: [ :show, :update]
+  resources :leads, only: [ :create ]
+
+  get 'inscription_pro', to: 'leads#inscription_pro'
 
 end

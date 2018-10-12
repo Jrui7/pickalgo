@@ -9,13 +9,13 @@
           <%= f.input :reset_password_token, as: :hidden %>
           <%= f.full_error :reset_password_token %>
           <div class="form-inputs">
-            <div id="input-and-icon-password">
+            <div class="input-and-icon">
               <%= f.input :password, required: true, label: false, placeholder: 'Nouveau mot de passe', hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length) %>
-              <span id="icon-lock" class="fas fa-lock"></span>
+              <span class="icon fas fa-lock"></span>
             </div>
-            <div id="input-and-icon-password2">
+            <div class="input-and-icon">
               <%= f.input :password_confirmation, required: true, label: false, placeholder: 'Confirmer le nouveau mot de passe' %>
-              <span id="icon-lock2" class="fas fa-lock"></span>
+              <span class="icon fas fa-lock"></span>
             </div>
           </div>
 

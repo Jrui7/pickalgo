@@ -40,25 +40,18 @@
     font-size: 40px;
 }
 
-
-
-#banner-content-partners {
-  width: 65%;
+#typer {
+    text-align: center;
 }
 
 
 @media all and (max-width: 1280px) {
 
-    #banner-content-partners {
-      width: 70%;
-    }
 
 }
 
 @media all and (max-width: 980px) {
-  #banner-content-partners {
-    width: 95%;
-  }
+
 }
 
 @media screen and (max-width: 480px) {

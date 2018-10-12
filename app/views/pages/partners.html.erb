@@ -18,16 +18,16 @@
       </div>
     </header>
     <div class="banner-container">
-      <div class="banner-content" id="banner-content-partners">
-        <h1>Le prix d'une promo ne s'invente pas, il se découvre.</h1>
-        <p class="concept">Acquisition, fidélisation, déstockage, volumes, CA, marge… Sur Pickalgo découvrez quel prix permettra à votre promo d'atteindre l'objectif que vous vous êtes fixé.
+      <div class="banner-content">
+        <h1>Objectif <span id="typer">.</span></h1>
+        <p class="concept">Le prix d'une promo ne s'invente pas, il se découvre. Sur Pickalgo découvrez quel prix permettra à votre promo d'atteindre l'objectif que vous vous êtes fixé.
         </p>
         <div class="cta-links">
           <a href="#how-it-works">
             <div class="btn-white go-to" id="concept">Concept</div>
           </a>
-          <%= link_to new_user_registration_path, class:"btn-orange cta-link" do %>
-            Créér un compte pro
+          <%= link_to inscription_pro_path, class:"btn-orange cta-link" do %>
+            Inscription pro
           <% end %>
         </div>
       </div>
@@ -38,24 +38,24 @@
     </h3>
     <div class="steps">
       <div class="icon-and-text-no-shaddow" id="first">
-        <%= image_tag "account.svg", class: "action-image", alt: "icon image create partner account svg" %>
-        <div class="quote">Compte</div>
-        <div class="step-text">
-          Crééz gratuitement et en moins de 2 minutes, votre compte partenaire sur Pickalgo
-        </div>
-      </div>
-      <div class="icon-and-text-no-shaddow" id="second">
         <%= image_tag "launch.svg", class: "action-image", alt: "icon image launch campaign svg" %>
         <div class="quote">Campagne</div>
         <div class="step-text">
           Lancez une campagne en présentant le produit pour lequel vous souhaitez proposer une promo
         </div>
       </div>
+      <div class="icon-and-text-no-shaddow" id="second">
+        <%= image_tag "determine.svg", class: "action-image", alt: "icon image think svg" %>
+        <div class="quote">Enquête</div>
+        <div class="step-text">
+          Les testeurs  déterminent le prix maximal qu'ils sont prêts à payer pour acquérir le produit dès maintenant
+        </div>
+      </div>
       <div class="icon-and-text-no-shaddow" id="third">
         <%= image_tag "collect.svg", class: "action-image", alt: "icon image collect svg" %>
         <div class="quote">Collecte</div>
         <div class="step-text">
-          Nous collectons pendant 7 jours les propositions des testeurs intéressés par votre produit
+          Nous collectons pendant 7 jours toutes les propositions d'achat  des testeurs intéressés par votre produit
         </div>
       </div>
     </div>
@@ -68,14 +68,14 @@
           <%= image_tag "dashboard.svg", class: "action-image", alt: "icon image  dashboard analyse svg" %>
           <div class="quote-orange">Analyse</div>
           <div class="step-text">
-            Nous vous fournissons les données et les analyses relatives à la campagne
+            Nous vous fournissons une analyse des données de la campagne
           </div>
         </div>
         <div class="icon-and-text-no-shaddow" id="fifth">
           <%= image_tag "win.svg", class: "action-image", alt: "icon image win svg" %>
           <div class="quote-orange">Décision</div>
           <div class="step-text">
-            Grace aux analyses, décidez du prix qui vous permet d'atteindre l'objectif souhaité
+            L'analyse vous aide à déterminer le prix qui permet d'atteindre l'objectif souhaité
           </div>
         </div>
         <div class="icon-and-text-no-shaddow" id="sixth">
@@ -117,9 +117,9 @@
           </div>
         </div>
       </div>
-      <%= link_to new_user_registration_path do %>
+      <%= link_to inscription_pro_path do %>
         <div class="cta">
-          <div class="btn-orange">Créér un compte pro</div>
+          <div class="btn-orange">Inscription pro</div>
         </div>
       <% end %>
     </div>

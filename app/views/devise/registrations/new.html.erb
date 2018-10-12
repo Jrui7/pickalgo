@@ -8,21 +8,21 @@
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <p id="beta-limit">Pickalgo, c'est pour bientôt! Inscriptions ouvertes aux 500 premiers testeurs.</p>
           <div class="form-inputs">
-            <div id="input-and-icon-first-name">
+            <div class="input-and-icon">
               <%= f.input :first_name, label: false, placeholder:'Prénom', autofocus: true %>
-              <span id="icon-firstname" class="fas fa-user"></span>
+              <span class="icon fas fa-user"></span>
             </div>
-            <div id="input-and-icon-last-name">
+            <div class="input-and-icon">
               <%= f.input :last_name, placeholder:'Nom', label: false %>
-              <span id="icon-lastname" class="fas fa-user"></span>
+              <span class="icon fas fa-user"></span>
             </div>
-            <div id="input-and-icon-email">
+            <div class="input-and-icon">
               <%= f.input :email, label: false, placeholder:'Email' %>
-              <span id="icon-envelope" class="fas fa-envelope"></span>
+              <span class="icon fas fa-envelope"></span>
             </div>
-            <div id="input-and-icon-password">
+            <div class="input-and-icon">
               <%= f.input :password, label: false, placeholder:'Mot de passe', hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length) %>
-              <span id="icon-lock" class="fas fa-lock"></span>
+              <span class="icon fas fa-lock"></span>
             </div>
              <div class="checkbox-and-text"><%= f.check_box :terms_of_service %>J'accepte les <%= link_to "conditions d'utilisation", cgu_path %>
              </div>

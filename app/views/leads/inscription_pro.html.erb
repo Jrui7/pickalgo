@@ -1,0 +1,41 @@
+<div class="page-container">
+  <div class="form-and-image">
+    <div class="registration-form">
+      <div class="logo-beta logo-form"><%= image_tag "logo.png", id: "logo", alt: "logo pickalgo color" %><br>©Beta 2018
+      </div>
+      <div class="form-elements">
+        <h1>S'inscrire à Pickalgo pro</h1>
+        <%= simple_form_for @lead do |f| %>
+          <p id="beta-limit">Inscrivez-vous gratuitement, nous revenons très vite vers vous !</p>
+          <div class="form-inputs">
+            <div class="input-and-icon">
+              <%= f.input :brand, label: false, placeholder:'Votre marque ou raison sociale', autofocus: true %>
+              <span class="icon fas fa-store"></span>
+            </div>
+            <div class="input-and-icon">
+              <%= f.input :contact_person, placeholder:'Nom de la personne à contacter', label: false %>
+              <span class="icon fas fa-user"></span>
+            </div>
+            <div class="input-and-icon">
+              <%= f.input :email, label: false, placeholder:'Email du contact' %>
+              <span class="icon fas fa-envelope"></span>
+            </div>
+            <div class="input-and-icon">
+              <%= f.input :phone, label: false, placeholder: 'Téléphone du contact (optionnel)' %>
+              <span class="icon fas fa-phone"></span>
+            </div>
+            <div class="input-and-icon">
+              <%= f.input :referal, placeholder:'Comment nous avez-vous connu ? (optionnel)', label: false %>
+              <span class=" icon fas fa-bullhorn"></span>
+            </div>
+          </div>
+          <%= f.button :submit, "Soumettre", class: "btn-orange", id:"registration-cta" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="image-background" style="background-image: linear-gradient(rgba(241, 243, 247, 0.6) 50%, transparent 100%), url('https://res.cloudinary.com/djmp0ivep/image/upload/v1538480440/tags.jpg');">
+    </div>
+  </div>
+</div>
+
+

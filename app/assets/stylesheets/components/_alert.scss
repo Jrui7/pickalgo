@@ -3,19 +3,20 @@
 * ------------------------------------- */
 
 .alert {
-  top: 5px;
-  right: 5px;
+  top: 0px;
+  width: 100%;
   text-align: center;
   color: white;
   background: #A1CECF;
   position: absolute;
-  font-size: 15px;
-  display: flex;
+  font-size: 17px;
   z-index: 3;
-  border-radius: 10px;
+  border-radius: 0px;
+  padding: 25px;
+
 }
 .alert-info {
-  background: $blue;
+  background: rgba(49, 170, 187, 0.9);
 }
 .alert-warning {
   background: $red;
