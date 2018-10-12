@@ -26,8 +26,8 @@
           <a href="#how-it-works">
             <div class="btn-white go-to" id="concept">Concept</div>
           </a>
-          <%= link_to new_user_registration_path, class:"btn-orange cta-link" do %>
-            Créér un compte pro
+          <%= link_to inscription_pro_path, class:"btn-orange cta-link" do %>
+            Inscription pro
           <% end %>
         </div>
       </div>
@@ -39,9 +39,11 @@
     <div class="steps">
       <div class="icon-and-text-no-shaddow" id="first">
         <%= image_tag "account.svg", class: "action-image", alt: "icon image create partner account svg" %>
-        <div class="quote">Compte</div>
+        <div class="quote">Inscription</div>
         <div class="step-text">
-          Crééz gratuitement et en moins de 2 minutes, votre compte partenaire sur Pickalgo
+          Remplissez <%= link_to "le formulaire", inscription_pro_path %>,
+          <br>ou envoyez nous un email:
+          <br><a href="mailto:contact@partners-pickalgo.com?Subject=Demande d'information Pickalgo" target="_top">contact@partners-pickalgo.com</a>
         </div>
       </div>
       <div class="icon-and-text-no-shaddow" id="second">
@@ -119,7 +121,7 @@
       </div>
       <%= link_to new_user_registration_path do %>
         <div class="cta">
-          <div class="btn-orange">Créér un compte pro</div>
+          <div class="btn-orange">Inscription pro</div>
         </div>
       <% end %>
     </div>
