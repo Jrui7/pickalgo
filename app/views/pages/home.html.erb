@@ -97,42 +97,7 @@
       </div>
     </div>
   </div>
-  <div class="testimonies-container">
-    <div class="testimony-box">
-      <h2>
-        <span>Pourquoi Pickalgo ?</span>
-      </h2>
-
-      <div class="testimonies">
-        <div class="testimony">
-          <%= cl_image_tag("1wh4IX4g.jpg", :width=>150, :height=>150, :gravity=>"face", :dpr=>2.0, :radius=>"max", :crop=>"fill", class: "user-photo", alt: "picture photo Jorge Pickalgo founder") %>
-          <h4 class="testimony-title">Jorge, fondateur de Pickalgo</h4>
-          <div class="testimony-text">
-            "Aider les vendeurs à trouver le meilleur prix pour leurs promos et faire bénéficier nos testeurs des meilleurs prix avant les autres"
-          </div>
-        </div>
-        <div class="testimony">
-          <%= cl_image_tag("jenny.jpg", :width=>150, :height=>150, :gravity=>"face", :dpr=>2.0, :radius=>"max", :crop=>"fill", class: "user-photo", alt: "picture photo Jenny founder PetitVoyou") %>
-          <h4 class="testimony-title">Jenny, fondatrice de <a href="https://petitvoyou.com" target="_blank">PetitVoyou</a></h4>
-          <div class="testimony-text">
-            "Avec Pickalgo je sais exactement quel prix ma promo doit offrir pour atteindre mes objectifs et satisfaire mes clients"
-          </div>
-        </div>
-        <div class="testimony">
-          <%= cl_image_tag("do.jpg", :width=>150, :height=>150, :gravity=>"face", :dpr=>2.0, :radius=>"max", :crop=>"fill", class: "user-photo", alt: "picture photo Mr P Pickalgo earlybird") %>
-          <h4 class="testimony-title">Do, "oiseau précoce" de Pickalgo</h4>
-          <div class="testimony-text">
-            "Utiliser mon avis pour mieux me satisfaire, en voilà une bonne idée !"
-          </div>
-        </div>
-      </div>
-      <%= link_to new_user_registration_path do %>
-        <div class="cta">
-          <div class="btn-orange">S'inscrire</div>
-        </div>
-      <% end %>
-    </div>
-  </div>
+  <%= render 'testimonies' %>
   <%= render 'shared/footer' %>
 
 </div>
