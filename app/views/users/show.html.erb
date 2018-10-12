@@ -15,17 +15,17 @@
           <h2>Informations personnelles</h2>
           <%= simple_form_for @user do |f| %>
             <div class="form-inputs">
-              <div id="input-and-icon-first-name">
+              <div class="input-and-icon">
                 <%= f.input :first_name, label: false, placeholder:'Prénom' %>
-                <span id="icon-firstname" class="fas fa-user"></span>
+                <span class="icon fas fa-user"></span>
               </div>
-              <div id="input-and-icon-last-name">
+              <div class="input-and-icon">
                 <%= f.input :last_name, placeholder:'Nom', label: false %>
-                <span id="icon-lastname" class="fas fa-user"></span>
+                <span class="icon fas fa-user"></span>
               </div>
-              <div id="input-and-icon-email">
+              <div class="input-and-icon">
                 <%= f.input :email, label: false, placeholder:'Email' %>
-                <span id="icon-envelope" class="fas fa-envelope"></span>
+                <span class="icon fas fa-envelope"></span>
               </div>
             </div>
             <%= f.button :submit, "Enregistrer", class: "btn-blue", id:"save-cta" %>
@@ -35,17 +35,17 @@
           <h2>Changer de mot de passe</h2>
           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
             <div class="form-inputs">
-              <div id="input-and-icon-password1">
+              <div class="input-and-icon">
                 <%= f.input :current_password, required: true, label: false, placeholder: 'Mot de passe actuel'%>
-                <span id="icon-lock1" class="fas fa-lock"></span>
+                <span class="icon fas fa-lock"></span>
               </div>
-              <div id="input-and-icon-password">
+              <div class="input-and-icon">
                 <%= f.input :password, required: true, label: false, placeholder: 'Nouveau mot de passe', hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length) %>
-                <span id="icon-lock" class="fas fa-lock"></span>
+                <span class="icon fas fa-lock"></span>
               </div>
-              <div id="input-and-icon-password2">
+              <div class="input-and-icon">
                 <%= f.input :password_confirmation, required: true, label: false, placeholder: 'Confirmer le nouveau mot de passe' %>
-                <span id="icon-lock2" class="fas fa-lock"></span>
+                <span class="icon fas fa-lock"></span>
               </div>
             </div>
             <%= f.button :submit, "Changer mot de passe", class: "btn-blue", id:"password-cta" %>
