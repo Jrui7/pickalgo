@@ -92,3 +92,7 @@
   <%= render 'shared/footer' %>
 
 </div>
+
+<% content_for(:after_js) do %>
+  <%= javascript_include_tag 'home'%>
+<% end %>

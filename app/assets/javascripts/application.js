@@ -6,3 +6,5 @@
 //= require cookies_eu
 
 //= require_tree .
+
+//= stub 'home'
