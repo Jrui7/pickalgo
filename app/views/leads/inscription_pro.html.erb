@@ -8,25 +8,25 @@
         <%= simple_form_for @lead do |f| %>
           <p id="beta-limit">Inscrivez-vous gratuitement, nous revenons très vite vers vous !</p>
           <div class="form-inputs">
-            <div id="input-and-icon-first-name">
+            <div class="input-and-icon">
               <%= f.input :brand, label: false, placeholder:'Votre marque ou raison sociale', autofocus: true %>
-              <span id="icon-firstname" class="fas fa-store"></span>
+              <span class="icon fas fa-store"></span>
             </div>
-            <div id="input-and-icon-last-name">
+            <div class="input-and-icon">
               <%= f.input :contact_person, placeholder:'Nom de la personne à contacter', label: false %>
-              <span id="icon-lastname" class="fas fa-user"></span>
+              <span class="icon fas fa-user"></span>
             </div>
-            <div id="input-and-icon-email">
+            <div class="input-and-icon">
               <%= f.input :email, label: false, placeholder:'Email du contact' %>
-              <span id="icon-envelope" class="fas fa-envelope"></span>
+              <span class="icon fas fa-envelope"></span>
             </div>
-            <div id="input-and-icon-password">
+            <div class="input-and-icon">
               <%= f.input :phone, label: false, placeholder: 'Téléphone du contact (optionnel)' %>
-              <span id="icon-lock" class="fas fa-phone"></span>
+              <span class="icon fas fa-phone"></span>
             </div>
-            <div id="input-and-icon-last-name">
+            <div class="input-and-icon">
               <%= f.input :referal, placeholder:'Comment nous avez-vous connu ? (optionnel)', label: false %>
-              <span id="icon-lastname" class="fas fa-bullhorn"></span>
+              <span class=" icon fas fa-bullhorn"></span>
             </div>
           </div>
           <%= f.button :submit, "Soumettre", class: "btn-orange", id:"registration-cta" %>

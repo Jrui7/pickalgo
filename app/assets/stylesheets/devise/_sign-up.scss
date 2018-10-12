@@ -56,11 +56,11 @@ h1 {
 
 }
 
-#input-and-icon-first-name, #input-and-icon-last-name, #input-and-icon-email, #input-and-icon-password, #input-and-icon-password1, #input-and-icon-password2 {
+.input-and-icon {
   position: relative;
 }
 
-#icon-firstname, #icon-lastname, #icon-envelope, #icon-lock, #icon-lock1, #icon-lock2 {
+.icon {
   &:before {
     position: absolute;
     top: 10px;

@@ -41,9 +41,7 @@
         <%= image_tag "account.svg", class: "action-image", alt: "icon image create partner account svg" %>
         <div class="quote">Inscription</div>
         <div class="step-text">
-          Remplissez <%= link_to "le formulaire", inscription_pro_path %>,
-          <br>ou envoyez nous un email:
-          <br><a href="mailto:contact@partners-pickalgo.com?Subject=Demande d'information Pickalgo" target="_top">contact@partners-pickalgo.com</a>
+          Remplissez en moins d'une minute <br><%= link_to "le formulaire", inscription_pro_path %> qui nous permettra de créér votre compte
         </div>
       </div>
       <div class="icon-and-text-no-shaddow" id="second">
@@ -119,7 +117,7 @@
           </div>
         </div>
       </div>
-      <%= link_to new_user_registration_path do %>
+      <%= link_to inscription_pro_path do %>
         <div class="cta">
           <div class="btn-orange">Inscription pro</div>
         </div>

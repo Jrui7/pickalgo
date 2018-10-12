@@ -10,8 +10,7 @@ class LeadsController < ApplicationController
     authorize @lead
     if @lead.save
       respond_to do |format|
-        format.html { redirect_to inscription_pro_path, notice: 'Inscription confirmée !' }
-        # format.js
+        format.html { redirect_to partners_path, notice: 'Inscription confirmée !' }
       end
     else
       render :inscription_pro
