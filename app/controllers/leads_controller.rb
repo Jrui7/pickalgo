@@ -8,10 +8,15 @@ class LeadsController < ApplicationController
   def create
     @lead = Lead.new(lead_params)
     authorize @lead
-    respond_to do |format|
-      format.html { redirect_to partner_path }
-      # format.js
+    if @lead.save
+      respond_to do |format|
+        format.html { redirect_to partners_path }
+        # format.js
+      end
+    else
+      render :inscription_pro
     end
+
 
   end
 
