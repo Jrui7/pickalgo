@@ -26,7 +26,7 @@
      if (typeof dataText[i] == 'undefined'){
         setTimeout(function() {
           StartTextAnimation(0);
-        }, 3000);
+        }, 7000);
      }
      // check if dataText[i] exists
     if (i < dataText[i].length) {
