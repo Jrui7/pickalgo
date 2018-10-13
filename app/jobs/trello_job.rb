@@ -17,7 +17,7 @@ class TrelloJob < ApplicationJob
     phone = "phone:" + " " + lead.phone
     referal = "referal:" + " " + lead.referal
 
-    url = URI("https://api.trello.com/1/cards?idList=#{list_id}&name=#{card_name}&desc=#{created_at}%0A#{contact_person}%0A#{email}%0A#{phone}%0A#{referal}&key=#{key}&token=#{token}")
+    url = URI("https://api.trello.com/1/cards?idList=#{list_id}&name=#{card_name}&desc=#{created_at} %0A #{contact_person} %0A #{email} %0A #{phone} %0A #{referal}&key=#{key}&token=#{token}")
 
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true
