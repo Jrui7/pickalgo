@@ -7,17 +7,18 @@ class TrelloJob < ApplicationJob
 
   def perform(lead_id)
     lead = Lead.find(lead_id)
-    list_id = "5bc1bbabe26acc72d7d41634"
-    token = ENV["TRELLO_TOKEN"]
-    key = ENV["TRELLO_KEY"]
-    card_name = lead.brand
     created_at = "created_at:" + " " + "#{lead.created_at}"
     contact_person = "contact_name:" + " " + lead.contact_person
     email = "email:" + " " + lead.email
     phone = "phone:" + " " + lead.phone
     referal = "referal:" + " " + lead.referal
 
-    url = URI("https://api.trello.com/1/cards?idList=#{list_id}&name=#{card_name}&desc=#{created_at} %0A #{contact_person} %0A #{email} %0A #{phone} %0A #{referal}&key=#{key}&token=#{token}")
+    desc = created_at + "\r\n" + contact_person + "\r\n" + email + "\r\n" + phone + "\r\n" + referal
+
+
+    query_s = {idList: "5bc1bbabe26acc72d7d41634", name: lead.brand, desc: "#{desc}", key: ENV["TRELLO_KEY"], token: ENV["TRELLO_TOKEN"]}.to_query
+
+    url = URI("https://api.trello.com/1/cards?#{query_s}")
 
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true
