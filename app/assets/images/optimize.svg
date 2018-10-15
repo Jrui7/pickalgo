@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="875px" height="573px" viewBox="0 0 875 573" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="49.9696555%" y1="99.8757264%" x2="49.9765949%" y2="-0.115521949%" id="linearGradient-1">
+            <stop stop-color="#808080" stop-opacity="0.25" offset="0%"></stop>
+            <stop stop-color="#808080" stop-opacity="0.12" offset="54%"></stop>
+            <stop stop-color="#808080" stop-opacity="0.1" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="49.9697738%" y1="99.8757264%" x2="49.9766861%" y2="-0.115521949%" id="linearGradient-2">
+            <stop stop-color="#808080" stop-opacity="0.25" offset="0%"></stop>
+            <stop stop-color="#808080" stop-opacity="0.12" offset="54%"></stop>
+            <stop stop-color="#808080" stop-opacity="0.1" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-0.523741434%" y1="50.0020309%" x2="99.9338477%" y2="50.0020309%" id="linearGradient-3">
+            <stop stop-color="#FFFFFF" stop-opacity="0.09" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.07" offset="55%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.02" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-3" fill-rule="nonzero">
+            <g id="select">
+                <g id="Group" opacity="0.5" fill="url(#linearGradient-2)">
+                    <path d="M0.74,552.02 L0,21.81 C0,10.764305 8.954305,1.81 20,1.81 L853.41,0.7 C864.455695,0.7 873.41,9.654305 873.41,20.7 L874.14,550.91 C874.14,556.21433 872.032863,561.301408 868.282136,565.052136 C864.531408,568.802863 859.44433,570.91 854.14,570.91 L20.73,572.02 C9.68821045,572.014479 0.73999862,563.061791 0.74,552.02 Z" id="Shape"></path>
+                </g>
+                <rect id="Rectangle-path" fill="url(#linearGradient-3)" transform="translate(435.570137, 287.333847) rotate(-0.080000) translate(-435.570137, -287.333847) " x="64.9101367" y="41.133847" width="741.32" height="492.4"></rect>
+                <rect id="Rectangle-path" fill="#FFFFFF" transform="translate(438.798716, 286.314352) rotate(-0.080000) translate(-438.798716, -286.314352) " x="17.2187163" y="18.569352" width="843.16" height="535.49" rx="12.68"></rect>
+            </g>
+            <rect id="Rectangle-path" fill="#F6F7F9" x="55.1801802" y="59.7366255" width="767.595721" height="454.312757"></rect>
+            <g id="Group" opacity="0.2" transform="translate(53.209459, 58.950617)" fill="#30AABC">
+                <rect id="Rectangle-path" x="0.0954923026" y="0.691687243" width="767.407975" height="22.6606173"></rect>
+            </g>
+            <rect id="Rectangle-path" fill="#DCE0ED" x="76.8581081" y="193.358025" width="715.371622" height="1.57201646"></rect>
+            <rect id="Rectangle-path" fill="#DCE0ED" x="76.8581081" y="220.868313" width="715.371622" height="1.57201646"></rect>
+            <rect id="Rectangle-path" fill="#DCE0ED" x="76.8581081" y="248.378601" width="715.371622" height="1.57201646"></rect>
+            <rect id="Rectangle-path" fill="#DCE0ED" x="76.8581081" y="275.102881" width="715.371622" height="1.57201646"></rect>
+            <rect id="Rectangle-path" fill="#DCE0ED" x="76.8581081" y="302.613168" width="715.371622" height="1.57201646"></rect>
+            <g id="Group" opacity="0.2" transform="translate(75.872748, 209.864197)" fill="#30AABC">
+                <polygon id="Shape" points="0.332308019 94.1323461 0.332308019 40.2907819 66.0132245 56.2624691 133.988114 60.8134568 193.63142 51.9394239 265.588903 24.4055555 301.782704 14.0931276 328.243049 11.5779013 353.556407 12.2460082 395.182465 22.3933745 451.78307 40.1807407 496.196942 42.9946502 531.403061 37.0052675 606.052775 6.84613168 644.158221 0.141481481 684.031938 3.18333333 716.498032 12.4346502 716.498032 94.1323461"></polygon>
+            </g>
+            <path d="M200.585954,270.38407 C136.152654,270.38407 76.6206769,251.029985 75.8727477,250.779852 L77.655047,249.482284 C78.5780234,249.787134 170.2073,279.560845 248.071497,264.646631 C276.460978,259.174959 296.670978,250.748584 316.22853,242.564527 C336.645403,234.020903 355.916514,225.954095 382.205427,222.452225 C412.345381,218.442271 445.286089,222.069208 470.317846,232.176167 C491.72135,240.813592 534.337397,254.680371 579.356366,250.537535 C602.303468,248.419217 621.638232,240.188258 642.11876,231.472667 C681.377083,214.760618 721.988044,197.477952 792.22973,222.272442 L790.367864,223.538743 C722.163092,199.463388 682.53876,216.339586 644.203414,232.652984 C623.388705,241.509276 603.735673,249.849667 579.945161,252.069602 C533.637208,256.337507 490.13001,242.189327 468.296845,233.379935 C444.060759,223.601277 412.20216,220.09159 383.032923,223.960844 C357.444198,227.368913 338.475443,235.326287 318.281356,243.752662 C298.532844,252.022703 278.115969,260.566327 249.233174,266.100533 C233.703247,269.006221 217.20366,270.45906 200.585954,270.38407 Z" id="Shape" fill="#30AABC"></path>
+            <circle id="Oval" fill="#30AABC" cx="404.512387" cy="228.955385" r="17.5"></circle>
+            <g id="Group" opacity="0.2" transform="translate(424.690315, 105.325103)" fill="#30AABC">
+                <path d="M227.886669,0.275102881 L3.67301569,0.275102881 C1.6621047,0.275102881 0.0319392668,1.07745283 0.0319392668,2.06720165 L0.0319392668,76.6986832 C0.0338654591,77.4329275 0.945581022,78.0923143 2.3326106,78.3626143 C3.71964018,78.6329142 5.30134759,78.4594381 6.32397483,77.9248563 L45.1780929,57.5279424 C45.8642025,57.1666223 46.8242336,56.9616752 47.8290521,56.9620165 L227.886669,56.9620165 C229.89758,56.9620165 231.527745,56.1596665 231.527745,55.1699177 L231.527745,2.05148148 C231.510215,1.06787725 229.885173,0.275065036 227.886669,0.275102881 Z" id="Shape"></path>
+            </g>
+            <rect id="Rectangle-path" fill="#F6F7F9" x="476.914414" y="119.473251" width="127.111486" height="7.86008231"></rect>
+            <rect id="Rectangle-path" fill="#F6F7F9" x="476.914414" y="136.765432" width="34.4876126" height="7.86008231"></rect>
+            <g id="Group" opacity="0.2" transform="translate(136.965090, 359.991770)" fill="#30AABC">
+                <rect id="Rectangle-path" x="0.602355073" y="0.251522634" width="34.7939312" height="7.86008231"></rect>
+            </g>
+            <g id="Group" opacity="0.2" transform="translate(136.965090, 374.925926)" fill="#30AABC">
+                <rect id="Rectangle-path" x="0.602355073" y="0.51090535" width="34.7939312" height="7.86008231"></rect>
+            </g>
+            <g id="Group" opacity="0.2" transform="translate(136.965090, 389.860082)" fill="#30AABC">
+                <rect id="Rectangle-path" x="0.602355073" y="0.770288066" width="34.7939312" height="7.86008231"></rect>
+            </g>
+            <g id="Group" opacity="0.2" transform="translate(136.965090, 405.580247)" fill="#30AABC">
+                <rect id="Rectangle-path" x="0.602355073" y="0.251522634" width="34.7939312" height="7.86008231"></rect>
+            </g>
+            <g id="Group" opacity="0.2" transform="translate(136.965090, 420.514403)" fill="#30AABC">
+                <rect id="Rectangle-path" x="0.602355073" y="0.51090535" width="34.7939312" height="7.86008231"></rect>
+            </g>
+            <g id="Group" opacity="0.2" transform="translate(136.965090, 435.448560)" fill="#30AABC">
+                <rect id="Rectangle-path" x="0.602355073" y="0.770288066" width="34.7939312" height="7.86008231"></rect>
+            </g>
+            <g id="Group" opacity="0.2" transform="translate(136.965090, 451.168724)" fill="#30AABC">
+                <rect id="Rectangle-path" x="0.602355073" y="0.251522634" width="34.7939312" height="7.86008231"></rect>
+            </g>
+            <g id="Group" opacity="0.2" transform="translate(136.965090, 466.102881)" fill="#30AABC">
+                <rect id="Rectangle-path" x="0.602355073" y="0.51090535" width="34.7939312" height="7.86008231"></rect>
+            </g>
+            <g id="Group" opacity="0.2" transform="translate(202.984234, 473.962963)" fill="#30AABC">
+                <rect id="Rectangle-path" x="0.0207246989" y="0.51090535" width="34.9114782" height="7.86008231"></rect>
+            </g>
+            <g id="Group" opacity="0.2" transform="translate(264.076577, 473.962963)" fill="#30AABC">
+                <rect id="Rectangle-path" x="0.602355073" y="0.51090535" width="34.7939312" height="7.86008231"></rect>
+            </g>
+            <g id="Group" opacity="0.2" transform="translate(326.154279, 473.962963)" fill="#30AABC">
+                <rect id="Rectangle-path" x="0.0783809377" y="0.51090535" width="34.4092316" height="7.86008231"></rect>
+            </g>
+            <g id="Group" opacity="0.2" transform="translate(388.231982, 473.962963)" fill="#30AABC">
+                <rect id="Rectangle-path" x="0.0207246989" y="0.51090535" width="34.9114782" height="7.86008231"></rect>
+            </g>
+            <g id="Group" opacity="0.2" transform="translate(449.324324, 473.962963)" fill="#30AABC">
+                <rect id="Rectangle-path" x="0.602355073" y="0.51090535" width="34.7939312" height="7.86008231"></rect>
+            </g>
+            <g id="Group" opacity="0.2" transform="translate(510.416667, 473.962963)" fill="#30AABC">
+                <rect id="Rectangle-path" x="0.0783809377" y="0.51090535" width="34.4092316" height="7.86008231"></rect>
+            </g>
+            <g id="Group" opacity="0.2" transform="translate(572.494369, 473.962963)" fill="#30AABC">
+                <rect id="Rectangle-path" x="0.0207246989" y="0.51090535" width="34.9114782" height="7.86008231"></rect>
+            </g>
+            <g id="Group" opacity="0.2" transform="translate(633.586712, 473.962963)" fill="#30AABC">
+                <rect id="Rectangle-path" x="0.602355073" y="0.51090535" width="34.7939312" height="7.86008231"></rect>
+            </g>
+            <g id="Group" opacity="0.2" transform="translate(696.649775, 473.962963)" fill="#30AABC">
+                <rect id="Rectangle-path" x="0.0795250073" y="0.51090535" width="34.9114782" height="7.86008231"></rect>
+            </g>
+            <g id="Group-2" transform="translate(202.000000, 136.000000)">
+                <rect id="Rectangle-path" fill="#F6F7F9" x="348.816441" y="0.765432" width="52.2240991" height="7.86008231"></rect>
+                <rect id="Rectangle-path" fill="#30AABC" x="0.984234" y="281.370371" width="34.4876126" height="49.5185185"></rect>
+                <rect id="Rectangle-path" fill="#30AABC" x="63.061937" y="258.576132" width="34.4876126" height="72.3127572"></rect>
+                <rect id="Rectangle-path" fill="#30AABC" x="124.154279" y="239.711934" width="34.4876126" height="91.1769549"></rect>
+                <rect id="Rectangle-path" fill="#30AABC" x="186.231982" y="249.144033" width="34.4876126" height="80.9588478"></rect>
+                <rect id="Rectangle-path" fill="#30AABC" x="247.324324" y="231.851852" width="34.4876126" height="98.2510289"></rect>
+            </g>
+            <g id="Group" opacity="0.2" transform="translate(510.416667, 405.580247)" fill="#30AABC">
+                <rect id="Rectangle-path" x="0.0783809377" y="0.251522634" width="34.4092316" height="60.7820165"></rect>
+            </g>
+            <g id="Group" opacity="0.2" transform="translate(572.494369, 405.580247)" fill="#30AABC">
+                <rect id="Rectangle-path" x="0.0207246989" y="0.251522634" width="34.9114782" height="60.7820165"></rect>
+            </g>
+            <g id="Group" opacity="0.2" transform="translate(633.586712, 405.580247)" fill="#30AABC">
+                <rect id="Rectangle-path" x="0.602355073" y="0.251522634" width="34.7939312" height="60.7820165"></rect>
+            </g>
+            <g id="Group" opacity="0.2" transform="translate(696.649775, 425.580247)" fill="#30AABC">
+                <rect id="Rectangle-path" x="0.0795250073" y="0.251522634" width="34.9114782" height="60.7820165"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
