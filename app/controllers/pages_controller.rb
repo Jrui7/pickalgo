@@ -1,8 +1,9 @@
 class PagesController < ApplicationController
-  before_action :set_page_action, only: [:faq, :contact, :mentions_legales, :cgu]
+  before_action :set_page_action, only: [:faq, :contact, :mentions_legales, :cgu, :home, :partners]
   skip_before_action :authenticate_user!, only: [:home, :faq, :contact, :mentions_legales, :cgu, :partners]
 
   def home
+
   end
 
   def faq
@@ -29,5 +30,6 @@ class PagesController < ApplicationController
   def set_page_action
     @page = params["action"]
   end
+
 
 end

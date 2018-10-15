@@ -210,8 +210,8 @@
     }
 
     .cta {
-      display: flex;
-      justify-content: center;
+      margin: 0 auto;
+      width: 35%;
       .btn-orange {
         font-size: 20px;
         text-transform: uppercase;
@@ -326,6 +326,7 @@
 
       .cta {
         margin-top: 40px;
+        width: 50%;
       }
 
       h2 {
@@ -461,6 +462,10 @@
           width: 90%;
           padding: 0;
 
+        }
+
+        .cta {
+          width: 65%;
         }
       }
 

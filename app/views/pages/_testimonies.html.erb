@@ -27,10 +27,10 @@
           </div>
         </div>
       </div>
-      <%= link_to new_user_registration_path do %>
-        <div class="cta">
-          <div class="btn-orange">S'inscrire</div>
-        </div>
+      <% if @page == "partners" %>
+        <%= link_to "inscription pro", inscription_pro_path, class:"btn-orange cta"%>
+      <% elsif @page == "home" %>
+        <%= link_to "S'inscrire", new_user_registration_path, class:"btn-orange cta"%>
       <% end %>
     </div>
   </div>
