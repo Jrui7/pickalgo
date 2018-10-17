@@ -1,6 +1,6 @@
 class LeadsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:inscription_pro, :create]
-  def inscription_pro
+  skip_before_action :authenticate_user!, only: [:more_infos, :create]
+  def more_infos
     @lead = Lead.new
     authorize @lead
   end
