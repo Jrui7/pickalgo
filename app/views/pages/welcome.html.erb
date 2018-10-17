@@ -2,7 +2,7 @@
 <div class="page-container">
   <div class="content-container">
     <div class="launching-infos">
-      <h1 id="welcome-title"><%= @user.first_name %>, vous ne raterez pas le lancement !</h1>
+      <h1 id="welcome-title"><%= @user.first_name %>, bientôt le lancement</h1>
       <%= image_tag 'lift-off.svg', id: 'lift-off', alt: 'lift-off image' %>
         <%= render "pages/timer"  %>
         <div id="clockdiv">
@@ -23,7 +23,7 @@
              <div class="smalltext">s</div>
            </div>
         </div>
-        <p id="welcome-text"><span>Inscription confirmée</span><br>Vous faites partie des 500 premiers testeurs à avoir accès en exclusivité à Pickalgo lors de son lancement. Encore un peu de patience avant l'embarquement !</p>
+        <p id="welcome-text"><span>Inscription confirmée</span><br>Vous faites partie des 500 premiers beta testeurs à avoir accès en exclusivité à Pickalgo lors de son lancement. Encore un peu de patience !</p>
     </div>
   </div>
 </div>

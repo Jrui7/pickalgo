@@ -6,7 +6,7 @@ class LeadPolicy < ApplicationPolicy
   end
 
 
-  def inscription_pro?
+  def more_infos?
     true
   end
 
