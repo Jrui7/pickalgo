@@ -163,17 +163,16 @@
   }
 
 
-  .how-it-works{
-    text-align: center;
-    padding: 20px 0;
-    width: 80%;
-    margin: 0 auto;
-  }
-
 
   .steps{
     display: flex;
     justify-content: space-between;
+    margin-top: 40px;
+  }
+
+  .conclusion-cases {
+    display: flex;
+    justify-content: space-around;
     margin-top: 40px;
   }
 
@@ -197,17 +196,17 @@
     background-color: #FFF;
   }
 
-  .testimony-box {
+  h2 {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .testimony-box, .how-it-works {
     width: 80%;
     padding: 80px 0;
     margin: 0 auto;
 
-    h2 {
-      width: 80%;
-      text-align: center;
-      line-height: 0.1em;
-      margin: 0 auto;
-    }
 
     .cta {
       margin: 0 auto;
@@ -281,7 +280,7 @@
     }
 
 
-    .testimony-box {
+    .testimony-box, .how-it-works {
       width: 95%;
       .testimony-title {
         text-align: center;
@@ -304,12 +303,17 @@
       margin: 0 auto 30px auto;
     }
 
-    .steps {
+    .steps, .conclusion-cases {
       display: block;
     }
 
     .icon-and-text-no-shaddow {
         padding: 40px 100px 40px;
+    }
+
+    h2 {
+      width: 100%;
+      border-bottom: none;
     }
 
 
@@ -329,20 +333,12 @@
         width: 50%;
       }
 
-      h2 {
-        width: 100%;
-        border-bottom: none;
-      }
-
       }
 
 
 
     .how-it-works {
       width: 90%;
-      h3 {
-        width: 100%;
-        }
     }
 
 
@@ -436,23 +432,16 @@
         font-size: 24px;
       }
 
-      .how-it-works {
-        h3 {
-          font-size: 18px;
-          }
+      h2 {
+        width: 100%;
+        border-bottom: none;
+        font-size: 23px;
       }
+
 
       .testimony-box {
         padding: 40px 0;
-        h2 {
-          width: 100%;
-          border-bottom: none;
-          font-size: 23px;
-        }
 
-        h2 span {
-          padding: 0;
-        }
 
         .testimonies {
           margin: 50px 0 15px 0;
