@@ -1,3 +1,5 @@
+<% content_for :meta_title, "Atteignez efficiement vos objectifs" %>
+<% content_for :meta_description, "Sur Pickalgo impliquez vos clients dans la conception de vos promos. Vous découvrirez ainsi le prix qui permettra à votre promo d'atteindre son objectif de la façon la plus efficiente." %>
 <%= render 'right-links-pro' %>
 <div class="page-container">
   <div class="nav-and-banner" style="background-image: linear-gradient(rgba(241, 243, 247,1) 50%, transparent 100%), url('https://res.cloudinary.com/djmp0ivep/image/upload/v1538480440/tags.jpg');">
@@ -32,8 +34,8 @@
     </div>
   </div>
   <div class="how-it-works" id="how-it-works">
-    <h3>Comment ça marche ?
-    </h3>
+    <h2>Comment ça marche ?
+    </h2>
     <div class="steps">
       <div class="icon-and-text-no-shaddow" id="first">
         <%= image_tag "launch.svg", class: "action-image", alt: "icon image launch campaign svg" %>
@@ -42,38 +44,31 @@
           Lancez une campagne en présentant le produit pour lequel vous souhaitez proposer une promo
         </div>
       </div>
-      <div class="icon-and-text-no-shaddow" id="second">
+      <div class="icon-and-text-no-shaddow" id="third">
         <%= image_tag "determine.svg", class: "action-image", alt: "icon image think svg" %>
+        <div class="quote">Décidez</div>
+        <div class="step-text">
+          Décidez du prix préférentiel que vous êtes prêt à accorder aux participants en fonction de leur nombre
+        </div>
+      </div>
+      <div class="icon-and-text-no-shaddow" id="second">
+        <%= image_tag "choose.svg", class: "action-image", alt: "icon image choose svg" %>
         <div class="quote">Enquête</div>
         <div class="step-text">
           Tout acheteur intéressé émet une proposition d'achat du montant maximal qu'il est prêt à payer pour votre produit
-        </div>
-      </div>
-      <div class="icon-and-text-no-shaddow" id="third">
-        <%= image_tag "dashboard.svg", class: "action-image", alt: "icon image  dashboard analyse svg" %>
-        <div class="quote">Analyse</div>
-        <div class="step-text">
-          Notre analyse vous présente les volumes que vous allez réaliser en fonction du prix remisé que vous choisirez
         </div>
       </div>
     </div>
   </div>
   <div id="conclusion">
     <div class="how-it-works">
-      <h3>Fin de la campagne</h3>
+      <h2>Fin de la campagne</h2>
       <div class="steps">
-        <div class="icon-and-text-no-shaddow" id="fifth">
-          <%= image_tag "optimize.svg", class: "action-image", alt: "icon image analyse optimosation svg" %>
-          <div class="quote-orange">Déterminez...</div>
-          <div class="step-text">
-            facilement le prix qui vous permet d'atteindre avec efficience l'objectif que vous avez défini
-          </div>
-        </div>
         <div class="icon-and-text-no-shaddow" id="sixth">
           <%= image_tag "select.svg", class: "action-image", alt: "icon image select successful order svg" %>
           <div class="quote-orange">Validez...</div>
           <div class="step-text">
-            au prix que vous avez déterminé, les commandes des acheteurs qui proposaient un prix supérieur où égal à celui-ci
+            les commandes des acheteurs qui proposaient un prix supérieur où égal à votre prix préférentiel
           </div>
         </div>
         <div class="icon-and-text-no-shaddow" id="sixth">
@@ -81,6 +76,13 @@
           <div class="quote-orange">Déclinez...</div>
           <div class="step-text">
             automatiquement les propositions des acheteurs qui sont inférieures au prix que vous avez déterminé
+          </div>
+        </div>
+        <div class="icon-and-text-no-shaddow" id="fifth">
+          <%= image_tag "optimize.svg", class: "action-image", alt: "icon image analyse optimosation svg" %>
+          <div class="quote-orange">Détermiez...</div>
+          <div class="step-text">
+            grâce aux analyses des données de la campagne, le meilleur prix que votre promo doit adopter
           </div>
         </div>
       </div>
