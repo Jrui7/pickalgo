@@ -18,7 +18,7 @@
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 5% 0;
+  padding: 5% 10%;
 
   .text {
     padding: 0 5%;
@@ -51,7 +51,7 @@
     background: linear-gradient(#fff, #F0F0F3);
     border: 1px solid #e8e8e8;
     padding: 15px;
-    border-radius: 2px;
+    border-radius: 7px;
     box-shadow: 0 1px 1px 0 rgba(90,122,190,.1), 0 10px 20px 0 rgba(90,122,190,.2);
     transition-duration: .5s;
     &:hover {
@@ -143,6 +143,9 @@
 
 
 @media all and (max-width: 1280px) {
+  .step-pro {
+      padding: 5% 3%;
+  }
 
 
 }
@@ -202,7 +205,6 @@
     }
 
     .step-pro {
-      padding: 5% 0;
 
       .text {
         padding: 0;
