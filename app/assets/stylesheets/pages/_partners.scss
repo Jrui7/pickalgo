@@ -4,6 +4,11 @@
   padding: 20px 0;
 }
 
+.layers {
+  height: 40px;
+  animation: pulse 4s infinite;
+}
+
 .steps-title {
   margin: 0;
   width: 100%;
@@ -41,7 +46,7 @@
   }
 
 
-  .test-type {
+  .test-type, .box-case {
     margin-top: 10px;
     background: linear-gradient(#fff, #F0F0F3);
     border: 1px solid #e8e8e8;
@@ -75,6 +80,10 @@
     padding: 5px 10px;
     border: 1px solid $orange;
     border-radius: 20px;
+
+    &:hover {
+      animation: pulse-shadow 2s infinite;
+    }
   }
 }
 
@@ -140,6 +149,34 @@
 
 @media all and (max-width: 980px) {
 
+  .reverse {
+    flex-direction: column-reverse;
+  }
+
+  .step-pro {
+    padding: 5%;
+  }
+
+  .step-pro .text {
+    flex: 0 0 100%;
+    margin: 30px 0;
+  }
+
+  .step-pro h3 {
+    text-align: center;
+    margin: 0 0 30px 0;
+  }
+
+  .step-pro-image-container {
+    flex: 0 0 100%;
+  }
+
+  .step-pro-image {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+  }
+
 }
 
 @media screen and (max-width: 480px) {
@@ -154,18 +191,35 @@
         display: none;
     }
 
-  .reverse {
-    flex-direction: column-reverse;
-  }
+    .steps-title {
+      margin: 0 auto;
+      width: 90%;
+    }
 
-  .step-pro .text {
-    flex: 0 0 100%;
-    padding: 0;
-  }
+    .step-pro-image {
+      display: block;
+      margin: 0 auto;
+    }
 
-  .step-pro-image-container {
-  flex: 0 0 100%;
-  }
+    .step-pro {
+      padding: 5% 0;
+
+      .text {
+        padding: 0;
+      }
+
+      h3 {
+        font-size: 30px;
+      }
+
+      .sub-title {
+        font-size: 20px;
+      }
+
+      .step-text {
+        font-size: 17px;
+      }
+    }
 }
 
 
