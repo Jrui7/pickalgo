@@ -25,7 +25,7 @@
         <p class="concept">Testez votre promo en impliquant vos clients dans sa conception. Vous découvrirez le prix et les volumes qui permettront à votre promo d'atteindre son objectif de la façon la plus efficiente.
         </p>
         <div class="cta-links">
-          <a href="#first">
+          <a href="#target">
             <div class="btn-white go-to" id="concept">Concept</div>
           </a>
           <%= link_to "Plus d'infos", more_infos_path, class:"btn-orange cta-link"%>
@@ -34,34 +34,33 @@
     </div>
   </div>
 
-  <div class="img-layer-container">
-    <%= image_tag "layers.png", class:"layers" %>
-  </div>
-  <h2 class="steps-title">Atteindre votre objectif en 4 étapes</h2>
-  <div class="step-pro reverse" id="first">
-    <div class="text">
-      <h3>Campagne</h3>
-      <div class="sub-title">Votre campagne, votre style</div>
-      <div class="step-text">
-        Choisissez le style de campagne que vous voulez lancer:
+  <div id=target>
+    <h2 class="steps-title">Atteindre votre objectif en 4 étapes</h2>
+    <div class="step-pro reverse">
+      <div class="text">
+        <h3><i class="fas fa-flask"></i> Test</h3>
+        <div class="sub-title">Votre test, votre style</div>
+        <div class="step-text">
+          Choisissez le style de test que vous voulez lancer:
+        </div>
+        <div class="test-type">
+          <h5 class="test-title">A/B Test</h5>
+          <p>Vous avez déjà une idée précise, mais hésitez encore entre plusieurs prix pour votre promo. Nous présentons vos prix de façon alternative à chaque participant de le test pour déterminer le plus judicieux à adopter.</p>
+          <%= link_to root_path do %>
+            <div class="btn more-infos">En savoir plus</div>
+          <% end %>
+        </div>
+        <div class="test-type">
+          <h5 class="test-title">Test ouvert</h5>
+          <p>Les testeurs intéressés nous communiquent le prix maximal qu'ils sont prêts à payer pour votre produit.</p>
+          <%= link_to root_path do %>
+            <div class="btn more-infos">En savoir plus</div>
+          <% end %>
+        </div>
       </div>
-      <div class="test-type">
-        <h5 class="test-title">A/B Test</h5>
-        <p>Vous avez déjà une idée précise, mais hésitez encore entre plusieurs prix pour votre promo.</p>
-        <%= link_to root_path do %>
-          <div class="btn more-infos">En savoir plus</div>
-        <% end %>
+      <div class="step-pro-image-container">
+        <%= image_tag "choice.svg", class:"step-pro-image"  %>
       </div>
-      <div class="test-type">
-        <h5 class="test-title">Test ouvert</h5>
-        <p>Les testeurs intéressés nous communiquent le prix maximal qu'ils sont prêts à payer pour votre produit.</p>
-        <%= link_to root_path do %>
-          <div class="btn more-infos">En savoir plus</div>
-        <% end %>
-      </div>
-    </div>
-    <div class="step-pro-image-container">
-      <%= image_tag "choice.svg", class:"step-pro-image"  %>
     </div>
   </div>
   <div class="step-pro regular" id="second">
@@ -69,21 +68,21 @@
       <%= image_tag "select.svg", class:"step-pro-image"  %>
     </div>
     <div class="text">
-      <h3>Collecte</h3>
+      <h3><i class="fas fa-filter"></i> Collecte</h3>
       <div class="sub-title">Votre collecte, votre style</div>
       <div class="step-text">
-        Choisissez qui peut participer à votre campagne :
+        Choisissez qui peut participer à votre test :
       </div>
       <div class="test-type">
-        <h5 class="test-title">Privé</h5>
-        <p>Seuls les clients que vous aurez vous même invité pourront participer</p>
+        <h5 class="test-title">Segment Privé</h5>
+        <p>Seuls les clients que vous aurez vous même invités pourront participer.</p>
         <%= link_to root_path do %>
           <div class="btn more-infos">En savoir plus</div>
         <% end %>
       </div>
       <div class="test-type">
-        <h5 class="test-title">Public</h5>
-        <p>Tous les utilisateurs de Pickalgo peuvent participer</p>
+        <h5 class="test-title">Segment Public</h5>
+        <p>Tous les utilisateurs de Pickalgo peuvent participer.</p>
         <%= link_to root_path do %>
           <div class="btn more-infos">En savoir plus</div>
         <% end %>
@@ -92,10 +91,10 @@
   </div>
   <div class="step-pro reverse" id="third">
     <div class="text">
-      <h3>Analyse</h3>
+      <h3><i class="fas fa-chart-area"></i> Analyse</h3>
       <div class="sub-title">Vos données, notre analyse</div>
       <div class="step-text">
-        Au bout de 7 jours la campagne est clôturée. Les données récoltées nous permettent de mesurer l'impact qu'a chaque prix sur les volumes et le chiffre d'affaires. Déterminez facilement quel prix vous permettra de générer les volumes nécessaires à l'atteinte de votre objectif.
+        Au bout de 7 jours la collecte est clôturée. Les données récoltées nous permettent de mesurer l'impact de chaque prix sur les volumes et le chiffre d'affaires. Déterminez facilement quel prix vous permettra de générer les volumes nécessaires à l'atteinte de votre objectif.
       </div>
     </div>
     <div class="step-pro-image-container">
@@ -107,7 +106,7 @@
       <%= image_tag "lift-off.svg", class:"step-pro-image"  %>
     </div>
     <div class="text">
-      <h3>Action</h3>
+      <h3><i class="fas fa-play-circle"></i> Action</h3>
       <div class="sub-title">Atteignez votre objectif</div>
       <div class="step-text">
         <div class="box-case">
