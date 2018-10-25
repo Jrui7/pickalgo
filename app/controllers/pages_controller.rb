@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
-  before_action :set_page_action, only: [:faq, :contact, :mentions_legales, :cgu, :home, :partners]
-  skip_before_action :authenticate_user!, only: [:home, :faq, :contact, :mentions_legales, :cgu, :partners]
+  before_action :set_page_action, only: [:faq, :contact, :mentions_legales, :cgu, :home, :pros]
+  skip_before_action :authenticate_user!, only: [:home, :faq, :contact, :mentions_legales, :cgu, :pros]
 
   def home
 
@@ -22,7 +22,7 @@ class PagesController < ApplicationController
     @user = current_user
   end
 
-  def partners
+  def pros
   end
 
   private
