@@ -1,12 +1,14 @@
+<% content_for :meta_title, "Demander plus d'infos" %>
+<% content_for :meta_description, "Sur Pickalgo impliquez vos clients dans la conception de vos promos. Vous découvrirez ainsi le prix qui permettra à votre promo d'atteindre son objectif de la façon la plus efficiente." %>
 <div class="page-container">
   <div class="form-and-image">
     <div class="registration-form">
       <div class="logo-beta logo-form"><%= image_tag "logo.png", id: "logo", alt: "logo pickalgo color" %><br>©Beta 2018
       </div>
       <div class="form-elements">
-        <h1>Vous voulez plus d'infos ?</h1>
+        <h1>Demander plus d'informations</h1>
         <%= simple_form_for @lead do |f| %>
-          <p id="beta-limit">Laissez-nous vos coordonnées, nous revenons vers vous très rapidement pour vous en dire plus</p>
+          <p id="beta-limit">Nous sommes à votre disposition pour répondre à vos questions. Remplissez ce formulaire, nous vous contacterons dès que possible.</p>
           <div class="form-inputs">
             <div class="input-and-icon">
               <%= f.input :brand, label: false, placeholder:'Votre marque ou raison sociale', autofocus: true %>
