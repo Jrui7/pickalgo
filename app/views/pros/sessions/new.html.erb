@@ -1,0 +1,35 @@
+<div class="page-container">
+  <div class="form-and-image">
+    <div class="registration-form">
+      <div class="logo-beta logo-form"><%= image_tag "logo.png", id: "logo", alt: "logo pickalgo color" %><br>©Beta 2018
+      </div>
+      <div class="form-elements">
+        <h1>Se connecter</h1>
+        <%= simple_form_for(resource, as: resource_name, html: {id: :registrate }, url: session_path(resource_name)) do |f| %>
+          <div class="form-inputs">
+            <div class="regroup-elements">
+              <div class="input-and-icon">
+                <%= f.input :email, required: true, label: false, autofocus: true, placeholder:'Email' %>
+                <span class="icon fas fa-envelope"></span>
+              </div>
+
+            </div>
+            <div class="regroup-elements">
+              <div class="input-and-icon">
+                <%= f.input :password, required: true, label: false, placeholder: 'Mot de passe' %>
+                <span class="icon fas fa-lock"></span>
+              </div>
+              <%= link_to "Mot de passe oublié ?", new_pro_password_path, id: 'forgot-password' %>
+            </div>
+          </div>
+          <div class="sign-link">
+            Pas encore de compte pro ? <%= link_to "Créér un compte", new_pro_registration_path %>
+          </div>
+          <%= f.button :submit, "Connexion", class: "btn-orange", id:"connect-cta" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="image-background" style="background-image: linear-gradient(rgba(241, 243, 247, 0.6) 50%, transparent 100%), url('https://res.cloudinary.com/djmp0ivep/image/upload/v1538480440/tags.jpg');">
+    </div>
+  </div>
+</div>

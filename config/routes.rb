@@ -1,4 +1,11 @@
+
 Rails.application.routes.draw do
+  devise_for :pros, controllers: {
+    registrations: "pros/registrations",
+    sessions: 'pros/sessions',
+    passwords: 'pros/passwords'
+  }
+  get 'pros/show'
   get 'users/show'
   devise_for :users, :controllers => { :registrations => :registrations }
   authenticated :user do
@@ -22,6 +29,7 @@ Rails.application.routes.draw do
 
 
   resources :users, only: [ :show, :update]
+  resources :pros, only: [:show, :update]
   resources :leads, only: [ :create ]
 
   get 'more_infos', to: 'leads#more_infos'

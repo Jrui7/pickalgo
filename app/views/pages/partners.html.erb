@@ -13,7 +13,7 @@
       <div class="right-links">
         <%= link_to "Espace Testeurs", home_path %>
         <%= link_to "Contact", contact_path %>
-        <%= link_to " Mon Compte pro", new_user_session_path %>
+        <%= link_to " Mon Compte pro", new_pro_session_path %>
       </div>
       <div class="right-links-menu">
         <i class="fas fa-bars"></i>
@@ -25,10 +25,8 @@
         <p class="concept">Découvrez le prix et les volumes qui permettront à votre promo d'atteindre son objectif de la façon la plus efficiente.
         </p>
         <div class="cta-links">
-          <a href="#target">
-            <div class="btn-white go-to" id="concept">Concept</div>
-          </a>
-          <%= link_to "Plus d'infos", more_infos_path, class:"btn-orange cta-link"%>
+          <%= link_to "Plus d'infos", more_infos_path, class:"btn-white cta-link go-to"%>
+          <%= link_to "Créer un compte pro", new_pro_registration_path, class:"btn-orange cta-link"%>
         </div>
       </div>
     </div>
@@ -39,10 +37,7 @@
     <div class="step-pro reverse">
       <div class="text">
         <h3><i class="fas fa-flask"></i> Test</h3>
-        <div class="sub-title">Votre test, votre style</div>
-        <div class="step-text">
-          Choisissez le style de test que vous voulez lancer:
-        </div>
+        <div class="sub-title">Choisissez votre test:</div>
         <div class="test-type">
           <h5 class="test-title">A/B Test</h5>
           <p>Vous avez déjà une idée précise, mais hésitez encore entre plusieurs prix pour votre promo. Nous présentons vos prix de façon alternative à chaque participant au test pour déterminer le plus judicieux à adopter.</p>
@@ -69,10 +64,7 @@
     </div>
     <div class="text">
       <h3><i class="fas fa-filter"></i> Collecte</h3>
-      <div class="sub-title">Votre collecte, votre style</div>
-      <div class="step-text">
-        Choisissez qui peut participer à votre test :
-      </div>
+      <div class="sub-title">Choisissez votre segment de collecte:</div>
       <div class="test-type">
         <h5 class="test-title">Segment Privé</h5>
         <p>Seuls les clients que vous aurez vous même invités pourront participer.</p>

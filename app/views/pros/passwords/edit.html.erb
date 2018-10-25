@@ -1,0 +1,29 @@
+<div class="page-container">
+  <div class="form-and-image">
+    <div class="registration-form">
+      <div class="logo-beta logo-form"><%= image_tag "logo.png", id: "logo" %><br>©Beta 2018
+      </div>
+      <div class="form-elements">
+        <h1>Nouveau mot de passe</h1>
+        <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+          <%= f.input :reset_password_token, as: :hidden %>
+          <%= f.full_error :reset_password_token %>
+          <div class="form-inputs">
+            <div class="input-and-icon">
+              <%= f.input :password, required: true, label: false, placeholder: 'Nouveau mot de passe', hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length) %>
+              <span class="icon fas fa-lock"></span>
+            </div>
+            <div class="input-and-icon">
+              <%= f.input :password_confirmation, required: true, label: false, placeholder: 'Confirmer le nouveau mot de passe' %>
+              <span class="icon fas fa-lock"></span>
+            </div>
+          </div>
+
+          <%= f.button :submit, "Changer mot de passe", class: "btn-orange", id:"connect-cta" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="image-background" style="background-image: linear-gradient(rgba(241, 243, 247, 0.6) 50%, transparent 100%), url('https://res.cloudinary.com/djmp0ivep/image/upload/v1538480440/tags.jpg');">
+    </div>
+  </div>
+</div>

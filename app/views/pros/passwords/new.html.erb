@@ -1,0 +1,33 @@
+<div class="page-container">
+  <div class="form-and-image">
+    <div class="registration-form">
+      <div class="logo-beta logo-form"><%= image_tag "logo.png", id: "logo", alt: "logo pickalgo color" %><br>©Beta 2018
+      </div>
+      <div class="form-elements">
+        <h1>
+          <span>
+          <%= link_to new_pro_session_path do %>
+            <i class="fas fa-arrow-left"></i>
+          <% end %>
+          </span>
+          Mot de passe oublié ?</h1>
+        <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+          <p class="reset-instructions">Saisissez l'adresse email liée à votre compte pro sur Pickalgo. Nous allons vous envoyer un lien pour choisir un nouveau mot de passe.</p>
+
+          <div class="form-inputs">
+            <div class="input-and-icon">
+              <%= f.input :email, required: true, label: false, autofocus: true, placeholder:'Email' %>
+              <span class="icon fas fa-envelope"></span>
+            </div>
+          </div>
+
+          <div id="reset-password-button">
+            <%= f.button :submit, "Envoyer", id: "reset-password-cta", class: "btn-orange" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="image-background" style="background-image: linear-gradient(rgba(241, 243, 247, 0.6) 50%, transparent 100%), url('https://res.cloudinary.com/djmp0ivep/image/upload/v1538480440/tags.jpg');">
+    </div>
+  </div>
+</div>
