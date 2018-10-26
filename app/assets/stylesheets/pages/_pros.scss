@@ -2,6 +2,14 @@
   padding-top: 80px;
 }
 
+.what {
+  width: 30%;
+  margin: 30px auto;
+  text-align: center;
+  font-size: 17px;
+  color: #525f7f;
+}
+
 .step-pro {
   display: flex;
   align-items: center;
@@ -16,7 +24,7 @@
   }
 
   .sub-title {
-    font-size: 25px;
+    font-size: 23px;
     font-weight: bold;
     margin-bottom: 10px;
   }
@@ -28,7 +36,7 @@
 
   h3 {
 
-    font-size: 40px;
+    font-size: 30px;
     color: $blue;
     margin: 0 0 20px 0;
     text-align: left;
