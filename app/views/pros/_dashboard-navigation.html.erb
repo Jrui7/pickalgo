@@ -1,0 +1,11 @@
+<div class="navigation-menu-container">
+  <%= link_to pro_path(@pro) do %>
+    <div class="link"><i class="fas fa-tachometer-alt"></i> Dashboard</div>
+  <% end %>
+  <div class="link">Produits</div>
+  <div class="link">Campagnes</div>
+  <div class="link">Nous contacter</div>
+  <%= link_to destroy_pro_session_path, method: :delete do %>
+    <div class="link"><i class="fas fa-power-off"></i> Déconnexion</div>
+  <% end %>
+</div>

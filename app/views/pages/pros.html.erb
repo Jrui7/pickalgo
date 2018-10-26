@@ -22,7 +22,7 @@
     <div class="banner-container">
       <div class="banner-content">
         <h1>Objectif <span id="typer">.</span></h1>
-        <p class="concept">L'outil indispensable pour tester et lancer des promos qui atteignent leurs objectifs de façon efficiente.
+        <p class="concept">Pickalgo c'est l'outil indispensable pour tester et lancer des promos qui atteignent leurs objectifs de façon efficiente.
         </p>
         <div class="cta-links">
           <%= link_to "Plus d'infos", more_infos_path, class:"btn-white cta-link go-to"%>
@@ -34,14 +34,14 @@
 
   <div id=target>
     <h2 class="steps-title">Atteindre votre objectif en 4 étapes</h2>
-    <p class="what">Découvrez le prix et les volumes qui permettront à votre promo d'atteindre son objectif de la façon la plus efficiente.</p>
-    <div class="step-pro reverse">
+    <p class="what">Sur Pickalgo impliquez vos clients dans la conception de vos promos. Vous découvrirez le prix et les volumes qui permettront à votre promo d'atteindre son objectif de la façon la plus efficiente.</p>
+    <div class="step-pro reverse" id="first">
       <div class="text">
-        <h3><i class="fas fa-flask"></i> Test</h3>
-        <div class="sub-title">Choisissez votre test:</div>
+        <h3><i class="fas fa-flask"></i> Choisissez votre test</h3>
+        <div class="sub-title"></div>
         <div class="test-type">
           <h5 class="test-title">A/B Test</h5>
-          <p>Vous avez déjà une idée précise, mais hésitez encore entre plusieurs prix pour votre promo. Nous présentons vos prix de façon alternative à chaque participant au test pour déterminer le plus judicieux à adopter.</p>
+          <p>Vous hésitez entre plusieurs prix pour votre promo. Lequel serait le plus efficient ? Nous présentons vos prix de façon alternative à chaque participant à la campagne de test pour le déterminer.</p>
           <%= link_to root_path do %>
             <div class="btn more-infos">En savoir plus</div>
           <% end %>
@@ -64,28 +64,13 @@
       <%= image_tag "select.svg", class:"step-pro-image"  %>
     </div>
     <div class="text">
-      <h3><i class="fas fa-filter"></i> Collecte</h3>
-      <div class="sub-title">Choisissez votre segment de collecte:</div>
-      <div class="test-type">
-        <h5 class="test-title">Segment Privé</h5>
-        <p>Seuls les clients que vous aurez vous même invités pourront participer.</p>
-        <%= link_to root_path do %>
-          <div class="btn more-infos">En savoir plus</div>
-        <% end %>
-      </div>
-      <div class="test-type">
-        <h5 class="test-title">Segment Public</h5>
-        <p>Tous les utilisateurs de Pickalgo peuvent participer.</p>
-        <%= link_to root_path do %>
-          <div class="btn more-infos">En savoir plus</div>
-        <% end %>
-      </div>
+      <h3><i class="fas fa-filter"></i> Collectez des données fiables</h3>
+      <div class="step-text">Contrairement à une étude de marché traditionnelle, les participants sont réellement prêts à acquerir votre produit. Collectez des données fiables et qualifiées matérialisées par des propositions d'achats de la part des clients intéressés par votre produit et votre promo.</div>
     </div>
   </div>
   <div class="step-pro reverse" id="third">
     <div class="text">
-      <h3><i class="fas fa-chart-area"></i> Analyse</h3>
-      <div class="sub-title">Vos données, notre analyse</div>
+      <h3><i class="fas fa-chart-area"></i> Nous analysons - vous décidez</h3>
       <div class="step-text">
         Au bout de 7 jours la collecte est clôturée. Les données récoltées nous permettent de mesurer l'impact de chaque prix sur les volumes et le chiffre d'affaires. Déterminez facilement quel prix vous permettra de générer les volumes nécessaires à l'atteinte de votre objectif.
       </div>
@@ -99,17 +84,16 @@
       <%= image_tag "lift-off.svg", class:"step-pro-image"  %>
     </div>
     <div class="text">
-      <h3><i class="fas fa-play-circle"></i> Action</h3>
-      <div class="sub-title">Atteignez votre objectif</div>
+      <h3><i class="fas fa-play-circle"></i> En route vers votre objectif</h3>
       <div class="step-text">
         <div class="box-case">
           <p>Premier pas vers votre objectif: validez les commandes des acheteurs qui proposent un prix supérieur ou égal au prix déterminé grâce à l'analyse.</p>
         </div>
         <div class="box-case">
-          <p>Déclinez les propositions des acheteurs qui sont inférieures à celui-ci</p>
+          <p>Déclinez les propositions des acheteurs qui sont inférieures à celui-ci.</p>
         </div>
         <div class="box-case">
-          <p>Avec ou sans nous, lancez votre promo à plus grande échelle: vous avez l'assurance de proposer le prix optimal pour atteindre vos objectifs de la façon la plus efficiente</p>
+          <p>Lancez votre promo à plus grande échelle: vous avez l'assurance de proposer le prix optimal pour atteindre vos objectifs de la façon la plus efficiente.</p>
         </div>
       </div>
     </div>

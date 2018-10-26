@@ -5,6 +5,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
 }
 
 .header-home {
@@ -412,6 +414,7 @@
         padding: 7px 20px !important;
         font-size: 15px;
         margin-right: 20px;
+        margin-bottom: 20px;
       }
 
 

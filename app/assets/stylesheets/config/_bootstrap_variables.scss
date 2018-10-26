@@ -8,7 +8,7 @@ $font-family-sans-serif:  $body-font;
 $headings-font-family:    $headers-font;
 $body-bg:                 #FFFFFF;
 $font-size-base: 16px;
-$text-color: #4d4d5e;
+$text-color: #495057;
 
 // Colors
 $gray-base:       $gray;
@@ -47,6 +47,10 @@ input[type=number]::-webkit-outer-spin-button {
 
 .invalid-feedback {
   color: #C03334;
+}
+
+.form-control {
+  color: #495057 !important;
 }
 
 .nav-tabs > li.active > a {

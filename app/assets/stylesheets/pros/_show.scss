@@ -1,0 +1,71 @@
+.dashboard-container {
+  display: flex;
+
+}
+
+.navigation-menu-container {
+  min-height: calc(100vh - 70px);
+  background-color: #FFF;
+  border-right: 1px solid rgba(0,0,0,.0625);
+  flex: 0 0 20%;
+  padding: 20px;
+
+  .link {
+    font-size: 20px;
+    color: #4d4d5e;
+  }
+
+  .fas {
+    margin-right: 10px;
+  }
+}
+
+.general-infos {
+  padding: 20px;
+  flex: 0 0 80%;
+}
+
+.pro-forms {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.compagny-recap {
+  flex: 0 0 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  margin-bottom: 30px;
+}
+
+.brand-name, .created-at {
+  flex: 0 0 24%;
+  background-color: #FFF;
+  border: 1px solid rgba(0,0,0,.0625);
+  padding: 20px;
+}
+
+.social-links {
+  flex: 0 0 49%;
+  background-color: #FFF;
+  border: 1px solid rgba(0,0,0,.0625);
+  padding: 20px;
+}
+
+.general-form, .security-form {
+  flex: 0 0 49%;
+  background-color: #FFF;
+  border: 1px solid rgba(0,0,0,.0625);
+  padding: 20px;
+
+  #new_user {
+    width: 100%;
+  }
+
+  #save-cta, #password-cta {
+    margin: 0 0 0 auto;
+  }
+
+}

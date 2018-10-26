@@ -1,0 +1,54 @@
+<div class="pro-forms">
+  <div class="compagny-recap">
+    <div class="brand-name">
+      <h3><%= @pro.brand %></h3>
+      <p>Brand photo</p>
+    </div>
+    <div class="created-at">
+      <h3>Membre depuis</h3>
+      <%= @pro.created_at.strftime("%d/%m/%Y") %>
+    </div>
+    <div class="social-links">
+      <h3>Trouver <%= @pro.brand %> sur les réseaux sociaux</h3>
+    </div>
+  </div>
+  <div class="general-form">
+    <%= simple_form_for @pro do |f| %>
+      <div class="form-inputs">
+        <div class="input-and-icon">
+          <%= f.input :brand, label: false, placeholder:'Marque ou raison sociale' %>
+          <span class="icon fas fa-store"></span>
+        </div>
+        <div class="input-and-icon">
+          <%= f.input :contact_person, placeholder:'Personne à contacter', label: false %>
+          <span class="icon fas fa-user"></span>
+        </div>
+        <div class="input-and-icon">
+          <%= f.input :email, label: false, placeholder:'Email' %>
+          <span class="icon fas fa-envelope"></span>
+        </div>
+      </div>
+      <%= f.button :submit, "Enregistrer", class: "btn-blue", id:"save-cta" %>
+    <% end %>
+  </div>
+  <div class="security-form">
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <div class="form-inputs">
+        <div class="input-and-icon">
+          <%= f.input :current_password, required: true, label: false, placeholder: 'Mot de passe actuel'%>
+          <span class="icon fas fa-lock"></span>
+        </div>
+        <div class="input-and-icon">
+          <%= f.input :password, required: true, label: false, placeholder: 'Nouveau mot de passe', hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length) %>
+          <span class="icon fas fa-lock"></span>
+        </div>
+        <div class="input-and-icon">
+          <%= f.input :password_confirmation, required: true, label: false, placeholder: 'Confirmer le nouveau mot de passe' %>
+          <span class="icon fas fa-lock"></span>
+        </div>
+      </div>
+      <%= f.button :submit, "Changer mot de passe", class: "btn-blue", id:"password-cta" %>
+    <% end %>
+  </div>
+</div>
+
