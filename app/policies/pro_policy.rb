@@ -15,4 +15,8 @@ class ProPolicy < ApplicationPolicy
   def configuration?
     record == Pro.find(record.id) || @user.admin == true
   end
+
+  def update_password?
+    record == Pro.find(record.id) || @user.admin == true
+  end
 end
