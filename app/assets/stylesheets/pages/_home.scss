@@ -5,7 +5,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-   -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
   clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
 }
 
@@ -39,7 +39,9 @@
 }
 
 
-
+.selected {
+  background-color: #f9fafc;
+}
 
 .right-links{
   display: flex;
@@ -121,12 +123,10 @@
 
   .go-to{
     margin-right: 30px;
-    text-transform: uppercase;
     font-size: 20px;
   }
 
   .cta-link{
-    text-transform: uppercase;
     font-size: 20px;
   }
 
@@ -156,7 +156,7 @@
   }
 
 
-  #how-it-works {
+  #how-it-works, #target {
     &:focus {
       outline: none;
     }
@@ -188,7 +188,7 @@
     list-style-type: none;
   }
 
-  #conclusion {
+  #conclusion, .regular {
     background-color: #f1f3f7;
   }
 
@@ -414,6 +414,7 @@
         padding: 7px 20px !important;
         font-size: 15px;
         margin-right: 20px;
+        margin-bottom: 20px;
       }
 
 

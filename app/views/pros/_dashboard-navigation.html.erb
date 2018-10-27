@@ -1,0 +1,14 @@
+<div class="navigation-menu-container">
+  <%= link_to pro_path(@pro) do %>
+    <div class="link"><i class="fas fa-tachometer-alt"></i> Dashboard</div>
+  <% end %>
+  <%= link_to edit_pro_path(@pro) do %>
+    <div class="link"><i class="fas fa-cog"></i> Configuration</div>
+  <% end %>
+  <div class="link"><i class="fas fa-flask"></i> Campagnes</div>
+  <div class="link"><i class="fas fa-question-circle"></i> Aide</div>
+  <div class="link"><i class="fas fa-envelope"></i> Nous contacter</div>
+  <%= link_to destroy_pro_session_path, method: :delete do %>
+    <div class="link"><i class="fas fa-power-off"></i> Déconnexion</div>
+  <% end %>
+</div>

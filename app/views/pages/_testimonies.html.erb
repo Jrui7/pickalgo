@@ -27,8 +27,11 @@
           </div>
         </div>
       </div>
-      <% if @page == "partners" %>
-        <%= link_to "Plus d'infos", more_infos_path, class:"btn-orange cta"%>
+      <% if @page == "pros" %>
+        <div class="cta-links">
+          <%= link_to "Plus d'infos", more_infos_path, class:"btn-white cta-link go-to"%>
+          <%= link_to "Créer un compte pro", new_pro_registration_path, class:"btn-orange cta-link"%>
+        </div>
       <% elsif @page == "home" %>
         <%= link_to "S'inscrire", new_user_registration_path, class:"btn-orange cta"%>
       <% end %>

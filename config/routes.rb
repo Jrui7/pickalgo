@@ -1,4 +1,16 @@
+
 Rails.application.routes.draw do
+  devise_for :pros, controllers: {
+    registrations: "pros/registrations",
+    sessions: 'pros/sessions',
+    passwords: 'pros/passwords'
+  }
+  get 'pros/show'
+  authenticated :pro do
+      root 'pros#show', as: :authenticated_pro_root
+  end
+
+
   get 'users/show'
   devise_for :users, :controllers => { :registrations => :registrations }
   authenticated :user do
@@ -13,7 +25,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get 'home', to: 'pages#home'
-  get 'partners', to: 'pages#partners'
+  get 'pros', to: 'pages#pros'
   get 'faq', to: 'pages#faq'
   get 'contact', to: 'pages#contact'
   get 'mentions_legales', to: 'pages#mentions_legales'
@@ -22,6 +34,7 @@ Rails.application.routes.draw do
 
 
   resources :users, only: [ :show, :update]
+  resources :pros, only: [:show, :edit, :update]
   resources :leads, only: [ :create ]
 
   get 'more_infos', to: 'leads#more_infos'

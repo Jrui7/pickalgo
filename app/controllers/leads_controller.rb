@@ -13,7 +13,7 @@ class LeadsController < ApplicationController
         format.html { redirect_to partners_path, notice: 'Votre inscription est confirmée, à très bientôt !' }
       end
     else
-      render :inscription_pro
+      render :more_infos
     end
 
 

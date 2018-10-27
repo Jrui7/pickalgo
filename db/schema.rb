@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_12_082051) do
+ActiveRecord::Schema.define(version: 2018_10_27_132609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,28 @@ ActiveRecord::Schema.define(version: 2018_10_12_082051) do
     t.string "referal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "pros", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "brand"
+    t.string "phone"
+    t.string "contact_person"
+    t.string "referal"
+    t.string "slug"
+    t.string "insta"
+    t.string "youtube"
+    t.string "facebook"
+    t.string "twitter"
+    t.index ["email"], name: "index_pros_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_pros_on_reset_password_token", unique: true
+    t.index ["slug"], name: "index_pros_on_slug", unique: true
   end
 
   create_table "users", force: :cascade do |t|

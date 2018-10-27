@@ -3,10 +3,9 @@
   justify-content: center;
   border: none;
   align-items: center;
-  text-transform: uppercase;
-  padding: 10px 30px;
+  padding: 7px 15px;
   text-decoration: none;
-  border-radius: 50px;
+  border-radius: 10px;
   color: #FFF;
   cursor: pointer;
   text-shadow: 0 1px 0 #ce870c;
@@ -35,15 +34,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 30px;
+  padding: 7px 15px;
   text-decoration: none;
-  text-transform: uppercase;
-  border-radius: 50px;
+  border-radius: 10px;
   cursor: pointer;
   border: none;
   color: #FFF;
-  background: -webkit-gradient(linear, left top, right bottom, from($blue), to(#3e2995));
-  background: linear-gradient($blue, #3e2995);
+  background: $blue;
   -webkit-box-shadow: 0 7px 14px -3px rgba(45,35,66,0.3), 0 2px 4px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 #2e1e72;
   box-shadow: 0 7px 14px -3px rgba(45,35,66,0.3), 0 2px 4px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 #2e1e72;
   transition: box-shadow 0.15s ease, transform 0.15s ease, -webkit-box-shadow 0.15s ease, -webkit-transform 0.15s ease;
@@ -59,10 +56,9 @@
 }
 
   .btn-white {
-    border-radius: 50px;
-    text-transform: uppercase;
+    border-radius: 10px;
     cursor: pointer;
-    padding: 10px 30px;
+    padding: 7px 15px;
     color: #243763;
     background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e4e4e9));
     background: linear-gradient(#fff, #e4e4e9);
@@ -89,7 +85,7 @@
 
 @media screen and (max-width: 480px) {
   .btn-white, .btn-blue, .btn-orange {
-    padding: 9px;
+    padding: 5px 10px;
     text-transform: capitalize;
   }
 }

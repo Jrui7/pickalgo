@@ -1,0 +1,27 @@
+
+<%= render 'pros/navbar' %>
+<%= render 'right-links-dashboard' %>
+<div class="dashboard-container">
+  <%= render 'dashboard-navigation' %>
+  <div class="general-infos">
+    <div class="pro-forms">
+      <div class="compagny-recap">
+        <div class="brand-name">
+          <h3><%= @pro.brand %></h3>
+          <p>Brand photo</p>
+        </div>
+        <div class="created-at">
+          <h3>Membre depuis</h3>
+          <%= @pro.created_at.strftime("%d/%m/%Y") %>
+        </div>
+        <div class="social-links">
+          <h3>Trouver <%= @pro.brand %> sur les réseaux sociaux</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
