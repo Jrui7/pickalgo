@@ -25,7 +25,7 @@ class ProsController < ApplicationController
   end
 
   def pro_params
-    params.require(:pro).permit(:brand, :contact_person, :email)
+    params.require(:pro).permit(:brand, :contact_person, :email, :facebook, :insta, :youtube, :twitter, :phone)
   end
 
 end

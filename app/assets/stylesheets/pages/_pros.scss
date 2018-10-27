@@ -91,7 +91,7 @@
 
 .overlay {
     height: 0%;
-    width: 50%;
+    width: 70%;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -100,6 +100,10 @@
     background-color: rgba(0,0,0, 0.9);
     overflow-x: hidden;
     transition: 0.5s;
+
+    i {
+      margin-right: 15px;
+    }
 }
 
 .overlay-content {
@@ -111,7 +115,7 @@
 }
 
 .overlay a {
-    padding: 8px;
+    padding: 10px 15px;
     text-decoration: none;
     font-size: 36px;
     color: #818181;

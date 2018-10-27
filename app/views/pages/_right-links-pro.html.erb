@@ -8,11 +8,11 @@
     <%= link_to home_path do %>
       <i class="fas fa-user-circle"></i> <%= t(".testeur", default: "Espace testeur") %>
     <% end %>
-    <%= link_to contact_path do %>
-      <i class="fas fa-envelope"></i> <%= t(".contact", default: "Contact") %>
-    <% end %>
     <%= link_to more_infos_path do %>
-      <i class="fas fa-store"></i> <%= t(".infos", default: "Plus d'infos") %>
+      <i class="fas fa-info-circle"></i> <%= t(".infos", default: "Plus d'infos") %>
+    <% end %>
+    <%= link_to new_pro_session_path do %>
+      <i class="fas fa-store"></i> <%= t(".contact", default: "Mon compte pro") %>
     <% end %>
   </div>
 
