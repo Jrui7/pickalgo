@@ -44,16 +44,26 @@
   .fa-envelope {
     color: #673ab7;
   }
+
+  .fa-question-circle {
+    color: #ff9800;
+  }
 }
 
 .general-infos {
   padding: 20px;
   flex: 0 0 80%;
+  h5 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: #313435;
+  }
 }
 
 .pro-forms {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   flex-wrap: wrap;
 }
 
@@ -80,11 +90,15 @@
   padding: 20px;
 }
 
-.general-form, .security-form {
+.column {
   flex: 0 0 49%;
+}
+
+.general-form {
   background-color: #FFF;
   border: 1px solid rgba(0,0,0,.0625);
   padding: 20px;
+  margin-bottom: 15px;
 
   #new_user {
     width: 100%;

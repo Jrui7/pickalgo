@@ -34,7 +34,7 @@ Rails.application.routes.draw do
 
 
   resources :users, only: [ :show, :update]
-  resources :pros, only: [:show, :update]
+  resources :pros, only: [:show, :edit, :update]
   resources :leads, only: [ :create ]
 
   get 'more_infos', to: 'leads#more_infos'

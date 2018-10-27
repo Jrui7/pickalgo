@@ -16,9 +16,12 @@ class ProsController < ApplicationController
         format.html {redirect_to pro_path(@pro)}
         format.js
       end
-
     end
+  end
 
+  def edit
+    @pro = Pro.friendly.find(params[:id])
+    authorize @pro
   end
 
   def pro_params
