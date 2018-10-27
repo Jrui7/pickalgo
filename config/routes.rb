@@ -34,7 +34,11 @@ Rails.application.routes.draw do
 
 
   resources :users, only: [ :show, :update]
-  resources :pros, only: [:show, :edit, :update]
+  resources :pros, only: [:show, :edit, :update] do
+    collection do
+        patch 'update_password'
+      end
+  end
   resources :leads, only: [ :create ]
 
   get 'more_infos', to: 'leads#more_infos'
