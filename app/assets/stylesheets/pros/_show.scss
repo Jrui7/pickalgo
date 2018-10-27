@@ -8,15 +8,41 @@
   background-color: #FFF;
   border-right: 1px solid rgba(0,0,0,.0625);
   flex: 0 0 20%;
-  padding: 20px;
+  padding: 20px 0;
 
   .link {
-    font-size: 20px;
-    color: #4d4d5e;
+    font-size: 15px;
+    color: #72777a;
+    padding: 15px 35px;
+    &:hover {
+      background-color: #F1F3F4;
+      cursor: pointer;
+    }
   }
 
   .fas {
-    margin-right: 10px;
+    margin-right: 15px;
+    font-size: 19px;
+  }
+
+  .fa-tachometer-alt {
+    color: #2196f3;
+  }
+
+  .fa-power-off {
+    color: $red;
+  }
+
+  .fa-cog {
+    color: #795548;
+  }
+
+  .fa-flask {
+    color: $blue;
+  }
+
+  .fa-envelope {
+    color: #673ab7;
   }
 }
 
