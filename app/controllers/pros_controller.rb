@@ -30,8 +30,13 @@ class ProsController < ApplicationController
     if @pro.update_with_password(pro_password_params)
       # Sign in the pro by passing validation in case their password changed
       bypass_sign_in(@pro)
-      redirect_to root_path
+      respond_to do |format|
+        format.html {redirect_to edit_pro_path(@pro)}
+        format.js
+      end
+      flash[:info] = "Mot de passe actualisé"
     else
+      flash[:alert] = "Erreur, mot de passe inchangé"
       render :edit
     end
   end
