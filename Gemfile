@@ -20,6 +20,9 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'figaro'
 gem 'cloudinary'
+gem "attachinary"
+gem "jquery-fileupload-rails"
+gem 'swipebox'
 
 gem 'cookies_eu'
 gem 'gibbon'

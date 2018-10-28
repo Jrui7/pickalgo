@@ -1,6 +1,9 @@
 class Pro < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  has_many :products
+
+
   devise :database_authenticatable, :registerable,
          :recoverable, :validatable
   validates :email, presence: { message: "Merci de renseigner l'email du contact" }

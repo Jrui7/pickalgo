@@ -1,5 +1,8 @@
 
 Rails.application.routes.draw do
+
+  mount Attachinary::Engine => "/attachinary"
+
   devise_for :pros, controllers: {
     registrations: "pros/registrations",
     sessions: 'pros/sessions',
@@ -45,6 +48,7 @@ Rails.application.routes.draw do
       end
   end
   resources :leads, only: [ :create ]
+  resources :products, only: [:index, :new, :create]
 
   get 'more_infos', to: 'leads#more_infos'
 

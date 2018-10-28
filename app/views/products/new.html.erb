@@ -1,0 +1,16 @@
+
+<%= render 'pros/navbar' %>
+<%= render 'pros/right-links-dashboard' %>
+<div class="dashboard-container">
+  <%= render 'pros/dashboard-navigation' %>
+  <div class="general-infos">
+    <%= simple_form_for(@product) do |f| %>
+      <%= f.input :title, label:"Nom du produit" %>
+      <%= f.input :price, label:"Prix" %>
+      <%= f.association :category, label:"Catégorie", prompt: "Selectionner une categorie" %>
+      <%= f.input :description %>
+      <%= f.attachinary_file_field :photos, label: false, class: "upload", cloudinary: { transformation: { width: 1220, height: 813, crop: :limit } } %>
+      <%= f.button :submit, "Enregistrer", class: "btn-blue", id:"save-cta" %>
+    <% end %>
+  </div>
+</div>
