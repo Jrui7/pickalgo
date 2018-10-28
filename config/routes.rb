@@ -34,6 +34,7 @@ Rails.application.routes.draw do
 
 
   resources :users, only: [ :show, :update]
+
   resources :pros, only: [:show, :edit, :update] do
     collection do
         patch 'update_password'

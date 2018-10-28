@@ -8,7 +8,7 @@
   background-color: #FFF;
   border-right: 1px solid rgba(0,0,0,.0625);
   flex: 0 0 20%;
-  padding: 20px 0;
+  padding: 30px 0;
 
   .link {
     font-size: 15px;
@@ -38,7 +38,7 @@
     color: $red;
   }
 
-  .fa-cog {
+  .fa-lock {
     color: #795548;
   }
 
@@ -56,57 +56,14 @@
 }
 
 .general-infos {
-  padding: 20px;
+  padding: 30px;
   flex: 0 0 80%;
+
   h5 {
     margin-top: 0;
     margin-bottom: 30px;
-    color: #313435;
-  }
-}
-
-.pro-forms {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
-
-.compagny-recap {
-  flex: 0 0 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: stretch;
-  margin-bottom: 30px;
-}
-
-.brand-name, .created-at {
-  flex: 0 0 24%;
-  background-color: #FFF;
-  border: 1px solid rgba(0,0,0,.0625);
-  padding: 20px;
-}
-
-.social-links {
-  flex: 0 0 49%;
-  background-color: #FFF;
-  border: 1px solid rgba(0,0,0,.0625);
-  padding: 20px;
-}
-
-.column {
-  flex: 0 0 49%;
-}
-
-.general-form {
-  background-color: #FFF;
-  border: 1px solid rgba(0,0,0,.0625);
-  padding: 20px;
-  margin-bottom: 15px;
-
-  #new_user {
-    width: 100%;
+    color: $blue;
+    font-size: 20px;
   }
 
   #save-cta, #password-cta {
@@ -114,6 +71,43 @@
   }
 
 }
+
+
+.info-bloc {
+  background-color: #FFF;
+  border: 1px solid rgba(0, 0, 0, 0.0625);
+  padding: 20px;
+}
+
+.brand {
+  flex: 0 0 40%;
+}
+
+.social {
+  flex: 0 0 59%;
+}
+
+.text-and-form {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.text-part {
+  flex: 0 0 40%;
+  padding: 30px 20px;
+  p {
+    color: #637381;
+    text-align: justify;
+  }
+}
+
+.form-part {
+  flex: 0 0 59%;
+}
+
+
 
 @media all and (max-width: 1280px) {
 
@@ -135,8 +129,20 @@
 
 @media screen and (max-width: 480px) {
 
-  .column {
+  .general-infos {
+    padding: 0 0 20px 0;
+    h5 {
+      margin-bottom: 15px;
+    }
+
+    #save-cta, #password-cta {
+      margin: 0 10px 0 auto;
+    }
+  }
+
+  .text-part, .form-part {
     flex: 0 0 100%;
+    padding: 10px 20px;
   }
 
 }

@@ -1,9 +1,9 @@
 <div class="navigation-menu-container">
   <%= link_to pro_path(@pro) do %>
-    <div class="link <%= 'selected-category' if @page == 'show'  %>"><i class="fas fa-tachometer-alt"></i> Dashboard</div>
+    <div class="link <%= 'selected-category' if @page == 'show'  %>"><i class="fas fa-tachometer-alt"></i> Paramètres</div>
   <% end %>
   <%= link_to edit_pro_path(@pro) do %>
-    <div class="link <%= 'selected-category' if @page == 'edit'  %>"><i class="fas fa-cog"></i> Configuration</div>
+    <div class="link <%= 'selected-category' if @page == 'edit'  %>"><i class="fas fa-lock"></i> Sécurité</div>
   <% end %>
   <div class="link"><i class="fas fa-flask"></i> Campagnes</div>
   <div class="link"><i class="fas fa-question-circle"></i> Aide</div>
