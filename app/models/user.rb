@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-  has_many :addresses, as: :resident
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
   def slug_candidates
