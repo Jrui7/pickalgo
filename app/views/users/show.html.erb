@@ -1,61 +1,46 @@
-<%= render 'shared/navbar' %>
-<div class="page-container">
-  <div class="content-container">
-    <div class="settings-container">
-      <div class="setting-menu">
-        <div class="menu-link">
-          <a href="#civil">Profil</a>
-        </div>
-        <div class="menu-link">
-          <a href="#security">Sécurité</a>
-        </div>
-      </div>
-      <div class="forms">
-        <div class="edit-user-form" id="civil">
-          <h2>Informations personnelles</h2>
-          <%= simple_form_for @user do |f| %>
-            <div class="form-inputs">
-              <div class="input-and-icon">
-                <%= f.input :first_name, label: false, placeholder:'Prénom' %>
-                <span class="icon fas fa-user"></span>
-              </div>
-              <div class="input-and-icon">
-                <%= f.input :last_name, placeholder:'Nom', label: false %>
-                <span class="icon fas fa-user"></span>
-              </div>
-              <div class="input-and-icon">
-                <%= f.input :email, label: false, placeholder:'Email' %>
-                <span class="icon fas fa-envelope"></span>
-              </div>
-            </div>
-            <%= f.button :submit, "Enregistrer", class: "btn-blue", id:"save-cta" %>
-          <% end %>
-        </div>
-        <div class="edit-user-form" id="security">
-          <h2>Changer de mot de passe</h2>
-          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-            <div class="form-inputs">
-              <div class="input-and-icon">
-                <%= f.input :current_password, required: true, label: false, placeholder: 'Mot de passe actuel'%>
-                <span class="icon fas fa-lock"></span>
-              </div>
-              <div class="input-and-icon">
-                <%= f.input :password, required: true, label: false, placeholder: 'Nouveau mot de passe', hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length) %>
-                <span class="icon fas fa-lock"></span>
-              </div>
-              <div class="input-and-icon">
-                <%= f.input :password_confirmation, required: true, label: false, placeholder: 'Confirmer le nouveau mot de passe' %>
-                <span class="icon fas fa-lock"></span>
-              </div>
-            </div>
-            <%= f.button :submit, "Changer mot de passe", class: "btn-blue", id:"password-cta" %>
-          <% end %>
-        </div>
-      </div>
-    </div>
 
+<%= render 'shared/navbar' %>
+<%= render 'right-links-dashboard' %>
+<div class="dashboard-container">
+  <%= render 'dashboard-navigation' %>
+  <div class="general-infos">
+    <%= simple_form_for @user do |f| %>
+      <div class="text-and-form">
+        <div class="text-part">
+          <h5>Vos informations personnelles</h5>
+          <p>Retrouvez et mettez à jour ici toutes vos informations personnelles.</p>
+        </div>
+        <div class="form-part info-bloc">
+          <div class="form-inputs">
+            <div class="input-and-icon">
+              <%= f.input :first_name, label: false, placeholder:'Prénom' %>
+              <span class="icon fas fa-user"></span>
+            </div>
+            <div class="input-and-icon">
+              <%= f.input :last_name, placeholder:'Nom', label: false %>
+              <span class="icon fas fa-user"></span>
+            </div>
+            <div class="input-and-icon">
+              <%= f.input :email, label: false, placeholder:'Email' %>
+              <span class="icon fas fa-envelope"></span>
+            </div>
+            <div class="input-and-icon">
+              <%= f.input :phone, label: false, placeholder:'Mobile' %>
+              <span class="icon fas fa-phone"></span>
+            </div>
+            <div class="input-and-icon">
+              <%= f.input :date_of_birth, label:"Anniversaire", as: :date,  start_year: Date.today.year - 16,
+                                                    end_year: 1900,
+                                                    order: [:day, :month, :year], :prompt => { :month => 'Mois', :year => 'Année', :day => 'Jour' }, use_month_numbers: true  %>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <%= f.button :submit, "Enregistrer", class: "btn-blue", id:"save-cta" %>
+    <% end %>
   </div>
 </div>
-<%= render 'shared/footer' %>
+
 
 

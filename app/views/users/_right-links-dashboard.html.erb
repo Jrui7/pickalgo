@@ -1,0 +1,22 @@
+<div id="myNav" class="overlay">
+
+  <!-- Button to close the overlay navigation -->
+  <a href="javascript:void(0)" class="closebtn fas fa-times"></a>
+
+  <!-- Overlay content -->
+  <div class="overlay-content">
+    <%= link_to user_path(@user) do %>
+      <div class="link"><i class="fas fa-tachometer-alt"></i> Paramètres</div>
+    <% end %>
+    <%= link_to edit_user_path(@user) do %>
+      <div class="link"><i class="fas fa-lock"></i> Sécurité</div>
+    <% end %>
+    <div class="link"><i class="fas fa-flask"></i> Campagnes</div>
+    <div class="link"><i class="fas fa-question-circle"></i> Aide</div>
+    <div class="link"><i class="fas fa-envelope"></i> Nous contacter</div>
+    <%= link_to destroy_user_session_path, method: :delete do %>
+      <div class="link"><i class="fas fa-power-off"></i> Déconnexion</div>
+    <% end %>
+  </div>
+
+</div>

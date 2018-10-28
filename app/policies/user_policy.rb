@@ -11,4 +11,12 @@ class UserPolicy < ApplicationPolicy
   def update?
     record == user || user.admin == true
   end
+
+  def edit?
+    record == user || user.admin == true
+  end
+
+  def update_password?
+    record == User.find(record.id) || @user.admin == true
+  end
 end

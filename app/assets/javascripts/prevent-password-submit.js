@@ -5,4 +5,11 @@ $(document).ready(function() {
       $('#pro_password').addClass('shake').css({ 'color': 'red', 'border-color': 'red' });
     }
   });
+
+  $('#password-cta').click(function(e){
+    if ($('#user_password').val() == "") {
+      e.preventDefault();
+      $('#user_password').addClass('shake').css({ 'color': 'red', 'border-color': 'red' });
+    }
+  });
 });
