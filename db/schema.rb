@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_28_195714) do
+ActiveRecord::Schema.define(version: 2018_10_28_220854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attachinary_files", force: :cascade do |t|
+    t.string "attachinariable_type"
+    t.bigint "attachinariable_id"
+    t.string "scope"
+    t.string "public_id"
+    t.string "version"
+    t.integer "width"
+    t.integer "height"
+    t.string "format"
+    t.string "resource_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent"
+    t.index ["attachinariable_type", "attachinariable_id"], name: "index_attachinary_files_attachinariable"
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -42,6 +58,20 @@ ActiveRecord::Schema.define(version: 2018_10_28_195714) do
     t.string "referal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.bigint "category_id"
+    t.float "price"
+    t.string "slug"
+    t.string "website"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "pro_id"
+    t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["pro_id"], name: "index_products_on_pro_id"
   end
 
   create_table "pros", force: :cascade do |t|
@@ -87,4 +117,6 @@ ActiveRecord::Schema.define(version: 2018_10_28_195714) do
     t.index ["slug"], name: "index_users_on_slug", unique: true
   end
 
+  add_foreign_key "products", "categories"
+  add_foreign_key "products", "pros"
 end
