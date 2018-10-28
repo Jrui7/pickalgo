@@ -38,7 +38,7 @@
     color: $red;
   }
 
-  .fa-cog {
+  .fa-lock {
     color: #795548;
   }
 
@@ -62,18 +62,16 @@
   h5 {
     margin-top: 0;
     margin-bottom: 30px;
-    color: #313435;
+    color: $blue;
     font-size: 20px;
+  }
+
+  #save-cta, #password-cta {
+    margin: 0 0 0 auto;
   }
 
 }
 
-.dashboard-top {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
-}
 
 .info-bloc {
   background-color: #FFF;
@@ -92,11 +90,17 @@
 .text-and-form {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
 }
 
 .text-part {
   flex: 0 0 40%;
   padding: 30px 20px;
+  p {
+    color: #637381;
+    text-align: justify;
+  }
 }
 
 .form-part {
@@ -125,5 +129,20 @@
 
 @media screen and (max-width: 480px) {
 
+  .general-infos {
+    padding: 0 0 20px 0;
+    h5 {
+      margin-bottom: 15px;
+    }
+
+    #save-cta, #password-cta {
+      margin: 0 10px 0 auto;
+    }
+  }
+
+  .text-part, .form-part {
+    flex: 0 0 100%;
+    padding: 10px 20px;
+  }
 
 }

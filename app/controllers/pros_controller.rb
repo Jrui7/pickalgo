@@ -6,7 +6,6 @@ class ProsController < ApplicationController
     pro = current_pro.id
     @pro = Pro.friendly.find(pro)
     authorize @pro
-    @address = @pro.addresses.first
   end
 
   def update
@@ -22,11 +21,6 @@ class ProsController < ApplicationController
   def edit
     @pro = Pro.friendly.find(params[:id])
     authorize @pro
-    if @pro.addresses.any?
-      @address = @pro.addresses.first
-    else
-      @address = Address.new
-    end
   end
 
   def update_password

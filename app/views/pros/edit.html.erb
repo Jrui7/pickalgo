@@ -4,6 +4,30 @@
 <div class="dashboard-container">
   <%= render 'dashboard-navigation' %>
   <div class="general-infos">
-    <%= render 'general-infos' %>
+    <%= simple_form_for(@pro, :url => { :action => "update_password" } ) do |f| %>
+      <div class="text-and-form">
+        <div class="text-part">
+          <h5>Modifier votre mot de passe</h5>
+          <p>Vous avez la possibilité de modifier votre mot de passe. Pour cela veuillez saisir votre mot de passe actuel, en choisir un nouveau de minimum 6 carractères, confirmez ce nouveau mot de passe puis enregistrez la modificiation.</p>
+        </div>
+        <div class="form-part info-bloc">
+          <div class="form-inputs">
+            <div class="input-and-icon">
+              <%= f.input :current_password, required: true, label: false, placeholder: 'Mot de passe actuel'%>
+              <span class="icon fas fa-lock"></span>
+            </div>
+            <div class="input-and-icon">
+              <%= f.input :password, required: true, label: false, placeholder: 'Nouveau mot de passe', hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length) %>
+              <span class="icon fas fa-lock"></span>
+            </div>
+            <div class="input-and-icon">
+              <%= f.input :password_confirmation, required: true, label: false, placeholder: 'Confirmer le nouveau mot de passe' %>
+              <span class="icon fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%= f.button :submit, "Changer mot de passe", class: "btn-blue", id:"password-cta" %>
+    <% end %>
   </div>
 </div>

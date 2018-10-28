@@ -4,14 +4,6 @@
 <div class="dashboard-container">
   <%= render 'dashboard-navigation' %>
   <div class="general-infos">
-    <div class="dashboard-top">
-      <div class="info-bloc brand">
-        <%= @pro.brand %>
-      </div>
-      <div class="info-bloc social">
-        <h5>Vous réseaux sociaux</h5>
-      </div>
-    </div>
     <%= simple_form_for @pro do |f| %>
       <div class="text-and-form">
         <div class="text-part">
@@ -39,6 +31,37 @@
           </div>
         </div>
       </div>
+      <div class="text-and-form">
+        <div class="text-part">
+          <h5>Social & bio</h5>
+          <p>Informations que pourront consulter les utilisateurs Pickalgo à propos de votre marque ou service. Ajoutez les liens vers vos pages sur les réseaux sociaux ou vous êtes présents.</p>
+        </div>
+        <div class="form-part info-bloc">
+        <div class="form-inputs">
+          <div class="input-and-icon">
+            <%= f.input :facebook, label: false, placeholder:'Votre page facebook' %>
+            <span class="icon fab fa-facebook"></span>
+          </div>
+          <div class="input-and-icon">
+            <%= f.input :insta, placeholder:'Votre page instagram', label: false %>
+            <span class="icon fab fa-instagram"></span>
+          </div>
+          <div class="input-and-icon">
+            <%= f.input :youtube, label: false, placeholder:'Votre page youtube' %>
+            <span class="icon fab fa-youtube"></span>
+          </div>
+          <div class="input-and-icon">
+            <%= f.input :twitter, label: false, placeholder: 'Votre page twitter' %>
+            <span class="icon fab fa-twitter"></span>
+          </div>
+          <div class="input-and-icon">
+            <%= f.input :bio, label: false, placeholder: 'Mini-bio: Décrivez votre marque ou service en quelques mots' %>
+            <span class="icon fab fa-twitter"></span>
+          </div>
+        </div>
+        </div>
+      </div>
+      <%= f.button :submit, "Enregistrer", class: "btn-blue", id:"save-cta" %>
     <% end %>
   </div>
 </div>
