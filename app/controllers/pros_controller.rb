@@ -12,9 +12,9 @@ class ProsController < ApplicationController
     @pro = Pro.friendly.find(params[:id])
     authorize @pro
     if @pro.update(pro_params)
-      redirect_to edit_pro_path(@pro) , :flash => { :notice => "Modification enregistrée" }
+      redirect_to pro_path(@pro) , :flash => { :notice => "Modification enregistrée" }
     else
-      render :edit
+      render :show
     end
   end
 
@@ -40,7 +40,7 @@ class ProsController < ApplicationController
   private
 
   def pro_params
-    params.require(:pro).permit(:brand, :contact_person, :email, :facebook, :insta, :youtube, :twitter, :phone)
+    params.require(:pro).permit(:brand, :contact_person, :email, :facebook, :insta, :youtube, :twitter, :phone, :bio)
   end
 
   def pro_password_params

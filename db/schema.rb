@@ -10,22 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_28_101339) do
+ActiveRecord::Schema.define(version: 2018_10_28_112344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "addresses", force: :cascade do |t|
-    t.string "street"
-    t.string "zip_code"
-    t.string "city"
-    t.string "resident_type"
-    t.bigint "resident_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["resident_id", "resident_type"], name: "index_addresses_on_resident_id_and_resident_type"
-    t.index ["resident_type", "resident_id"], name: "index_addresses_on_resident_type_and_resident_id"
-  end
 
   create_table "friendly_id_slugs", id: :serial, force: :cascade do |t|
     t.string "slug", null: false
@@ -66,6 +54,7 @@ ActiveRecord::Schema.define(version: 2018_10_28_101339) do
     t.string "youtube"
     t.string "facebook"
     t.string "twitter"
+    t.text "bio"
     t.index ["email"], name: "index_pros_on_email", unique: true
     t.index ["reset_password_token"], name: "index_pros_on_reset_password_token", unique: true
     t.index ["slug"], name: "index_pros_on_slug", unique: true
