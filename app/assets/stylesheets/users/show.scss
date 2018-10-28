@@ -7,3 +7,20 @@
 #user_date_of_birth_3i, #user_date_of_birth_2i, #user_date_of_birth_1i {
   flex: 0 0 30%;
 }
+
+.gender {
+  display: flex;
+  margin-bottom: 20px;
+  input {
+    margin: 0 10px 0 0;
+  }
+
+  label {
+    margin: 0 20px 0 0;
+  }
+
+  span {
+    display: flex;
+    align-items: baseline;
+  }
+}

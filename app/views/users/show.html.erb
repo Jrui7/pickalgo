@@ -12,6 +12,9 @@
         </div>
         <div class="form-part info-bloc">
           <div class="form-inputs">
+            <div class="input-and-icon gender">
+              <%= f.collection_radio_buttons :sex, [["Madame", 'Madame'] ,["Monsieur", 'Monsieur']], :first, :last %>
+            </div>
             <div class="input-and-icon">
               <%= f.input :first_name, label: false, placeholder:'Prénom' %>
               <span class="icon fas fa-user"></span>
