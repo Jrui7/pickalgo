@@ -33,8 +33,12 @@ Rails.application.routes.draw do
   get 'welcome', to: 'pages#welcome'
 
 
-  resources :users, only: [ :show, :update]
-  resources :pros, only: [:show, :edit, :update] do
+  resources :users, only: [ :show, :update], shallow: true do
+    resources :addresses, only: [:create, :update]
+  end
+
+  resources :pros, only: [:show, :edit, :update], shallow: true do
+    resources :addresses, only: [:create, :update]
     collection do
         patch 'update_password'
       end

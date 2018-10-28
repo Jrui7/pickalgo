@@ -4,21 +4,42 @@
 <div class="dashboard-container">
   <%= render 'dashboard-navigation' %>
   <div class="general-infos">
-    <div class="pro-forms">
-      <div class="compagny-recap">
-        <div class="brand-name">
-          <h3><%= @pro.brand %></h3>
-          <p>Brand photo</p>
-        </div>
-        <div class="created-at">
-          <h3>Membre depuis</h3>
-          <%= @pro.created_at.strftime("%d/%m/%Y") %>
-        </div>
-        <div class="social-links">
-          <h3>Trouver <%= @pro.brand %> sur les réseaux sociaux</h3>
-        </div>
+    <div class="dashboard-top">
+      <div class="info-bloc brand">
+        <%= @pro.brand %>
+      </div>
+      <div class="info-bloc social">
+        <h5>Vous réseaux sociaux</h5>
       </div>
     </div>
+    <%= simple_form_for @pro do |f| %>
+      <div class="text-and-form">
+        <div class="text-part">
+          <h5>Informations générales</h5>
+          <p>Pickalgo utilisera ces informations afin de vous contacter</p>
+        </div>
+        <div class="form-part info-bloc">
+          <div class="form-inputs">
+            <div class="input-and-icon">
+              <%= f.input :brand, label: false, placeholder:'Marque ou raison sociale' %>
+              <span class="icon fas fa-store"></span>
+            </div>
+            <div class="input-and-icon">
+              <%= f.input :contact_person, placeholder:'Personne à contacter', label: false %>
+              <span class="icon fas fa-user"></span>
+            </div>
+            <div class="input-and-icon">
+              <%= f.input :email, label: false, placeholder:'Email' %>
+              <span class="icon fas fa-envelope"></span>
+            </div>
+            <div class="input-and-icon">
+              <%= f.input :phone, label: false, placeholder: 'Téléphone du contact' %>
+              <span class="icon fas fa-phone"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
 

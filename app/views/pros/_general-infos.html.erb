@@ -70,6 +70,26 @@
         <%= f.button :submit, "Changer mot de passe", class: "btn-blue", id:"password-cta" %>
       <% end %>
     </div>
+    <div class="general-form">
+      <h5>Addresse</h5>
+      <%= simple_form_for [@pro, @address] do |f| %>
+        <div class="form-inputs">
+          <div class="input-and-icon">
+            <%= f.input :street, label: false, placeholder:'Rue et numéro' %>
+            <span class="icon fab fa-facebook"></span>
+          </div>
+          <div class="input-and-icon">
+            <%= f.input :zip_code, placeholder:'Code postal', label: false %>
+            <span class="icon fab fa-instagram"></span>
+          </div>
+          <div class="input-and-icon">
+            <%= f.input :city, label: false, placeholder:'Ville' %>
+            <span class="icon fab fa-youtube"></span>
+          </div>
+        </div>
+        <%= f.button :submit, "Enregistrer", class: "btn-blue", id:"save-cta" %>
+      <% end %>
+    </div>
   </div>
 </div>
 
