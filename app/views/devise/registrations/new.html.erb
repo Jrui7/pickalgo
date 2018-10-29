@@ -8,13 +8,15 @@
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <p id="beta-limit">Pickalgo c'est seulement sur invitation. Renseignez votre code d'invitation ainsi que les informations nécessaires à l'inscription.</p>
           <div class="form-inputs">
-            <div class="input-and-icon">
-              <%= f.input :invite, placeholder: "Votre code d'invitation", autofocus: true, label: false %>
-              <span class="icon fas fa-user-plus"></span>
-            </div>
-            <div class="input-and-icon">
-              <%= f.input :first_name, label: false, placeholder:'Prénom' %>
-              <span class="icon fas fa-user"></span>
+            <div class="first-name-and-code">
+              <div class="input-and-icon">
+                <%= f.input :invite, placeholder: "Votre code d'invitation", autofocus: true, label: false %>
+                <span class="icon fas fa-user-plus"></span>
+              </div>
+              <div class="input-and-icon">
+                <%= f.input :first_name, label: false, placeholder:'Prénom' %>
+                <span class="icon fas fa-user"></span>
+              </div>
             </div>
             <div class="input-and-icon">
               <%= f.input :last_name, placeholder:'Nom', label: false %>

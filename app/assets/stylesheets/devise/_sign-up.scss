@@ -68,6 +68,12 @@ h1 {
   }
 }
 
+.first-name-and-code {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 
 .checkbox-and-text {
   display: flex;
