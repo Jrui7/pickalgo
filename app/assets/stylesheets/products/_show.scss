@@ -1,10 +1,11 @@
 .products-container {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .product-iterration {
-  flex: 0 0 59%;
+  flex: 0 0 55%;
 }
 
 .product-card {

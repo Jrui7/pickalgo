@@ -11,6 +11,9 @@
     <%= link_to edit_pro_path(@pro) do %>
       <div class="link"><i class="fas fa-lock"></i> Sécurité</div>
     <% end %>
+    <%= link_to products_path do %>
+      <div class="link <%= 'selected-category' if @page == 'products'  %>"><i class="fas fa-box-open"></i> Produits</div>
+    <% end %>
     <div class="link"><i class="fas fa-flask"></i> Campagnes</div>
     <div class="link"><i class="fas fa-question-circle"></i> Aide</div>
     <div class="link"><i class="fas fa-envelope"></i> Nous contacter</div>
