@@ -15,10 +15,18 @@
       <div class="right-part info-bloc">
         <%= simple_form_for [@product, @campaign] do |f| %>
           <div class="explain-block">
-            Vous pouvez chosisir entre deux types de campagnes: L'AB/Test et le Test libre.
+            <h3>Vous pouvez chosisir entre deux types de campagnes: L'AB/Test et le Test libre.</h3>
+            <div class="test-type">
+              <h5 class="test-title">A/B Test</h5>
+              <p>Vous hésitez entre plusieurs prix pour votre promo. Lequel serait le plus efficient ? Nous présentons vos prix de façon alternative à chaque participant à la campagne de test pour le déterminer.</p>
+            </div>
+            <div class="test-type">
+              <h5 class="test-title">Test ouvert</h5>
+              <p>Les testeurs intéressés nous communiquent le prix maximal qu'ils sont prêts à payer pour votre produit.</p>
+            </div>
           </div>
           <div class="test-type-inputs">
-          <%= f.collection_radio_buttons :test_type, [["A/B Test", 'A/B Test'] ,["Test libre", 'Test libre']], :first, :last %>
+          <%= f.collection_radio_buttons :test_type, [["A/B Test", 'A/B Test'] ,["Test ouvert", 'Test ouvert']], :first, :last %>
           </div>
           <div class="price-part">
             <p>Merci de renseigner le nombre de prix que vous souhaitez tester. Vous pouvez tester entre 2 et 3 prix.</p>
