@@ -5,18 +5,15 @@ class ProPolicy < ApplicationPolicy
     end
   end
   def show?
-    record == Pro.find(record.id) || @user.admin == true
+    record == @user || @user.admin == true
   end
 
   def update?
-    record == Pro.find(record.id) || @user.admin == true
+    record == @user || @user.admin == true
   end
 
-  def configuration?
-    record == Pro.find(record.id) || @user.admin == true
-  end
 
   def update_password?
-    record == Pro.find(record.id) || @user.admin == true
+    @user || @user.admin == true
   end
 end

@@ -8,9 +8,9 @@ Rails.application.routes.draw do
     sessions: 'pros/sessions',
     passwords: 'pros/passwords'
   }
-  get 'pros/show'
+  get 'products/index'
   authenticated :pro do
-      root 'pros#show', as: :authenticated_pro_root
+      root 'products#index', as: :authenticated_pro_root
   end
 
 
@@ -43,12 +43,14 @@ Rails.application.routes.draw do
   end
 
   resources :pros, only: [:show, :edit, :update] do
-    collection do
+    member do
         patch 'update_password'
       end
   end
   resources :leads, only: [ :create ]
-  resources :products, only: [:index, :new, :create, :edit, :update]
+  resources :products, only: [:index, :new, :create, :edit, :update], shallow: true do
+    resources :campaigns, only: [:new, :create, :show, :index ]
+  end
 
   get 'more_infos', to: 'leads#more_infos'
 

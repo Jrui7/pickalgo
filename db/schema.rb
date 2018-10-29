@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_28_220854) do
+ActiveRecord::Schema.define(version: 2018_10_29_221700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,18 @@ ActiveRecord::Schema.define(version: 2018_10_28_220854) do
     t.datetime "updated_at", null: false
     t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent"
     t.index ["attachinariable_type", "attachinariable_id"], name: "index_attachinary_files_attachinariable"
+  end
+
+  create_table "campaigns", force: :cascade do |t|
+    t.string "price_1"
+    t.string "price_2"
+    t.string "price_3"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "product_id"
+    t.string "test_type"
+    t.datetime "expiration_date"
+    t.index ["product_id"], name: "index_campaigns_on_product_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -92,6 +104,7 @@ ActiveRecord::Schema.define(version: 2018_10_28_220854) do
     t.string "facebook"
     t.string "twitter"
     t.text "bio"
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_pros_on_email", unique: true
     t.index ["reset_password_token"], name: "index_pros_on_reset_password_token", unique: true
     t.index ["slug"], name: "index_pros_on_slug", unique: true
@@ -117,6 +130,7 @@ ActiveRecord::Schema.define(version: 2018_10_28_220854) do
     t.index ["slug"], name: "index_users_on_slug", unique: true
   end
 
+  add_foreign_key "campaigns", "products"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "pros"
 end

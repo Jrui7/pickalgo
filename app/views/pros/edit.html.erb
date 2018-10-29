@@ -4,7 +4,7 @@
 <div class="dashboard-container">
   <%= render 'dashboard-navigation' %>
   <div class="general-infos">
-    <%= simple_form_for(@pro, :url => { :action => "update_password" } ) do |f| %>
+    <%= simple_form_for @pro, :url => update_password_pro_path(@pro), :method => :patch do |f| %>
       <div class="text-and-form">
         <div class="text-part">
           <h5>Modifier votre mot de passe</h5>
