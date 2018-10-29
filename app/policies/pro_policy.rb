@@ -5,7 +5,7 @@ class ProPolicy < ApplicationPolicy
     end
   end
   def show?
-    record == Pro.find(record.id) || @user.admin == true
+    record == @user || @user.admin == true
   end
 
   def update?

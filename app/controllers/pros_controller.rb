@@ -3,8 +3,7 @@ class ProsController < ApplicationController
   before_action :authenticate_pro!
   before_action :set_page_params, only: [:show, :edit]
   def show
-    pro = current_pro.id
-    @pro = Pro.friendly.find(pro)
+    @pro = Pro.friendly.find(params[:id])
     authorize @pro
   end
 
@@ -35,6 +34,10 @@ class ProsController < ApplicationController
       flash[:alert] = "Erreur, mot de passe inchangé"
       render :edit
     end
+  end
+
+  def pundit_user
+    Pro.friendly.find(params[:id])
   end
 
   private
