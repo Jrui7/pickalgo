@@ -8,9 +8,9 @@ Rails.application.routes.draw do
     sessions: 'pros/sessions',
     passwords: 'pros/passwords'
   }
-  get 'pros/show'
+  get 'products/index'
   authenticated :pro do
-      root 'pros#show', as: :authenticated_pro_root
+      root 'products#index', as: :authenticated_pro_root
   end
 
 

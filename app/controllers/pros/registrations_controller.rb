@@ -52,7 +52,7 @@ class Pros::RegistrationsController < Devise::RegistrationsController
 
   # The path used after sign up.
   def after_sign_up_path_for(resource)
-    pros_show_path(resource)
+    products_path
   end
 
   # The path used after sign up for inactive accounts.
