@@ -3,6 +3,8 @@
   <%= f.input :price, label:"Prix" %>
   <%= f.association :category, label:"Catégorie", prompt: "Selectionner une categorie" %>
   <%= f.input :description %>
+  <%= f.input :website %>
+  <label for="">Photos (1min / 5max)</label>
   <%= f.attachinary_file_field :photos, label: false, class: "upload", cloudinary: { transformation: { width: 1220, height: 813, crop: :limit } } %>
   <%= f.button :submit, "Enregistrer", class: "btn-blue", id:"save-cta" %>
 <% end %>

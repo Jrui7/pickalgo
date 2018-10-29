@@ -21,7 +21,8 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = current_pro.products.build(product_params)
+    @pro = current_pro
+    @product = @pro.products.build(product_params)
     authorize @product
    if @product.save
      redirect_to products_path

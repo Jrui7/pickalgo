@@ -7,7 +7,7 @@ $.attachinary.config.template = '\
           <div class="picture-upload">\
             <img\
               src="<%= $.cloudinary.url(files[i].public_id, { "version": files[i].version, "format": "jpg", "crop": "fill", "width": 250, "height": 250 }) %>"\
-              alt="" width="150" height="150" />\
+              alt="" width="100" height="100" />\
             <a href="#" data-remove="<%= files[i].public_id %>" class="glyphicon glyphicon-remove"></a>\
           </div>\
         <% } %>\
