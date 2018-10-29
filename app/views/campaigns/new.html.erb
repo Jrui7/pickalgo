@@ -1,6 +1,36 @@
-<%= simple_form_for [@product, @campaign] do |f| %>
-  <%= f.input :price_1, label:"Prix test 1" %>
-  <%= f.input :price_2, label:"Prix test 2" %>
-  <%= f.input :price_3, label:"Prix test 3" %>
-  <%= f.button :submit, "Enregistrer", class: "btn-blue", id:"save-cta" %>
-<% end %>
+<%= render 'pros/navbar' %>
+<%= render 'pros/right-links-dashboard' %>
+<div class="dashboard-container">
+  <%= render 'pros/dashboard-navigation' %>
+  <div class="general-infos">
+    <div class="products-container">
+      <div class="text-part">
+        <h5>Créér une campagne</h5>
+        <p>Définissez ici les modalités de la lancement de votre campagne
+        </p>
+         <%= link_to products_path do %>
+          <div class="btn-white">Retour aux produits</div>
+         <% end %>
+      </div>
+      <div class="right-part info-bloc">
+        <%= simple_form_for [@product, @campaign] do |f| %>
+          <div class="explain-block">
+            Vous pouvez chosisir entre deux types de campagnes: L'AB/Test et le Test libre.
+          </div>
+          <div class="test-type-inputs">
+          <%= f.collection_radio_buttons :test_type, [["A/B Test", 'A/B Test'] ,["Test libre", 'Test libre']], :first, :last %>
+          </div>
+          <div class="price-part">
+            <p>Merci de renseigner le nombre de prix que vous souhaitez tester. Vous pouvez tester entre 2 et 3 prix.</p>
+            <div class="price-inputs">
+              <%= f.input :price_1, label:"Prix testé 1" %>
+              <%= f.input :price_2, label:"Prix testé 2" %>
+              <%= f.input :price_3, label:"Prix testé 3" %>
+            </div>
+          </div>
+          <%= f.button :submit, "Enregistrer", class: "btn-blue", id:"save-cta" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
