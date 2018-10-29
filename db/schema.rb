@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_28_220854) do
+ActiveRecord::Schema.define(version: 2018_10_29_173752) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,17 @@ ActiveRecord::Schema.define(version: 2018_10_28_220854) do
     t.datetime "updated_at", null: false
     t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent"
     t.index ["attachinariable_type", "attachinariable_id"], name: "index_attachinary_files_attachinariable"
+  end
+
+  create_table "campaigns", force: :cascade do |t|
+    t.datetime "launch_date"
+    t.string "type"
+    t.string "price_1"
+    t.string "price_2"
+    t.string "price_3"
+    t.string "product_referenecs"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "categories", force: :cascade do |t|

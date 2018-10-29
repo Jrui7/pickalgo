@@ -1,0 +1,6 @@
+<%= simple_form_for [@product, @campaign] do |f| %>
+  <%= f.input :price_1, label:"Prix test 1" %>
+  <%= f.input :price_2, label:"Prix test 2" %>
+  <%= f.input :price_3, label:"Prix test 3" %>
+  <%= f.button :submit, "Enregistrer", class: "btn-blue", id:"save-cta" %>
+<% end %>
