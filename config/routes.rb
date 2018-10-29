@@ -43,7 +43,7 @@ Rails.application.routes.draw do
   end
 
   resources :pros, only: [:show, :edit, :update] do
-    collection do
+    member do
         patch 'update_password'
       end
   end

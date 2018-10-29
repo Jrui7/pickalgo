@@ -2,6 +2,7 @@ class ProsController < ApplicationController
   skip_before_action :authenticate_user!
   before_action :authenticate_pro!
   before_action :set_page_params, only: [:show, :edit]
+
   def show
     @pro = Pro.friendly.find(params[:id])
     authorize @pro
