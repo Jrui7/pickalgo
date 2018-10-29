@@ -10,7 +10,7 @@
 .product-card {
   display: flex;
   padding: 15px;
-  border: 1px solid lightgray;
+  border: 1px solid rgba(0, 0, 0, 0.0625);
   border-radius: 2px;
   background-color: #FFFFFF;
   margin-bottom: 15px;
@@ -20,6 +20,9 @@
     font-size: 20px;
     margin: 0;
     color: #3F3933
+  }
+  &:hover {
+    background-color: #f7f7fa;
   }
 }
 
