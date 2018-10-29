@@ -3,7 +3,7 @@ $(document).ready(function(){
     if($(this).is(':checked'))
     $(".price-part").slideDown();
   })
-  $("#campaign_test_type_test_libre").click(function(){
+  $("#campaign_test_type_test_ouvert").click(function(){
     if($(this).is(':checked'))
     $(".price-part").slideUp();
   })
