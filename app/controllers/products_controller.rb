@@ -33,6 +33,7 @@ class ProductsController < ApplicationController
 
  def update
    @product = Product.find(params[:id])
+   @pro = current_pro
    authorize @product
    if @product.update(product_params)
       redirect_to products_path
