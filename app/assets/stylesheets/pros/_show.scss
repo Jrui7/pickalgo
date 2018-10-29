@@ -67,7 +67,7 @@
   }
 
   #save-cta, #password-cta {
-    margin: 0 0 0 auto;
+    margin: 20px 0 0 auto;
   }
 
   #new_user {
@@ -95,19 +95,28 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  align-items: flex-start;
   margin-bottom: 30px;
 }
 
 .text-part {
   flex: 0 0 40%;
-  padding: 30px 20px;
+  background-color: #FFF;
+  border: 1px solid rgba(0, 0, 0, 0.0625);
+  padding: 20px;
+  margin-right: 1%;
+
+  a {
+    display: inline-block;
+    margin-top: 40px;
+  }
   p {
     color: #637381;
     text-align: justify;
   }
 }
 
-.form-part {
+.right-part {
   flex: 0 0 59%;
 }
 
@@ -140,13 +149,13 @@
     }
 
     #save-cta, #password-cta {
-      margin: 0 10px 0 auto;
+      margin: 10px 10px 0 auto;
     }
   }
 
-  .text-part, .form-part {
+  .text-part, .right-part {
     flex: 0 0 100%;
-    padding: 15px 20px;
+    padding: 15px 10px;
   }
 
 }

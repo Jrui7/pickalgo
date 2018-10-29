@@ -1,3 +1,4 @@
+
 <%= render 'pros/navbar' %>
 <%= render 'pros/right-links-dashboard' %>
 <div class="dashboard-container">
@@ -5,9 +6,9 @@
   <div class="general-infos">
     <div class="products-container">
       <div class="text-part">
-        <h5>Ajouter un produit</h5>
-        <p>Ajoutez ici un produit pour lequel vous souhaitez lancer une campagne promo.
-        </p>
+        <h5>Editer <%= @product.title %></h5>
+        <p>Modifiez ici les informations relatives à <%= @product.title %>.
+         </p>
          <%= link_to products_path do %>
           <div class="btn-white">Retour aux produits</div>
          <% end %>
@@ -18,4 +19,3 @@
     </div>
   </div>
 </div>
-

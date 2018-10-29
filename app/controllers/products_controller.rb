@@ -1,11 +1,11 @@
 class ProductsController < ApplicationController
-  before_action :set_page_params, only: [:index, :new]
+  before_action :set_page_params, only: [:index, :new, :edit]
   skip_before_action :authenticate_user!
   before_action :authenticate_pro!
 
   def index
-    @products = policy_scope(Product)
     @pro = current_pro
+    @products = policy_scope(Product).my_products(@pro)
   end
 
   def new
@@ -14,13 +14,31 @@ class ProductsController < ApplicationController
     @pro = current_pro
   end
 
+  def edit
+    @product = Product.find(params[:id])
+    authorize @product
+    @pro = current_pro
+  end
+
   def create
-    @product = current_pro.products.build(product_params)
+    @pro = current_pro
+    @product = @pro.products.build(product_params)
     authorize @product
    if @product.save
      redirect_to products_path
    else
      render :new
+   end
+ end
+
+ def update
+   @product = Product.find(params[:id])
+   @pro = current_pro
+   authorize @product
+   if @product.update(product_params)
+      redirect_to products_path
+    else
+      render :edit
    end
  end
 

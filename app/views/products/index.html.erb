@@ -4,13 +4,22 @@
 <div class="dashboard-container">
   <%= render 'pros/dashboard-navigation' %>
   <div class="general-infos">
-    <%= link_to "Ajouter un produit", new_product_path %>
-    <% if @products.present? %>
-      <% @products.each do |product| %>
-        <h1><%= product.title %></h1>
-        <p><%= product.price %></p>
-        <%= cl_image_tag("#{product.photos.first.path}", :width=>110, :height=>110, :crop=>"fill", class: "product-image")%>
+    <div class="products-container">
+      <div class="text-part">
+        <h5>Vos produits</h5>
+        <p>Retrouvez ici l'intégralité de vos produits.
+         </p>
+         <%= link_to new_product_path do %>
+          <div class="btn-orange">Ajouter un produit</div>
+         <% end %>
+      </div>
+      <% if @products.present? %>
+      <div class="right-part info-bloc">
+        <%= render @products %>
+      <% else %>
+        <p>No products</p>
       <% end %>
-    <% end %>
+      </div>
+    </div>
   </div>
 </div>

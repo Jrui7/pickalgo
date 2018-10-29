@@ -1,0 +1,17 @@
+<div class="product-card">
+  <%= cl_image_tag("#{product.photos.first.path}", :width=>110, :height=>110, :crop=>"fill", class: "recap-image")%>
+  <div class="recap-body">
+    <div class="title-and-price">
+      <h3><%= product.title.capitalize %></h3>
+      <p><%= product.price %> €</p>
+    </div>
+    <div class="product-category">
+      <p><%= product.category.name %></p>
+    </div>
+  </div>
+  <div class="edit-links">
+    <%= link_to  edit_product_path(product) do%>
+      <i class="fas fa-edit"></i>
+    <% end %>
+  </div>
+</div>
