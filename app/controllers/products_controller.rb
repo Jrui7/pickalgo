@@ -4,8 +4,8 @@ class ProductsController < ApplicationController
   before_action :authenticate_pro!
 
   def index
-    @products = policy_scope(Product)
     @pro = current_pro
+    @products = policy_scope(Product).my_products(@pro)
   end
 
   def new

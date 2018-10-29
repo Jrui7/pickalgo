@@ -101,13 +101,18 @@
 .text-part {
   flex: 0 0 40%;
   padding: 30px 20px;
+
+  a {
+    display: inline-block;
+    margin-top: 40px;
+  }
   p {
     color: #637381;
     text-align: justify;
   }
 }
 
-.form-part {
+.right-part {
   flex: 0 0 59%;
 }
 
@@ -144,7 +149,7 @@
     }
   }
 
-  .text-part, .form-part {
+  .text-part, .right-part {
     flex: 0 0 100%;
     padding: 15px 20px;
   }
