@@ -33,9 +33,11 @@
           <%= link_to "Créer un compte pro", new_pro_registration_path, class:"btn-orange cta-link"%>
         </div>
       <% elsif @page == "home" %>
+        <div class="shorten">
         <%= link_to new_user_registration_path do%>
           <div class="btn-orange">S'inscrire</div>
         <% end %>
+        </div>
       <% end %>
     </div>
   </div>

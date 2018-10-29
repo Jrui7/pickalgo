@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  validate :validate_invite, :on => :create
+  attr_accessor :invite
+
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
   def slug_candidates
@@ -40,6 +43,12 @@ class User < ApplicationRecord
 
   def subscribe_to_newsletter
     AddUserToMarketingListJob.perform_later(self.id)
+  end
+
+  def validate_invite
+    if self.invite != "XDMp2018"
+      self.errors[:base] << "Code is invalide"
+    end
   end
 
 

@@ -7,18 +7,18 @@
     <div class="products-container">
       <div class="text-part">
         <h5>Vos produits</h5>
-        <p>Retrouvez ici l'intégralité de vos produits.
+        <p>Retrouvez et gérez ici l'intégralité de vos produits.
          </p>
          <%= link_to new_product_path do %>
           <div class="btn-orange">Ajouter un produit</div>
          <% end %>
       </div>
-      <% if @products.present? %>
       <div class="right-part info-bloc">
-        <%= render @products %>
-      <% else %>
-        <p>No products</p>
-      <% end %>
+        <% if @products.present? %>
+          <%= render @products %>
+        <% else %>
+          <h4>Vous n'avez encore ajouté aucun produit</h4>
+        <% end %>
       </div>
     </div>
   </div>
