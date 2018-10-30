@@ -7,26 +7,28 @@
   <div class="general-infos">
     <div class="campaigns-container">
       <h5>Vos campagnes</h5>
-      <table>
-        <tr>
-          <th>Nom de la campagne</th>
-          <th>Type de campagne</th>
-          <th>Statut</th>
-        </tr>
-        <% @products.each do |product| %>
-          <% product.campaigns.each do |campaign| %>
-        <tr>
-          <td><%= campaign.product.title %></td>
-          <td><%= campaign.test_type %></td>
-          <% if campaign.state == "ongoing" %>
-            <td class="ongoing">En cours</td>
-            <% else %>
-            <td class="closed">Clôturée</td>
-          <% end %>
-        </tr>
-          <% end %>
+        <% if @campaigns.present? %>
+          <table>
+            <tr>
+              <th>Nom de la campagne</th>
+              <th>Type de campagne</th>
+              <th>Statut</th>
+            </tr>
+            <% @campaigns.each do |campaign| %>
+              <tr>
+                <td><%= campaign.product.title %></td>
+                <td><%= campaign.test_type %></td>
+                <% if campaign.state == "ongoing" %>
+                  <td class="ongoing">En cours</td>
+                  <% else %>
+                  <td class="closed">Clôturée</td>
+                <% end %>
+              </tr>
+            <% end %>
+          </table>
+        <% else %>
+          <p>Vous n'avez pas encore créé de campagne</p>
         <% end %>
-      </table>
 
     </div>
   </div>

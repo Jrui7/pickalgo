@@ -40,7 +40,7 @@ class ProsController < ApplicationController
   def my_campaigns
     @pro = Pro.friendly.find(params[:id])
     authorize @pro
-    @products = Product.my_products(@pro)
+    @campaigns = @pro.campaigns
   end
 
   def pundit_user
