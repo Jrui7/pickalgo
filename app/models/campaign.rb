@@ -1,6 +1,22 @@
 class Campaign < ApplicationRecord
   belongs_to :product
+  belongs_to :category
   after_create :set_expiration
+
+  extend FriendlyId
+    friendly_id :slug_candidates, use: :slugged
+    def slug_candidates
+      [
+        :title,
+        [:title, :insert_id],
+      ]
+    end
+
+    def insert_id
+      nb = Campaign.count
+      nb > 0 ?  sequence = Campaign.last.id + 1 : sequence = 1
+      "#{sequence}"
+    end
 
 
   scope :ongoing, -> { where('expiration_date > ?', DateTime.now)}
@@ -17,6 +33,12 @@ class Campaign < ApplicationRecord
     else
       "closed"
     end
+  end
+
+
+  def increment_views
+    self.views += 1
+    save!
   end
 
 

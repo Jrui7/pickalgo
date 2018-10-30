@@ -13,6 +13,7 @@
               <th>Nom de la campagne</th>
               <th>Type de campagne</th>
               <th>Statut</th>
+              <th>Voir</th>
             </tr>
             <% @campaigns.each do |campaign| %>
               <tr>
@@ -23,6 +24,7 @@
                   <% else %>
                   <td class="closed">Clôturée</td>
                 <% end %>
+                <td><%= link_to 'Détails', promo_path(campaign) %></td>
               </tr>
             <% end %>
           </table>

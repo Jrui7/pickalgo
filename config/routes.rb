@@ -42,6 +42,7 @@ Rails.application.routes.draw do
       end
   end
 
+
   resources :pros, only: [:show, :edit, :update] do
     member do
         patch 'update_password'
@@ -50,10 +51,12 @@ Rails.application.routes.draw do
   end
   resources :leads, only: [ :create ]
   resources :products, only: [:index, :new, :create, :edit, :update], shallow: true do
-    resources :campaigns, only: [:new, :create, :show, :index ]
+    resources :campaigns, only: [:new, :create, :show]
   end
 
-  get '/campaigns/:id', to: 'campaigns#promo', as: 'promo'
+  get "campaigns", to: "campaigns#index"
+
+  get 'pro/campaigns/:id', to: 'campaigns#promo', as: 'promo'
 
   get 'more_infos', to: 'leads#more_infos'
 

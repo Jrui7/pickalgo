@@ -1,8 +1,18 @@
 class CampaignsController < ApplicationController
-  skip_before_action :authenticate_user!
-  before_action :authenticate_pro!
+  skip_before_action :authenticate_user!, only: [:new, :create, :promo]
+  before_action :authenticate_pro!, only: [:new, :create, :promo]
   before_action :set_page_params, only: [:new, :create]
 
+
+  def index
+    @categories = Category.all
+    if params[:category].present?
+      @filter = Category.friendly.find(params[:category])
+      @campaigns = policy_scope(Campaign).where(category: @filter)
+    else
+      @campaigns = policy_scope(Campaign)
+    end
+  end
 
   def new
     @pro = current_pro
@@ -16,20 +26,24 @@ class CampaignsController < ApplicationController
     @product = Product.find(params[:product_id])
     @campaign = @product.campaigns.build(campaign_params)
     authorize @campaign
+    @campaign.category = @product.category
+    @campaign.title = @product.title
     if @campaign.save
       redirect_to products_path
     else
       render :new
     end
-
   end
 
   def show
-
+    @campaign = Campaign.friendly.find(params[:id])
+    authorize @campaign
   end
 
-  def promo
 
+  def promo
+    @campaign = Campaign.friendly.find(params[:id])
+    authorize @campaign
   end
 
   private

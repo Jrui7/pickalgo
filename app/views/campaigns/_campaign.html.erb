@@ -1,0 +1,15 @@
+
+<%= link_to campaign_path(campaign) do %>
+  <div class="product-card">
+    <%= cl_image_tag("#{campaign.product.photos.first.path}", :width=>110, :height=>110, :crop=>"fill", class: "recap-image")%>
+    <div class="recap-body">
+      <div class="title-and-price">
+        <h3><%= campaign.product.title.capitalize %></h3>
+        <p class="product-description"><%= campaign.product.description.capitalize.first(40) %></p>
+      </div>
+      <div class="product-category">
+        <p class="<%= campaign.category.name.downcase.gsub('é', 'e')%>"> <%= campaign.category.name %></p>
+      </div>
+    </div>
+  </div>
+<% end %>
