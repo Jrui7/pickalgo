@@ -1,0 +1,31 @@
+.campaigns-container {
+  max-width: 1100px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+.filter-campaigns-right {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 0px;
+}
+
+.categories {
+  flex: 0 0 16%;
+  margin-right: 5%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 30px;
+}
+
+.campaigns-presentation {
+  flex: 0 0 50%;
+  min-height: 100vh;
+}
+
+.right-encart {
+  flex: 0 0 24%;
+  margin-left: 5%;
+}

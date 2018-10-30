@@ -1,0 +1,21 @@
+<div class="right-encart">
+  <div class="encart-element-background">
+    <h3>Une remarque ?</h3>
+    <p>Pickalgo est actuellement en version beta, si vous décelez un bug, avez une suggestion, ou un mot d'amour à nous faire passer, c'est par ici ↓</p>
+    <%= link_to contact_path do %>
+      <div class="cta-button btn-white">Nous contacter</div>
+    <% end %>
+  </div>
+  <div class="encart-element">
+    <div class="links-container">
+      <%= link_to "FAQ", faq_path %>
+      <%= link_to "Contact", contact_path %>
+      <%= link_to "CGU", cgu_path %>
+      <%= link_to "Mentions légales", mentions_legales_path %>
+    </div>
+    <h4>
+      <%= image_tag "gray-logo.png", class: "gray-logo" %>
+      <span>©Beta 2018</span>
+    </h4>
+  </div>
+</div>

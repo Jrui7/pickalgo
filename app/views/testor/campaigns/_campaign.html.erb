@@ -1,0 +1,13 @@
+<div class="product-card">
+  <%= cl_image_tag("#{campaign.product.photos.first.path}", :width=>110, :height=>110, :crop=>"fill", class: "recap-image")%>
+  <div class="recap-body">
+    <div class="title-and-price">
+      <h3><%= campaign.product.title.capitalize %></h3>
+      <p><%= campaign.product.price %> €</p>
+    </div>
+    <div class="product-category">
+      <p><%= campaign.product.category.name %></p>
+    </div>
+  </div>
+</div>
+

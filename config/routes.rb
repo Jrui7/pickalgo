@@ -42,6 +42,10 @@ Rails.application.routes.draw do
       end
   end
 
+  namespace :testor do
+    resources :campaigns, only: [:index, :show]
+  end
+
   resources :pros, only: [:show, :edit, :update] do
     member do
         patch 'update_password'
