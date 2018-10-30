@@ -1,5 +1,6 @@
 class Campaign < ApplicationRecord
   belongs_to :product
+  belongs_to :category
   after_create :set_expiration
 
 

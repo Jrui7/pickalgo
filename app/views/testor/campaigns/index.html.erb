@@ -3,7 +3,21 @@
   <div class="campaigns-container">
     <div class="filter-campaigns-right">
       <div class="categories">
-        toto
+        <div class="filter-title">
+          <div class="filter-header">
+          <% if @filter %>
+             <p class="filter-before">DEFILTRER</p>
+             <%= link_to testor_campaigns_path do %>
+              <i class="fa fa-toggle-on" aria-hidden="true"></i>
+             <% end %>
+            <% else %>
+              <p class="filter-before">FILTRER</p>
+            <% end %>
+          </div>
+          <div class="sub-categories">
+          <%= render "shared/categories", categories: @categories %>
+          </div>
+        </div>
       </div>
       <div class="campaigns-presentation">
         <%= render @campaigns %>

@@ -16,6 +16,7 @@ class CampaignsController < ApplicationController
     @product = Product.find(params[:product_id])
     @campaign = @product.campaigns.build(campaign_params)
     authorize @campaign
+    @campaign.category = @product.category
     if @campaign.save
       redirect_to products_path
     else

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_29_221700) do
+ActiveRecord::Schema.define(version: 2018_10_30_154127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 2018_10_29_221700) do
     t.bigint "product_id"
     t.string "test_type"
     t.datetime "expiration_date"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_campaigns_on_category_id"
     t.index ["product_id"], name: "index_campaigns_on_product_id"
   end
 
@@ -130,6 +132,7 @@ ActiveRecord::Schema.define(version: 2018_10_29_221700) do
     t.index ["slug"], name: "index_users_on_slug", unique: true
   end
 
+  add_foreign_key "campaigns", "categories"
   add_foreign_key "campaigns", "products"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "pros"
