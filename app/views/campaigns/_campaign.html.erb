@@ -1,5 +1,5 @@
 
-<%= link_to campaign_path(campaign) do %>
+<%= link_to testor_campaign_path(campaign.id) do %>
   <div class="product-card">
     <%= cl_image_tag("#{campaign.product.photos.first.path}", :width=>110, :height=>110, :crop=>"fill", class: "recap-image")%>
     <div class="recap-body">
@@ -13,4 +13,3 @@
     </div>
   </div>
 <% end %>
-

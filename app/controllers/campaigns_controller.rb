@@ -1,6 +1,6 @@
 class CampaignsController < ApplicationController
-  skip_before_action :authenticate_user!
-  before_action :authenticate_pro!
+  skip_before_action :authenticate_user!, only: [:new, :create, :promo]
+  before_action :authenticate_pro!, only: [:new, :create, :promo]
   before_action :set_page_params, only: [:new, :create]
 
 
@@ -17,20 +17,23 @@ class CampaignsController < ApplicationController
     @campaign = @product.campaigns.build(campaign_params)
     authorize @campaign
     @campaign.category = @product.category
+    @campaign.title = @product.title
     if @campaign.save
       redirect_to products_path
     else
       render :new
     end
-
   end
 
   def show
-
+    @campaign = Campaign.friendly.find(params[:id])
+    authorize @campaign
   end
 
-  def promo
 
+  def promo
+    @campaign = Campaign.friendly.find(params[:id])
+    authorize @campaign
   end
 
   private
