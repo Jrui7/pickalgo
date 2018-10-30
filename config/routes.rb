@@ -42,9 +42,6 @@ Rails.application.routes.draw do
       end
   end
 
-  namespace :testor do
-    resources :campaigns, only: [:index, :show]
-  end
 
   resources :pros, only: [:show, :edit, :update] do
     member do
@@ -56,6 +53,8 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :new, :create, :edit, :update], shallow: true do
     resources :campaigns, only: [:new, :create, :show]
   end
+
+  get "campaigns", to: "campaigns#index"
 
   get 'pro/campaigns/:id', to: 'campaigns#promo', as: 'promo'
 

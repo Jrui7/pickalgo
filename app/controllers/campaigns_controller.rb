@@ -4,6 +4,16 @@ class CampaignsController < ApplicationController
   before_action :set_page_params, only: [:new, :create]
 
 
+  def index
+    @categories = Category.all
+    if params[:category].present?
+      @filter = Category.friendly.find(params[:category])
+      @campaigns = policy_scope(Campaign).where(category: @filter)
+    else
+      @campaigns = policy_scope(Campaign)
+    end
+  end
+
   def new
     @pro = current_pro
     @product = Product.find(params[:product_id])
