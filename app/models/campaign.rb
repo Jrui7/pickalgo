@@ -8,5 +8,14 @@ class Campaign < ApplicationRecord
     self.save
   end
 
+  def state
+    if self.expiration_date > DateTime.now
+      "ongoing"
+    else
+      "closed"
+    end
+  end
+
+
 
 end

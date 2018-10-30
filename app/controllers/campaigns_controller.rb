@@ -3,6 +3,7 @@ class CampaignsController < ApplicationController
   before_action :authenticate_pro!
   before_action :set_page_params, only: [:new, :create]
 
+
   def new
     @pro = current_pro
     @product = Product.find(params[:product_id])
@@ -20,6 +21,14 @@ class CampaignsController < ApplicationController
     else
       render :new
     end
+
+  end
+
+  def show
+
+  end
+
+  def promo
 
   end
 

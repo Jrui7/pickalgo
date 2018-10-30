@@ -37,6 +37,12 @@ class ProsController < ApplicationController
     end
   end
 
+  def my_campaigns
+    @pro = Pro.friendly.find(params[:id])
+    authorize @pro
+    @products = Product.my_products(@pro)
+  end
+
   def pundit_user
     Pro.friendly.find(params[:id])
   end
