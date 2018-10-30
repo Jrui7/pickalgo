@@ -3,10 +3,24 @@ class Campaign < ApplicationRecord
   after_create :set_expiration
 
 
+  scope :ongoing, -> { where('expiration_date > ?', DateTime.now)}
+
+
   def set_expiration
     self.expiration_date = DateTime.now + 7.days
     self.save
   end
+
+  def state
+    if self.expiration_date > DateTime.now
+      "ongoing"
+    else
+      "closed"
+    end
+  end
+
+
+
 
 
 end

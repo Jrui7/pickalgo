@@ -45,12 +45,15 @@ Rails.application.routes.draw do
   resources :pros, only: [:show, :edit, :update] do
     member do
         patch 'update_password'
+        get 'my_campaigns'
       end
   end
   resources :leads, only: [ :create ]
   resources :products, only: [:index, :new, :create, :edit, :update], shallow: true do
     resources :campaigns, only: [:new, :create, :show, :index ]
   end
+
+  get '/campaigns/:id', to: 'campaigns#promo', as: 'promo'
 
   get 'more_infos', to: 'leads#more_infos'
 
