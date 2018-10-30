@@ -6,7 +6,7 @@
       <p><%= campaign.product.price %> €</p>
     </div>
     <div class="product-category">
-      <p><%= campaign.product.category.name %></p>
+      <p class="<%= campaign.category.name.downcase.gsub('é', 'e')%>"> <%= campaign.category.name %></p>
     </div>
   </div>
 </div>
