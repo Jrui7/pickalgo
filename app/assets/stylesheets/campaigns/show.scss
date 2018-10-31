@@ -116,6 +116,19 @@
     margin-bottom: 0;
   }
 
+  @media all and (max-width: 1280px) {
+
+  .explaination {
+    padding-right: 20px;
+  }
+
+  }
+
+  @media screen and (max-width: 768px) {
+
+
+   }
+
 
 
 
@@ -123,10 +136,19 @@
 
     .seed-media {
       flex: 0 0 100%;
+      margin-bottom: 60px;
+    }
+
+    .right-campaign {
+      flex: 0 0 100%;
+      padding: 0 10px;
     }
 
     .carousel-indicators {
       bottom: -70px;
+    }
+    .explaination {
+      padding: 0;
     }
 
   }
