@@ -38,7 +38,14 @@ class CampaignsController < ApplicationController
   def show
     @campaign = Campaign.friendly.find(params[:id])
     authorize @campaign
+    @campaign.increment_views
     @product = @campaign.product
+    @user = current_user
+    @pick = Pick.where(campaign: @campaign, user: @user).first
+    if @pick.blank?
+      Pick.create(campaign: @campaign, user: @user)
+      @pick = Pick.where(campaign: @campaign, user: @user).first
+    end
   end
 
 
@@ -56,6 +63,11 @@ class CampaignsController < ApplicationController
   def campaign_params
     params.require(:campaign).permit(:test_type, :price_1, :price_2, :price_3)
   end
+
+  def pick_params
+    params.require(:pick).permit(:user, :campaign)
+  end
+
 
 
 end

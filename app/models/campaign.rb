@@ -1,6 +1,7 @@
 class Campaign < ApplicationRecord
   belongs_to :product
   belongs_to :category
+  has_many :picks
   after_create :set_expiration
 
   extend FriendlyId
@@ -40,7 +41,6 @@ class Campaign < ApplicationRecord
     self.views += 1
     save!
   end
-
 
 
 
