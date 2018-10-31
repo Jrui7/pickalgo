@@ -8,7 +8,7 @@ $(document).ready(function(){
     $(".price-part").slideUp();
   })
 
-  $(".test-title").click(function(){
+  $(".test-title-box").click(function(){
     $(".explaination").slideToggle();
   })
 

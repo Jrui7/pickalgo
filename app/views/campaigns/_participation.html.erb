@@ -11,8 +11,8 @@
   <div class="test-exmplain">
     <div class="type-and-price">
       <h3 class=test-title-box>Prix A/B<i class="fas fa-question-circle"></i></h3>
-      <p class="price-type"><%= sprintf('%.2f', @campaign.price_1) %> €</p>
+      <p class="price-type"><%= sprintf('%.2f', @pick.price) %> €</p>
     </div>
-    <p class="explaination">Une promo à <%= sprintf('%.2f', @campaign.price_1) %> € vous incite-t-elle à acheter <b><i><%= @product.title.capitalize %></i></b> ? Si  <%= sprintf('%.2f', @campaign.price_1) %> € n'est pas le prix le plus bas que nous pouvons vous proposer et que vous nous donnez votre opinion ci-dessous, <b>vous avez la garantie</b> de bénéficier d'un prix inférieur à  <%= sprintf('%.2f', @campaign.price_1) %> €. En revanche, si <%= sprintf('%.2f', @campaign.price_1) %> € est le prix le plus bas que nous puissions vous proposer (50% de probabilité), et que vous nous indiquez que le prix est trop élevé, <b>vous ne pourrez pas en bénéficier</b> à la fin de la campagne. </p>
+    <p class="explaination">Une promo à <%= sprintf('%.2f', @pick.price) %> € vous incite-t-elle à acheter <b><i><%= @product.title.capitalize %></i></b> ? Si  <%= sprintf('%.2f', @pick.price) %> € n'est pas le prix le plus bas que nous pouvons vous proposer et que vous nous donnez votre opinion ci-dessous, <b>vous avez la garantie</b> de bénéficier d'un prix inférieur à  <%= sprintf('%.2f', @pick.price) %> €. En revanche, si <%= sprintf('%.2f', @pick.price) %> € est le prix le plus bas que nous puissions vous proposer (50% de probabilité), et que vous nous indiquez que le prix est trop élevé, <b>vous ne pourrez pas en bénéficier</b> à la fin de la campagne. </p>
   </div>
 <% end %>
