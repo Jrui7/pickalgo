@@ -43,9 +43,12 @@ class CampaignsController < ApplicationController
     @user = current_user
     @pick = Pick.where(campaign: @campaign, user: @user).first
     if @pick.blank?
-      Pick.create(campaign: @campaign, user: @user)
-      @pick = Pick.where(campaign: @campaign, user: @user).first
+      if @campaign.test_type == "A/B Test"
+        @pick = Pick.create(campaign: @campaign, user: @user)
+      end
     end
+
+
   end
 
 
@@ -64,9 +67,6 @@ class CampaignsController < ApplicationController
     params.require(:campaign).permit(:test_type, :price_1, :price_2, :price_3)
   end
 
-  def pick_params
-    params.require(:pick).permit(:user, :campaign)
-  end
 
 
 

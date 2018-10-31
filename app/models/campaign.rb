@@ -42,6 +42,18 @@ class Campaign < ApplicationRecord
     save!
   end
 
+  def set_ab_price
+    arr = []
+    nb_1 = self.picks.where(price: self.price_1).count
+    nb_2 = self.picks.where(price: self.price_2).count
+    arr << nb_1 << nb_2
+    if self.price_3?
+      nb_3 = self.picks.where(price: self.price_3).count
+      arr << nb_3
+    end
+    price = arr.min
+  end
+
 
 
 
