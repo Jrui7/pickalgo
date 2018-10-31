@@ -78,18 +78,50 @@
     <div class="official-infos">
       <div>
         <ul class="tabs">
-          <li><a href="#tab-1">©<%= @product.pro.brand %></a></li>
-          <li><a href="#tab-2">Shipping</a></li>
-          <li><a href="#tab-3">Returns</a></li>
+          <li><a href="#tab-1">Description</a></li>
+          <li><a href="#tab-2">A propos</a></li>
         </ul>
         <div id="tab-1">
-
+          <h3 class="tab-title"><%= @product.title %></h3>
+          <% if @product.description %>
+          <p class="tab-content"><%= simple_format(@product.description.capitalize) %></p>
+          <% end %>
+          <% if @product.website %>
+            <p class="tab-content">Plus d'infos sur la page officielle du vendeur <a href="<%= @product.website %>" target="_blank">ici</a></p>
+          <% end %>
         </div>
         <div id="tab-2">
-
-        </div>
-        <div id="tab-3">
-
+          <h3 class="tab-title"><%= @product.pro.brand.capitalize %></h3>
+          <p class="tab-content"><%= @product.pro.bio %></p>
+          <% if @product.pro.socials? %>
+            <p>Retrouvez <%= @product.pro.brand.capitalize %> sur les réseaux sociaux</p>
+            <div class="social-cards">
+              <% if  @product.pro.facebook.present? %>
+                <div class="social-card">
+                  <i class="fab fa-facebook"></i>
+                  <%= @product.pro.facebook %>
+                </div>
+              <% end %>
+              <% if  @product.pro.insta.present? %>
+                <div class="social-card">
+                  <i class="fab fa-instagram"></i>
+                  <%= @product.pro.insta %>
+                </div>
+              <% end %>
+              <% if  @product.pro.youtube.present? %>
+                <div class="social-card">
+                  <i class="fab fa-youtube"></i>
+                  <%= @product.pro.youtube %>
+                </div>
+              <% end %>
+              <% if  @product.pro.twitter.present? %>
+                <div class="social-card">
+                  <i class="fab fa-twitter"></i>
+                  <%= @product.pro.twitter %>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
@@ -97,3 +129,4 @@
 
   </div>
 </div>
+<%= render 'shared/footer' %>

@@ -1,9 +1,12 @@
 <%= simple_form_for(@product) do |f| %>
   <%= f.input :title, label:"Nom du produit" %>
-  <%= f.input :price, label:"Prix" %>
+  <div class="input-and-icon">
+    <%= f.input :price, label: false, placeholder: "Prix original du produit en €" %>
+    <span class="icon fas fa-euro-sign"></span>
+  </div>
   <%= f.association :category, label:"Catégorie", prompt: "Selectionner une categorie" %>
-  <%= f.input :description %>
-  <%= f.input :website %>
+  <%= f.input :description, placeholder: "Décrivez votre produit: utilisation, composition, entretien, dimensions..." %>
+  <%= f.input :website, label: "Lien vers votre produit", placeholder: "Ex: https://wwww.votre_site/votre_produit.com" %>
   <label for="">Photos (1min / 5max)</label>
   <%= f.attachinary_file_field :photos, label: false, class: "upload", cloudinary: { transformation: { width: 1220, height: 813, crop: :limit } } %>
   <%= f.button :submit, "Enregistrer", class: "btn-blue", id:"save-cta" %>

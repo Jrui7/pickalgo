@@ -11,6 +11,7 @@ $(document).ready(function(){
   $(".test-title").click(function(){
     $(".explaination").slideToggle();
   })
+
 })
 
 

@@ -7,7 +7,7 @@
     <div class="products-container">
       <div class="text-part">
         <h5>Editer <%= @product.title %></h5>
-        <p>Modifiez ici les informations relatives à <%= @product.title %>.
+        <p>Modifiez ici les informations relatives à <%= @product.title.capitalize %>. Ces information relatives à votre produit seront visibles par les utilisateurs.
          </p>
          <%= link_to products_path do %>
           <div class="btn-white">Retour aux produits</div>
