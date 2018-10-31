@@ -52,6 +52,8 @@ class CampaignsController < ApplicationController
           @price = @campaign.price_3 if nb_3 <= nb_1 && nb_3 <= nb_2
         end
         @pick = Pick.create(campaign: @campaign, user: @user, price: @price)
+      else
+        @pick = Pick.create(campaign: @campaign, user: @user)
       end
     end
 
