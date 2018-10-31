@@ -5,28 +5,6 @@
 <%= render 'shared/navbar' %>
 <div class="page-container">
   <div class="campaign-container">
-    <h1><%= @campaign.title.capitalize %></h1>
-    <div id="timer" data-timer="<%= (@campaign.expiration_date) %>">
-      <%= render "campaigns/timer"  %>
-      <div id="clockdiv">
-        <div class="dynamic-timer">
-           <span class="days"></span>
-           <div class="smalltext">j</div>
-         </div>
-         <div class="dynamic-timer">
-           <span class="hours"></span>
-           <div class="smalltext">h</div>
-         </div>
-         <div class="dynamic-timer">
-           <span class="minutes"></span>
-           <div class="smalltext">m</div>
-         </div>
-         <div class="dynamic-timer">
-           <span class="seconds"></span>
-           <div class="smalltext">s</div>
-         </div>
-      </div>
-    </div>
     <div class="left-and-right">
       <div class="seed-media">
         <div class="seed-photos">
@@ -65,6 +43,36 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="right-campaign">
+        <h1><%= @campaign.title.capitalize %></h1>
+        <div class="brand-and-price">
+          <p class="brand-name">©<%= @product.pro.brand %></p>
+          <p class="old-price"><%= sprintf('%.2f', @product.price) %> €</p>
+        </div>
+
+        <div id="timer" data-timer="<%= (@campaign.expiration_date) %>">
+          <%= render "campaigns/timer"  %>
+          <div id="clockdiv">
+            <div class="dynamic-timer">
+               <span class="days"></span>
+               <div class="smalltext">j</div>
+             </div>
+             <div class="dynamic-timer">
+               <span class="hours"></span>
+               <div class="smalltext">h</div>
+             </div>
+             <div class="dynamic-timer">
+               <span class="minutes"></span>
+               <div class="smalltext">m</div>
+             </div>
+             <div class="dynamic-timer">
+               <span class="seconds"></span>
+               <div class="smalltext">s</div>
+             </div>
+          </div>
+        </div>
+        <%= render 'participation' %>
       </div>
     </div>
 

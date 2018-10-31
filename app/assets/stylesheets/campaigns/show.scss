@@ -52,9 +52,71 @@
     padding: 20px;
     border: 1px solid #efefef;
     border-radius: 5px;
-    margin: 20px 0;
     background-color: #FFFFFF;
   }
+
+  .right-campaign {
+    flex: 0 0 45%;
+    padding: 0 0 0 40px;
+  }
+
+  .brand-and-price {
+    display: flex;
+    p {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .old-price {
+      margin: 0 0 0 15px;
+      font-weight: bold;
+      text-decoration: line-through;
+      color: #6a6a6a;
+    }
+  }
+
+  .type-and-price {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 20px;
+    h3 {
+      margin: 0 15px 0 0;
+      i {
+        margin-left: 5px;
+      }
+    }
+
+    .price-ab {
+      margin: 0;
+    }
+  }
+
+  .test-title {
+    font-size: 15px;
+    border: 1px solid #e8e8e8;
+    color: white;
+    border-radius: 3px;
+    padding: 5px 10px;
+    background-color: darkgray;
+    cursor: pointer;
+  }
+
+  .explaination {
+    text-align: justify;
+    display: none;
+    margin-top: 20px;
+    font-size: 15px;
+  }
+
+  .price-type {
+    color: $orange;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+
+
 
 
   @media(max-width: 480px) {
