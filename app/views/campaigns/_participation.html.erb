@@ -1,7 +1,7 @@
 <% if @campaign.test_type == "Test ouvert" %>
   <div class="test-exmplain">
     <div class="type-and-price">
-      <h3 class=test-title>Prix libre<i class="fas fa-question-circle"></i></h3>
+      <h3 class=test-title-box>Prix libre<i class="fas fa-question-circle"></i></h3>
       <p class="price-type">A vous de choisir</p>
     </div>
     <p class="explaination">Quel prix maximal pensez-vous que la promo doit adopter ? Si nous pouvons obtenir un prix inférieur à celui que vous proposez, vous profitez de la promo au prix le plus bas. Si le prix que nous avons obtenu est suppérieur à celui que vous proposez, vous ne pourrez pas en profiter.</p>
@@ -10,7 +10,7 @@
 
   <div class="test-exmplain">
     <div class="type-and-price">
-      <h3 class=test-title>Prix A/B<i class="fas fa-question-circle"></i></h3>
+      <h3 class=test-title-box>Prix A/B<i class="fas fa-question-circle"></i></h3>
       <p class="price-type"><%= sprintf('%.2f', @campaign.price_1) %> €</p>
     </div>
     <p class="explaination">Une promo à <%= sprintf('%.2f', @campaign.price_1) %> € vous incite-t-elle à acheter <b><i><%= @product.title.capitalize %></i></b> ? Si  <%= sprintf('%.2f', @campaign.price_1) %> € n'est pas le prix le plus bas que nous pouvons vous proposer et que vous nous donnez votre opinion ci-dessous, <b>vous avez la garantie</b> de bénéficier d'un prix inférieur à  <%= sprintf('%.2f', @campaign.price_1) %> €. En revanche, si <%= sprintf('%.2f', @campaign.price_1) %> € est le prix le plus bas que nous puissions vous proposer (50% de probabilité), et que vous nous indiquez que le prix est trop élevé, <b>vous ne pourrez pas en bénéficier</b> à la fin de la campagne. </p>

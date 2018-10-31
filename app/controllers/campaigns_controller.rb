@@ -44,7 +44,14 @@ class CampaignsController < ApplicationController
     @pick = Pick.where(campaign: @campaign, user: @user).first
     if @pick.blank?
       if @campaign.test_type == "A/B Test"
-        @pick = Pick.create(campaign: @campaign, user: @user)
+        nb_1 = @campaign.picks.where(price: @campaign.price_1).count
+        nb_2 = @campaign.picks.where(price: @campaign.price_2).count
+        nb_1 <= nb_2 ? @price = @campaign.price_1 : @price = @campaign.price_2
+        if @campaign.price_3?
+          nb_3 = @campaign.picks.where(price: @campaign.price_3).count
+          @price = @campaign.price_3 if nb_3 <= nb_1 && nb_3 <= nb_2
+        end
+        @pick = Pick.create(campaign: @campaign, user: @user, price: @price)
       end
     end
 
