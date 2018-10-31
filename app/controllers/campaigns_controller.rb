@@ -38,6 +38,7 @@ class CampaignsController < ApplicationController
   def show
     @campaign = Campaign.friendly.find(params[:id])
     authorize @campaign
+    @product = @campaign.product
   end
 
 

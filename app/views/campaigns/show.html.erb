@@ -1,2 +1,132 @@
-<p>promo pour user lalalalalala</p>
-<%= @campaign.title %>
+
+<% content_for :meta_title, "#{@product.title} est sur #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "Aidez-nous a trouver le meilleur prix promo" %>
+<% content_for :meta_image, cl_image_path(@product.photos.first.path) %>
+<%= render 'shared/navbar' %>
+<div class="page-container">
+  <div class="campaign-container">
+    <div class="left-and-right">
+      <div class="seed-media">
+        <div class="seed-photos">
+          <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <% turns = @product.photos.size - 1 %>
+              <% slide_index = 1 %>
+              <% if @product.photos.size > 1 %>
+                <% turns.times do  %>
+                  <li data-target="#myCarousel" data-slide-to="<%= slide_index%>"></li>
+                  <% slide_index += 1 %>
+                <% end %>
+              <% end %>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+            <% photos = @product.extract_photos %>
+              <div class="item active">
+                <a href="<%= cl_image_path photos.first.path %>" class="swipebox" title="<%= @product.title %>">
+                  <%= cl_image_tag photos.first.path, :height=>300, :crop=>"scale", class:"img-seed" %>
+                </a>
+              </div>
+              <% if photos.size >= 2 %>
+                <% photos.delete_at(0) %>
+                <% photos.each do |photo| %>
+                  <div class="item">
+                    <a href="<%= cl_image_path photo.path %>" class="swipebox" title="<%= @product.title %>">
+                      <%= cl_image_tag photo.path, :height=>300, :crop=>"scale", class:"img-seed" %>
+                    </a>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right-campaign">
+        <h1><%= @campaign.title.capitalize %></h1>
+        <div class="brand-and-price">
+          <p class="brand-name">©<%= @product.pro.brand %></p>
+          <p class="old-price"><%= sprintf('%.2f', @product.price) %> €</p>
+        </div>
+
+        <div id="timer" data-timer="<%= (@campaign.expiration_date) %>">
+          <%= render "campaigns/timer"  %>
+          <div id="clockdiv">
+            <div class="dynamic-timer">
+               <span class="days"></span>
+               <div class="smalltext">j</div>
+             </div>
+             <div class="dynamic-timer">
+               <span class="hours"></span>
+               <div class="smalltext">h</div>
+             </div>
+             <div class="dynamic-timer">
+               <span class="minutes"></span>
+               <div class="smalltext">m</div>
+             </div>
+             <div class="dynamic-timer">
+               <span class="seconds"></span>
+               <div class="smalltext">s</div>
+             </div>
+          </div>
+        </div>
+        <%= render 'participation' %>
+      </div>
+    </div>
+    <div class="official-infos">
+      <div>
+        <ul class="tabs">
+          <li><a href="#tab-1">Description</a></li>
+          <li><a href="#tab-2">A propos</a></li>
+        </ul>
+        <div id="tab-1">
+          <h3 class="tab-title"><%= @product.title %></h3>
+          <% if @product.description %>
+          <p class="tab-content"><%= simple_format(@product.description.capitalize) %></p>
+          <% end %>
+          <% if @product.website %>
+            <p class="tab-content">Plus d'infos sur la page officielle du vendeur <a href="<%= @product.website %>" target="_blank">ici</a></p>
+          <% end %>
+        </div>
+        <div id="tab-2">
+          <h3 class="tab-title"><%= @product.pro.brand.capitalize %></h3>
+          <p class="tab-content"><%= @product.pro.bio %></p>
+          <% if @product.pro.socials? %>
+            <p>Retrouvez <%= @product.pro.brand.capitalize %> sur les réseaux sociaux</p>
+            <div class="social-cards">
+              <% if  @product.pro.facebook.present? %>
+                <div class="social-card">
+                  <i class="fab fa-facebook"></i>
+                  <%= @product.pro.facebook %>
+                </div>
+              <% end %>
+              <% if  @product.pro.insta.present? %>
+                <div class="social-card">
+                  <i class="fab fa-instagram"></i>
+                  <%= @product.pro.insta %>
+                </div>
+              <% end %>
+              <% if  @product.pro.youtube.present? %>
+                <div class="social-card">
+                  <i class="fab fa-youtube"></i>
+                  <%= @product.pro.youtube %>
+                </div>
+              <% end %>
+              <% if  @product.pro.twitter.present? %>
+                <div class="social-card">
+                  <i class="fab fa-twitter"></i>
+                  <%= @product.pro.twitter %>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+<%= render 'shared/footer' %>

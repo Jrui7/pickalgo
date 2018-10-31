@@ -7,6 +7,11 @@ $(document).ready(function(){
     if($(this).is(':checked'))
     $(".price-part").slideUp();
   })
+
+  $(".test-title").click(function(){
+    $(".explaination").slideToggle();
+  })
+
 })
 
 

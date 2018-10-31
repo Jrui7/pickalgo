@@ -35,4 +35,17 @@ class Product < ApplicationRecord
   def self.my_products(current_pro)
     where(pro_id: current_pro)
   end
+
+  def photos_count
+    self.photos.count
+  end
+
+  def extract_photos
+      collection = []
+      self.photos.reverse_each do |photo|
+        collection << photo
+      end
+      return collection
+    end
+
 end

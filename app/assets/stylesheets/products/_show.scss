@@ -1,3 +1,8 @@
+#product_price {
+  padding: 6px 12px 6px 30px;
+  margin-top: 30px;
+}
+
 .products-container {
   display: flex;
   flex-wrap: wrap;
@@ -65,4 +70,8 @@
 
 .edit-links {
   margin-left: 15px;
+}
+
+#product_description {
+  height: 130px;
 }
