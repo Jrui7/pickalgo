@@ -22,11 +22,11 @@ class PicksController < ApplicationController
   end
 
   def pick_params_ab
-    params.require(:pick).permit(:answer)
+    params.require(:pick).permit(:answer).reject { |_, v| v.blank? }
   end
 
   def pick_params_open
-    params.require(:pick).permit(:price)
+    params.require(:pick).permit(:price).reject { |_, v| v.blank? }
   end
 
 end
