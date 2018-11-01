@@ -1,23 +1,20 @@
 <table>
   <tr>
+    <th>Prix original (€)</th>
     <th>Remise</th>
-    <th>Prix</th>
-    <th>Quantités</th>
-    <th>CA</th>
+    <th>Prix promotionnel (€)</th>
+    <th>Quantités (U)</th>
+    <th>CA (€)</th>
 
   </tr>
-  <% @campaign.picks.each do |pick| %>
+  <% @validated_picks.each do |pick| %>
     <tr>
-      <td><%= pick. %></td>
-      <td><%= campaign.test_type %></td>
-      <% if campaign.state == "ongoing" %>
-        <td class="ongoing">En cours</td>
-        <% else %>
-        <td class="closed">Clôturée</td>
-      <% end %>
-      <td><%= campaign.picks.count %></td>
-      <td><%= campaign.views %></td>
-      <td><%= link_to 'Détails', promo_path(campaign) %></td>
+      <td><%= sprintf('%.2f', @campaign.product.price) %></td>
+      <td><%= ((pick.price - @campaign.product.price) / (@campaign.product.price)*100).round %> %</td>
+      <td><%= sprintf('%.2f', pick.price) %></td>
+      <% qt =  @validated_picks.where("price >= ?", pick.price).count %>
+      <td><%= qt %></td>
+      <td><%= pick.price*qt %></td>
     </tr>
   <% end %>
 </table>

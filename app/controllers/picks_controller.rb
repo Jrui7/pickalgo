@@ -26,7 +26,7 @@ class PicksController < ApplicationController
   end
 
   def pick_params_open
-    params.require(:pick).permit(:price).merge(answer: "yes").reject { |_, v| v.blank? }
+    params.require(:pick).permit(:price).merge(answer: "Yes").reject { |_, v| v.blank? }
   end
 
 end

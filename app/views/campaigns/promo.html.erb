@@ -63,15 +63,18 @@
         <div class="stat-block">
           <div class="top-block">
             <h3>Commandes validées</h3>
-            <span><%= @picks.where(state: "validated").count %>/<%= @picks.where.not(answer: [nil, ""]).count %></span>
+            <span><%= @validated_picks.count %>/<%= @picks.where.not(answer: [nil, ""]).count %></span>
           </div>
           <div class="bottom-block">
             <i class="fas fa-credit-card"></i>
-            <span><%= @picks.where(state: "validated").count %></span>
+            <span><%= @validated_picks.count %></span>
           </div>
         </div>
         <div class="data-block">
-          here are the datas
+          <h3>Commandes potentielles</h3>
+          <% if  @campaign.test_type == "Test ouvert" %>
+            <%= render 'data-open-campaign' %>
+          <% end %>
         </div>
 
       </div>

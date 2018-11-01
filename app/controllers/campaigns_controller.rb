@@ -66,6 +66,7 @@ class CampaignsController < ApplicationController
     @pro = current_pro
     authorize @campaign
     @picks = @campaign.picks.order('price DESC')
+    @validated_picks = @picks.where(state: "validated")
   end
 
   private
