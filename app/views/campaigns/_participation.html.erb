@@ -16,7 +16,7 @@
     <p class="explaination">Nous présentons à chaque testeur de façon aléatoire un des prix auquel le vendeur pense proposer sa promo. Chaque testeur nous indique ce qu'il pense du prix qui lui a été présenté. En analysant le nombre de participants pour chaque prix, nous pouvons ainsi déterminer quel prix la promo doit adopter.</p>
   </div>
   <div class="pick-form">
-    <%= simple_form_for [@campaign, @pick], url: pick_path(@pick), remote: true do |f| %>
+    <%= simple_form_for [@campaign, @pick], url: pick_path(@pick) do |f| %>
       <div class="participation-input">
         <%= f.collection_radio_buttons :answer, [["Yes", "J'en profite"] ,["No", "Prix pas assez attractif"]], :first, :last %>
       </div>

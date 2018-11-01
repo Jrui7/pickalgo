@@ -1,11 +1,17 @@
-class ProsController < ApplicationController
+class PicksController < ApplicationController
   before_action :set_pick, only: [:update]
 
 
   def update
-    @pick.update(pick_params)
     authorize @pick
-    if @pick.update(pick_params)
+    if @pick.campaign.test_type == "Test ouvert"
+      if @pick.update(pick_params_open)
+        redirect_to campaigns_path
+      end
+    else
+      if @pick.update(pick_params_ab)
+        redirect_to campaigns_path
+      end
     end
   end
 
@@ -15,8 +21,12 @@ class ProsController < ApplicationController
     @pick = Pick.find(params[:id])
   end
 
-  def pick_params
-    params.require(:pick).permit(:price, :answer)
+  def pick_params_ab
+    params.require(:pick).permit(:answer)
+  end
+
+  def pick_params_open
+    params.require(:pick).permit(:price)
   end
 
 end
