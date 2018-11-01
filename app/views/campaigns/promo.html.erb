@@ -7,7 +7,9 @@
       <h1>Campagne pour <%= @campaign.title.capitalize %></h1>
       <div class="stats">
         <div class="stat-block">
-          <h3>Type de test</h3>
+          <div class="top-block">
+            <h3>Type de test</h3>
+          </div>
           <div class="bottom-block">
             <i class="fas fa-poll"></i>
             <span><%= @campaign.test_type %></span>
@@ -62,7 +64,7 @@
         </div>
         <div class="stat-block">
           <div class="top-block">
-            <h3>Commandes validées</h3>
+            <h3>Commandes</h3>
             <span><%= @validated_picks.count %>/<%= @picks.where.not(answer: [nil, ""]).count %></span>
           </div>
           <div class="bottom-block">
@@ -70,11 +72,10 @@
             <span><%= @validated_picks.count %></span>
           </div>
         </div>
-        <div class="data-block">
-          <h3>Commandes potentielles</h3>
-            <%= render 'data-campaign' %>
-        </div>
-
+      </div>
+      <div class="data-block">
+        <h3>Commandes potentielles</h3>
+          <%= render 'data-campaign' %>
       </div>
 
     </div>

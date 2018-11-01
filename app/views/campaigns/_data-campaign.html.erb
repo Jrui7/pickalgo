@@ -10,7 +10,7 @@
         <th>CA</th>
       </tr>
       <% @validated_picks.each do |pick| %>
-        <tr>
+        <tr class="tr-body">
           <td><%= sprintf('%.2f', @campaign.product.price) %> €</td>
           <td><%= ((pick.price - @campaign.product.price) / (@campaign.product.price)*100).round %> %</td>
           <td><%= sprintf('%.2f', pick.price) %> €</td>

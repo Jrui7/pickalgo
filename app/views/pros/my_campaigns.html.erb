@@ -8,30 +8,32 @@
     <div class="campaigns-container">
       <h5>Vos campagnes</h5>
         <% if @campaigns.present? %>
-          <table>
-            <tr class="first-left">
-              <th class="cell100 column1">Nom de la campagne</th>
-              <th class="cell100 column2">Type de campagne</th>
-              <th class="cell100 column3">Statut</th>
-              <th class="cell100 column4">Vues uniques</th>
-              <th class="cell100 column5">Vues totales</th>
-              <th class="cell100 column6">Voir</th>
-            </tr>
-            <% @campaigns.each do |campaign| %>
-              <tr class="tr-body">
-                <td><%= campaign.product.title %></td>
-                <td><%= campaign.test_type %></td>
-                <% if campaign.state == "ongoing" %>
-                  <td class="ongoing">En cours</td>
-                  <% else %>
-                  <td class="closed">Clôturée</td>
-                <% end %>
-                <td><%= campaign.picks.count %></td>
-                <td><%= campaign.views %></td>
-                <td><%= link_to 'Détails', promo_path(campaign) %></td>
+          <div class="table-container">
+            <table>
+              <tr class="first-left">
+                <th>Nom de la campagne</th>
+                <th>Type de campagne</th>
+                <th>Statut</th>
+                <th>Vues uniques</th>
+                <th>Vues totales</th>
+                <th>Voir</th>
               </tr>
-            <% end %>
-          </table>
+              <% @campaigns.each do |campaign| %>
+                <tr class="tr-body">
+                  <td><%= campaign.product.title %></td>
+                  <td><%= campaign.test_type %></td>
+                  <% if campaign.state == "ongoing" %>
+                    <td class="ongoing">En cours</td>
+                    <% else %>
+                    <td class="closed">Clôturée</td>
+                  <% end %>
+                  <td><%= campaign.picks.count %></td>
+                  <td><%= campaign.views %></td>
+                  <td><%= link_to 'Détails', promo_path(campaign) %></td>
+                </tr>
+              <% end %>
+            </table>
+          </div>
         <% else %>
           <p>Vous n'avez pas encore créé de campagne</p>
         <% end %>
