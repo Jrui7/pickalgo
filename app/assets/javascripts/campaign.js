@@ -12,6 +12,28 @@ $(document).ready(function(){
     $(".explaination").slideToggle();
   })
 
+  $("#pick_answer_yes").click(function(){
+    if($(this).is(':checked'))
+      if($('.no-outcome').is(':visible'))
+      {
+        $(".no-outcome").slideUp();
+      }
+    $(".yes-outcome").slideDown();
+  })
+
+  $("#pick_answer_no").click(function(){
+    if($(this).is(':checked'))
+      if($('.yes-outcome').is(':visible'))
+      {
+        $(".yes-outcome").slideUp();
+      }
+    $(".no-outcome").slideDown();
+  })
+
+
+
+
+
 })
 
 
