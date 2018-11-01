@@ -1,3 +1,12 @@
-<p>Promo pour Pro</p>
-<%= @campaign.title %>
+<%= render 'pros/navbar' %>
+<%= render 'pros/right-links-dashboard' %>
+<div class="dashboard-container">
+  <%= render 'pros/dashboard-navigation' %>
+  <div class="general-infos">
+    <div class="campaigns-container">
+      <h5><%= @campaign.title.capitalize %></h5>
+
+    </div>
+  </div>
+</div>
 

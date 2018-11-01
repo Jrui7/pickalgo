@@ -1,7 +1,7 @@
 class CampaignsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:new, :create, :promo]
   before_action :authenticate_pro!, only: [:new, :create, :promo]
-  before_action :set_page_params, only: [:new, :create]
+  before_action :set_page_params, only: [:new, :create, :promo]
 
 
   def index
@@ -63,13 +63,14 @@ class CampaignsController < ApplicationController
 
   def promo
     @campaign = Campaign.friendly.find(params[:id])
+    @pro = current_pro
     authorize @campaign
   end
 
   private
 
   def set_page_params
-    @page = params["action"]
+    @page = params["controller"]
   end
 
   def campaign_params
