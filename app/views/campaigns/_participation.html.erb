@@ -1,18 +1,45 @@
 <% if @campaign.test_type == "Test ouvert" %>
-  <div class="test-exmplain">
+  <div class="test-explain">
     <div class="type-and-price">
-      <h3 class=test-title>Prix libre<i class="fas fa-question-circle"></i></h3>
+      <h3 class=test-title-box>Prix libre<i class="fas fa-question-circle"></i></h3>
       <p class="price-type">A vous de choisir</p>
     </div>
-    <p class="explaination">Quel prix maximal pensez que la promo doit adopter ? Si nous pouvons obtenir un prix inférieur à celui que vous proposez, vous profitez de la promo au prix le plus bas. Si nous obtenons un prix suppérieur à celui que vous proposez, vous ne pourrez pas profiter de la promo.</p>
+    <p class="explaination">Quel prix maximal pensez-vous que la promo doit adopter ? Si nous pouvons obtenir un prix inférieur à celui que vous proposez, vous profitez de la promo au prix le plus bas. Si le prix que nous avons obtenu est suppérieur à celui que vous proposez, vous ne pourrez pas en profiter.</p>
+  </div>
+  <div class="pick-form">
+    <%= simple_form_for [@campaign, @pick], url: pick_path(@pick) do |f| %>
+      <div class="participation-input">
+        <div class="input-and-icon">
+          <%= f.input :price, label: false, placeholder: "Votre prix" %>
+          <span class="icon fas fa-euro-sign"></span>
+        </div>
+      </div>
+
+      <%= f.button :submit, "Valider", class: "btn-blue", id:"save-cta" %>
+
+    <% end %>
   </div>
 <% else %>
 
-  <div class="test-exmplain">
+  <div class="test-explain">
     <div class="type-and-price">
-      <h3 class=test-title>Prix A/B<i class="fas fa-question-circle"></i></h3>
-      <p class="price-type"><%= sprintf('%.2f', @campaign.price_1) %> €</p>
+      <h3 class=test-title-box>Prix A/B<i class="fas fa-question-circle"></i></h3>
+      <p class="price-type"><%= sprintf('%.2f', @pick.price) %> €</p>
     </div>
-    <p class="explaination">Une promo à <%= sprintf('%.2f', @campaign.price_1) %> € vous incite-t-elle à acheter <b><i><%= @product.title.capitalize %></i></b> ? Si  <%= sprintf('%.2f', @campaign.price_1) %> € n'est pas le prix le plus bas que nous pouvons vous proposer et que vous nous donnez votre opinion ci-dessous, <b>vous avez la garantie</b> de bénéficier d'un prix inférieur à  <%= sprintf('%.2f', @campaign.price_1) %> €. En revanche, si <%= sprintf('%.2f', @campaign.price_1) %> € est le prix le plus bas que nous puissions vous proposer (50% de probabilité), et que vous nous indiquez que le prix est trop élevé, <b>vous ne pourrez pas en bénéficier</b> à la fin de la campagne. </p>
+    <p class="explaination">Nous présentons à chaque testeur de façon aléatoire un des prix auquel le vendeur pense proposer sa promo. Chaque testeur nous indique ce qu'il pense du prix qui lui a été présenté. En analysant le nombre de participants pour chaque prix, nous pouvons ainsi déterminer quel prix la promo doit adopter.</p>
   </div>
+  <div class="pick-form">
+    <%= simple_form_for [@campaign, @pick], url: pick_path(@pick) do |f| %>
+      <div class="participation-input">
+        <%= f.collection_radio_buttons :answer, [["Yes", "J'en profite"] ,["No", "Prix pas assez attractif"]], :first, :last %>
+      </div>
+      <p class="yes-outcome">Vous vous assurez de pourvoir profiter de la promo à <%= sprintf('%.2f', @pick.price) %>  € au maximum. En revanche, si le prix que nous avons négocié est par exmple égal à <%= sprintf('%.2f', @pick.price * 0.9) %> €, vous profiterez de la promo à  <%= sprintf('%.2f', @pick.price * 0.9) %> € !</p>
+      <p class="no-outcome">Vous aimez <%= @product.title %> mais une promo à <%= sprintf('%.2f', @pick.price) %> € ne vous convainc pas à l'acheter ? Dites-le-nous en validant le sondage. Si <%= sprintf('%.2f', @pick.price) %> € est supérieur au prix que nous avons négocié pour vous, vous pourrez profiter du prix négocié à la fin de la campagne. En revanche, si <%= sprintf('%.2f', @pick.price) %> € est déjà le meilleur prix négocié, vous ne pourrez pas profiter de ce prix négocié à la fin de la campagne.</p>
+
+      <%= f.button :submit, "Valider", class: "btn-blue", id:"save-cta" %>
+
+    <% end %>
+  </div>
+
+
 <% end %>

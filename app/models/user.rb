@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   validate :validate_invite, :on => :create
+  has_many :picks
   attr_accessor :invite
 
   extend FriendlyId

@@ -1,0 +1,134 @@
+.stats {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.stat-block {
+  border: 1px solid rgba(0,0,0,.0625);
+  padding: 20px;
+  background-color: #FFF;
+  margin-right: 1%;
+  margin-bottom: 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 0 0 32%;
+  h3 {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .top-block {
+    margin-bottom: 30px;
+    span {
+      font-size: 14px;
+      color: #72777a;
+    }
+  }
+
+  .bottom-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+  }
+
+  .fa-poll {
+    color: #673ab7;
+    font-size: 25px;
+  }
+
+  .fa-shopping-cart {
+    color: #ff9800;
+    font-size: 25px;
+  }
+
+  .fa-eye {
+    font-size: 25px;
+    color: #2196f3;
+  }
+
+  .fa-users {
+    font-size: 25px;
+    color: #795548;
+  }
+
+  .fa-credit-card {
+    font-size: 25px;
+    color: #4caf50;
+  }
+
+  .red-icon {
+    color: $red;
+    animation: pulse-shadow 2s infinite;
+    border-radius: 50%;
+  }
+}
+
+
+.data-block {
+  h3 {
+    font-size: 20px;
+    margin: 0;
+  }
+}
+
+table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  margin-top: 20px;
+}
+
+tbody {
+  width: 100%;
+  display: table;
+}
+
+th {
+  padding: 15px 20px;
+}
+td, th {
+  text-align: center;
+}
+
+.orders {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f1f8fc;
+  text-align: justify;
+  display: inline-block;
+}
+
+@media(max-width: 768px) {
+
+
+  .table-container {
+    width: 460px;
+  }
+
+}
+
+@media(max-width: 480px) {
+
+  .campaigns-container, .campaign-container {
+    padding: 30px 10px;
+  }
+  .stat-block {
+    flex: 0 0 49%;
+    h3 {
+      font-size: 18px;
+    }
+  }
+
+  .table-container {
+    width: 298px;
+  }
+
+  .data-block {
+    margin-top: 20px;
+  }
+
+}

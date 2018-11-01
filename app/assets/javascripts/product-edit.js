@@ -1,5 +1,8 @@
+
+
 $(document).ready(function(){
-  var form = document.getElementById('new_product');
+
+  var form = document.querySelector('.edit_product');
   if(form) {
     form.addEventListener('submit', function(event) {
        event.preventDefault();
@@ -12,8 +15,4 @@ $(document).ready(function(){
         }
     })
   }
-
 })
-
-
-

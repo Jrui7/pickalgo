@@ -41,6 +41,7 @@ class ProsController < ApplicationController
     @pro = Pro.friendly.find(params[:id])
     authorize @pro
     @campaigns = @pro.campaigns
+    @page = "campaigns"
   end
 
   def pundit_user

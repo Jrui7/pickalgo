@@ -51,7 +51,9 @@ Rails.application.routes.draw do
   end
   resources :leads, only: [ :create ]
   resources :products, only: [:index, :new, :create, :edit, :update], shallow: true do
-    resources :campaigns, only: [:new, :create, :show]
+    resources :campaigns, only: [:new, :create, :show] do
+      resources :picks, only: [:create, :update]
+    end
   end
 
   get "campaigns", to: "campaigns#index"
