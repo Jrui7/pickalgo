@@ -6,7 +6,7 @@
 }
 
 .data-block {
-  flex: 0 0 100%;
+  flex: 0 0 98%;
   border: 1px solid rgba(0,0,0,.0625);
   padding: 20px;
   background-color: #FFF;
@@ -90,6 +90,14 @@
   td, th {
     text-align: center;
   }
+}
+
+.orders {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f1f8fc;
+  text-align: justify;
+  display: inline-block;
 }
 
 @media(max-width: 768px) {
