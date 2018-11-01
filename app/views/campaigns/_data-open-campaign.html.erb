@@ -1,0 +1,23 @@
+<table>
+  <tr>
+    <th>Remise</th>
+    <th>Prix</th>
+    <th>Quantités</th>
+    <th>CA</th>
+
+  </tr>
+  <% @campaign.picks.each do |pick| %>
+    <tr>
+      <td><%= pick. %></td>
+      <td><%= campaign.test_type %></td>
+      <% if campaign.state == "ongoing" %>
+        <td class="ongoing">En cours</td>
+        <% else %>
+        <td class="closed">Clôturée</td>
+      <% end %>
+      <td><%= campaign.picks.count %></td>
+      <td><%= campaign.views %></td>
+      <td><%= link_to 'Détails', promo_path(campaign) %></td>
+    </tr>
+  <% end %>
+</table>

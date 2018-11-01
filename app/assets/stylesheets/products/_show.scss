@@ -70,6 +70,13 @@
 
 .edit-links {
   margin-left: 15px;
+  a {
+    color: $orange;
+    border-radius: 50%;
+    &:hover {
+    animation: pulse-shadow 2s infinite;
+    }
+  }
 }
 
 #product_description {

@@ -65,6 +65,7 @@ class CampaignsController < ApplicationController
     @campaign = Campaign.friendly.find(params[:id])
     @pro = current_pro
     authorize @campaign
+    @picks = @campaign.picks.order('price DESC')
   end
 
   private

@@ -43,23 +43,37 @@
         <div class="stat-block">
           <div class="top-block">
             <h3>Visites uniques</h3>
-            <span><%= @campaign.picks.count %>/<%= @campaign.views %></span>
+            <span><%= @picks.count %>/<%= @campaign.views %></span>
           </div>
           <div class="bottom-block">
             <i class="fas fa-users"></i>
-            <span><%= @campaign.picks.count %></span>
+            <span><%= @picks.count %></span>
           </div>
         </div>
         <div class="stat-block">
           <div class="top-block">
             <h3>Panier</h3>
-            <span><%= @campaign.picks.where.not(answer: [nil, ""]).count %>/<%= @campaign.picks.count %></span>
+            <span><%= @picks.where.not(answer: [nil, ""]).count %>/<%= @picks.count %></span>
           </div>
           <div class="bottom-block">
             <i class="fas fa-shopping-cart"></i>
-            <span><%= @campaign.picks.where.not(answer: [nil, ""]).count %></span>
+            <span><%= @picks.where.not(answer: [nil, ""]).count %></span>
           </div>
         </div>
+        <div class="stat-block">
+          <div class="top-block">
+            <h3>Commandes validées</h3>
+            <span><%= @picks.where(state: "validated").count %>/<%= @picks.where.not(answer: [nil, ""]).count %></span>
+          </div>
+          <div class="bottom-block">
+            <i class="fas fa-credit-card"></i>
+            <span><%= @picks.where(state: "validated").count %></span>
+          </div>
+        </div>
+        <div class="data-block">
+          here are the datas
+        </div>
+
       </div>
 
     </div>

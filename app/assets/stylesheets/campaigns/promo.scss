@@ -5,15 +5,23 @@
   margin: 20px 0;
 }
 
+.data-block {
+  flex: 0 0 100%;
+  border: 1px solid rgba(0,0,0,.0625);
+  padding: 20px;
+  background-color: #FFF;
+}
+
 .stat-block {
   border: 1px solid rgba(0,0,0,.0625);
   padding: 20px;
   background-color: #FFF;
   margin-right: 1%;
+  margin-bottom: 1%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex: 0 0 19%;
+  flex: 0 0 32%;
   h3 {
     font-size: 20px;
     margin: 0;
@@ -49,8 +57,13 @@
   }
 
   .fa-users {
-    color: #4caf50;
     font-size: 25px;
+    color: #795548;
+  }
+
+  .fa-credit-card {
+    font-size: 25px;
+    color: #4caf50;
   }
 
   .red-icon {
@@ -58,4 +71,11 @@
     animation: pulse-shadow 2s infinite;
     border-radius: 50%;
   }
+}
+
+@media(max-width: 480px) {
+  .stat-block {
+    flex: 0 0 49%;
+  }
+
 }
