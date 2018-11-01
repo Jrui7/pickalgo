@@ -16,7 +16,7 @@
                 <th>Statut</th>
                 <th>Vues uniques</th>
                 <th>Vues totales</th>
-                <th>Voir</th>
+                <th>Détails</th>
               </tr>
               <% @campaigns.each do |campaign| %>
                 <tr class="tr-body">
@@ -29,7 +29,7 @@
                   <% end %>
                   <td><%= campaign.picks.count %></td>
                   <td><%= campaign.views %></td>
-                  <td><%= link_to 'Détails', promo_path(campaign) %></td>
+                  <td><%= link_to 'Voir', promo_path(campaign) %></td>
                 </tr>
               <% end %>
             </table>
