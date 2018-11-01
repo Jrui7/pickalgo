@@ -1,0 +1,50 @@
+.stats {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.stat-block {
+  border: 1px solid rgba(0,0,0,.0625);
+  padding: 20px;
+  background-color: #FFF;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 0 0 20%;
+  h3 {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .top-block {
+    margin-bottom: 30px;
+    span {
+      font-size: 14px;
+      color: #72777a;
+    }
+  }
+
+  .bottom-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+  }
+
+  .fa-poll {
+    color: #4caf50;
+    font-size: 25px;
+  }
+
+  .fa-eye {
+    font-size: 25px;
+  }
+
+  .red-icon {
+    color: $red;
+    animation: pulse-shadow 2s infinite;
+    border-radius: 50%;
+  }
+}

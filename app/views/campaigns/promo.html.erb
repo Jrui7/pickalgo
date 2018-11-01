@@ -4,9 +4,46 @@
   <%= render 'pros/dashboard-navigation' %>
   <div class="general-infos">
     <div class="campaigns-container">
-      <h5><%= @campaign.title.capitalize %></h5>
+      <h1>Campagne pour <%= @campaign.title.capitalize %></h1>
+      <div class="stats">
+        <div class="stat-block">
+          <h3>Type de test</h3>
+          <div class="bottom-block">
+            <i class="fas fa-poll"></i>
+            <span><%= @campaign.test_type %></span>
+          </div>
+        </div>
+        <div class="stat-block">
+          <div class="top-block">
+            <h3>Fin de la campagne</h3>
+            <span><%= @campaign.expiration_date.strftime("%d/%m/%y") %></span>
+          </div>
+           <% if @campaign.state == "ongoing" %>
+            <div class="bottom-block">
+              <i class="fas fa-circle red-icon"></i>
+              <span>En cours</span>
+            </div>
+            <% else %>
+            <div class="bottom-block">
+              <i class="fas fa-circle gray-icon"></i>
+              <span>Clôtuée</span>
+            </div>
+          <% end %>
+        </div>
+        <div class="stat-block">
+          <div class="top-block">
+            <h3>Nombre de visites</h3>
+            <span>100%</span>
+          </div>
+          <div class="bottom-block">
+            <i class="far fa-eye"></i>
+            <span><%= @campaign.views %></span>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>
 </div>
+
 
