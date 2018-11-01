@@ -1,20 +1,22 @@
-<table>
-  <tr>
-    <th>Prix original (€)</th>
-    <th>Remise</th>
-    <th>Prix promotionnel (€)</th>
-    <th>Quantités (U)</th>
-    <th>CA (€)</th>
-
-  </tr>
-  <% @validated_picks.each do |pick| %>
+<div class="table-container">
+  <table>
     <tr>
-      <td><%= sprintf('%.2f', @campaign.product.price) %></td>
-      <td><%= ((pick.price - @campaign.product.price) / (@campaign.product.price)*100).round %> %</td>
-      <td><%= sprintf('%.2f', pick.price) %></td>
-      <% qt =  @validated_picks.where("price >= ?", pick.price).count %>
-      <td><%= qt %></td>
-      <td><%= pick.price*qt %></td>
+      <th>Prix original</th>
+      <th>Remise</th>
+      <th>Prix promotionnel</th>
+      <th>Quantités (U)</th>
+      <th>CA</th>
+
     </tr>
-  <% end %>
-</table>
+    <% @validated_picks.each do |pick| %>
+      <tr>
+        <td><%= sprintf('%.2f', @campaign.product.price) %> €</td>
+        <td><%= ((pick.price - @campaign.product.price) / (@campaign.product.price)*100).round %> %</td>
+        <td><%= sprintf('%.2f', pick.price) %> €</td>
+        <% qt =  @validated_picks.where("price >= ?", pick.price).count %>
+        <td><%= qt %></td>
+        <td><%= sprintf('%.2f', pick.price*qt) %> €</td>
+      </tr>
+    <% end %>
+  </table>
+</div>

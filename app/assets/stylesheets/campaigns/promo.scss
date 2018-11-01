@@ -73,6 +73,7 @@
   }
 }
 
+
 .data-block {
   h3 {
     font-size: 20px;
@@ -80,13 +81,33 @@
   }
 
   table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
     margin-top: 20px;
   }
+
+  td, th {
+    text-align: center;
+  }
+}
+
+@media(max-width: 768px) {
+
+
+  .table-container {
+    width: 460px;
+  }
+
 }
 
 @media(max-width: 480px) {
   .stat-block {
     flex: 0 0 49%;
+  }
+
+  .table-container {
+    width: 280px;
   }
 
 }
