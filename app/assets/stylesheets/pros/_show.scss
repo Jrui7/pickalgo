@@ -63,6 +63,7 @@
     margin-top: 0;
     margin-bottom: 30px;
     font-size: 20px;
+    color: $blue;
   }
 
   #save-cta, #password-cta {
@@ -94,7 +95,7 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: stretch;
   margin-bottom: 30px;
 }
 
@@ -112,6 +113,7 @@
   p {
     color: #637381;
     text-align: justify;
+    font-size: 16px;
   }
 }
 
