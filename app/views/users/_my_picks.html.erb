@@ -4,10 +4,16 @@
     <div class="recap-body">
       <div class="title-and-price">
         <h3><%= pick.campaign.product.title.capitalize %></h3>
+        <p><%= pick.campaign.product.pro.brand %></p>
       </div>
-      <div class="product-category">
-        <p class="<%= pick.campaign.category.name.downcase.gsub('é', 'e')%>"> <%= pick.campaign.category.name %></p>
+      <div class="pick-price">
+        Prix max: <%= sprintf('%.2f', pick.price) %> €
       </div>
     </div>
+  </div>
+  <div class="campaign-link">
+    <% if  pick.campaign.ongoing? %>
+      <p>Ongoing</p>
+    <% end %>
   </div>
 <% end %>
