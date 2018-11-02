@@ -34,16 +34,19 @@ Rails.application.routes.draw do
 
   resources :users, only: [ :show, :update, :edit] do
     collection do
-        patch 'update_password'
-      end
+      patch 'update_password'
+    end
+    member do
+      get 'my_campaigns'
+    end
   end
 
 
   resources :pros, only: [:show, :edit, :update] do
     member do
-        patch 'update_password'
-        get 'my_campaigns'
-      end
+      patch 'update_password'
+      get 'my_campaigns'
+    end
   end
   resources :leads, only: [ :create ]
   resources :products, only: [:index, :new, :create, :edit, :update], shallow: true do

@@ -21,7 +21,6 @@ class UsersController < ApplicationController
     else
       render :show
     end
-
   end
 
   def update_password
@@ -36,6 +35,11 @@ class UsersController < ApplicationController
       flash[:alert] = "Erreur, mot de passe inchangé"
       render :edit
     end
+  end
+
+  def my_campaigns
+    @user = current_user
+    @campaigns = @user.campaigns
   end
 
   private

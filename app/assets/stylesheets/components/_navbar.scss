@@ -31,11 +31,17 @@
 /* User Avatar */
 
 .user-menu{
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  .fa-flask {
+    color: $blue;
+    cursor: pointer;
+  }
   .fa-bars {
-  font-size: 25px;
+  font-size: 20px;
   color: $blue;
-
+  cursor: pointer;
+  margin-left: 50px;
   a {
     text-decoration: none;
      &:hover{

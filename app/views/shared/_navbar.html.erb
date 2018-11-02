@@ -6,16 +6,15 @@
       </div>
     <% end %>
     <div class="user-menu">
+      <i class="fas fa-flask"></i>
       <div class="dropdown">
         <i class="fas fa-bars dropdown-toggle" aria-hidden="true" id="dropdown-icon", data-toggle="dropdown"></i>
         <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
-          <% if user_signed_in? %>
-            <li>
-              <%= link_to user_path(current_user) do %>
-                <i class="fas fa-user-circle"></i> <%= t(".profile", default: "Mon compte") %>
-              <% end %>
-            </li>
-          <% end %>
+          <li>
+            <%= link_to user_path(current_user) do %>
+              <i class="fas fa-user-circle"></i> <%= t(".profile", default: "Mon compte") %>
+            <% end %>
+          </li>
           <li>
             <%= link_to faq_path do %>
               <i class="fas fa-question-circle"></i> <%= t(".faq", default: "FAQ") %>
