@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_page, only: [:show, :edit]
   def show
     @user = User.friendly.find(params[:id])
     authorize @user
@@ -45,6 +46,10 @@ class UsersController < ApplicationController
 
   def user_password_params
     params.require(:user).permit(:current_password, :password, :password_confirmation)
+  end
+
+  def set_page
+    @page = params["action"]
   end
 
 end
