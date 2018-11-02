@@ -1,0 +1,26 @@
+
+
+<%= render 'shared/navbar' %>
+<%= render 'right-links-dashboard' %>
+<div class="dashboard-container">
+  <%= render 'dashboard-navigation' %>
+  <div class="general-infos">
+    <div class="products-container">
+      <div class="text-part">
+        <h5>Vos campagnes</h5>
+        <p>Retrouvez ici l'historique de vos participations aux campagnes.
+         </p>
+         <%= link_to campaigns_path do %>
+          <div class="btn-blue">Retour aux campagnes en cours</div>
+         <% end %>
+      </div>
+      <div class="right-part product-feed">
+        <% if @picks.present? %>
+          <%= render "my_picks" %>
+        <% else %>
+          <h4>Vous n'avez encore participé à aucune campagne</h4>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

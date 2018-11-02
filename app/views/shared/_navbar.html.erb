@@ -6,7 +6,11 @@
       </div>
     <% end %>
     <div class="user-menu">
-      <i class="fas fa-flask"></i>
+      <% if @user.present? %>
+        <%= link_to my_campaigns_user_path(current_user) do %>
+          <i class="fas fa-flask"></i>
+        <% end %>
+      <% end %>
       <div class="dropdown">
         <i class="fas fa-bars dropdown-toggle" aria-hidden="true" id="dropdown-icon", data-toggle="dropdown"></i>
         <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">

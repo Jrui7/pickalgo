@@ -39,7 +39,8 @@ class UsersController < ApplicationController
 
   def my_campaigns
     @user = current_user
-    @campaigns = @user.campaigns
+    authorize @user
+    @picks = Pick.where(user: @user).where.not(answer: [nil, ""])
   end
 
   private
