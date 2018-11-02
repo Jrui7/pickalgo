@@ -33,9 +33,9 @@
 .user-menu{
   display: flex;
   align-items: center;
-  .fa-flask {
-    color: $blue;
-    cursor: pointer;
+
+  .pick-icon {
+    height: 22px;
   }
   .fa-bars {
   font-size: 20px;

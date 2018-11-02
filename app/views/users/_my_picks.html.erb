@@ -1,5 +1,5 @@
 <% @picks.each do |pick|  %>
-  <div class="product-card">
+  <div class="product-card my-picks">
     <%= cl_image_tag("#{pick.campaign.product.photos.first.path}", :width=>110, :height=>110, :crop=>"fill", class: "recap-image")%>
     <div class="recap-body">
       <div class="title-and-price">
@@ -11,9 +11,30 @@
       </div>
     </div>
   </div>
-  <div class="campaign-link">
-    <% if  pick.campaign.ongoing? %>
-      <p>Ongoing</p>
-    <% end %>
-  </div>
+
+  <% if  pick.campaign.ongoing? %>
+    <div class="campaign-link pending">
+      <div id="timer-<%= pick.id %>" data-timer="<%= pick.campaign.expiration_date %>">
+        <%= render "timer", pick: pick  %>
+        <div id="clockdiv-<%= pick.id%>" class="clockdiv">
+          <div class="dynamic-timer">
+            <span class="days"></span>
+            <div class="smalltext">j</div>
+          </div>
+          <div class="dynamic-timer">
+            <span class="hours"></span>
+            <div class="smalltext">h</div>
+          </div>
+          <div class="dynamic-timer">
+            <span class="minutes"></span>
+            <div class="smalltext">m</div>
+          </div>
+          <div class="dynamic-timer">
+            <span class="seconds"></span>
+            <div class="smalltext">s</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 <% end %>
