@@ -60,11 +60,16 @@
     color: #4caf50;
   }
 
-  .red-icon {
-    color: $red;
-    animation: pulse-shadow 2s infinite;
-    border-radius: 50%;
-  }
+}
+
+.red-icon {
+  color: $red;
+  animation: pulse-shadow 2s infinite;
+  border-radius: 50%;
+}
+
+.gray-icon {
+  color: darkgray;
 }
 
 
