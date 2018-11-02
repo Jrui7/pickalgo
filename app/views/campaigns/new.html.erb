@@ -5,7 +5,7 @@
   <div class="general-infos">
     <div class="products-container">
       <div class="text-part">
-        <h5>Créér une campagne</h5>
+        <h5>Lancez votre campagne</h5>
         <p>Définissez ici les modalités de la lancement de votre campagne
         </p>
          <%= link_to products_path do %>
@@ -14,8 +14,20 @@
       </div>
       <div class="right-part info-bloc">
         <%= simple_form_for [@product, @campaign] do |f| %>
+          <div class="product-card">
+            <%= cl_image_tag("#{@product.photos.first.path}", :width=>110, :height=>110, :crop=>"fill", class: "recap-image")%>
+            <div class="recap-body">
+              <div class="title-and-price">
+                <h3><%= @product.title.capitalize %></h3>
+                <p>Prix original: <%= @product.price %> €</p>
+              </div>
+              <div class="product-category">
+                <p class="<%= @product.category.name.downcase.gsub('é', 'e') %>"><%= @product.category.name %></p>
+              </div>
+            </div>
+          </div>
           <div class="explain-block">
-            <h3>Vous pouvez chosisir entre deux types de campagnes: L'AB/Test et le Test libre.</h3>
+            <h3>Choisissez le type de campagne que vous voulez lancer</h3>
             <div class="test-type">
               <h5 class="test-title">A/B Test</h5>
               <p>Vous hésitez entre plusieurs prix pour votre promo. Lequel serait le plus efficient ? Nous présentons vos prix de façon alternative à chaque participant à la campagne de test pour le déterminer.</p>

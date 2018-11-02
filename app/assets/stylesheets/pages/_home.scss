@@ -217,14 +217,10 @@
     }
 
     .shorten {
-      a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
+      display: flex;
+      justify-content: center;
         .btn-orange {
-          display: inline-block;
+          display: table;
         }
     }
 
@@ -403,6 +399,9 @@
 
       .cta-links {
         margin-top: 30px;
+        a {
+          display: table;
+        }
       }
 
 
