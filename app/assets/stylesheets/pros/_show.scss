@@ -96,7 +96,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: stretch;
-  margin-bottom: 30px;
+  margin-bottom: 1%;
 }
 
 .text-part {
@@ -121,6 +121,10 @@
   flex: 0 0 59%;
   h4 {
     text-align: center;
+  }
+
+  .form-inputs {
+    padding: 0 30px;
   }
 }
 
