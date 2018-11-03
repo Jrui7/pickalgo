@@ -25,7 +25,7 @@ class ProductsController < ApplicationController
     @product = @pro.products.build(product_params)
     authorize @product
    if @product.save
-     redirect_to products_path
+     redirect_to new_product_campaign_path(@product)
    else
      render :new
    end

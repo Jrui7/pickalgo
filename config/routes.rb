@@ -8,10 +8,6 @@ Rails.application.routes.draw do
     sessions: 'pros/sessions',
     passwords: 'pros/passwords'
   }
-  get 'products/index'
-  authenticated :pro do
-      root 'products#index', as: :authenticated_pro_root
-  end
 
 
   get 'users/show'
@@ -38,21 +34,24 @@ Rails.application.routes.draw do
 
   resources :users, only: [ :show, :update, :edit] do
     collection do
-        patch 'update_password'
-      end
+      patch 'update_password'
+    end
+    member do
+      get 'my_campaigns'
+    end
   end
 
 
   resources :pros, only: [:show, :edit, :update] do
     member do
-        patch 'update_password'
-        get 'my_campaigns'
-      end
+      patch 'update_password'
+      get 'my_campaigns'
+    end
   end
   resources :leads, only: [ :create ]
   resources :products, only: [:index, :new, :create, :edit, :update], shallow: true do
     resources :campaigns, only: [:new, :create, :show] do
-      resources :picks, only: [:create, :update]
+      resources :picks, only: [:create, :update, :index]
     end
   end
 

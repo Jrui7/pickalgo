@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_page, only: [:show, :edit]
   def show
     @user = User.friendly.find(params[:id])
     authorize @user
@@ -20,7 +21,6 @@ class UsersController < ApplicationController
     else
       render :show
     end
-
   end
 
   def update_password
@@ -37,6 +37,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def my_campaigns
+    @user = current_user
+    authorize @user
+    @picks = Pick.where(user: @user).where.not(answer: [nil, ""])
+  end
+
   private
 
   def user_params
@@ -45,6 +51,10 @@ class UsersController < ApplicationController
 
   def user_password_params
     params.require(:user).permit(:current_password, :password, :password_confirmation)
+  end
+
+  def set_page
+    @page = params["action"]
   end
 
 end

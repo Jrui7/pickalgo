@@ -5,6 +5,7 @@ class CampaignsController < ApplicationController
 
 
   def index
+    @user = current_user
     @categories = Category.all
     if params[:category].present?
       @filter = Category.friendly.find(params[:category])

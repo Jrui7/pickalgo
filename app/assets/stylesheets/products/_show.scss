@@ -1,12 +1,18 @@
 #product_price, #pick_price {
   padding: 6px 12px 6px 30px;
-  margin-top: 30px;
+  width: 50%;
 }
+
 
 .products-container {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
+}
+
+
+.product-feed {
+  padding: 0 20px;
 }
 
 .product-iterration {
@@ -15,13 +21,29 @@
 
 .campaign-link {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   padding: 15px;
   margin-bottom: 40px;
   background-color: #f1f8fc;
   border: 1px solid rgba(0, 0, 0, 0.0625);
   border-bottom-right-radius: 2px;
   border-bottom-left-radius: 2px;
+}
+
+.new_campaign_buttom {
+  font-weight: bold;
+}
+
+.status-overview {
+  i {
+    margin-right: 10px;
+    font-size: 15px;
+  }
+
+  span {
+    text-transform: uppercase;
+  }
 }
 
 .product-card {
@@ -79,6 +101,6 @@
   }
 }
 
-#product_description {
+#product_description, #pro_bio {
   height: 130px;
 }

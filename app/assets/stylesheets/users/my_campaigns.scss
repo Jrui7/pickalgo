@@ -1,0 +1,24 @@
+.pick-price {
+  color: $blue;
+  font-size: 22px;
+  margin-right: 10px;
+}
+
+.clockdiv {
+  display: flex;
+}
+
+.product-card.my-picks {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.campaign-link.pending {
+  background-color: $blue;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  .dynamic-timer {
+    color: #FFF;
+    border: 1px dashed #FFF;
+  }
+}

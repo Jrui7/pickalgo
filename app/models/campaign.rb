@@ -42,6 +42,10 @@ class Campaign < ApplicationRecord
     save!
   end
 
+  def ongoing?
+    self.expiration_date > DateTime.now
+  end
+
 
 
 

@@ -19,4 +19,8 @@ class UserPolicy < ApplicationPolicy
   def update_password?
     record == User.find(record.id) || @user.admin == true
   end
+
+  def my_campaigns?
+    record == user
+  end
 end

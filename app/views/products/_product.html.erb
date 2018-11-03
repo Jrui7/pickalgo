@@ -6,7 +6,7 @@
       <p><%= product.price %> €</p>
     </div>
     <div class="product-category">
-      <p><%= product.category.name %></p>
+      <p class="<%= product.category.name.downcase.gsub('é', 'e') %>"><%= product.category.name %></p>
     </div>
   </div>
   <div class="edit-links">
@@ -16,7 +16,22 @@
   </div>
 </div>
 <div class="campaign-link">
-  <%= link_to new_product_campaign_path(product) do %>
-    <div class="new_campaign_buttom btn-light">Lancer une campagne</div>
+  <% campaign = product.campaigns.last %>
+  <% if campaign.present? && campaign.ongoing? %>
+    <div class="status-overview">
+      <i class="fas fa-circle red-icon"></i>
+      <span>Campagne active</span>
+    </div>
+    <%= link_to promo_path(campaign) do %>
+      <div class="new_campaign_buttom btn-white">Voir</div>
+    <% end %>
+  <% else %>
+    <div class="status-overview">
+      <i class="fas fa-circle gray-icon"></i>
+      <span>Pas de campagne active</span>
+    </div>
+    <%= link_to new_product_campaign_path(product) do %>
+      <div class="new_campaign_buttom btn-white">Lancer une campagne</div>
+    <% end %>
   <% end %>
 </div>

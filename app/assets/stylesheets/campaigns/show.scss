@@ -1,4 +1,4 @@
-.campaign-container {
+.campaign-container, .campaign-link {
   #clockdiv {
       display: flex;
       margin-top: 15px;
@@ -141,7 +141,7 @@
   }
 
   .participation-input {
-    margin: 20px 0;
+    margin: 40px 0 0 0;
     span {
       margin-right: 20px;
       margin-bottom: 20px;
@@ -190,6 +190,12 @@
     .participation-input {
       display: flex;
       flex-direction: column;
+      margin: 40px 0 0 0;
+      .icon:before {
+          position: absolute;
+          top: 5px;
+          left: 10px;
+      }
     }
 
    }
