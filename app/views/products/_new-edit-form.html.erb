@@ -1,4 +1,5 @@
 <%= simple_form_for(@product) do |f| %>
+  <h5>Informations générales</h5>
   <div class="input-group name-and-cat">
     <%= f.input :title, label:"Nom", placeholder: "Nom de votre produit ou service" %>
     <%= f.association :category, label:"Catégorie", prompt: "Selectionner une categorie" %>
@@ -13,6 +14,7 @@
     <%= f.input :size_guide, label: "Guide des tailles", placeholder: "url du site / guide des tailles" %>
   </div>
   <%= f.input :description, placeholder: "Décrivez votre produit: utilisation, composition, entretien, dimensions..." %>
+  <h5>Médias</h5>
   <div class="media-display">
     <div class="chooseFile">
       <div><span class="glyphicon glyphicon-plus"></span>Ajouter des photos<span style="color: #ff6d43; font-size: 13px; font-weight: bold; margin-left: 10px;">(min-1 / max-5)</span></div>
