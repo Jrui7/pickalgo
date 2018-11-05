@@ -5,13 +5,17 @@ $(document).ready(function(){
        event.preventDefault();
        var photo = $(".attachinary_container").children('input').first();
        if( !$(photo).val() ) {
-          $("#product_photos").addClass("shake").css({ 'color': 'red',});
+          $(".chooseFile").addClass("shake").css({ 'color': 'red',});
         }
         else {
           form.submit();
         }
     })
   }
+
+  $(".chooseFile").click(function() {
+        $("#product_photos").click();
+    });
 
 })
 

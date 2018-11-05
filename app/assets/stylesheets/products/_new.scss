@@ -40,3 +40,37 @@
     flex: 0 0 40%;
   }
 }
+
+.chooseFile, .chooseVideo {
+  color: $orange;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 30px;
+  span {
+    margin-left: 0;
+    margin-right: 10px;
+  }
+}
+
+#product_photos, .video-block {
+  display: none
+}
+
+.video-block {
+  margin-bottom: 40px;
+}
+
+.media-preview {
+  display: inline-block;
+}
+
+#product_video_url {
+  width: 40%;
+}
+
+#product_facebook, #product_instagram, #product_youtube, #product_twitter {
+  width: 40%;
+  padding: 6px 12px 6px 35px;
+}
+
+
