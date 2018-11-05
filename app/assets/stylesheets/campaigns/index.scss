@@ -122,7 +122,6 @@ tr.tr-body:last-child {
 
 .campaigns-presentation {
   flex: 0 0 50%;
-  min-height: 100vh;
 }
 
 .right-encart {
@@ -132,6 +131,7 @@ tr.tr-body:last-child {
 
 .filter-header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding-bottom: 15px;
 
@@ -257,6 +257,82 @@ tr.tr-body:last-child {
 
 .product-description {
   color: #999999 !important;
+}
+
+.filter-xs {
+  display: none;
+}
+
+@media all and (max-width: 1280px) {
+  .campaigns-container {
+    padding: 50px 20px;
+  }
+}
+
+
+
+@media all and (max-width: 980px) {
+
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .categories {
+    display: none;
+  }
+
+  .right-encart {
+    display: none;
+   }
+
+   .campaigns-presentation {
+     flex: 0 0 100%;
+   }
+
+   .filter-xs {
+    display: inline-block;
+    padding: 15px 18px;
+    text-shadow: 0 1px 0 #ce870c;
+    background: linear-gradient(#f5af19, #ff6d43);
+    box-shadow: 0 7px 13px -3px rgba(45,35,66,0.3), 0 2px 4px 0 rgba(45,35,66,0.4), inset 0 -2px 0 0 #ce870c;
+    border-radius: 50%;
+    text-decoration: none;
+    outline: none;
+    color: #FFF;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+   }
+
+   #myNavFilter {
+
+    .filter-header {
+      padding: 0 15px 15px;
+    }
+    p {
+      color: $blue;
+    }
+    a {
+      padding: 5px 15px;
+    }
+   }
+
+
+}
+
+@media screen and (max-width: 480px) {
+
+  #feed {
+    padding: 0;
+  }
+
+
+
+  .right-encart {
+    display: none;
+  }
+
 }
 
 

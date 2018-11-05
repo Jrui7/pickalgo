@@ -7,4 +7,8 @@ $(document).ready(function(){
     $(".overlay").css({ 'height': '0%',});
   })
 
+  $(".filter-xs").click(function(){
+    $(".overlay").css({ 'height': '100%',});
+  })
+
 })
