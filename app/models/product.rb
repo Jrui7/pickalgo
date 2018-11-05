@@ -36,6 +36,10 @@ class Product < ApplicationRecord
     where(pro_id: current_pro)
   end
 
+  def socials?
+    self.facebook.present? || self.instagram.present? || self.youtube.present? || self.twitter.present?
+  end
+
   def photos_count
     self.photos.count
   end
