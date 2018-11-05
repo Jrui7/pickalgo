@@ -40,7 +40,11 @@ class UsersController < ApplicationController
   def my_campaigns
     @user = current_user
     authorize @user
-    @picks = Pick.where(user: @user).where.not(answer: [nil, ""])
+    @picks = Pick.where(user: @user).includes(:campaign).where.not(answer: [nil, ""]).paginate(page: params[:page])
+    respond_to do |format|
+      format.html
+      format.js { render 'users/pick_page' }
+    end
   end
 
   private

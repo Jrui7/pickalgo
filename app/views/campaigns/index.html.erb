@@ -21,6 +21,9 @@
         </div>
       </div>
       <div class="campaigns-presentation">
+        <div id="infinite-scrolling">
+          <%= will_paginate @campaigns %>
+        </div>
         <%= render @campaigns %>
       </div>
       <%= render "shared/right-encart" %>

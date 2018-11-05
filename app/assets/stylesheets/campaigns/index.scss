@@ -1,3 +1,7 @@
+#infinite-scrolling{
+  display: none;
+}
+
 #new_campaign {
   .product-card {
     border-bottom: 1px solid rgba(0, 0, 0, 0.0625);
@@ -122,6 +126,7 @@ tr.tr-body:last-child {
 
 .campaigns-presentation {
   flex: 0 0 50%;
+  min-height: 100vh;
 }
 
 .right-encart {

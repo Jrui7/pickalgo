@@ -5,7 +5,11 @@ class ProductsController < ApplicationController
 
   def index
     @pro = current_pro
-    @products = policy_scope(Product).my_products(@pro)
+    @products = policy_scope(Product).my_products(@pro).paginate(page: params[:page])
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def new
