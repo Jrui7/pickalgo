@@ -15,7 +15,4 @@ class Pro < ApplicationRecord
  extend FriendlyId
   friendly_id :brand, use: :slugged
 
-  def socials?
-    self.facebook.present? || insta.present? || youtube.present? || twitter.present?
-  end
 end

@@ -92,32 +92,31 @@
         </div>
         <div id="tab-2">
           <h3 class="tab-title"><%= @product.pro.brand.capitalize %></h3>
-          <p class="tab-content"><%= @product.pro.bio %></p>
-          <% if @product.pro.socials? %>
+          <% if @product.socials? %>
             <p>Retrouvez <%= @product.pro.brand.capitalize %> sur les réseaux sociaux</p>
             <div class="social-cards">
-              <% if  @product.pro.facebook.present? %>
+              <% if  @product.facebook.present? %>
                 <div class="social-card">
                   <i class="fab fa-facebook"></i>
-                  <%= @product.pro.facebook %>
+                  <%= @product.facebook %>
                 </div>
               <% end %>
-              <% if  @product.pro.insta.present? %>
+              <% if  @product.insta.present? %>
                 <div class="social-card">
                   <i class="fab fa-instagram"></i>
-                  <%= @product.pro.insta %>
+                  <%= @product.insta %>
                 </div>
               <% end %>
-              <% if  @product.pro.youtube.present? %>
+              <% if  @product.youtube.present? %>
                 <div class="social-card">
                   <i class="fab fa-youtube"></i>
-                  <%= @product.pro.youtube %>
+                  <%= @product.youtube %>
                 </div>
               <% end %>
-              <% if  @product.pro.twitter.present? %>
+              <% if  @product.twitter.present? %>
                 <div class="social-card">
                   <i class="fab fa-twitter"></i>
-                  <%= @product.pro.twitter %>
+                  <%= @product.twitter %>
                 </div>
               <% end %>
             </div>

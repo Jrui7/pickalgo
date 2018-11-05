@@ -1,13 +1,50 @@
 <%= simple_form_for(@product) do |f| %>
-  <%= f.input :title, label:"Nom du produit" %>
-  <div class="input-and-icon">
-    <%= f.input :price, label: false, placeholder: "Prix original du produit en €" %>
-    <span class="icon fas fa-euro-sign"></span>
+  <h5>Informations générales</h5>
+  <div class="input-group name-and-cat">
+    <%= f.input :title, label:"Nom", placeholder: "Nom de votre produit ou service" %>
+    <%= f.association :category, label:"Catégorie", prompt: "Selectionner une categorie" %>
+      <%= f.input :price, label: "Prix TTC (€)", placeholder: "Exemple: 89.90" %>
+      <%= f.input :price_ht, label: "Prix HT (€)", placeholder: "Exemple: 74,92" %>
+    <%= f.input :expedition_costs, label: "Livraison (€)", placeholder: "Coûts de livraison pour le client" %>
+    <%= f.input :website, label: "Site internet", placeholder: "Ex: https://wwww.votre_site/votre_produit.com" %>
+    <%= f.input :size_guide, label: "Guide des tailles", placeholder: "url du site / guide des tailles" %>
   </div>
-  <%= f.association :category, label:"Catégorie", prompt: "Selectionner une categorie" %>
   <%= f.input :description, placeholder: "Décrivez votre produit: utilisation, composition, entretien, dimensions..." %>
-  <%= f.input :website, label: "Lien vers votre produit", placeholder: "Ex: https://wwww.votre_site/votre_produit.com" %>
-  <label for="">Photos (1min / 5max)</label>
-  <%= f.attachinary_file_field :photos, label: false, class: "upload", cloudinary: { transformation: { width: 1220, height: 813, crop: :limit } } %>
+  <h5>Médias</h5>
+  <div class="media-display">
+    <div class="chooseFile">
+      <span class="glyphicon glyphicon-plus"></span>Ajouter des photos<span style="color: #72777a; font-size: 13px; font-weight: bold; margin-left: 10px;">(min-1 / max-5)</span>
+    </div>
+    <div class="input-block attach">
+      <%= f.attachinary_file_field :photos, label: false, class: "upload", cloudinary: { transformation: { width: 1220, height: 813, crop: :limit } } %>
+    </div>
+    <div class="chooseVideo">
+      <span class="glyphicon glyphicon-plus"></span>Ajouter une vidéo
+    </div>
+    <div class="input-block video-block">
+      <%= f.input :video_url, label: "Lien Youtube", placeholder: "coller ici l'url d'une video youtube" %>
+      <div class="media-preview hidden">
+        <iframe id="iframe" src="">
+        </iframe>
+      </div>
+    </div>
+  </div>
+  <div class="input-and-icon">
+    <%= f.input :facebook, label: false, placeholder:'Votre page facebook' %>
+    <span class="icon fab fa-facebook"></span>
+  </div>
+  <div class="input-and-icon">
+    <%= f.input :instagram, placeholder:'Votre page instagram', label: false %>
+    <span class="icon fab fa-instagram"></span>
+  </div>
+  <div class="input-and-icon">
+    <%= f.input :youtube, label: false, placeholder:'Votre page youtube' %>
+    <span class="icon fab fa-youtube"></span>
+  </div>
+  <div class="input-and-icon">
+    <%= f.input :twitter, label: false, placeholder: 'Votre page twitter' %>
+    <span class="icon fab fa-twitter"></span>
+  </div>
+
   <%= f.button :submit, "Enregistrer", class: "btn-blue", id:"save-cta" %>
 <% end %>

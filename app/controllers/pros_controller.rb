@@ -1,7 +1,7 @@
 class ProsController < ApplicationController
   skip_before_action :authenticate_user!
   before_action :authenticate_pro!
-  before_action :set_page_params, only: [:show, :edit]
+  before_action :set_page_params, only: [:show]
 
   def show
     @pro = Pro.friendly.find(params[:id])
@@ -30,10 +30,10 @@ class ProsController < ApplicationController
       # Sign in the pro by passing validation in case their password changed
       bypass_sign_in(@pro)
       flash[:notice] = "Mot de passe actualisé"
-      redirect_to edit_pro_path(@pro)
+      redirect_to pro_path(@pro)
     else
       flash[:alert] = "Erreur, mot de passe inchangé"
-      render :edit
+      render :show
     end
   end
 
@@ -51,7 +51,7 @@ class ProsController < ApplicationController
   private
 
   def pro_params
-    params.require(:pro).permit(:brand, :contact_person, :email, :facebook, :insta, :youtube, :twitter, :phone, :bio)
+    params.require(:pro).permit(:brand, :contact_person, :email, :phone, :bio)
   end
 
   def pro_password_params

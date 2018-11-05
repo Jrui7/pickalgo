@@ -42,7 +42,7 @@ Rails.application.routes.draw do
   end
 
 
-  resources :pros, only: [:show, :edit, :update] do
+  resources :pros, only: [:show, :update] do
     member do
       patch 'update_password'
       get 'my_campaigns'
