@@ -1,0 +1,11 @@
+
+  $('.campaigns-presentation').append('<%= j render @campaigns %>');
+  <% if @campaigns.next_page %>
+    $('.pagination').replaceWith('<%= j will_paginate @campaigns %>');
+  <% else %>
+    $('.layout').off('scroll');
+    $('.pagination').remove();
+  <% end %>
+
+
+

@@ -1,4 +1,5 @@
 class Campaign < ApplicationRecord
+  self.per_page = 10
   belongs_to :product
   belongs_to :category
   has_many :picks

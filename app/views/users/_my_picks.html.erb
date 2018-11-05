@@ -1,4 +1,4 @@
-<% @picks.each do |pick|  %>
+<% picks.each do |pick|  %>
   <div class="product-card my-picks">
     <%= cl_image_tag("#{pick.campaign.product.photos.first.path}", :width=>110, :height=>110, :crop=>"fill", class: "recap-image")%>
     <div class="recap-body">

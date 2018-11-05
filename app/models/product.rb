@@ -3,6 +3,7 @@ class Product < ApplicationRecord
   belongs_to :pro
   has_many :campaigns
   has_attachments :photos, maximum: 5
+  self.per_page = 10
 
   validates :title,
       presence: {

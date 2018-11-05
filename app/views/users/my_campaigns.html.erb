@@ -16,7 +16,10 @@
       </div>
       <div class="right-part product-feed">
         <% if @picks.present? %>
-          <%= render "my_picks" %>
+          <div id="infinite-scrolling">
+            <%= will_paginate @picks %>
+          </div>
+          <%= render "my_picks", picks: @picks %>
         <% else %>
           <h4>Vous n'avez encore participé à aucune campagne</h4>
         <% end %>

@@ -9,9 +9,13 @@ class CampaignsController < ApplicationController
     @categories = Category.all
     if params[:category].present?
       @filter = Category.friendly.find(params[:category])
-      @campaigns = policy_scope(Campaign).where(category: @filter)
+      @campaigns = policy_scope(Campaign).includes(:product, :category).where(category: @filter).paginate(page: params[:page])
     else
-      @campaigns = policy_scope(Campaign)
+      @campaigns = policy_scope(Campaign).includes(:product, :category).paginate(page: params[:page])
+    end
+    respond_to do |format|
+      format.html
+      format.js { render 'shared/campaign_page' }
     end
   end
 
