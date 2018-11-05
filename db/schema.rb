@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_31_220543) do
+ActiveRecord::Schema.define(version: 2018_11_05_105918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,6 +100,14 @@ ActiveRecord::Schema.define(version: 2018_10_31_220543) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "pro_id"
+    t.float "price_ht"
+    t.float "expedition_costs"
+    t.string "video_url"
+    t.string "facebook"
+    t.string "instagram"
+    t.string "youtube"
+    t.string "twitter"
+    t.string "size_guide"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["pro_id"], name: "index_products_on_pro_id"
   end
@@ -117,11 +125,6 @@ ActiveRecord::Schema.define(version: 2018_10_31_220543) do
     t.string "contact_person"
     t.string "referal"
     t.string "slug"
-    t.string "insta"
-    t.string "youtube"
-    t.string "facebook"
-    t.string "twitter"
-    t.text "bio"
     t.boolean "admin", default: false
     t.index ["email"], name: "index_pros_on_email", unique: true
     t.index ["reset_password_token"], name: "index_pros_on_reset_password_token", unique: true

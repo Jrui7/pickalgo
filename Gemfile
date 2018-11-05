@@ -34,6 +34,8 @@ gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
 gem 'redis'
 
+gem 'money-rails'
+
 gem 'friendly_id', '~> 5.2.0'
 
 

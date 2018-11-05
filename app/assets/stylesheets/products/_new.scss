@@ -1,0 +1,42 @@
+.product-container {
+  h1 {
+    color: #989898;
+    font-size: 25px;
+    text-align: left;
+  }
+
+  label {
+    color: #72777a;
+  }
+}
+
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.name-and-cat {
+  .product_title, .product_category {
+    flex: 0 0 40%;
+  }
+}
+
+.product_description {
+  margin-bottom: 30px;
+}
+
+.price-and-cost {
+  .product_price, .product_price_ht, .product_expedition_costs {
+    flex: 0 0 40%;
+  }
+}
+
+.website {
+  .product_website, .product_size_guide {
+    flex: 0 0 40%;
+  }
+}
