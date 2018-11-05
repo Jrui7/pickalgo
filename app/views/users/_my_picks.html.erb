@@ -15,7 +15,7 @@
   <% if  pick.campaign.ongoing? %>
     <div class="campaign-link pending">
       <div id="timer-<%= pick.id %>" data-timer="<%= pick.campaign.expiration_date %>">
-        <%= render "timer", pick: pick  %>
+        <%= render "users/timer", pick: pick  %>
         <div id="clockdiv-<%= pick.id%>" class="clockdiv">
           <div class="dynamic-timer">
             <span class="days"></span>

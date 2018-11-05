@@ -1,4 +1,4 @@
-$('.product-feed').append('<%= j render 'users/my_picks', picks: @picks %>');
+$('.product-feed').append('<%= j render 'users/add-pick-history', picks: @picks %>');
 <% if @picks.next_page %>
   $('.pagination').replaceWith('<%= j will_paginate @picks %>');
 <% else %>
