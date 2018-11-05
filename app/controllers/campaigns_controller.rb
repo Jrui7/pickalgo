@@ -15,7 +15,7 @@ class CampaignsController < ApplicationController
     end
     respond_to do |format|
       format.html
-      format.js { render 'shared/campaign_page' }
+      format.js
     end
   end
 
