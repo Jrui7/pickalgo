@@ -1,0 +1,21 @@
+<div id="myNavFilter" class="overlay">
+
+  <!-- Button to close the overlay navigation -->
+  <a href="javascript:void(0)" class="closebtn fas fa-times"></a>
+
+  <!-- Overlay content -->
+  <div class="overlay-content">
+    <div class="filter-header">
+    <% if @filter %>
+       <p class="filter-before">DEFILTRER</p>
+       <%= link_to campaigns_path do %>
+        <i class="fa fa-toggle-on" aria-hidden="true"></i>
+       <% end %>
+      <% else %>
+        <p class="filter-before">FILTRER</p>
+      <% end %>
+    </div>
+    <%= render 'shared/categories', categories: @categories %>
+  </div>
+
+</div>

@@ -1,6 +1,7 @@
 <%= render 'shared/navbar' %>
+<%= render 'filter-overlay' %>
 <div class="page-container">
-  <div class="campaigns-container">
+  <div class="campaigns-container" id="feed">
     <div class="filter-campaigns-right">
       <div class="categories">
         <div class="filter-title">
@@ -24,6 +25,8 @@
       </div>
       <%= render "shared/right-encart" %>
     </div>
-
+  </div>
+  <div class="filter-xs">
+    <i class="fas fa-filter"></i>
   </div>
 </div>
