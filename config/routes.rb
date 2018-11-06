@@ -56,6 +56,7 @@ Rails.application.routes.draw do
   end
 
   get "campaigns", to: "campaigns#index"
+  get "settings/payment-info/pros/auth/stripe_connect/callback", to:"pros#stripe_callback"
 
   get 'pro/campaigns/:id', to: 'campaigns#promo', as: 'promo'
 

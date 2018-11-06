@@ -44,8 +44,17 @@ class ProsController < ApplicationController
     @page = "campaigns"
   end
 
+  def stripe_callback
+    @pro = current_pro
+    authorize @pro
+    code = params[:code]
+    customer = ActiveSupport::JSON.decode(`curl -X POST https://connect.stripe.com/oauth/token -d client_secret=#{ENV['STRIPE_SECRET_KEY']} -d code=#{code} -d grant_type=authorization_code`)
+    @pro.stripe_uid = customer["stripe_user_id"]
+    @pro.save
+  end
+
   def pundit_user
-    Pro.friendly.find(params[:id])
+    current_pro
   end
 
   private

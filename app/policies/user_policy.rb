@@ -19,4 +19,5 @@ class UserPolicy < ApplicationPolicy
   def my_campaigns?
     record == user
   end
+
 end

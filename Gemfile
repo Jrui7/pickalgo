@@ -36,6 +36,7 @@ gem 'redis'
 
 gem 'money-rails'
 gem 'stripe'
+gem 'oauth2'
 
 gem 'friendly_id', '~> 5.2.0'
 gem 'will_paginate'
