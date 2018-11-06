@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   get 'welcome', to: 'pages#welcome'
 
 
-  resources :users, only: [ :show, :update, :edit] do
+  resources :users, only: [ :show, :update] do
     collection do
       patch 'update_password'
     end

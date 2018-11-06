@@ -2,10 +2,11 @@
   <%= link_to user_path(@user) do %>
     <div class="link <%= 'selected-category' if @page == 'show'  %>"><i class="fas fa-tachometer-alt"></i> Paramètres</div>
   <% end %>
-  <%= link_to edit_user_path(@user) do %>
-    <div class="link <%= 'selected-category' if @page == 'edit'  %>"><i class="fas fa-lock"></i> Sécurité</div>
+  <%= link_to my_campaigns_user_path(@user) do %>
+    <div class="pick-menu link <%= 'selected-category' if @page == 'my_campaigns'  %>">
+    <%= image_tag "blue-icon.png", class:"pick-icon" %> Mes campagnes
+    </div>
   <% end %>
-  <div class="link"><i class="fas fa-flask"></i> Campagnes</div>
   <div class="link"><i class="fas fa-question-circle"></i> Aide</div>
   <div class="link"><i class="fas fa-envelope"></i> Nous contacter</div>
   <%= link_to destroy_user_session_path, method: :delete do %>
