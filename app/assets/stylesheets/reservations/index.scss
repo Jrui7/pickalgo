@@ -27,6 +27,10 @@
       border: 1px solid #ccc;
     }
   }
+
+  .form-inputs {
+    margin-top: 30px;
+  }
 }
 
 .left-recap {
@@ -74,7 +78,7 @@
 
 .info-detail {
     padding: 20px;
-    margin: 10px 0;
+    margin: 10px 0 0 0;
     background-color: #f1f8fc;
     text-align: justify;
     color: #3F3933;
@@ -98,5 +102,37 @@
   i {
     margin-right: 15px;
   }
+}
+
+.yellow-selected {
+  background-color: lightgoldenrodyellow;
+  margin-top: 30px;
+}
+
+.or {
+  margin: 15px 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+.display-card {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 1px solid #ccc;
+  box-shadow: none;
+  height: 36px;
+  border-radius: 20px;
+  padding: 8px 9px 8px 10px;
+  i {
+    color: #B5BBC5;
+    margin-right: 20px;
+  }
+  span {
+    margin-right: 10px;
+  }
+
 }
 

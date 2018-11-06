@@ -20,6 +20,4 @@
     <div class="text"><b>Coût total max:</b></div>
     <p class="price"><%= sprintf('%.2f', @pick.campaign.product.expedition_costs + @pick.price) %>€</p>
   </div>
-  <div class="info-detail">Vous n'avez rien à payer aujourd'hui. Si nous pouvons obtenir un prix inférieur à <%= sprintf('%.2f', @pick.campaign.product.expedition_costs + @pick.price) %>€, vous en bénéficierez à la fin de la campagne.
-  </div>
 </div>

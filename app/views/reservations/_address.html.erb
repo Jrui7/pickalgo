@@ -1,7 +1,12 @@
 
 <%= simple_form_for address do |f| %>
   <div class="info-and-inputs">
-    <div class="info-detail">Adresse à laquelle vous souhaitez être livré en cas de campagne concluante.
+    <div class="info-detail">
+      <% if @pick.campaign.test_type == "Test ouvert" %>
+        Adresse à laquelle vous souhaitez être livré si votre proposition est retenue.
+      <% else %>
+        Adresse à laquelle vous souhaitez être livré.
+      <% end %>
     </div>
       <div class="form-inputs">
         <a href="#address-form" id="go-to-form" class='hidden'></a>
