@@ -1,0 +1,33 @@
+<div class="text-part">
+  <h5>Etape 2</h5>
+  <p>Ajouter un produit</p>
+</div>
+<div class="right-part">
+  <div class="not-yet-overlay">
+    <div class="step info-bloc">
+      <h6><i class="fas fa-check-circle"></i> Etape 1</h6>
+      <div class="step-title">Autoriser les encaissements</div>
+      <p>Compte enregistré</p>
+    </div>
+   </div>
+  <div class="step info-bloc">
+    <h6><i class="fas fa-times-circle"></i>Etape 2</h6>
+    <div class="step-title">Ajouter un produit</div>
+    <p>Une fois vos informations de paiement enregistrées, ajoutez le produit pour lequel vous souhaitez lancer une campagne.</p>
+    <div class="btn-container">
+      <%= link_to new_product_path do %>
+        <div class="btn-blue">Ajouter un produit</div>
+      <% end %>
+    </div>
+  </div>
+  <div class="not-yet-overlay">
+    <div class="step info-bloc">
+      <h6><i class="fas fa-times-circle"></i>Etape 3</h6>
+      <div class="step-title">Lancer une campagne</div>
+      <p>Une fois le produit ajouté, vous pouvez lancer une campagne pour celui-ci</p>
+      <div class="btn-container">
+        <a class= "btn-white" href="#">Lancer une campagne</a>
+      </div>
+    </div>
+  </div>
+</div>

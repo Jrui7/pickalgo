@@ -6,6 +6,8 @@ class ProsController < ApplicationController
   def show
     @pro = Pro.friendly.find(params[:id])
     authorize @pro
+    @account = Stripe::Account.retrieve("#{@pro.stripe_uid.to_s}") if @pro.stripe_uid.present?
+    @balance = Stripe::Balance.retrieve() if @pro.stripe_uid.present?
   end
 
   def update
@@ -53,7 +55,10 @@ class ProsController < ApplicationController
       @pro.stripe_uid = customer["stripe_user_id"]
       @pro.save
       flash[:notice] = "Compte enregistré"
-      redirect_to new_product_path
+      redirect_to products_path
+    else
+      flash[:alter] = "Enregistrement non valide. Merci de renouveller l'opération"
+      redirect_to products_path
     end
 
   end
