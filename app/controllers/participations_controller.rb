@@ -5,7 +5,7 @@ class ParticipationsController < ApplicationController
 
   def new
     @user = current_user
-
+    @user.address.present? ? @address = @user.address : @address = Address.new
   end
 
 

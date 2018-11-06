@@ -1,0 +1,25 @@
+<div class="explanation info-bloc">
+  <div class="image-title-price">
+    <%= cl_image_tag @pick.campaign.product.photos.first.path, :height=>75, :crop=>"scale" %>
+    <div class="recap-paragraph">
+      <div>
+      <h4><%= @pick.campaign.product.title.capitalize %></h4>
+      </div>
+      Prix original: <%= sprintf('%.2f', @pick.campaign.product.price) %> €
+    </div>
+  </div>
+  <div class="how-much">
+    <div class="text">Coût livraison:</div>
+    <p class="price"><%= sprintf('%.2f', @pick.campaign.product.expedition_costs) %> €</p>
+  </div>
+  <div class="how-much">
+    <div class="text">Votre prix max:</div>
+    <p class="price"><%= sprintf('%.2f', @pick.price) %> €</p>
+  </div>
+  <div class="how-much last">
+    <div class="text"><b>Coût total max:</b></div>
+    <p class="price"><%= sprintf('%.2f', @pick.campaign.product.expedition_costs + @pick.price) %>€</p>
+  </div>
+  <div class="info-detail">Vous n'avez rien à payer aujourd'hui. Si nous pouvons obtenir un prix inférieur à <%= sprintf('%.2f', @pick.campaign.product.expedition_costs + @pick.price) %>€, vous en bénéficierez à la fin de la campagne.
+  </div>
+</div>

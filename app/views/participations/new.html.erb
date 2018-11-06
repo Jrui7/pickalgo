@@ -1,91 +1,20 @@
- <script src="https://js.stripe.com/v3/"></script>
- <div class="paiement-container" >
-  <div class="booking-confirmation">
-    <h2>Enregistrez votre participation</h2>
-    <div class="recap-and-form">
-      <div class="address input-form">
-        <div class="address-form">
-          <% if  @user.addresses.any? %>
-            <%= render "payments/address", customer_address: @customer_address %>
-            <% else %>
-            <%= render "payments/create-address", customer_address: @customer_address %>
-          <% end %>
-        </div>
+<script src="https://js.stripe.com/v3/"></script>
+<%= render 'shared/navbar' %>
+<div class="page-container">
+  <div class="campaigns-container" id="feed">
+    <div class="left-and-right">
+      <div class="left-recap">
+        <h5 id="recap">Récap</h5>
+        <%= render 'recap' %>
       </div>
-      <div class="recap">
-        <h3>Récap</h3>
-        <div class="explanation">
-          <div class="image-title-price">
-            <%= cl_image_tag @seed.photos.first.path, :height=>75, :crop=>"scale" %>
-            <div class="recap-paragraph">
-              <div>
-              <h4><%= @seed.title %></h4>
-              </div>
-              Pické le: <%= @pick.created_at.strftime("%d/%m/%Y") %>
-            </div>
-          </div>
-          <div class="how-much">
-            <div class="text">Coût livraison:</div>
-            <p class="price"><%= @seed.expedition_costs.round(2) %> €</p>
-          </div>
-          <div class="how-much">
-            <div class="text">Pické pour:</div>
-            <p class="price"><%= @pick.price.round(2) %> €</p>
-          </div>
-          <div class="how-much last">
-            <div class="text"><b>Coût total max:</b></div>
-            <p class="price"><%= (@pick.price + @seed.expedition_costs).round(2) %> €</p>
-          </div>
-          <div class="info-detail">Vous n'avez rien à payer aujourd'hui, et ne serez débité que si nous arrivons à obtenir un prix inférieur ou égal à celui que vous avez proposé.
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="recap-and-form">
-      <div class="input-form stripe">
-        <h3>Paiement</h3>
-        <div class="info-and-inputs">
-          <div class="info-detail">Renseignez la carte à débiter en cas de succès de votre proposition d'achat.
-          <br><b>Vous n'avez rien à payer aujourd'hui</b>
-          </div>
-        </div>
-          <div class="card-container">
-          <% if @customer_infos %>
-            <div id="update-customer-stripe">
-              <%= render "payments/card", customer_infos: @customer_infos %>
-            </div>
-            <%= link_to "Save and book", pick_payments_path(@pick), class: "hidden", id: "save-and-book",  method: :post %>
-            <div class="with_customer_id">
-              <div class="cgu-reminder">En validant ma participation, je déclare avoir pris connaissance et accepté sans réserve les CGU et CGV</div>
-              <div class="booking-button btn-orange" id="with_customer_id">
-                <i class="fa fa-lock"></i>
-                <p>Confirmer participation</p>
-              </div>
-            </div>
-          <% end %>
-          <%= form_tag pick_payments_path(@pick), class: "#{'hidden' if @customer_infos}", id: "payment-form" do %>
-            <div class="form-row">
-              <div id="card-element">
-                <!-- A Stripe Element will be inserted here. -->
-              </div>
-              <!-- Used to display form errors. -->
-              <div id="card-errors" role="alert"></div>
-            </div>
-            <div class="cgu-reminder">En validant ma participation, je déclare avoir pris connaissance et accepté sans réserve les CGU et CGV</div>
-            <button class="booking-button btn-orange" id="validate-paiement">
-              <i class="fa fa-lock"></i>
-              <p>Confirmer participation</p>
-            </button>
-            <% end %>
-            <div class="loader-container hidden">
-            </div>
+      <div class="right-forms">
+        <div class="delivery">
+          <h5>Livraison</h5>
+          <div class="info-bloc">
+            <%= render 'address', address: @address %>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
-<%= render "shared/stripe-form" %>
-<%= render "shared/footer" %>

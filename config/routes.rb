@@ -57,6 +57,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :addresses, only: [:create, :update]
+
   get "campaigns", to: "campaigns#index"
   get "settings/payment-info/pros/auth/stripe_connect/callback", to:"pros#stripe_callback"
 
