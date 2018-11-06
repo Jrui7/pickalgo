@@ -84,9 +84,19 @@
   display: flex;
 }
 
-.update-address-button {
+.validate-form-button {
   display: flex;
   justify-content: flex-end;
   margin-top: 50px;
+}
+
+.delivery {
+  margin-bottom: 5%;
+}
+
+.booking-button {
+  i {
+    margin-right: 15px;
+  }
 }
 

@@ -14,7 +14,14 @@
             <%= render 'address', address: @address %>
           </div>
         </div>
+        <div class="reservation">
+          <h5>Réservation</h5>
+          <div class="info-bloc">
+            <%= render 'stripe-infos' %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+<%= render "shared/stripe-form" %>
