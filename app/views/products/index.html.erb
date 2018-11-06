@@ -5,29 +5,61 @@
   <%= render 'pros/dashboard-navigation' %>
   <div class="general-infos">
     <div class="products-container">
-      <div class="text-part">
-        <h5>Vos produits</h5>
-         <% if @pro.stripe_uid.present? %>
-         <p>Retrouvez et gérez ici l'intégralité de vos produits.
-          </p>
+      <% if @pro.stripe_uid.blank? %>
+        <div class="text-part">
+          <h5>Etape 1</h5>
+          <p>3 étapes pour lancer une campagne</p>
+        </div>
+        <div class="right-part">
+          <div class="step info-bloc">
+            <h6><i class="fas fa-times-circle"></i> Etape 1</h6>
+            <div class="step-title">Autoriser les encaissements</div>
+            <p>Autorisez les encaissements sur votre compte bancaire des commandes que vous aurez validées à la fin de votre campagne. Cliquez sur le boutton "Autoriser les encaissements", et suivez les instructions de STRIPE, notre partenaire de gestion de paiement sécurisé.</p>
+            <div class="btn-container">
+              <a class= "btn-blue" href="<%= stripe_url %>">Autoriser les encaissements</a>
+            </div>
+          </div>
+          <div class="not-yet-overlay">
+            <div class="step info-bloc">
+              <h6><i class="fas fa-times-circle"></i>Etape 2</h6>
+              <div class="step-title">Ajouter un produit</div>
+              <p>Une fois vos informations de paiement enregistrées, ajoutez le produit pour lequel vous souhaitez lancer une campagne.</p>
+              <div class="btn-container">
+                <a class= "btn-blue" href="#">Ajouter un produit</a>
+              </div>
+            </div>
+          </div>
+          <div class="not-yet-overlay">
+            <div class="step info-bloc">
+              <h6><i class="fas fa-times-circle"></i>Etape 3</h6>
+              <div class="step-title">Lancer une campagne</div>
+              <p>Une fois le produit ajouté, vous pouvez lancer une campagne pour celui-ci</p>
+              <div class="btn-container">
+                <a class= "btn-blue" href="#">Lancer une campagne</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% else %>
+        <div class="text-part">
+          <h5>Vos produits</h5>
+           <p>Retrouvez et gérez ici l'intégralité de vos produits.
+            </p>
           <%= link_to new_product_path do %>
             <div class="btn-orange">Ajouter un produit</div>
           <% end %>
-        <% else %>
-          <p>Pour ajouter un produit et lancer une campagne, vous devez en premier lieu renseigner le compte sur lequel vous souhaitez encaisser les commandes de vos diffétentes campagnes.</p>
-          <a class= "btn-blue" href="<%= stripe_url %>">Autoriser les encaissements</a>
-         <% end %>
-      </div>
-      <div class="right-part product-feed">
-        <% if @products.present? %>
-          <div id="infinite-scrolling">
-            <%= will_paginate @products %>
-          </div>
-          <%= render @products %>
-        <% else %>
-          <h4>Vous n'avez encore ajouté aucun produit</h4>
-        <% end %>
-      </div>
+        </div>
+        <div class="right-part product-feed">
+          <% if @products.present? %>
+            <div id="infinite-scrolling">
+              <%= will_paginate @products %>
+            </div>
+            <%= render @products %>
+          <% else %>
+            <h4>Vous n'avez encore ajouté aucun produit</h4>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

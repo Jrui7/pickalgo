@@ -1,2 +1,39 @@
 @import "show";
 @import "new";
+
+
+
+.step {
+  h6 {
+    font-size: 20px;
+    i {
+      margin-right: 15px;
+    }
+    .fa-times-circle {
+      color: $red;
+    }
+  }
+  .step-title {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  p {
+    text-align: justify;
+    font-size: 15px;
+  }
+
+  a {
+    display: inline-block;
+  }
+
+  .btn-container {
+    text-align: right;
+    margin-top: 30px;
+  }
+}
+
+.not-yet-overlay {
+  opacity: .5;
+  background: black;
+}
+

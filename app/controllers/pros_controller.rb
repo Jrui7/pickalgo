@@ -48,9 +48,14 @@ class ProsController < ApplicationController
     @pro = current_pro
     authorize @pro
     code = params[:code]
-    customer = ActiveSupport::JSON.decode(`curl -X POST https://connect.stripe.com/oauth/token -d client_secret=#{ENV['STRIPE_SECRET_KEY']} -d code=#{code} -d grant_type=authorization_code`)
-    @pro.stripe_uid = customer["stripe_user_id"]
-    @pro.save
+    if code.present?
+      customer = ActiveSupport::JSON.decode(`curl -X POST https://connect.stripe.com/oauth/token -d client_secret=#{ENV['STRIPE_SECRET_KEY']} -d code=#{code} -d grant_type=authorization_code`)
+      @pro.stripe_uid = customer["stripe_user_id"]
+      @pro.save
+      flash[:notice] = "Compte enregistré"
+      redirect_to new_product_path
+    end
+
   end
 
   def pundit_user
