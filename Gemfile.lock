@@ -254,6 +254,8 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    stripe (3.29.0)
+      faraday (~> 0.10)
     swipebox (1.4.4)
       rails (>= 3.1, < 6.0)
       sass-rails (>= 3.1, < 6.0)
@@ -320,6 +322,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   sprockets (~> 3.7.2)
+  stripe
   swipebox
   turbolinks (~> 5)
   tzinfo-data

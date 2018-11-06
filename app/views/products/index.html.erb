@@ -7,10 +7,15 @@
     <div class="products-container">
       <div class="text-part">
         <h5>Vos produits</h5>
-        <p>Retrouvez et gérez ici l'intégralité de vos produits.
-         </p>
-         <%= link_to new_product_path do %>
-          <div class="btn-orange">Ajouter un produit</div>
+         <% if @pro.stripe_uid.present? %>
+         <p>Retrouvez et gérez ici l'intégralité de vos produits.
+          </p>
+          <%= link_to new_product_path do %>
+            <div class="btn-orange">Ajouter un produit</div>
+          <% end %>
+        <% else %>
+          <p>Pour ajouter un produit et lancer une campagne, vous devez en premier lieu renseigner le compte sur lequel vous souhaitez encaisser les commandes à la fin de la campagne.</p>
+          <a class= "btn-blue" href="<%= stripe_url %>">Créér mon compte produit</a>
          <% end %>
       </div>
       <div class="right-part product-feed">
