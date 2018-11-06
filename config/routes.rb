@@ -52,7 +52,7 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :new, :create, :edit, :update], shallow: true do
     resources :campaigns, only: [:new, :create, :show] do
       resources :picks, only: [:create, :update, :index] do
-        resources :reservations, only: [:new, :create, :edit, :destroy]
+        resources :reservations, only: [:new, :create, :destroy]
       end
     end
   end
