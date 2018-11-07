@@ -34,8 +34,10 @@ class CampaignsController < ApplicationController
     @campaign.category = @product.category
     @campaign.title = @product.title
     if @campaign.save
+      flash[:notice] = "Campagne lancée avec succès"
       redirect_to products_path
     else
+      flash[:alert] = "Erreur, informations incomplètes"
       render :new
     end
   end

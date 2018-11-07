@@ -4,6 +4,7 @@ class Campaign < ApplicationRecord
   belongs_to :category
   has_many :picks
   after_create :set_expiration
+  validates :test_type, presence: { message: "Merci de choisir un type de test pour votre campagne" }
 
   extend FriendlyId
     friendly_id :slug_candidates, use: :slugged

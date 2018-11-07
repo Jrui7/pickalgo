@@ -44,6 +44,15 @@
   }
 }
 
+.open-part {
+  display: none;
+  p {
+    text-align: justify;
+    font-size: 15px;
+    margin-bottom: 25px;
+  }
+}
+
 .price-inputs {
   display: flex;
   flex-wrap: wrap;
