@@ -5,24 +5,26 @@
   <%= render 'pros/dashboard-navigation' %>
   <div class="general-infos">
     <div class="products-container">
-      <div class="text-part">
-        <h5>Vos produits</h5>
-        <p>Retrouvez et gérez ici l'intégralité de vos produits.
-         </p>
-         <%= link_to new_product_path do %>
-          <div class="btn-orange">Ajouter un produit</div>
-         <% end %>
-      </div>
-      <div class="right-part product-feed">
-        <% if @products.present? %>
-          <div id="infinite-scrolling">
-            <%= will_paginate @products %>
-          </div>
-          <%= render @products %>
-        <% else %>
-          <h4>Vous n'avez encore ajouté aucun produit</h4>
-        <% end %>
-      </div>
+      <% if @pro.stripe_uid.blank? %>
+        <%= render 'shared/no-pro-id' %>
+      <% elsif @products.blank? %>
+        <%= render 'shared/no-products' %>
+      <% elsif @products.present? %>
+        <div class="text-part">
+          <h5>Vos produits</h5>
+           <p>Retrouvez et gérez ici l'intégralité de vos produits.
+            </p>
+          <%= link_to new_product_path do %>
+            <div class="btn-orange">Ajouter un produit</div>
+          <% end %>
+        </div>
+        <div class="right-part product-feed">
+            <div id="infinite-scrolling">
+              <%= will_paginate @products %>
+            </div>
+            <%= render @products %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

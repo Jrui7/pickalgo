@@ -1,0 +1,13 @@
+<div class="registered-card">
+  <div class="or">OU</div>
+  <div class="new-card display-card">
+    Utiliser une autre carte
+  </div>
+  <%= link_to "This card", pick_reservations_path(@pick),  method: :post, id:"with_customer_id" %>
+  <div class="validate-form-button">
+    <button class="booking-button btn-orange has-infos">
+      <i class="fa fa-lock"></i>
+      <span>Confirmer réservation</span>
+    </button>
+  </div>
+</div>

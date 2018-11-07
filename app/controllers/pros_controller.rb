@@ -6,6 +6,8 @@ class ProsController < ApplicationController
   def show
     @pro = Pro.friendly.find(params[:id])
     authorize @pro
+    @account = Stripe::Account.retrieve("#{@pro.stripe_uid.to_s}") if @pro.stripe_uid.present?
+    @balance = Stripe::Balance.retrieve() if @pro.stripe_uid.present?
   end
 
   def update
@@ -44,8 +46,25 @@ class ProsController < ApplicationController
     @page = "campaigns"
   end
 
+  def stripe_callback
+    @pro = current_pro
+    authorize @pro
+    code = params[:code]
+    if code.present?
+      customer = ActiveSupport::JSON.decode(`curl -X POST https://connect.stripe.com/oauth/token -d client_secret=#{ENV['STRIPE_SECRET_KEY']} -d code=#{code} -d grant_type=authorization_code`)
+      @pro.stripe_uid = customer["stripe_user_id"]
+      @pro.save
+      flash[:notice] = "Compte enregistré"
+      redirect_to products_path
+    else
+      flash[:alter] = "Enregistrement non valide. Merci de renouveller l'opération"
+      redirect_to products_path
+    end
+
+  end
+
   def pundit_user
-    Pro.friendly.find(params[:id])
+    current_pro
   end
 
   private

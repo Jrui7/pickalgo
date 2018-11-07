@@ -12,10 +12,6 @@ class UserPolicy < ApplicationPolicy
     record == user || user.admin == true
   end
 
-  def edit?
-    record == user || user.admin == true
-  end
-
   def update_password?
     record == User.find(record.id) || @user.admin == true
   end
@@ -23,4 +19,5 @@ class UserPolicy < ApplicationPolicy
   def my_campaigns?
     record == user
   end
+
 end

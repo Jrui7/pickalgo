@@ -1,0 +1,168 @@
+.two-parts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-betwwen;
+  margin-bottom: 0px;
+  h5 {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 20px;
+      color: #FFF;
+      background-color: $blue;
+      padding: 5px 10px;
+  }
+
+  #recap {
+    background-color: #CCC;
+  }
+
+  .input-and-icon {
+    height: 40px;
+  }
+
+  .form-control {
+    border: 1px solid transparent;
+    box-shadow: none;
+    &:hover, &:focus {
+      border: 1px solid #ccc;
+    }
+  }
+
+  .form-inputs {
+    margin-top: 30px;
+  }
+}
+
+.left-recap {
+  flex: 0 0 35%;
+  margin-right: 1%;
+}
+
+.right-forms {
+  flex: 0 0 64%;
+}
+
+.image-title-price {
+  display: flex;
+  margin-bottom: 20px;
+  img {
+    margin-right: 30px;
+  }
+}
+
+.how-much {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 10px;
+  .text {
+    text-transform: uppercase;
+    color: #1A171B;
+  }
+
+  .price {
+    margin: 0;
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+    flex: 1 0 20%;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.explanation .last {
+    border: 1px solid black;
+    padding: 5px 10px;
+}
+
+.info-detail {
+    padding: 20px;
+    margin: 10px 0 0 0;
+    background-color: #f1f8fc;
+    text-align: justify;
+    color: #3F3933;
+}
+
+.group-inputs {
+  display: flex;
+}
+
+.validate-form-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 50px;
+}
+
+.delivery {
+  margin-bottom: 5%;
+}
+
+.booking-button {
+  i {
+    margin-right: 15px;
+  }
+}
+
+.yellow {
+  background-color: lightgoldenrodyellow;
+}
+
+.first-card {
+  margin-top: 30px;
+}
+
+.or {
+  margin: 15px 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+.display-card {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 1px solid #ccc;
+  box-shadow: none;
+  height: 36px;
+  border-radius: 20px;
+  padding: 8px 9px 8px 10px;
+  i {
+    color: #B5BBC5;
+    margin-right: 20px;
+  }
+  span {
+    margin-right: 10px;
+  }
+
+}
+
+#with_customer_id {
+  display: none;
+}
+
+.update-card {
+  display: none;
+}
+
+#address-errors {
+  color: $red;
+  margin: 10px 0;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .left-recap {
+    flex: 0 0 100%;
+    margin-right: 0;
+  }
+
+  .right-forms {
+    flex: 0 0 100%;
+  }
+
+ }
+

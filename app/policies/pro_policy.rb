@@ -20,4 +20,8 @@ class ProPolicy < ApplicationPolicy
   def my_campaigns?
     record == @user
   end
+
+  def stripe_callback?
+    record == user
+  end
 end

@@ -1,11 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_page, only: [:show, :edit]
+  before_action :set_page, only: [:show, :my_campaigns]
   def show
-    @user = User.friendly.find(params[:id])
-    authorize @user
-  end
-
-  def edit
     @user = User.friendly.find(params[:id])
     authorize @user
   end
@@ -30,10 +25,10 @@ class UsersController < ApplicationController
       # Sign in the pro by passing validation in case their password changed
       bypass_sign_in(@user)
       flash[:notice] = "Mot de passe actualisé"
-      redirect_to edit_user_path(@user)
+      redirect_to user_path(@user)
     else
       flash[:alert] = "Erreur, mot de passe inchangé"
-      render :edit
+      render :show
     end
   end
 

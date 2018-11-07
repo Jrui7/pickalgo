@@ -2,6 +2,7 @@ class User < ApplicationRecord
   validate :validate_invite, :on => :create
   has_many :picks
   has_many :campaigns, through: :picks
+  has_one :address
   attr_accessor :invite
 
   extend FriendlyId

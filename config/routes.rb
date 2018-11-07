@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   get 'welcome', to: 'pages#welcome'
 
 
-  resources :users, only: [ :show, :update, :edit] do
+  resources :users, only: [ :show, :update] do
     collection do
       patch 'update_password'
     end
@@ -51,11 +51,16 @@ Rails.application.routes.draw do
   resources :leads, only: [ :create ]
   resources :products, only: [:index, :new, :create, :edit, :update], shallow: true do
     resources :campaigns, only: [:new, :create, :show] do
-      resources :picks, only: [:create, :update, :index]
+      resources :picks, only: [:create, :update, :index] do
+        resources :reservations, only: [:new, :create, :destroy]
+      end
     end
   end
 
+  resources :addresses, only: [:create, :update]
+
   get "campaigns", to: "campaigns#index"
+  get "settings/payment-info/pros/auth/stripe_connect/callback", to:"pros#stripe_callback"
 
   get 'pro/campaigns/:id', to: 'campaigns#promo', as: 'promo'
 

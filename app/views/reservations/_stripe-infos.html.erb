@@ -1,0 +1,55 @@
+<div class="info-detail">
+  <% if @pick.campaign.test_type == "Test ouvert" %>
+    Si nous pouvons obtenir un prix inférieur à <%= sprintf('%.2f', @pick.campaign.product.expedition_costs + @pick.price) %>€ (livraison comprise), vous en bénéficierez à la fin de la campagne. La carte débitée sera celle renseignée ci-dessous. <b>Vous n'avez rien à payer aujourd'hui.</b>
+  <% else %>
+    Confirmez votre réservation pour bénéficier du meilleur prix promotionnel. La carte renseignée ci-dessous sera débitée à la fin de la campagne d'un montant inférieur ou égal à <%= sprintf('%.2f', @pick.campaign.product.expedition_costs + @pick.price) %>€ (livraison comprise). <b>Vous n'avez rien à payer aujourd'hui.</b>
+  <% end %>
+</div>
+<% if @customer_infos.present? %>
+  <div class="display-card yellow first-card">
+    <i class="fas fa-credit-card"></i>
+    <span><%= @customer_infos["brand"]%></span>
+    <span class="hidden-xs">**** **** **** <%= @customer_infos["last4"] %></span>
+    <span><%= @customer_infos["exp_month"]%>/<%= @customer_infos["exp_year"] %></span>
+  </div>
+  <%= render 'registered-card' %>
+  <%= form_tag pick_reservations_path(@pick), class: "update-card", id: "reservation-form" do %>
+    <div class="form-row">
+      <label class="or" for="card-element">
+        Nouvelle Carte
+      </label>
+      <div id="card-element">
+        <!-- A Stripe Element will be inserted here. -->
+      </div>
+
+      <!-- Used to display form errors. -->
+      <div id="card-errors" role="alert"></div>
+    </div>
+    <div class="validate-form-button">
+      <button class="booking-button btn-orange" id="validate-reservation">
+        <i class="fa fa-lock"></i>
+        <span>Confirmer réservation</span>
+    </button>
+    </div>
+  <% end %>
+<% else %>
+  <%= form_tag pick_reservations_path(@pick), id: "reservation-form" do %>
+    <div class="form-row">
+      <label class= "or" for="card-element">
+        Carte
+      </label>
+      <div id="card-element">
+        <!-- A Stripe Element will be inserted here. -->
+      </div>
+
+      <!-- Used to display form errors. -->
+      <div id="card-errors" role="alert"></div>
+    </div>
+    <div class="validate-form-button">
+      <button class="booking-button btn-orange" id="validate-reservation">
+        <i class="fa fa-lock"></i>
+        <span>Confirmer réservation</span>
+      </button>
+    </div>
+  <% end %>
+<% end %>
