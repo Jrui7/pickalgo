@@ -1,7 +1,7 @@
 class CampaignsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:new, :create, :promo]
-  before_action :authenticate_pro!, only: [:new, :create, :promo]
-  before_action :set_page_params, only: [:new, :create, :promo]
+  skip_before_action :authenticate_user!, only: [:new, :edit, :create, :promo]
+  before_action :authenticate_pro!, only: [:new, :edit, :create, :promo]
+  before_action :set_page_params, only: [:new, :edit, :create, :promo]
 
 
   def index
@@ -40,6 +40,7 @@ class CampaignsController < ApplicationController
     end
   end
 
+  # Pour les testeurs
   def show
     @campaign = Campaign.friendly.find(params[:id])
     authorize @campaign
@@ -65,13 +66,19 @@ class CampaignsController < ApplicationController
 
   end
 
+  def edit
+    @campaign = Campaign.friendly.find(params[:id])
+    authorize @campaign
+    @pro = @campaign.product.pro
+  end
 
+  # Pour le pro
   def promo
     @campaign = Campaign.friendly.find(params[:id])
     @pro = current_pro
     authorize @campaign
     @picks = @campaign.picks.order('price DESC')
-    @validated_picks = @picks.where(state: "validated")
+    @validated_picks = @picks.where.not(card: [nil, ""])
   end
 
   private

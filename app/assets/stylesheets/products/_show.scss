@@ -105,3 +105,9 @@
 #product_description, #pro_bio {
   height: 130px;
 }
+
+@media screen and (max-width: 480px) {
+  .product-feed {
+    padding: 0;
+  }
+}
