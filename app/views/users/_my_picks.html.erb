@@ -11,8 +11,14 @@
       </div>
     </div>
   </div>
-
-  <% if  pick.campaign.ongoing? %>
+  <% if pick.card.present? && pick.campaign.ongoing? %>
+    <div class="campaign-link reservation-done">
+      <div class="status-overview">En attente</div>
+      <%= link_to pick_path(pick) do %>
+        <div class="btn-white">Voir détails</div>
+      <% end %>
+    </div>
+  <% elsif pick.campaign.ongoing? %>
     <div class="campaign-link pending">
       <div id="timer-<%= pick.id %>" data-timer="<%= pick.campaign.expiration_date %>">
         <%= render "users/timer", pick: pick  %>

@@ -41,7 +41,7 @@ class ReservationsController < ApplicationController
     end
     delivery_infos = {first_name: pick_address.first_name, last_name: pick_address.last_name, street: pick_address.street, address_complement: pick_address.address_complement, zip_code: pick_address.zip_code, city: pick_address.city, phone_number: pick_address.phone_number}
     @pick.update(card: card, delivery_infos: delivery_infos)
-    redirect_to my_campaigns_user_path(@user), :flash => { :notice => "Réservation enregistrée" }
+    redirect_to pick_path(@pick), :flash => { :notice => "Réservation enregistrée" }
 
     rescue Stripe::CardError => e
     flash[:alert] = e.message
