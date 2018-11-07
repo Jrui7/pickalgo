@@ -9,7 +9,8 @@
       </div>
       <div class="right-forms">
         <div class="delivery">
-          <h5>Livraison</h5>
+          <h5 id="address-top">Livraison</h5>
+          <div class="hidden" id="address-errors">Merci de remplir les informations nécessaires à la validation</div>
           <div class="info-bloc">
             <%= render 'address', address: @address %>
           </div>
@@ -18,6 +19,7 @@
           <h5>Réservation</h5>
           <div class="info-bloc">
             <%= render 'stripe-infos' %>
+            <div class="loader-container hidden">
           </div>
         </div>
       </div>

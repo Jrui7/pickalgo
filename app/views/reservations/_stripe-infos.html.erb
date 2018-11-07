@@ -15,7 +15,7 @@
   <%= render 'registered-card' %>
   <%= form_tag pick_reservations_path(@pick), class: "update-card", id: "reservation-form" do %>
     <div class="form-row">
-      <label for="card-element">
+      <label class="or" for="card-element">
         Nouvelle Carte
       </label>
       <div id="card-element">
@@ -35,7 +35,7 @@
 <% else %>
   <%= form_tag pick_reservations_path(@pick), id: "reservation-form" do %>
     <div class="form-row">
-      <label for="card-element">
+      <label class= "or" for="card-element">
         Carte
       </label>
       <div id="card-element">
