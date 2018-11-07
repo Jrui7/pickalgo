@@ -80,7 +80,7 @@ class CampaignsController < ApplicationController
     @pro = current_pro
     authorize @campaign
     @picks = @campaign.picks.order('price DESC')
-    @validated_picks = @picks.where.not(card: [nil, ""])
+    @validated_picks = @picks.select { |pick| pick.card.present? }
   end
 
   private

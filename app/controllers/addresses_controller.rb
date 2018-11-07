@@ -8,7 +8,7 @@ class AddressesController < ApplicationController
     if @address.save
       flash[:notice] = "Adresse enregistrée"
       respond_to do |format|
-        format.html { redirect_to new_pick_reservation_path(pick)}
+        format.html { redirect_to new_pick_reservation_path(pick, anchor: 'reservation-box')}
       end
     else
       flash[:notice] = "Erreur: adresse non enregistrée"
@@ -27,7 +27,7 @@ class AddressesController < ApplicationController
     if @address.update(address_params_form_payment)
       flash[:notice] = "Adresse modifiée avec succès"
       respond_to do |format|
-        format.html { redirect_to new_pick_reservation_path(pick)}
+        format.html { redirect_to new_pick_reservation_path(pick, anchor: 'reservation-box')}
       end
     end
   end
