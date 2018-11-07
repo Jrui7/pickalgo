@@ -9,6 +9,10 @@
   }
 }
 
+.campaign-bloc {
+  flex: 0 0 100%;
+}
+
 .explain-block {
   margin-bottom: 30px;
   h3 {
@@ -33,14 +37,18 @@
 
 .price-part {
   display: none;
+  p {
+    text-align: justify;
+    font-size: 15px;
+    margin-bottom: 25px;
+  }
 }
 
 .price-inputs {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  input {
-    flex: 0 0 30%;
+  .form-group {
+    margin-right: 15px;
   }
 }
 
