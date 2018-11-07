@@ -3,7 +3,7 @@
 <div class="dashboard-container">
   <%= render 'users/dashboard-navigation' %>
     <div class="general-infos">
-      <h5>Fin de la campagne: <%= @pick.campaign.expiration_date.strftime("%d/%m/%y") %></h5>
+      <h5 id="ending-date">Fin de la campagne: <%= @pick.campaign.expiration_date.strftime("%d/%m/%y") %></h5>
       <div class="two-parts">
         <div class="left-recap">
           <h5 id="recap">Récap</h5>
@@ -21,9 +21,17 @@
                 <% end %>
               </div>
               <div class="address-infos">
+                <div class="addres-bloc">
                 <div><%= @pick.delivery_infos["first_name"] %> <%= @pick.delivery_infos["last_name"] %></div>
                 <div><%= @pick.delivery_infos["street"] %></div>
                 <div><%= @pick.delivery_infos["zip_code"] %> <%= @pick.delivery_infos["city"] %></div>
+                </div>
+                <div class="complement-bloc">
+                  <div class="complement">Infos complémentaires:</div>
+                  <div class="info"><%= @pick.delivery_infos["address_complement"].present? ? @pick.delivery_infos["address_complement"] : "Pas de complément d'adresse" %>
+                  <div class="info"><%= @pick.delivery_infos["phone_number"].present? ? @pick.delivery_infos["phone_number"] : "Pas de numéro de téléphone renseigné"%>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
