@@ -1,5 +1,6 @@
 .two-parts {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-betwwen;
   margin-bottom: 0px;
@@ -139,6 +140,10 @@
 
 }
 
+#with_customer_id {
+  display: none;
+}
+
 .update-card {
   display: none;
 }
@@ -148,4 +153,16 @@
   margin: 10px 0;
   text-align: center;
 }
+
+@media screen and (max-width: 768px) {
+  .left-recap {
+    flex: 0 0 100%;
+    margin-right: 0;
+  }
+
+  .right-forms {
+    flex: 0 0 100%;
+  }
+
+ }
 
