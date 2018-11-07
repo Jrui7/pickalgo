@@ -6,11 +6,17 @@
   <% end %>
 </div>
 <% if @customer_infos.present? %>
-  <%= render 'card' %>
-  <%= form_tag pick_reservations_path(@pick), class: "hidden", id: "reservation-form" do %>
+  <div class="display-card yellow first-card">
+    <i class="fas fa-credit-card"></i>
+    <span><%= @customer_infos["brand"]%></span>
+    <span>**** **** **** <%= @customer_infos["last4"] %></span>
+    <span><%= @customer_infos["exp_month"]%>/<%= @customer_infos["exp_year"] %></span>
+  </div>
+  <%= render 'registered-card' %>
+  <%= form_tag pick_reservations_path(@pick), class: "update-card", id: "reservation-form" do %>
     <div class="form-row">
       <label for="card-element">
-        Carte
+        Nouvelle Carte
       </label>
       <div id="card-element">
         <!-- A Stripe Element will be inserted here. -->
