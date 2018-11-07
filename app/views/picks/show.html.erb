@@ -1,0 +1,52 @@
+<%= render 'shared/navbar' %>
+<%= render 'users/right-links-dashboard' %>
+<div class="dashboard-container">
+  <%= render 'users/dashboard-navigation' %>
+    <div class="general-infos">
+      <h5>Fin de la campagne: <%= @pick.campaign.expiration_date.strftime("%d/%m/%y") %></h5>
+      <div class="two-parts">
+        <div class="left-recap">
+          <h5 id="recap">Récap</h5>
+          <%= render 'recap' %>
+        </div>
+        <div class="right-forms">
+          <div class="delivery">
+            <h5 id="address-top">Livraison</h5>
+            <div class="info-bloc">
+              <div class="info-detail">
+                <% if @pick.campaign.test_type == "Test ouvert" %>
+                  Adresse à laquelle vous souhaitez être livré si votre proposition est retenue. (Si livraison applicable)
+                <% else %>
+                  Adresse à laquelle vous souhaitez être livré. (Si livraison applicable)
+                <% end %>
+              </div>
+              <div class="address-infos">
+                <div><%= @pick.delivery_infos["first_name"] %> <%= @pick.delivery_infos["last_name"] %></div>
+                <div><%= @pick.delivery_infos["street"] %></div>
+                <div><%= @pick.delivery_infos["zip_code"] %> <%= @pick.delivery_infos["city"] %></div>
+              </div>
+            </div>
+          </div>
+          <div class="reservation">
+            <h5>Réservation</h5>
+            <div class="info-bloc">
+              <div class="info-detail">
+                <% if @pick.campaign.test_type == "Test ouvert" %>
+                  Si nous pouvons obtenir un prix inférieur à <%= sprintf('%.2f', @pick.campaign.product.expedition_costs + @pick.price) %>€ (livraison comprise), vous en bénéficierez à la fin de la campagne. La carte débitée sera celle renseignée ci-dessous.
+                <% else %>
+                  Vous êtes assuré de bénéficier du meilleur prix promotionnel. La carte renseignée ci-dessous sera débitée à la fin de la campagne d'un montant inférieur ou égal à <%= sprintf('%.2f', @pick.campaign.product.expedition_costs + @pick.price) %>€ (livraison comprise).
+                <% end %>
+              </div>
+              <div class="display-card yellow first-card">
+                <i class="fas fa-credit-card"></i>
+                <span><%= @pick.card["brand"]%></span>
+                <span class="hidden-xs">**** **** **** <%= @pick.card["last4"] %></span>
+                <span><%= @pick.card["exp_month"]%>/<%= @pick.card["exp_year"] %></span>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'shared/footer' %>

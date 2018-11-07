@@ -1,6 +1,10 @@
 class PicksController < ApplicationController
-  before_action :set_pick, only: [:update]
+  before_action :set_pick, only: [:show, :update]
 
+  def show
+    authorize @pick
+    @user = @pick.user
+  end
 
   def update
     authorize @pick
