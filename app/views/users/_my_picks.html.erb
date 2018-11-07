@@ -13,9 +13,9 @@
   </div>
   <% if pick.card.present? && pick.campaign.ongoing? %>
     <div class="campaign-link reservation-done">
-      <h5>En attente</h5>
+      <div class="status-overview">En attente</div>
       <%= link_to pick_path(pick) do %>
-        <div class="btn-blue">Voir détails</div>
+        <div class="btn-white">Voir détails</div>
       <% end %>
     </div>
   <% elsif pick.campaign.ongoing? %>
