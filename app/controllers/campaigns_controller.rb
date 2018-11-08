@@ -51,7 +51,7 @@ class CampaignsController < ApplicationController
     @user = current_user
     @pick = Pick.where(campaign: @campaign, user: @user).first
     if @pick.blank?
-      if @campaign.test_type == "A/B Test"
+      if @campaign.ab_campaign?
         nb_1 = @campaign.picks.where(price: @campaign.price_1).count
         nb_2 = @campaign.picks.where(price: @campaign.price_2).count
         nb_1 <= nb_2 ? @price = @campaign.price_1 : @price = @campaign.price_2
@@ -79,8 +79,9 @@ class CampaignsController < ApplicationController
     @campaign = Campaign.friendly.find(params[:id])
     @pro = current_pro
     authorize @campaign
-    @picks = @campaign.picks.order('price DESC')
-    @validated_picks = @picks.select { |pick| pick.card.present? }
+    @uniq_views = @campaign.uniq_views
+    @added_to_cart = @campaign.added_to_cart
+    @validated_picks = @campaign.validated_picks
   end
 
   private

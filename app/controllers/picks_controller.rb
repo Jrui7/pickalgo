@@ -9,7 +9,7 @@ class PicksController < ApplicationController
 
   def update
     authorize @pick
-    if @pick.campaign.test_type == "Test ouvert"
+    if @pick.campaign.open_type?
       if @pick.update(pick_params_open)
         redirect_to campaigns_path
       end

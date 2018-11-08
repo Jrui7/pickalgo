@@ -1,5 +1,5 @@
 <div class="info-detail">
-  <% if @pick.campaign.test_type == "Test ouvert" %>
+  <% if @pick.campaign.open_type? %>
     <% if @product.expedition_costs.present? %>
       Si nous pouvons obtenir un prix inférieur à <%= sprintf('%.2f', @product.expedition_costs + @pick.price) %>€ (livraison comprise), vous en bénéficierez à la fin de la campagne. La carte débitée sera celle renseignée ci-dessous. <b>Vous n'avez rien à payer aujourd'hui.</b>
     <% else %>
