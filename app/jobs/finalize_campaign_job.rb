@@ -8,11 +8,11 @@ class FinalizeCampaignJob < ApplicationJob
 
     if @campaign.ab_campaign?
       @validated_picks.each do |pick|
-        ProceedAbPaymentJob.perform_later(self.id, campaign_id)
+        ProceedAbPaymentJob.perform_later(pick.id, campaign_id)
       end
     else
       @validated_picks.each do |pick|
-        ProceedOpenPaymentJob.perform_later(self.id, campaign_id)
+        ProceedOpenPaymentJob.perform_later(pick.id, campaign_id)
       end
     end
 
