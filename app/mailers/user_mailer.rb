@@ -36,4 +36,5 @@ class UserMailer < ApplicationMailer
     @user = User.find(user)
     mail to: @user.email, subject: "ceci est un message test", from: '"Pickalgo" <contact@pickalgo.com>'
   end
+
 end

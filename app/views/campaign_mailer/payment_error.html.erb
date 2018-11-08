@@ -1,0 +1,4 @@
+<h1><%= @user.first_name %>,</h1>
+
+<p>Il s'est produit une erreur lors du paiement pour <%= @campaign.product.title %>. Merci de bien vouloir suivre ce lien et mettre à jour vos coordonnées bancaires.</p>
+<%= link_to 'Modifier', edit_pick_url(@pick.id) %>
