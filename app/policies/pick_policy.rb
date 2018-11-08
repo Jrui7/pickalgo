@@ -9,6 +9,10 @@ class PickPolicy < ApplicationPolicy
     record.user == user || user.admin == true
   end
 
+  def edit?
+    record.user == user || user.admin == true
+  end
+
   def show?
     record.user == user || user.admin == true
   end

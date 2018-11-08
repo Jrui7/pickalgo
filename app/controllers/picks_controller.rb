@@ -1,5 +1,5 @@
 class PicksController < ApplicationController
-  before_action :set_pick, only: [:show, :update]
+  before_action :set_pick, only: [:show, :update, :edit]
 
   def show
     authorize @pick
@@ -18,6 +18,12 @@ class PicksController < ApplicationController
         redirect_to campaigns_path
       end
     end
+  end
+
+  def edit
+    authorize @pick
+    @user = @pick.user
+    @product = @pick.campaign.product
   end
 
   private
