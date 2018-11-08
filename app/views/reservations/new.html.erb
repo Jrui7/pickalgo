@@ -5,11 +5,13 @@
     <div class="two-parts">
       <div class="left-recap">
         <h5 id="recap">Récap</h5>
-        <%= render 'recap' %>
+        <%= render 'recap', product: @product %>
       </div>
       <div class="right-forms">
         <div class="delivery">
-          <h5 id="address-top">Livraison</h5>
+          <h5 id="address-top">
+            <%= @product.expedition_costs.present? ? "Livraison" : "Facturation" %>
+          </h5>
           <div class="hidden" id="address-errors">Merci de remplir les informations nécessaires à la validation</div>
           <div class="info-bloc">
             <%= render 'address', address: @address %>

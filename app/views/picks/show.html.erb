@@ -7,17 +7,25 @@
       <div class="two-parts">
         <div class="left-recap">
           <h5 id="recap">Récap</h5>
-          <%= render 'recap' %>
+          <%= render 'reservations/recap', product: @product %>
         </div>
         <div class="right-forms">
           <div class="delivery">
-            <h5 id="address-top">Livraison</h5>
+            <h5 id="address-top"><%= @product.expedition_costs.present? ? "Livraison" : "Facturation" %></h5>
             <div class="info-bloc">
               <div class="info-detail">
                 <% if @pick.campaign.test_type == "Test ouvert" %>
-                  Adresse à laquelle vous souhaitez être livré si votre proposition est retenue. (Si livraison applicable)
+                  <% if @product.expedition_costs.present? %>
+                    Adresse à laquelle vous souhaitez être livré si votre proposition est retenue.
+                  <% else %>
+                    Adresse de facturation si votre proposition est retenue.
+                  <% end %>
                 <% else %>
-                  Adresse à laquelle vous souhaitez être livré. (Si livraison applicable)
+                  <% if @product.expedition_costs.present? %>
+                    Adresse à laquelle vous souhaitez être livré.
+                  <% else %>
+                    Adresse de facturation
+                  <% end %>
                 <% end %>
               </div>
               <div class="address-infos">
@@ -40,9 +48,17 @@
             <div class="info-bloc">
               <div class="info-detail">
                 <% if @pick.campaign.test_type == "Test ouvert" %>
-                  Si nous pouvons obtenir un prix inférieur à <%= sprintf('%.2f', @pick.campaign.product.expedition_costs + @pick.price) %>€ (livraison comprise), vous en bénéficierez à la fin de la campagne. La carte débitée sera celle renseignée ci-dessous.
+                  <% if @product.expedition_costs.present? %>
+                    Si nous pouvons obtenir un prix inférieur à <%= sprintf('%.2f', @product.expedition_costs + @pick.price) %>€ (livraison comprise), vous en bénéficierez à la fin de la campagne. La carte débitée sera celle renseignée ci-dessous. <b>Vous n'avez rien à payer aujourd'hui.</b>
+                  <% else %>
+                    Si nous pouvons obtenir un prix inférieur à <%= sprintf('%.2f', @pick.price) %>€, vous en bénéficierez à la fin de la campagne. La carte débitée sera celle renseignée ci-dessous. <b>Vous n'avez rien à payer aujourd'hui.</b>
+                  <% end %>
                 <% else %>
-                  Vous êtes assuré de bénéficier du meilleur prix promotionnel. La carte renseignée ci-dessous sera débitée à la fin de la campagne d'un montant inférieur ou égal à <%= sprintf('%.2f', @pick.campaign.product.expedition_costs + @pick.price) %>€ (livraison comprise).
+                  <% if @product.expedition_costs.present? %>
+                    Vous êtes assuré de bénéficier du meilleur prix promotionnel. La carte renseignée ci-dessous sera débitée à la fin de la campagne d'un montant inférieur ou égal à <%= sprintf('%.2f', @product.expedition_costs + @pick.price) %>€ (livraison comprise). <b>Vous n'avez rien à payer aujourd'hui.</b>
+                  <% else %>
+                  Vous êtes assuré du meilleur prix promotionnel. La carte renseignée ci-dessous sera débitée à la fin de la campagne d'un montant inférieur ou égal à <%= sprintf('%.2f', @pick.price) %>€. <b>Vous n'avez rien à payer aujourd'hui.</b>
+                  <% end %>
                 <% end %>
               </div>
               <div class="display-card yellow first-card">

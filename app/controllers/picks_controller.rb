@@ -4,6 +4,7 @@ class PicksController < ApplicationController
   def show
     authorize @pick
     @user = @pick.user
+    @product = @pick.campaign.product
   end
 
   def update
