@@ -20,7 +20,7 @@
             <h3>Fin de la campagne</h3>
             <span><%= @campaign.expiration_date.strftime("%d/%m/%y") %></span>
           </div>
-           <% if @campaign.state == "ongoing" %>
+           <% if @campaign.ongoing? %>
             <div class="bottom-block">
               <i class="fas fa-circle red-icon"></i>
               <span>En cours</span>
@@ -45,27 +45,27 @@
         <div class="stat-block">
           <div class="top-block">
             <h3>Visites uniques</h3>
-            <span><%= @picks.count %>/<%= @campaign.views %></span>
+            <span><%= @uniq_views %>/<%= @campaign.views %></span>
           </div>
           <div class="bottom-block">
             <i class="fas fa-users"></i>
-            <span><%= @picks.count %></span>
+            <span><%= @uniq_views %></span>
           </div>
         </div>
         <div class="stat-block">
           <div class="top-block">
             <h3>Panier</h3>
-            <span><%= @picks.where.not(answer: [nil, ""]).count %>/<%= @picks.count %></span>
+            <span><%= @added_to_cart.count %>/<%= @uniq_views %></span>
           </div>
           <div class="bottom-block">
             <i class="fas fa-shopping-cart"></i>
-            <span><%= @picks.where.not(answer: [nil, ""]).count %></span>
+            <span><%= @added_to_cart.count %></span>
           </div>
         </div>
         <div class="stat-block">
           <div class="top-block">
             <h3>Commandes</h3>
-            <span><%= @validated_picks.count %>/<%= @picks.where.not(answer: [nil, ""]).count %></span>
+            <span><%= @validated_picks.count %>/<%= @added_to_cart.count %></span>
           </div>
           <div class="bottom-block">
             <i class="fas fa-credit-card"></i>

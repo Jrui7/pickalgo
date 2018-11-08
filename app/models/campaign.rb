@@ -23,7 +23,9 @@ class Campaign < ApplicationRecord
 
 
   scope :ongoing, -> { where('expiration_date > ?', DateTime.now)}
-
+  scope :ab, -> { where(test_type: "A/B Test")}
+  scope :open, -> { where.not(test_type: "A/B Test")}
+  after_create :finalize_ab_campaign
 
   def set_expiration
     self.expiration_date = DateTime.now + 7.days
@@ -49,7 +51,33 @@ class Campaign < ApplicationRecord
   end
 
 
+  def ab_campaign?
+    self.test_type == "A/B Test"
+  end
 
+  def open_type?
+    ! ab_campaign?
+  end
+
+  def uniq_views
+    self.picks.count
+  end
+
+  def added_to_cart
+    self.picks.where.not(answer: [nil, ""]).order('price DESC')
+  end
+
+  def validated_picks
+    added_to_cart.select { |pick| pick.card.present? }
+  end
+
+  private
+
+  def finalize_ab_campaign
+    if self.ab_campaign?
+      FinalizeAbCampaignJob.set(wait: 5.minutes).perform_later(self.id)
+    end
+  end
 
 
 end

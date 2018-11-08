@@ -2,7 +2,7 @@
 <%= simple_form_for address do |f| %>
   <div class="info-and-inputs">
     <div class="info-detail">
-      <% if @pick.campaign.test_type == "Test ouvert" %>
+      <% if @pick.campaign.open_type? %>
         <% if @product.expedition_costs.present? %>
           Adresse à laquelle vous souhaitez être livré si votre proposition est retenue.
         <% else %>

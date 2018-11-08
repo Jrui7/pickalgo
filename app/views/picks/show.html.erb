@@ -14,7 +14,7 @@
             <h5 id="address-top"><%= @product.expedition_costs.present? ? "Livraison" : "Facturation" %></h5>
             <div class="info-bloc">
               <div class="info-detail">
-                <% if @pick.campaign.test_type == "Test ouvert" %>
+                <% if @pick.campaign.open_type? %>
                   <% if @product.expedition_costs.present? %>
                     Adresse à laquelle vous souhaitez être livré si votre proposition est retenue.
                   <% else %>
@@ -47,7 +47,7 @@
             <h5>Réservation</h5>
             <div class="info-bloc">
               <div class="info-detail">
-                <% if @pick.campaign.test_type == "Test ouvert" %>
+                <% if @pick.campaign.open_type? %>
                   <% if @product.expedition_costs.present? %>
                     Si nous pouvons obtenir un prix inférieur à <%= sprintf('%.2f', @product.expedition_costs + @pick.price) %>€ (livraison comprise), vous en bénéficierez à la fin de la campagne. La carte débitée sera celle renseignée ci-dessous.
                   <% else %>
