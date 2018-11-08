@@ -6,6 +6,7 @@ class ReservationsController < ApplicationController
   def new
     @user = current_user
     @user.address.present? ? @address = @user.address : @address = Address.new
+    @product = @pick.campaign.product
     unless @user.customer_id.blank?
       @customer_infos = Stripe::Customer.retrieve(@user.customer_id).sources.data[0]
     end
