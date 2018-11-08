@@ -34,7 +34,7 @@ class Product < ApplicationRecord
       }
 
   def self.my_products(current_pro)
-    where(pro_id: current_pro)
+    where(pro_id: current_pro).order("created_at DESC")
   end
 
   def socials?

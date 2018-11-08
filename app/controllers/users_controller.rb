@@ -35,7 +35,7 @@ class UsersController < ApplicationController
   def my_campaigns
     @user = current_user
     authorize @user
-    @picks = Pick.where(user: @user).includes(:campaign).where(answer: "Yes").paginate(page: params[:page])
+    @picks = Pick.where(user: @user).order("created_at DESC").includes(:campaign).where(answer: "Yes").paginate(page: params[:page])
     respond_to do |format|
       format.html
       format.js { render 'users/pick_page' }

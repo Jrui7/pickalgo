@@ -3,9 +3,17 @@
   <div class="info-and-inputs">
     <div class="info-detail">
       <% if @pick.campaign.test_type == "Test ouvert" %>
-        Adresse à laquelle vous souhaitez être livré si votre proposition est retenue. (Si livraison applicable).
+        <% if @product.expedition_costs.present? %>
+          Adresse à laquelle vous souhaitez être livré si votre proposition est retenue.
+        <% else %>
+          Adresse de facturation si votre proposition est retenue.
+        <% end %>
       <% else %>
-        Adresse à laquelle vous souhaitez être livré. (Si livraison applicable).
+        <% if @product.expedition_costs.present? %>
+          Adresse de livraison.
+        <% else %>
+          Adresse de facturation
+        <% end %>
       <% end %>
     </div>
       <div class="form-inputs">

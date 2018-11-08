@@ -14,8 +14,6 @@
                 <th>Nom de la campagne</th>
                 <th>Type de campagne</th>
                 <th>Statut</th>
-                <th>Vues uniques</th>
-                <th>Vues totales</th>
                 <th>Détails</th>
               </tr>
               <% @campaigns.each do |campaign| %>
@@ -25,10 +23,8 @@
                   <% if campaign.state == "ongoing" %>
                     <td class="ongoing">En cours</td>
                     <% else %>
-                    <td class="closed">Clôturée</td>
+                    <td class="closed">A finaliser</td>
                   <% end %>
-                  <td><%= campaign.picks.count %></td>
-                  <td><%= campaign.views %></td>
                   <td><%= link_to 'Voir', promo_path(campaign) %></td>
                 </tr>
               <% end %>

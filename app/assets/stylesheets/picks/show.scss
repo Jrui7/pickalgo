@@ -12,9 +12,17 @@
   }
 }
 
+.reservation-encart {
+  margin-top: 20px;
+}
+
  @media screen and (max-width: 480px) {
  #ending-date {
      margin-top: 15px;
      margin-left: 15px;
+   }
+
+   .reservation-encart {
+     margin-top: 0px;
    }
  }

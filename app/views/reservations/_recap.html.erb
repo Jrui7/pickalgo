@@ -1,23 +1,29 @@
 <div class="explanation info-bloc">
   <div class="image-title-price">
-    <%= cl_image_tag @pick.campaign.product.photos.first.path, :height=>75, :crop=>"scale" %>
+    <%= cl_image_tag product.photos.first.path, :height=>75, :crop=>"scale" %>
     <div class="recap-paragraph">
       <div>
-      <h4><%= @pick.campaign.product.title.capitalize %></h4>
+      <h4><%= product.title.capitalize %></h4>
       </div>
-      Prix original: <%= sprintf('%.2f', @pick.campaign.product.price) %> €
+      Prix original: <%= sprintf('%.2f', product.price) %> €
     </div>
   </div>
-  <div class="how-much">
-    <div class="text">Coût livraison:</div>
-    <p class="price"><%= sprintf('%.2f', @pick.campaign.product.expedition_costs) %> €</p>
-  </div>
+  <% if product.expedition_costs.present? %>
+    <div class="how-much">
+      <div class="text">Coût livraison:</div>
+      <p class="price"><%= sprintf('%.2f', product.expedition_costs) %> €</p>
+    </div>
+  <% end %>
   <div class="how-much">
     <div class="text">Votre prix max:</div>
     <p class="price"><%= sprintf('%.2f', @pick.price) %> €</p>
   </div>
   <div class="how-much last">
-    <div class="text"><b>Coût total max:</b></div>
-    <p class="price"><%= sprintf('%.2f', @pick.campaign.product.expedition_costs + @pick.price) %>€</p>
-  </div>
+      <div class="text"><b>Coût total max:</b></div>
+      <% if  product.expedition_costs.present? %>
+        <p class="price"><%= sprintf('%.2f', product.expedition_costs + @pick.price) %>€</p>
+      <% else %>
+        <p class="price"><%= sprintf('%.2f', @pick.price) %>€</p>
+      <% end %>
+    </div>
 </div>
