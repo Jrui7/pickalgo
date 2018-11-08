@@ -19,7 +19,7 @@ class ProceedAbPaymentJob < ApplicationJob
           :account => "#{campaign.product.pro.stripe_uid}",
         }
       )
-      pick.update(state: "paid")
+      pick.update(state: "paid", transac_detail: charge.to_json)
     rescue
       pick.update(state: "error")
     end

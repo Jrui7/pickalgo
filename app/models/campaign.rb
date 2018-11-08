@@ -79,7 +79,7 @@ class Campaign < ApplicationRecord
 
   def finalize_ab_campaign
     if self.ab_campaign?
-      FinalizeCampaignJob.set(wait: 5.minutes).perform_later(self.id)
+      FinalizeCampaignJob.set(wait: 7.days).perform_later(self.id)
     end
   end
 
