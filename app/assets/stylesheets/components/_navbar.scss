@@ -52,6 +52,65 @@
   }
 }
 
+.pending-animation {
+  margin: 0 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+
+  .tooltiptext {
+    visibility: hidden;
+    background-color: white;
+    color: $blue;
+    border: 1px solid $blue;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 90%;
+    min-width: 90px;
+    font-size: 15px;
+  }
+
+  .tooltiptext::after {
+      visibility: visible;
+  }
+
+  &:hover .tooltiptext {
+      visibility: visible;
+  }
+}
+
+.pending-icon {
+  position: relative;
+  display: flex;
+  height: 22px;
+
+}
+
+
+.picks-pending-circle {
+  position: absolute;
+  left: 12px;
+  bottom: 2px;
+  min-width: 20px;
+  min-height: 20px;
+  margin: 0;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  background-color: #EE5F5B;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
 
 
 /* Dropdown */

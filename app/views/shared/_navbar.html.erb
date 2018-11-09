@@ -7,9 +7,10 @@
     <% end %>
     <div class="user-menu">
       <% if @user.present? %>
-        <%= link_to my_campaigns_user_path(current_user) do %>
-          <%= image_tag "blue-icon.png", class:"pick-icon" %>
-        <% end %>
+        <div class="pending-animation">
+          <%= render "shared/pending-picks" %>
+          <span class="tooltiptext">Campagnes</span>
+        </div>
       <% end %>
       <div class="dropdown">
         <i class="fas fa-bars dropdown-toggle" aria-hidden="true" id="dropdown-icon", data-toggle="dropdown"></i>
