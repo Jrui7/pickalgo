@@ -1,0 +1,6 @@
+
+$(document).ready(function(){
+  $("#close-modal-destroy-<%= @pick.id%>").click();
+  $(".card-and-link-<%= @pick.id %>").slideUp();
+  $(".pending-animation").html('<%= j render 'shared/pending-picks' %> ');
+})

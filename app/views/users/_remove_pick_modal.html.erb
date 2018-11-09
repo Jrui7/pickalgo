@@ -15,7 +15,7 @@
         <div class="modal-footer">
           <div class="action-links">
             <button type="button" id="close-modal-destroy-<%= pick.id%>" class="btn-white" data-dismiss="modal">Retour</button>
-            <%= link_to root_path, class: "mid-width" do %>
+            <%= link_to remove_participation_pick_path(pick), class: "mid-width", method: :patch, remote: true do %>
                 <div class="btn-orange">Retirer</div>
               <% end %>
           </div>

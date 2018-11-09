@@ -17,4 +17,8 @@ class PickPolicy < ApplicationPolicy
     record.user == user || user.admin == true
   end
 
+  def remove_participation?
+    record.user == user || user.admin == true
+  end
+
 end

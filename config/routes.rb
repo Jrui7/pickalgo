@@ -52,6 +52,9 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :new, :create, :edit, :update], shallow: true do
     resources :campaigns, only: [:new, :edit, :update, :create, :show] do
       resources :picks, only: [:show, :edit, :create, :update, :index] do
+        member do
+          patch 'remove_participation'
+        end
         resources :reservations, only: [:new, :create, :destroy]
       end
     end
