@@ -1,21 +1,40 @@
+
+.modal-body {
+  h5 {
+    color: #495057 !important;
+    font-size: 17px !important;
+  }
+}
+
+.modal-footer {
+  .action-links {
+    display: flex;
+    justify-content: flex-end;
+    .btn-orange {
+      margin-left: 20px;
+    }
+  }
+}
+
 .pick-price {
+  display: flex;
   color: $blue;
   font-size: 19px;
   margin-right: 10px;
+  .test-title {
+    font-size: 15px;
+    border: 1px solid #e8e8e8;
+    margin-right: 10px;
+    color: white;
+    border-radius: 3px;
+    padding: 5px 10px;
+    background-color: lightsteelblue;
+  }
 }
 
 .space-between {
   display: flex;
   justify-content: space-between;
-  .test-title {
-    font-size: 15px;
-    border: 1px solid #e8e8e8;
-    color: white;
-    border-radius: 3px;
-    padding: 5px 10px;
-    background-color: lightsteelblue;
-    cursor: pointer;
-  }
 }
 
 .clockdiv {
@@ -29,8 +48,6 @@
 
 .campaign-link.pending {
   background-color: $blue;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
   .dynamic-timer {
     color: #FFF;
     border: 1px dashed #FFF;

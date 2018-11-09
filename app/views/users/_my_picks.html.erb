@@ -1,4 +1,5 @@
 <% picks.each do |pick|  %>
+<%= render 'remove_pick_modal', pick: pick %>
   <div class="product-card my-picks">
     <%= cl_image_tag("#{pick.campaign.product.photos.first.path}", :width=>110, :height=>110, :crop=>"fill", class: "recap-image")%>
     <div class="recap-body">
@@ -6,23 +7,31 @@
         <div class="title-and-price">
           <div class="space-between">
             <h3><%= pick.campaign.product.title.capitalize %></h3>
-            <h3 class=test-title>Prix A/B</h3>
+            <% if pick.campaign.ongoing? %>
+              <%= link_to "#removePick-#{pick.id}", data: {toggle: "modal"} do %>
+                <i class="fa fa-times-circle"></i>
+              <% end %>
+            <% end %>
           </div>
           <p><%= pick.campaign.product.pro.brand %></p>
         </div>
         <div class="pick-price">
-          Prix: <span class="max-symbol">⩽</span><%= sprintf('%.2f', pick.price) %> €
+          <h3 class=test-title>Prix A/B</h3> <span class="max-symbol">⩽</span><%= sprintf('%.2f', pick.price) %> €
         </div>
       <% else %>
         <div class="title-and-price">
           <div class="space-between">
             <h3><%= pick.campaign.product.title.capitalize %></h3>
-            <h3 class=test-title>Prix libre</h3>
+            <% if pick.campaign.ongoing? %>
+              <%= link_to "#removePick-#{pick.id}", data: {toggle: "modal"} do %>
+                <i class="fa fa-times-circle"></i>
+              <% end %>
+            <% end %>
           </div>
           <p><%= pick.campaign.product.pro.brand %></p>
         </div>
         <div class="pick-price">
-          Votre prix: <span class="max-symbol">⩽</span><%= sprintf('%.2f', pick.price) %> €
+          <h3 class=test-title>Prix libre</h3> <span class="max-symbol">⩽</span><%= sprintf('%.2f', pick.price) %> €
         </div>
       <% end %>
     </div>
@@ -61,5 +70,9 @@
         <div class="btn-orange">Valider participation</div>
       <% end %>
     </div>
+    <% elsif !pick.campaign.ongoing? %>
+      <div class="campaign-link expired">
+        <div class="status-overview">Expiré</div>
+      </div>
   <% end %>
 <% end %>
