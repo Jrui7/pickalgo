@@ -15,7 +15,13 @@ class PicksController < ApplicationController
       end
     else
       if @pick.update(pick_params_ab)
-        redirect_to campaigns_path
+        if @pick.answer == "Yes"
+          @pick.update(state: "pending")
+          redirect_to new_pick_reservation_path(@pick.id)
+        else
+          @pick.update(state: nil)
+          redirect_to campaigns_path
+        end
       end
     end
   end
@@ -37,7 +43,7 @@ class PicksController < ApplicationController
   end
 
   def pick_params_open
-    params.require(:pick).permit(:price).merge(answer: "Yes").reject { |_, v| v.blank? }
+    params.require(:pick).permit(:price).merge(state: "pending").reject { |_, v| v.blank? }
   end
 
 end

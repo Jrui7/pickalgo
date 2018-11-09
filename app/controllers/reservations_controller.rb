@@ -54,7 +54,8 @@ class ReservationsController < ApplicationController
   private
 
     def set_pick
-      @pick = Pick.where.not(answer: [nil, ""]).find(params[:pick_id])
+      #the where condition prevents user that answered no to be able to make a reservation as state can not be pending
+      @pick = Pick.where(state: "pending").find(params[:pick_id])
     end
 
 

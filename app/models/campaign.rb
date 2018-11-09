@@ -64,7 +64,7 @@ class Campaign < ApplicationRecord
   end
 
   def added_to_cart
-    self.picks.where.not(answer: [nil, ""]).order('price DESC')
+    self.picks.where(state: "pending").order('price DESC')
   end
 
   def validated_picks
