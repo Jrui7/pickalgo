@@ -11,7 +11,7 @@ class PicksController < ApplicationController
     authorize @pick
     if @pick.campaign.open_type?
       if @pick.update(pick_params_open)
-        redirect_to campaigns_path
+        redirect_to new_pick_reservation_path(@pick.id)
       end
     else
       if @pick.update(pick_params_ab)

@@ -1,7 +1,21 @@
 .pick-price {
   color: $blue;
-  font-size: 22px;
+  font-size: 19px;
   margin-right: 10px;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+  .test-title {
+    font-size: 15px;
+    border: 1px solid #e8e8e8;
+    color: white;
+    border-radius: 3px;
+    padding: 5px 10px;
+    background-color: lightsteelblue;
+    cursor: pointer;
+  }
 }
 
 .clockdiv {

@@ -15,15 +15,15 @@
     </div>
   <% end %>
   <div class="how-much">
-    <div class="text">Votre prix max:</div>
-    <p class="price"><%= sprintf('%.2f', @pick.price) %> €</p>
+    <div class="text">Prix max:</div>
+    <p class="price"><span class="max-symbol">⩽</span><%= sprintf('%.2f', @pick.price) %> €</p>
   </div>
   <div class="how-much last">
       <div class="text"><b>Coût total max:</b></div>
       <% if  product.expedition_costs.present? %>
-        <p class="price"><%= sprintf('%.2f', product.expedition_costs + @pick.price) %>€</p>
+        <p class="price"><span class="max-symbol">⩽</span><%= sprintf('%.2f', product.expedition_costs + @pick.price) %>€</p>
       <% else %>
-        <p class="price"><%= sprintf('%.2f', @pick.price) %>€</p>
+        <p class="price"><span class="max-symbol">⩽</span><%= sprintf('%.2f', @pick.price) %>€</p>
       <% end %>
     </div>
 </div>

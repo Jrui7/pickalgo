@@ -10,7 +10,7 @@
         <p>Retrouvez et mettez à jour ici toutes vos informations personnelles.</p>
       </div>
       <div class="right-part info-bloc">
-        <%= simple_form_for @user do |f| %>
+        <%= simple_form_for @user, html: {id: :general } do |f| %>
         <div class="form-inputs">
           <div class="input-and-icon gender">
             <%= f.collection_radio_buttons :sex, [["Madame", 'Madame'] ,["Monsieur", 'Monsieur']], :first, :last %>

@@ -10,7 +10,7 @@
         <p>Pickalgo utilisera ces informations afin de vous contacter</p>
       </div>
       <div class="right-part info-bloc">
-        <%= simple_form_for @pro do |f| %>
+        <%= simple_form_for @pro, html: {id: :general } do |f| %>
           <div class="form-inputs">
             <div class="input-and-icon">
               <%= f.input :brand, label: false, placeholder:'Marque ou raison sociale' %>

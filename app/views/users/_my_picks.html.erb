@@ -2,13 +2,29 @@
   <div class="product-card my-picks">
     <%= cl_image_tag("#{pick.campaign.product.photos.first.path}", :width=>110, :height=>110, :crop=>"fill", class: "recap-image")%>
     <div class="recap-body">
-      <div class="title-and-price">
-        <h3><%= pick.campaign.product.title.capitalize %></h3>
-        <p><%= pick.campaign.product.pro.brand %></p>
-      </div>
-      <div class="pick-price">
-        Prix max: <%= sprintf('%.2f', pick.price) %> €
-      </div>
+      <% if pick.campaign.ab_campaign? %>
+        <div class="title-and-price">
+          <div class="space-between">
+            <h3><%= pick.campaign.product.title.capitalize %></h3>
+            <h3 class=test-title>Prix A/B</h3>
+          </div>
+          <p><%= pick.campaign.product.pro.brand %></p>
+        </div>
+        <div class="pick-price">
+          Prix: <span class="max-symbol">⩽</span><%= sprintf('%.2f', pick.price) %> €
+        </div>
+      <% else %>
+        <div class="title-and-price">
+          <div class="space-between">
+            <h3><%= pick.campaign.product.title.capitalize %></h3>
+            <h3 class=test-title>Prix libre</h3>
+          </div>
+          <p><%= pick.campaign.product.pro.brand %></p>
+        </div>
+        <div class="pick-price">
+          Votre prix: <span class="max-symbol">⩽</span><%= sprintf('%.2f', pick.price) %> €
+        </div>
+      <% end %>
     </div>
   </div>
   <% if pick.card.present? && pick.campaign.ongoing? %>
