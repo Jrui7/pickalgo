@@ -82,7 +82,7 @@
 
 table {
   display: block;
-  overflow-x: auto;
+  overflow-x: scroll;
   white-space: nowrap;
   margin-top: 20px;
 }
@@ -93,7 +93,8 @@ tbody {
 }
 
 th {
-  padding: 15px 20px;
+  padding: 10px 5px;
+  border: 1px solid rgba(0, 0, 0, 0.0625);
 }
 td, th {
   text-align: center;

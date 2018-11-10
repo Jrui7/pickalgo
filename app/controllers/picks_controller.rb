@@ -1,5 +1,5 @@
 class PicksController < ApplicationController
-  before_action :set_pick, only: [:show, :update, :edit]
+  before_action :set_pick, only: [:show, :update, :edit, :remove_participation]
 
   def show
     authorize @pick
@@ -30,6 +30,21 @@ class PicksController < ApplicationController
     authorize @pick
     @user = @pick.user
     @product = @pick.campaign.product
+  end
+
+  def remove_participation
+    authorize @pick
+    @user = @pick.user
+    if @pick.campaign.ab_campaign?
+      @pick.update(state: "removed", answer: nil)
+    else
+      @pick.update(state: "removed", price: nil)
+    end
+
+    respond_to do |format|
+      format.html {redirect_to my_campaigns_path}
+      format.js
+    end
   end
 
   private

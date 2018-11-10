@@ -12,28 +12,14 @@
           <p class="<%= campaign.category.name.downcase.gsub('é', 'e')%>"> <%= campaign.category.name %></p>
         </div>
         <div class="social-overview">
-          <% if Pick.view?(@user.id, campaign.id) %>
-            <div class="icon-and-number done-by-user">
-              <div class="glyphicon glyphicon-eye-open"></div>
-              <p><%= campaign.views%></p>
-            </div>
-          <% else %>
             <div class="icon-and-number">
               <div class="glyphicon glyphicon-eye-open"></div>
               <p><%= campaign.views%></p>
             </div>
-          <% end %>
-          <% if Pick.pending?(@user.id, campaign.id) %>
-            <div class="icon-and-number done-by-user">
-              <%= image_tag "blue-icon.png", class: "pick-icon" %>
-              <p class="picks-counter"><%= campaign.picks.count%></p>
-            </div>
-          <% else %>
-            <div class="icon-and-number">
-              <%= image_tag "gray-icon.png", class: "pick-icon" %>
-              <p class="picks-counter"><%= campaign.picks.count%></p>
-            </div>
-          <% end %>
+          <div class="icon-and-number">
+            <%= image_tag "gray-icon.png", class: "pick-icon" %>
+            <p class="picks-counter"><%= campaign.added_to_cart.count%></p>
+          </div>
         </div>
       </div>
     </div>

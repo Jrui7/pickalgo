@@ -1,0 +1,28 @@
+<div class="pick-modal">
+<!-- Modal -->
+  <div class="modal fade" id="removePick-<%= pick.id%>" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Retirer</h4>
+        </div>
+        <div class="modal-body">
+          <h5>Cliquez sur <b>Retirer</b> pour retirer "<%= pick.campaign.title.capitalize %>"" de vos campagnes, sinon, cliquez sur <b>"Retour"</b>.</h5>
+        </div>
+        <div class="modal-footer">
+          <div class="action-links">
+            <button type="button" id="close-modal-destroy-<%= pick.id%>" class="btn-white" data-dismiss="modal">Retour</button>
+            <%= link_to remove_participation_pick_path(pick), class: "mid-width", method: :patch, remote: true do %>
+                <div class="btn-orange">Retirer</div>
+              <% end %>
+          </div>
+          <div class="loader-container hidden"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
