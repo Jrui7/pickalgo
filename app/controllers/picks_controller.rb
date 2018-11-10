@@ -35,7 +35,12 @@ class PicksController < ApplicationController
   def remove_participation
     authorize @pick
     @user = @pick.user
-    @pick.update(state: nil)
+    if @pick.campaign.ab_campaign?
+      @pick.update(state: "removed", answer: nil)
+    else
+      @pick.update(state: "removed", price: nil)
+    end
+
     respond_to do |format|
       format.html {redirect_to my_campaigns_path}
       format.js

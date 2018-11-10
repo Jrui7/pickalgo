@@ -63,6 +63,10 @@ class Campaign < ApplicationRecord
     self.picks.count
   end
 
+  def all_cart_additions
+    self.picks.where.not(state: [nil, ""]).order('price DESC')
+  end
+
   def added_to_cart
     self.picks.where(state: "pending").order('price DESC')
   end
@@ -74,6 +78,7 @@ class Campaign < ApplicationRecord
   def ab_final_price
     price = [self.price_1, self.price_2, self.price_3].reject {|v| v.nil? }.min
   end
+
 
   private
 

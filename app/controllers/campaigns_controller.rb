@@ -80,7 +80,7 @@ class CampaignsController < ApplicationController
     @pro = current_pro
     authorize @campaign
     @uniq_views = @campaign.uniq_views
-    @added_to_cart = @campaign.added_to_cart
+    @added_to_cart = @campaign.all_cart_additions
     @validated_picks = @campaign.validated_picks
   end
 
