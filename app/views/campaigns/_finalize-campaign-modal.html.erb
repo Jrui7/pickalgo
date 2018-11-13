@@ -1,0 +1,33 @@
+<div class="pick-modal">
+<!-- Modal -->
+  <div class="modal fade" id="finalize-campaign-modal-<%= pick.id %>" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Finaliser la campagne</h4>
+        </div>
+        <div class="modal-body">
+          Vous vous apprêtez à valider les commandes des testeurs pour <%= sprintf('%.2f', pick.price) %> €. Ceux qui ont choisi un prix supérieur à <%= sprintf('%.2f', pick.price) %> € passent la commande pour <%= sprintf('%.2f', pick.price) %> €, ceux qui avaient choisi un prix inférieur à <%= sprintf('%.2f', pick.price) %> € ne sont pas débités mais ne peuvent pas profiter de la remise à <%= sprintf('%.2f', pick.price) %> € que vous accordez aux autres.
+          <div class="recap-line"></div>
+        </div>
+        <div class="modal-footer">
+          <div class="action-links">
+            <button type="button" class="btn-white" data-dismiss="modal">Retour</button>
+            <%= link_to campaign_path(@campaign.id, pick: pick.id), :method => :patch do |f| %>
+                <div class="btn-orange">Valider</div>
+              <% end %>
+          </div>
+          <div class="loader-container hidden"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+

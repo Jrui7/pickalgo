@@ -1,5 +1,5 @@
 <% if @validated_picks.any? %>
-
+  <%= render 'finalize-while-ongoing-modal' %>
   <div class="table-container">
     <table>
       <tr>
@@ -11,6 +11,7 @@
         <th>Finaliser campagne</th>
       </tr>
       <% @validated_picks.each do |pick| %>
+        <%= render 'finalize-campaign-modal', pick: pick %>
         <tr class="tr-body">
           <td><%= sprintf('%.2f', @campaign.product.price) %> €</td>
           <td><%= ((pick.price - @campaign.product.price) / (@campaign.product.price)*100).round %> %</td>
@@ -19,8 +20,18 @@
           <td><%= qt.count %></td>
           <td><%= sprintf('%.2f', pick.price*qt.count) %> €</td>
           <td>
-            <%= link_to campaign_path(@campaign.id, pick: pick.id), :method => :patch do |f| %>
-              <div class="finalize-campaign-cta">Valider les commandes à <%= sprintf('%.2f', pick.price) %> €</div>
+            <% if @campaign.ongoing? %>
+              <%= link_to "#finalize-while-ongoing-modal", data: {toggle: "modal"} do %>
+                <div class="finalize-campaign-cta">Valider (commandes  <span>⩾</span> à <%= sprintf('%.2f', pick.price) %> €)</div>
+              <% end %>
+            <% else %>
+              <% if  @campaign.state != "finalized" %>
+                <%= link_to "#finalize-campaign-modal-#{pick.id}", data: {toggle: "modal"} do %>
+                  <div class="finalize-campaign-cta">Valider (commandes  <span>⩾</span> à <%= sprintf('%.2f', pick.price) %> €)</div>
+                <% end %>
+              <% else %>
+                Voir commandes
+              <% end %>
             <% end %>
           </td>
         </tr>

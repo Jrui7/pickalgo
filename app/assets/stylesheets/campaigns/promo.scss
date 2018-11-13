@@ -131,6 +131,12 @@ td:last-child {
     color: white;
   }
   padding: 5px;
+
+  span {
+    font-size: 17px;
+    margin: 0 5px;
+    font-weight: bold;
+  }
 }
 
 @media(max-width: 768px) {
