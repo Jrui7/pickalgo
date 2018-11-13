@@ -75,7 +75,12 @@
       </div>
       <div class="data-block">
         <h3>Commandes à valider</h3>
-          <%= render 'data-campaign' %>
+        <% if @campaign.ab_campaign? %>
+          <%= render 'data-campaign-ab' %>
+        <% else %>
+          <%= render 'data-campaign-open' %>
+        <% end %>
+
       </div>
 
     </div>

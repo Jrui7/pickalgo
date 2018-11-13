@@ -1,6 +1,6 @@
 class CampaignsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:new, :edit, :create, :promo]
-  before_action :authenticate_pro!, only: [:new, :edit, :create, :promo]
+  skip_before_action :authenticate_user!, only: [:new, :edit, :create, :promo, :update]
+  before_action :authenticate_pro!, only: [:new, :edit, :create, :promo, :update]
   before_action :set_page_params, only: [:new, :edit, :create, :promo]
 
 
@@ -82,6 +82,12 @@ class CampaignsController < ApplicationController
     @uniq_views = @campaign.uniq_views
     @added_to_cart = @campaign.all_cart_additions
     @validated_picks = @campaign.validated_picks
+  end
+
+  def update
+    @campaign = Campaign.friendly.find(params[:id])
+    authorize @campaign
+    binding.pry
   end
 
   private
