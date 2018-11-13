@@ -16,7 +16,7 @@
         <div class="modal-footer">
           <div class="action-links">
             <button type="button" class="btn-white" data-dismiss="modal">Retour</button>
-            <%= link_to campaign_path(@campaign.id, pick: pick.id), :method => :patch do |f| %>
+            <%= link_to campaign_path(@campaign.id, promo: pick.price), :method => :patch do |f| %>
                 <div class="btn-orange">Valider</div>
               <% end %>
           </div>

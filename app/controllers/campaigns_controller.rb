@@ -87,7 +87,11 @@ class CampaignsController < ApplicationController
   def update
     @campaign = Campaign.friendly.find(params[:id])
     authorize @campaign
-    binding.pry
+    price = params["promo"].to_i
+    @campaign.update(price_1: price)
+    FinalizeOpenCampaignJob.perform_later(price, @campaign.id)
+    flash[:notice] = "Campagne finalisée"
+    redirect_to promo_path(@campaign.id)
   end
 
   private

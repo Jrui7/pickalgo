@@ -79,6 +79,11 @@ class Campaign < ApplicationRecord
     price = [self.price_1, self.price_2, self.price_3].reject {|v| v.nil? }.min
   end
 
+  def validated_picks_open(price)
+    promo_price = price.to_i
+    added_to_cart.select { |pick| pick.card.present? && pick.price >= promo_price }
+  end
+
 
   private
 
