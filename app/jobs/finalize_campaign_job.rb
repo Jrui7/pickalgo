@@ -9,6 +9,6 @@ class FinalizeCampaignJob < ApplicationJob
     @validated_picks.each do |pick|
       ProceedAbPaymentJob.perform_later(pick.id, campaign_id)
     end
-    @campaign.update(state: "finalized")
+    @campaign.update(finalized: true)
   end
 end

@@ -81,7 +81,12 @@ class CampaignsController < ApplicationController
     authorize @campaign
     @uniq_views = @campaign.uniq_views
     @added_to_cart = @campaign.all_cart_additions
-    @validated_picks = @campaign.validated_picks
+    if @campaign.finalized == true
+      @validated_picks = @campaign.picks.where(state: ["paid", "error"]).order('price DESC')
+    else
+      @validated_picks = @campaign.validated_picks
+    end
+
   end
 
   def update

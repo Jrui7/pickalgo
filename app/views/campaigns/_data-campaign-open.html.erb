@@ -25,7 +25,7 @@
                 <div class="finalize-campaign-cta">Valider (commandes  <span>⩾</span> à <%= sprintf('%.2f', pick.price) %> €)</div>
               <% end %>
             <% else %>
-              <% if  @campaign.state != "finalized" %>
+              <% if  @campaign.finalized == false %>
                 <%= link_to "#finalize-campaign-modal-#{pick.id}", data: {toggle: "modal"} do %>
                   <div class="finalize-campaign-cta">Valider (commandes  <span>⩾</span> à <%= sprintf('%.2f', pick.price) %> €)</div>
                 <% end %>
