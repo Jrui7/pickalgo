@@ -17,14 +17,16 @@
               <%= render 'address', address: @address %>
             </div>
           </div>
-          <div class="reservation">
-            <h5 id=reservation-box>Réservation</h5>
-            <div class="info-bloc">
-              <%= render 'stripe-infos' %>
-              <div class="loader-container hidden">
+          <% if @address.first_name.present? %>
+            <div class="reservation">
+              <h5 id=reservation-box>Réservation</h5>
+              <div class="info-bloc">
+                <%= render 'stripe-infos' %>
+                <div class="loader-container hidden">
+              </div>
             </div>
           </div>
-        </div>
+        <% end %>
       </div>
 
 
