@@ -2,4 +2,8 @@
 
 <p><%= @user.first_name %>,</p>
 
-<p>Votre participation à la campagne pour <%= @campaign.product.title %> a contribué à faire découvrir quel prix adopter pour faire de ses futures opérations de promo un succès. Pour vous en remercier, vous profitez de <%= @campaign.product.title %> pour seulement <%= @campaign.ab_final_price %>.</p>
+<p>Votre participation à la campagne pour <%= @campaign.product.title %> a contribué à faire découvrir quel prix adopter pour faire de ses opérations de promo un succès. Pour vous en remercier, vous profitez de <%= @campaign.product.title %> pour seulement <%= sprintf('%.2f', @campaign.ab_final_price) %> €.</p>
+
+<p>Voir le détail de votre commande</p>
+
+<p>A très vite sur Pickalgo !</p>

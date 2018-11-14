@@ -20,10 +20,14 @@
                 <tr class="tr-body">
                   <td><%= campaign.product.title %></td>
                   <td><%= campaign.test_type %></td>
-                  <% if campaign.state == "ongoing" %>
-                    <td class="ongoing">En cours</td>
-                    <% else %>
-                    <td class="closed">A finaliser</td>
+                  <% if campaign.finalized == true %>
+                    <td class="closed">Finalisée</td>
+                  <% else %>
+                    <% if campaign.state == "ongoing" %>
+                      <td class="ongoing">En cours</td>
+                      <% else %>
+                      <td class="closed">A finaliser</td>
+                    <% end %>
                   <% end %>
                   <td><%= link_to 'Voir', promo_path(campaign) %></td>
                 </tr>

@@ -21,7 +21,7 @@ class ProceedOpenPaymentJob < ApplicationJob
           }
         )
         pick.update(state: "paid", transac_detail: charge.to_json)
-        CampaignMailer.success(user.id, campaign.id, pick.id).deliver_later
+        CampaignMailer.success_open(user.id, campaign.id, pick.id).deliver_later
       rescue
         pick.update(state: "error")
         CampaignMailer.payment_error(user.id, campaign.id, pick.id).deliver_later

@@ -84,6 +84,10 @@ class Campaign < ApplicationRecord
     added_to_cart.select { |pick| pick.card.present? && pick.price >= promo_price }
   end
 
+  def rejected_picks_open(price)
+    promo_price = price.to_i
+    added_to_cart.select { |pick| pick.card.present? && pick.price < promo_price }
+  end
 
   private
 

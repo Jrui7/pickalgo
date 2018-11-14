@@ -12,6 +12,7 @@ class ReservationsController < ApplicationController
     end
   end
 
+
   def create
     @user = current_user
     pick_address = @user.address
