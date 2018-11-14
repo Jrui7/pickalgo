@@ -7,6 +7,27 @@
         <h5 id="recap">Récap</h5>
         <%= render 'recap', product: @product %>
       </div>
+        <div class="right-forms">
+          <div class="delivery">
+            <h5 id="address-top">
+              <%= @product.expedition_costs.present? ? "Livraison" : "Facturation" %>
+            </h5>
+            <div class="hidden" id="address-errors">Merci de remplir les informations nécessaires à la validation</div>
+            <div class="info-bloc">
+              <%= render 'reservations/address', address: @address %>
+            </div>
+          </div>
+          <% if @address.first_name.present? %>
+            <div class="reservation">
+              <h5 id=reservation-box>Réservation</h5>
+              <div class="info-bloc">
+                Stripe form
+                <div class="loader-container hidden">
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
 
   </div>
 </div>
