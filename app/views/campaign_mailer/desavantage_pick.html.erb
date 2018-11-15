@@ -1,0 +1,6 @@
+<h1><%= @user.first_name %>,</h1>
+
+<p>Vous nous aviez indiqué que <%= sprintf('%.2f', @pick.price) %> € vous semblait trop cher pour <%= @campaign.product.title %></p>
+<p>Ce prix de <%= sprintf('%.2f', @pick.price) %> € vous avait été présenté afin de déterminer s'il s'agissait d'un prix intéressant pour les futures campagnes promotionnelles pour <%= @campaign.product.title %>.</p>
+<p>Puisque <%= sprintf('%.2f', @pick.price) %> € n'est pas le meilleur prix que nous avions négocié pour vous et que vous nous avez aidé à trouver le meilleur prix pour sa future promo, vous pouvez bénéficier du meilleur prix qui nous avons négocié pour vous à savoir <%= sprintf('%.2f', @campaign.ab_final_price) %> €.</p>
+<%= link_to "J'en profite", edit_pick_url(@pick.id) %>
