@@ -75,6 +75,11 @@ class Campaign < ApplicationRecord
     added_to_cart.select { |pick| pick.card.present? }
   end
 
+  def desavantage_picks
+    promo = self.ab_final_price
+    self.picks.where(answer: "No").select { |pick| pick.price > promo }
+  end
+
   def ab_final_price
     price = [self.price_1, self.price_2, self.price_3].reject {|v| v.nil? }.min
   end
