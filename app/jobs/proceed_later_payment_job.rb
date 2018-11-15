@@ -1,13 +1,21 @@
-class ProceedAbPaymentJob < ApplicationJob
+class ProceedLaterPaymentJob < ApplicationJob
   queue_as :default
 
   def perform(pick_id, campaign_id)
     pick = Pick.find(pick_id)
     user = pick.user
     campaign = Campaign.find(campaign_id)
-    price = (campaign.ab_final_price * 100).to_i
-    delivery = (campaign.product.expedition_costs.to_i * 100).to_i
-    total = price + delivery
+
+    if campaign.ab_campaign?
+      price = (campaign.ab_final_price * 100).to_i
+      delivery = (campaign.product.expedition_costs.to_i * 100).to_i
+      total = price + delivery
+    else
+      price = (campaign.price_1 * 100).to_i
+      delivery = (campaign.product.expedition_costs.to_i * 100).to_i
+      total = price + delivery
+    end
+
 
     begin
       charge = Stripe::Charge.create(
@@ -21,7 +29,7 @@ class ProceedAbPaymentJob < ApplicationJob
         }
       )
       pick.update(state: "paid", transac_detail: charge.to_json)
-      CampaignMailer.success(user.id, campaign.id, pick.id).deliver_later
+      CampaignMailer.success_later(user.id, campaign.id, pick.id).deliver_later
     rescue
       pick.update(state: "error")
       CampaignMailer.payment_error(user.id, campaign.id, pick.id).deliver_later

@@ -1,0 +1,49 @@
+
+<%= simple_form_for address do |f| %>
+  <div class="info-and-inputs">
+    <div class="info-detail">
+      <% if @product.expedition_costs.present? %>
+        Adresse de livraison.
+      <% else %>
+        Adresse de facturation
+      <% end %>
+    </div>
+      <div class="form-inputs">
+        <a href="#address-top" id="go-to-form" class='hidden'></a>
+        <div class="group-inputs">
+          <div class="input-and-icon">
+            <%= f.input :first_name, label: false, placeholder:'Prénom' %>
+            <span class="icon fas fa-user"></span>
+          </div>
+          <%= f.input :last_name, placeholder:'Nom', label: false %>
+        </div>
+        <div class="input-and-icon">
+          <%= f.input :street, class: "input-group-field", placeholder: "Numéro et rue", label: false %>
+          <span class="icon fas fa-road"></span>
+        </div>
+        <div class="group-inputs">
+          <div class="input-and-icon">
+            <%= f.input :zip_code, class: "input-group-field", placeholder: "Code Postal", label: false %>
+            <span class="icon fas fa-map-marked"></span>
+          </div>
+          <div class="input-and-icon">
+            <%= f.input :city, class: "input-group-field", placeholder: "Ville", label: false %>
+            <span class="icon fas fa-map-marker"></span>
+          </div>
+        </div>
+        <div class="input-and-icon">
+          <%= f.input :address_complement, class: "input-group-field", label: false, placeholder: "Autres instructions de livraison: Digicode, Batiment, Société " %>
+          <span class="icon fas fa-info-circle"></span>
+        </div>
+        <div class="input-and-icon">
+          <%= f.input :phone_number, class: "input-group-field", label: false, placeholder: "Vous joindre par téléphone" %>
+          <span class="icon fas fa-mobile"></span>
+        </div>
+      </div>
+      <div class="validate-form-button">
+        <%= f.button :submit, value: "Enregistrer", class: "btn-blue" %>
+      </div>
+    </div>
+  <% end %>
+
+

@@ -10,7 +10,7 @@ class PickPolicy < ApplicationPolicy
   end
 
   def edit?
-    record.user == user || user.admin == true
+    (record.user == user && record.state != "paid" ) || user.admin == true
   end
 
   def show?

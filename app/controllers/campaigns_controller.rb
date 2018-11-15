@@ -1,6 +1,6 @@
 class CampaignsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:new, :edit, :create, :promo]
-  before_action :authenticate_pro!, only: [:new, :edit, :create, :promo]
+  skip_before_action :authenticate_user!, only: [:new, :edit, :create, :promo, :update]
+  before_action :authenticate_pro!, only: [:new, :edit, :create, :promo, :update]
   before_action :set_page_params, only: [:new, :edit, :create, :promo]
 
 
@@ -81,7 +81,22 @@ class CampaignsController < ApplicationController
     authorize @campaign
     @uniq_views = @campaign.uniq_views
     @added_to_cart = @campaign.all_cart_additions
-    @validated_picks = @campaign.validated_picks
+    if @campaign.finalized == true
+      @validated_picks = @campaign.picks.where(state: ["paid", "error"]).order('price DESC')
+    else
+      @validated_picks = @campaign.validated_picks
+    end
+
+  end
+
+  def update
+    @campaign = Campaign.friendly.find(params[:id])
+    authorize @campaign
+    price = params["promo"].to_i
+    @campaign.update(price_1: price)
+    FinalizeOpenCampaignJob.perform_later(price, @campaign.id)
+    flash[:notice] = "Campagne finalisée"
+    redirect_to promo_path(@campaign.id)
   end
 
   private
