@@ -29,6 +29,7 @@ class OrdersController < ApplicationController
     end
     delivery_infos = {first_name: pick_address.first_name, last_name: pick_address.last_name, street: pick_address.street, address_complement: pick_address.address_complement, zip_code: pick_address.zip_code, city: pick_address.city, phone_number: pick_address.phone_number}
     @pick.update(card: card, delivery_infos: delivery_infos)
+    ProceedLaterPaymentJob.perform_later(@pick.id, @pick.campaign.id)
     redirect_to pick_path(@pick), :flash => { :notice => "Paiement validé" }
 
     rescue Stripe::CardError => e
@@ -43,7 +44,7 @@ class OrdersController < ApplicationController
 
     def set_pick
       #the where condition prevents user that answered no to be able to make a reservation as state can not be pending
-      @pick = Pick.where(state: "pending").find(params[:pick_id])
+      @pick = Pick.find(params[:pick_id])
     end
 
 end
