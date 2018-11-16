@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'users/show'
   devise_for :users, :controllers => { :registrations => :registrations }
   authenticated :user do
-      root 'pages#welcome', as: :authenticated_root
+      root 'campaigns#index', as: :authenticated_root
   end
 
   require "sidekiq/web"
@@ -38,6 +38,7 @@ Rails.application.routes.draw do
     end
     member do
       get 'my_campaigns'
+      get 'my_orders'
     end
   end
 

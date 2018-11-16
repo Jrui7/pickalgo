@@ -40,9 +40,9 @@ class PicksController < ApplicationController
     authorize @pick
     @user = @pick.user
     if @pick.campaign.ab_campaign?
-      @pick.update(state: "removed", answer: nil)
+      @pick.update(state: "removed", delivery_infos: {},  answer: nil)
     else
-      @pick.update(state: "removed", price: nil)
+      @pick.update(state: "removed", delivery_infos: {}, price: nil)
     end
 
     respond_to do |format|

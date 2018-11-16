@@ -7,9 +7,14 @@
     <%= image_tag "blue-icon.png", class:"pick-icon" %> Mes campagnes
     </div>
   <% end %>
+   <%= link_to my_orders_user_path(@user) do %>
+    <div class="pick-menu link <%= 'selected-category' if @page == 'my_orders'  %>" class="link"><i class="fas fa-clipboard-list"></i>Commandes</div>
+  <% end %>
   <div class="link"><i class="fas fa-question-circle"></i> Aide</div>
   <div class="link"><i class="fas fa-envelope"></i> Nous contacter</div>
   <%= link_to destroy_user_session_path, method: :delete do %>
     <div class="link"><i class="fas fa-power-off"></i> Déconnexion</div>
   <% end %>
 </div>
+
+
