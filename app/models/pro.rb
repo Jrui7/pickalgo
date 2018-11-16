@@ -3,6 +3,7 @@ class Pro < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :products, dependent: :destroy
   has_many :campaigns, through: :products
+  has_many :orders
 
 
   devise :database_authenticatable, :registerable,

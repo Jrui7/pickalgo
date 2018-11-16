@@ -3,6 +3,7 @@ class Campaign < ApplicationRecord
   belongs_to :product
   belongs_to :category
   has_many :picks
+  has_many :orders
   after_create :set_expiration
   validates :test_type, presence: { message: "Merci de choisir un type de test pour votre campagne" }
 
