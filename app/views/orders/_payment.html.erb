@@ -1,0 +1,14 @@
+  <div class="reservation-encart">
+    <h5>Paiement</h5>
+    <div class="info-bloc">
+      <div class="info-detail">
+        Carte débitée:
+      </div>
+      <div class="display-card yellow first-card">
+        <i class="fas fa-credit-card"></i>
+        <span><%= @pick.card["brand"]%></span>
+        <span class="hidden-xs">**** **** **** <%= @pick.card["last4"] %></span>
+        <span><%= @pick.card["exp_month"]%>/<%= @pick.card["exp_year"] %></span>
+      </div>
+  </div>
+</div>

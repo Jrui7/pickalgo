@@ -7,24 +7,32 @@
       <div class="two-parts">
         <div class="left-recap">
           <h5 id="recap">Récap</h5>
+          <% if @pick.state == "paid" %>
+            <%= render 'orders/recap', pick: @pick, product: @pick.campaign.product  %>
+          <% else %>
           <%= render 'reservations/recap', product: @product %>
+          <% end %>
         </div>
         <div class="right-forms">
           <div class="delivery">
             <h5 id="address-top"><%= @product.expedition_costs.present? ? "Livraison" : "Facturation" %></h5>
             <div class="info-bloc">
               <div class="info-detail">
-                <% if @pick.campaign.open_type? %>
-                  <% if @product.expedition_costs.present? %>
-                    Adresse à laquelle vous souhaitez être livré si votre proposition est retenue.
-                  <% else %>
-                    Adresse de facturation si votre proposition est retenue.
-                  <% end %>
+                <% if @pick.state == "paid" %>
+                  Adresse
                 <% else %>
-                  <% if @product.expedition_costs.present? %>
-                    Adresse de livraison.
+                  <% if @pick.campaign.open_type? %>
+                    <% if @product.expedition_costs.present? %>
+                      Adresse à laquelle vous souhaitez être livré si votre proposition est retenue.
+                    <% else %>
+                      Adresse de facturation si votre proposition est retenue.
+                    <% end %>
                   <% else %>
-                    Adresse de facturation
+                    <% if @product.expedition_costs.present? %>
+                      Adresse de livraison.
+                    <% else %>
+                      Adresse de facturation
+                    <% end %>
                   <% end %>
                 <% end %>
               </div>
@@ -43,32 +51,36 @@
               </div>
             </div>
           </div>
-          <div class="reservation-encart">
-            <h5>Réservation</h5>
-            <div class="info-bloc">
-              <div class="info-detail">
-                <% if @pick.campaign.open_type? %>
-                  <% if @product.expedition_costs.present? %>
-                    Si nous pouvons obtenir un prix inférieur à <%= sprintf('%.2f', @product.expedition_costs + @pick.price) %>€ (livraison comprise), vous en bénéficierez à la fin de la campagne. La carte débitée sera celle renseignée ci-dessous.
-                  <% else %>
-                    Si nous pouvons obtenir un prix inférieur à <%= sprintf('%.2f', @pick.price) %>€, vous en bénéficierez à la fin de la campagne. La carte débitée sera celle renseignée ci-dessous.
-                  <% end %>
-                <% else %>
-                  <% if @product.expedition_costs.present? %>
-                    Vous êtes assuré de bénéficier du meilleur prix promotionnel. La carte renseignée ci-dessous sera débitée à la fin de la campagne d'un montant inférieur ou égal à <%= sprintf('%.2f', @product.expedition_costs + @pick.price) %>€ (livraison comprise).
-                  <% else %>
-                  Vous êtes assuré de bénéficier du meilleur prix promotionnel. La carte renseignée ci-dessous sera débitée à la fin de la campagne d'un montant inférieur ou égal à <%= sprintf('%.2f', @pick.price) %>€.
-                  <% end %>
-                <% end %>
+          <% if @pick.state == "paid" %>
+            <%= render 'orders/payment' %>
+          <% else %>
+              <div class="reservation-encart">
+                <h5>Réservation</h5>
+                <div class="info-bloc">
+                  <div class="info-detail">
+                    <% if @pick.campaign.open_type? %>
+                      <% if @product.expedition_costs.present? %>
+                        Si nous pouvons obtenir un prix inférieur à <%= sprintf('%.2f', @product.expedition_costs + @pick.price) %>€ (livraison comprise), vous en bénéficierez à la fin de la campagne. La carte débitée sera celle renseignée ci-dessous.
+                      <% else %>
+                        Si nous pouvons obtenir un prix inférieur à <%= sprintf('%.2f', @pick.price) %>€, vous en bénéficierez à la fin de la campagne. La carte débitée sera celle renseignée ci-dessous.
+                      <% end %>
+                    <% else %>
+                      <% if @product.expedition_costs.present? %>
+                        Vous êtes assuré de bénéficier du meilleur prix promotionnel. La carte renseignée ci-dessous sera débitée à la fin de la campagne d'un montant inférieur ou égal à <%= sprintf('%.2f', @product.expedition_costs + @pick.price) %>€ (livraison comprise).
+                      <% else %>
+                      Vous êtes assuré de bénéficier du meilleur prix promotionnel. La carte renseignée ci-dessous sera débitée à la fin de la campagne d'un montant inférieur ou égal à <%= sprintf('%.2f', @pick.price) %>€.
+                      <% end %>
+                    <% end %>
+                  </div>
+                  <div class="display-card yellow first-card">
+                    <i class="fas fa-credit-card"></i>
+                    <span><%= @pick.card["brand"]%></span>
+                    <span class="hidden-xs">**** **** **** <%= @pick.card["last4"] %></span>
+                    <span><%= @pick.card["exp_month"]%>/<%= @pick.card["exp_year"] %></span>
+                  </div>
               </div>
-              <div class="display-card yellow first-card">
-                <i class="fas fa-credit-card"></i>
-                <span><%= @pick.card["brand"]%></span>
-                <span class="hidden-xs">**** **** **** <%= @pick.card["last4"] %></span>
-                <span><%= @pick.card["exp_month"]%>/<%= @pick.card["exp_year"] %></span>
-              </div>
-          </div>
-        </div>
+            </div>
+          <% end %>
       </div>
     </div>
   </div>
