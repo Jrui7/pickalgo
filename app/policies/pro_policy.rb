@@ -21,6 +21,10 @@ class ProPolicy < ApplicationPolicy
     record == @user
   end
 
+  def all_orders?
+    record == @user
+  end
+
   def stripe_callback?
     record == user
   end

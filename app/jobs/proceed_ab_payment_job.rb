@@ -21,6 +21,7 @@ class ProceedAbPaymentJob < ApplicationJob
         }
       )
       pick.update(state: "paid", transac_detail: charge.to_json)
+      Order.create(pick_id: pick.id, campaign_id: campaign.id, pro_id: campaign.product.pro.id)
       CampaignMailer.success(user.id, campaign.id, pick.id).deliver_later
     rescue
       pick.update(state: "error")

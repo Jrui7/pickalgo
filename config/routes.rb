@@ -47,6 +47,7 @@ Rails.application.routes.draw do
     member do
       patch 'update_password'
       get 'my_campaigns'
+      get 'all_orders'
     end
   end
   resources :leads, only: [ :create ]
@@ -61,6 +62,7 @@ Rails.application.routes.draw do
       end
     end
   end
+
 
   resources :addresses, only: [:create, :update]
 

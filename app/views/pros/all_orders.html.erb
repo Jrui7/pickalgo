@@ -1,0 +1,31 @@
+
+
+<%= render 'pros/navbar' %>
+<%= render 'pros/right-links-dashboard' %>
+<div class="dashboard-container">
+  <%= render 'pros/dashboard-navigation' %>
+  <div class="general-infos">
+    <div class="campaigns-container">
+      <h5>Vos commandes</h5>
+        <% if @orders.present? %>
+          <div class="table-container">
+            <table>
+              <tr class="first-left">
+                <th>Nom de la campagne</th>
+                <th>Livraison</th>
+              </tr>
+              <% @orders.each do |order| %>
+                <tr class="tr-body">
+                  <td><%= order.campaign.product.title %></td>
+                  <td><%= order.pick.delivery_infos %></td>
+                </tr>
+              <% end %>
+            </table>
+          </div>
+        <% else %>
+          <p>Pas de commandes à traiter</p>
+        <% end %>
+
+    </div>
+  </div>
+</div>
