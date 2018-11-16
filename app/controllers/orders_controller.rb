@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :set_pick, only: [:new, :create]
+  before_action :set_pick, only: [:create]
   skip_after_action :verify_authorized
 
 
@@ -35,15 +35,15 @@ class OrdersController < ApplicationController
     rescue Stripe::CardError => e
     flash[:alert] = e.message
     redirect_to edit_pick_path(@pick)
-
   end
+
+
 
 
 
   private
 
     def set_pick
-      #the where condition prevents user that answered no to be able to make a reservation as state can not be pending
       @pick = Pick.find(params[:pick_id])
     end
 

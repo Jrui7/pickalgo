@@ -46,6 +46,15 @@ class ProsController < ApplicationController
     @page = "campaigns"
   end
 
+  def all_orders
+    @pro = Pro.friendly.find(params[:id])
+    authorize @pro
+    @page = "pro-orders"
+    @orders = Order.where(pro_id: @pro.id).order("created_at DESC")
+  end
+
+
+
   def stripe_callback
     @pro = current_pro
     authorize @pro

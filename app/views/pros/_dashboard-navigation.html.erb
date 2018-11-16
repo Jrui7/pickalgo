@@ -8,6 +8,9 @@
   <%= link_to my_campaigns_pro_path(@pro) do %>
     <div class="link <%= 'selected-category' if @page == 'campaigns'  %>"><i class="fas fa-flask"></i> Campagnes</div>
   <% end %>
+   <%= link_to all_orders_pro_path(@pro) do %>
+    <div class="link <%= 'selected-category' if @page == 'pro_orders'  %>" class="link"><i class="fas fa-clipboard-list"></i>Commandes</div>
+  <% end %>
   <div class="link"><i class="fas fa-question-circle"></i> Aide</div>
   <div class="link"><i class="fas fa-envelope"></i> Nous contacter</div>
   <%= link_to destroy_pro_session_path, method: :delete do %>
