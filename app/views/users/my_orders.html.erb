@@ -1,5 +1,4 @@
 
-
 <%= render 'shared/navbar' %>
 <%= render 'right-links-dashboard' %>
 <div class="dashboard-container">
@@ -7,8 +6,8 @@
   <div class="general-infos">
     <div class="products-container">
       <div class="text-part">
-        <h5>Vos campagnes</h5>
-        <p>Retrouvez ici l'historique de vos participations aux campagnes.
+        <h5>Vos commandes</h5>
+        <p>Retrouvez ici l'historique de vos commandes.
          </p>
       </div>
       <div class="right-part product-feed">
@@ -16,7 +15,7 @@
           <div id="infinite-scrolling">
             <%= will_paginate @picks %>
           </div>
-          <%= render "my_picks", picks: @picks %>
+          <%= render "my_orders", picks: @picks %>
         <% else %>
           <h4>Vous ne participez actuellement à aucune campagne</h4>
         <% end %>

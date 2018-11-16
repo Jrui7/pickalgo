@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_page, only: [:show, :my_campaigns]
+  before_action :set_page, only: [:show, :my_campaigns, :my_orders]
   def show
     @user = User.friendly.find(params[:id])
     authorize @user
@@ -36,6 +36,16 @@ class UsersController < ApplicationController
     @user = current_user
     authorize @user
     @picks = Pick.where(user: @user).order("created_at DESC").where(state: "pending").includes(:campaign).paginate(page: params[:page])
+    respond_to do |format|
+      format.html
+      format.js { render 'users/pick_page' }
+    end
+  end
+
+  def my_orders
+    @user = current_user
+    authorize @user
+    @picks = Pick.where(user: @user).order("created_at DESC").where(state: "paid").includes(:campaign).paginate(page: params[:page])
     respond_to do |format|
       format.html
       format.js { render 'users/pick_page' }

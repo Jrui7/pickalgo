@@ -1,0 +1,35 @@
+<% picks.each do |pick|  %>
+    <div class="product-card">
+      <%= cl_image_tag("#{pick.campaign.product.photos.first.path}", :width=>110, :height=>110, :crop=>"fill", class: "recap-image")%>
+      <div class="recap-body">
+        <div class="title-and-price">
+          <div class="space-between">
+            <h3><%= pick.campaign.product.title.capitalize %></h3>
+          </div>
+          <p><%= pick.campaign.product.pro.brand %></p>
+        </div>
+        <div class="pick-price">
+          <% if  pick.campaign.product.expedition_costs.present? %>
+            <% if pick.campaign.ab_campaign? %>
+              <%= sprintf('%.2f', pick.campaign.product.expedition_costs + pick.campaign.ab_final_price) %> €
+            <% else %>
+              <%= sprintf('%.2f', pick.campaign.product.expedition_costs + pick.campaign.price_1) %> €
+            <% end %>
+          <% else %>
+            <% if pick.campaign.ab_campaign? %>
+              <%= sprintf('%.2f', pick.campaign.ab_final_price) %> €
+            <% else %>
+              <%= sprintf('%.2f', pick.campaign.price_1) %> €
+            <% end %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="campaign-link expired">
+      <div class="status-overview">Commande validée</div>
+      <%= link_to pick_path(pick.id) do %>
+        <div class="btn-blue">Détails</div>
+      <% end %>
+    </div>
+<% end %>
+

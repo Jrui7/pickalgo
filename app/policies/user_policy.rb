@@ -20,4 +20,8 @@ class UserPolicy < ApplicationPolicy
     record == user
   end
 
+  def my_orders?
+    record == user
+  end
+
 end
