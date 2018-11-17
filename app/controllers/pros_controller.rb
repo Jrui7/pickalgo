@@ -49,7 +49,7 @@ class ProsController < ApplicationController
   def all_orders
     @pro = Pro.friendly.find(params[:id])
     authorize @pro
-    @page = "pro-orders"
+    @page = "order"
     @orders = Order.where(pro_id: @pro.id).order("created_at DESC")
   end
 

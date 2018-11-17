@@ -37,6 +37,15 @@ class OrdersController < ApplicationController
     redirect_to edit_pick_path(@pick)
   end
 
+  def show
+    @order = Order.find(params[:id])
+    @pick = @order.pick
+    @campaign = @pick.campaign
+    @product = @campaign.product
+    @page = "order"
+    @pro = current_pro
+  end
+
 
 
 

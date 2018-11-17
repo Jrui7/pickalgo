@@ -84,6 +84,12 @@ td {
   background: transparent;
   padding: 5px 10px;
   border: 1px solid rgba(0, 0, 0, 0.0625);
+  a {
+    color: inherit;
+    span {
+      text-decoration: underline;
+    }
+  }
 }
 
 
