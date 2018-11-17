@@ -8,28 +8,88 @@
       <div class="two-parts">
         <div class="left-recap">
           <h5 id="recap">Récap</h5>
-            <%= render 'orders/recap', pick: @pick, product: @pick.campaign.product  %>
+            <div class="explanation info-bloc">
+              <div class="image-title-price">
+                <%= cl_image_tag @product.photos.first.path, :height=>75, :crop=>"scale" %>
+                <div class="recap-paragraph">
+                  <div>
+                  <h4><%= @product.title.capitalize %></h4>
+                  </div>
+                  Prix original: <%= sprintf('%.2f', @product.price) %> €
+                </div>
+              </div>
+              <% if @product.expedition_costs.present? %>
+                <div class="how-much">
+                  <div class="text">Livraison:</div>
+                  <p class="price"><%= sprintf('%.2f', @product.expedition_costs) %> €</p>
+                </div>
+              <% end %>
+              <div class="how-much">
+                <div class="text">Prix promotionnel:</div>
+                <p class="price">
+                  <% if @pick.campaign.ab_campaign? %>
+                    <%= sprintf('%.2f', @pick.campaign.ab_final_price) %> €
+                  <% else %>
+                    <%= sprintf('%.2f', @pick.campaign.price_1) %> €
+                  <% end %>
+                </p>
+              </div>
+              <% if  @product.expedition_costs.present? %>
+                <div class="how-much last">
+                  <div class="text"><b>Total payé:</b></div>
+                  <p class="price">
+                    <% if @pick.campaign.ab_campaign? %>
+                      <%= sprintf('%.2f', @pick.campaign.product.expedition_costs + @pick.campaign.ab_final_price) %> €
+                    <% else %>
+                      <%= sprintf('%.2f', @pick.campaign.product.expedition_costs + @pick.campaign.price_1) %> €
+                    <% end %>
+                  </p>
+                </div>
+                <% else %>
+                <div class="how-much last">
+                  <div class="text">Total payé:</div>
+                  <p class="price">
+                    <% if @pick.campaign.ab_campaign? %>
+                      <%= sprintf('%.2f', @pick.campaign.ab_final_price) %> €
+                    <% else %>
+                      <%= sprintf('%.2f', @pick.campaign.price_1) %> €
+                    <% end %>
+                  </p>
+                </div>
+              <% end %>
+              <div class="debit">
+                <span><b>Débit autorisé</b></span>
+                <span><%= @pick.card["brand"]%></span>
+                <span class="hidden-xs">**** **** **** <%= @pick.card["last4"] %></span>
+                <div>Email de confirmation envoyé à <%= @pick.user.email %></div>
+              </div>
+            </div>
         </div>
         <div class="right-forms">
           <div class="delivery">
             <h5 id="address-top"><%= @product.expedition_costs.present? ? "Livraison" : "Facturation" %></h5>
-            <div class="info-bloc">
-              <div class="address-infos">
-                <div class="addres-bloc">
-                <div><%= @pick.delivery_infos["first_name"] %> <%= @pick.delivery_infos["last_name"] %></div>
-                <div><%= @pick.delivery_infos["street"] %></div>
-                <div><%= @pick.delivery_infos["zip_code"] %> <%= @pick.delivery_infos["city"] %></div>
-                </div>
-                <div class="complement-bloc">
-                  <div class="complement">Infos complémentaires:</div>
-                  <div class="info"><%= @pick.delivery_infos["address_complement"].present? ? @pick.delivery_infos["address_complement"] : "Pas de complément d'adresse" %>
-                  <div class="info"><%= @pick.delivery_infos["phone_number"].present? ? @pick.delivery_infos["phone_number"] : "Pas de numéro de téléphone renseigné"%>
-                  </div>
+          <div class="info-bloc">
+            <div class="address-infos">
+              <div class="addres-bloc">
+              <div><%= @pick.delivery_infos["first_name"] %> <%= @pick.delivery_infos["last_name"] %></div>
+              <div><%= @pick.delivery_infos["street"] %></div>
+              <div><%= @pick.delivery_infos["zip_code"] %> <%= @pick.delivery_infos["city"] %></div>
+              </div>
+              <div class="complement-bloc">
+                <div class="complement">Infos complémentaires:</div>
+                <div class="info"><%= @pick.delivery_infos["address_complement"].present? ? @pick.delivery_infos["address_complement"] : "Pas de complément d'adresse" %>
+                <div class="info"><%= @pick.delivery_infos["phone_number"].present? ? @pick.delivery_infos["phone_number"] : "Pas de numéro de téléphone renseigné"%>
                 </div>
               </div>
             </div>
           </div>
-
+        </div>
+      </div>
+      <div class="delivery">
+        <h5 id="status">Status</h5>
+        <div class="info-bloc">
+          <%= @order.completed == true ? "Finalisée" : "A traiter" %>
+        </div>
       </div>
     </div>
   </div>
