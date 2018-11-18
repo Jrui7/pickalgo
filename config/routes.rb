@@ -58,7 +58,7 @@ Rails.application.routes.draw do
           patch 'remove_participation'
         end
         resources :reservations, only: [:new, :create, :destroy]
-        resources :orders, only: [:create, :show]
+        resources :orders, only: [:create, :show, :update]
       end
     end
   end
