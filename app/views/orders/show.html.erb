@@ -86,12 +86,18 @@
         </div>
       </div>
       <div class="delivery">
-        <h5 id="status">Status</h5>
+        <h5 id="status">Status de la commande</h5>
         <div class="info-bloc">
-          <%= simple_form_for [@pick, @order], url: order_path(@order) do |f| %>
-            <%= f.collection_radio_buttons :completed, [[true, 'Finalisée'], [false, 'A traiter']], :first, :last  %>
-            <%= f.button :submit, "Enregistrer", class: "btn-blue", id:"ab-cta" %>
-          <% end %>
+          <div class="status-form">
+            <%= simple_form_for [@pick, @order], url: order_path(@order) do |f| %>
+                <input class="hidden" type="radio" value="true" checked="checked" name="order[completed]" id="order_completed_true">
+                <label class="form-choice <%= 'active' if @order.completed == true %>" for="order_completed_true">Finalisée</label>
+                <input class="hidden" type="radio" value="false" name="order[completed]" id="order_completed_false">
+                <label class="form-choice <%= 'active' if @order.completed == false %>" for="order_completed_false">A traiter</label>
+
+              <%= f.button :submit, "Enregistrer", class: "btn-blue", id:"ab-cta" %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>

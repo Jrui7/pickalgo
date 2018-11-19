@@ -49,7 +49,7 @@ class OrdersController < ApplicationController
   def update
     @order = Order.find(params[:id])
     if @order.update(order_params)
-      flash[:notice] = "Commande traitée"
+      flash[:notice] = "Modification enregistrée"
       redirect_to order_path(@order)
     else
       flash[:alert] = "Erreur"
