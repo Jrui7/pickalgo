@@ -109,6 +109,12 @@
     font-size: 15px;
   }
 
+  .pick-pending {
+    text-align: justify;
+    margin-top: 20px;
+    font-size: 15px;
+  }
+
   .price-type {
     color: $orange;
     font-size: 20px;
@@ -178,6 +184,10 @@
    margin-bottom: 20px;
   }
 
+  .video-container {
+    width: 50%;
+  }
+
   @media all and (max-width: 1280px) {
 
   .explaination {
@@ -224,6 +234,11 @@
     }
     .explaination {
       padding: 0;
+    }
+
+
+    .video-container {
+      width: 100%;
     }
 
 

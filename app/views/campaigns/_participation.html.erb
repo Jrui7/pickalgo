@@ -1,10 +1,18 @@
 <% if @campaign.open_type? %>
   <div class="test-explain">
-    <div class="type-and-price">
-      <h3 class=test-title-box>Prix libre<i class="fas fa-question-circle"></i></h3>
-      <p class="price-type">A vous de choisir</p>
-    </div>
-    <p class="explaination">Quel prix maximal pensez-vous que la promo doit adopter ? Si nous pouvons obtenir un prix inférieur à celui que vous proposez, vous profitez de la promo au prix le plus bas. Si le prix que nous avons obtenu est suppérieur à celui que vous proposez, vous ne pourrez pas en profiter.</p>
+    <% unless @pick.state == "pending" %>
+      <div class="type-and-price">
+        <h3 class=test-title-box>Prix libre<i class="fas fa-question-circle"></i></h3>
+        <p class="price-type">A vous de choisir</p>
+      </div>
+      <p class="explaination">Quel prix maximal pensez-vous que la promo doit adopter ? Si nous pouvons obtenir un prix inférieur à celui que vous proposez, vous profitez de la promo au prix le plus bas. Si le prix que nous avons obtenu est suppérieur à celui que vous proposez, vous ne pourrez pas en profiter.</p>
+    <% else %>
+      <div class="type-and-price">
+        <h3 class=test-title-box>Prix libre<i class="fas fa-question-circle"></i></h3>
+        <p class="price-type">Votre choix: <%= sprintf('%.2f', @pick.price) %> €</p>
+      </div>
+      <p class="pick-pending">Vous décidez de participer à la campagne pour <%= sprintf('%.2f', @pick.price) %> €. Vous pouvez encore modifier le montant de votre proposition ci-dessous.</p>
+    <% end %>
   </div>
   <div class="pick-form">
     <%= simple_form_for [@campaign, @pick], url: pick_path(@pick) do |f| %>
