@@ -89,6 +89,14 @@
           <% if @product.website %>
             <p class="tab-content">Plus d'infos sur la page officielle du vendeur <a href="<%= @product.website %>" target="_blank">ici</a></p>
           <% end %>
+          <% if @product.video_url.present? %>
+            <div class="video-container">
+              <div class="media-preview">
+                <iframe id="iframe" src="<%= @product.video_url.gsub('watch?v=', 'embed/') %>">
+                </iframe>
+              </div>
+            </div>
+          <% end %>
         </div>
         <div id="tab-2">
           <h3 class="tab-title"><%= @product.pro.brand.capitalize %></h3>

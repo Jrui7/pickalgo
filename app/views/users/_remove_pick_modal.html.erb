@@ -7,16 +7,16 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Retirer</h4>
+          <h4 class="modal-title">Annuler votre participation ?</h4>
         </div>
         <div class="modal-body">
-          <h5>Cliquez sur <b>Retirer</b> pour retirer "<%= pick.campaign.title.capitalize %>"" de vos campagnes, sinon, cliquez sur <b>"Retour"</b>.</h5>
+          <h5>Cliquez sur <b>Annuler participation</b> pour annuler votre participation à la campagne pour "<%= pick.campaign.title.capitalize %>", sinon, cliquez sur <b>"Retour"</b>.</h5>
         </div>
         <div class="modal-footer">
           <div class="action-links">
             <button type="button" id="close-modal-destroy-<%= pick.id%>" class="btn-white" data-dismiss="modal">Retour</button>
             <%= link_to remove_participation_pick_path(pick), class: "mid-width", method: :patch, remote: true do %>
-                <div class="btn-orange">Retirer</div>
+                <div class="btn-orange">Annuler participation</div>
               <% end %>
           </div>
           <div class="loader-container hidden"></div>
