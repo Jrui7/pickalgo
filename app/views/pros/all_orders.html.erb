@@ -11,13 +11,27 @@
           <div class="table-container">
             <table>
               <tr class="first-left">
+                <th>Commande</th>
+                <th>Date</th>
                 <th>Nom de la campagne</th>
-                <th>Livraison</th>
+                <th>Client</th>
+                <th>Statut</th>
               </tr>
               <% @orders.each do |order| %>
                 <tr class="tr-body">
+                  <td>
+                    <%= link_to order_path(order.id) do %>
+                      <span>#<%= order.id %></span>
+                    <% end %>
+                  </td>
+                  <td><%= order.created_at.strftime("%d/%m/%y")%></td>
                   <td><%= order.campaign.product.title %></td>
-                  <td><%= order.pick.delivery_infos %></td>
+                  <td><%= order.pick.delivery_infos["first_name"].capitalize %> <%= order.pick.delivery_infos["last_name"].capitalize %></td>
+                  <td>
+                    <%= link_to order_path(order.id) do %>
+                      <span><%= order.completed == true ? "Finalisée" : "A traiter" %></span>
+                    <% end %>
+                  </td>
                 </tr>
               <% end %>
             </table>

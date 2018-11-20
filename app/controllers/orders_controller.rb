@@ -37,6 +37,26 @@ class OrdersController < ApplicationController
     redirect_to edit_pick_path(@pick)
   end
 
+  def show
+    @order = Order.find(params[:id])
+    @pick = @order.pick
+    @campaign = @pick.campaign
+    @product = @campaign.product
+    @page = "order"
+    @pro = current_pro
+  end
+
+  def update
+    @order = Order.find(params[:id])
+    if @order.update(order_params)
+      flash[:notice] = "Modification enregistrée"
+      redirect_to order_path(@order)
+    else
+      flash[:alert] = "Erreur"
+      render :show
+    end
+  end
+
 
 
 
@@ -45,6 +65,10 @@ class OrdersController < ApplicationController
 
     def set_pick
       @pick = Pick.find(params[:pick_id])
+    end
+
+    def order_params
+      params.require(:order).permit(:completed)
     end
 
 end
