@@ -1,14 +1,25 @@
 $(document).ready(function(){
-  $("#campaign_test_type_ab_test").click(function(){
-    if($(this).is(':checked'))
+
+  $("#ab-card").click(function(){
+    $("#campaign_test_type_ab_test").click();
+    if($("#campaign_test_type_ab_test").is(':checked'))
+    $("#open-card").removeClass("selected");
+    $("#ab-card").addClass("selected");
     $(".open-part").slideUp();
     $(".price-part").slideDown();
   })
-  $("#campaign_test_type_test_ouvert").click(function(){
-    if($(this).is(':checked'))
+
+  $("#open-card").click(function(){
+    $("#campaign_test_type_test_ouvert").click();
+    if($("#campaign_test_type_test_ouvert").is(':checked'))
+    $("#ab-card").removeClass("selected");
+    $("#open-card").addClass("selected");
     $(".price-part").slideUp();
     $(".open-part").slideDown();
   })
+
+
+
 
   $(".test-title-box").click(function(){
     $(".explaination").slideToggle();
@@ -43,6 +54,8 @@ $(document).ready(function(){
       }
 
     });
+
+
 
 })
 

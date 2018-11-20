@@ -124,6 +124,7 @@
 
   .official-infos {
     margin-top: 70px;
+    width: 55%;
   }
 
   .tab-title {
@@ -184,9 +185,6 @@
    margin-bottom: 20px;
   }
 
-  .video-container {
-    width: 50%;
-  }
 
   @media all and (max-width: 1280px) {
 
@@ -222,6 +220,11 @@
     .seed-media {
       flex: 0 0 100%;
       margin-bottom: 60px;
+    }
+
+    .official-infos {
+      margin-top: 70px;
+      width: 100%;
     }
 
     .right-campaign {

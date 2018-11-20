@@ -6,6 +6,13 @@ class CampaignMailer < ApplicationMailer
     mail to: @user.email, subject: "Commande confirmée", from: '"Pickalgo" <contact@pickalgo.com>'
   end
 
+  def new_chance(user_id, campaign_id, pick_id)
+    @user = User.find(user_id)
+    @campaign = Campaign.find(campaign_id)
+    @pick = Pick.find(pick_id)
+    mail to: @user.email, subject: "Ca ne serait pas juste...", from: '"Pickalgo" <contact@pickalgo.com>'
+  end
+
   def success_open(user_id, campaign_id, pick_id)
     @user = User.find(user_id)
     @campaign = Campaign.find(campaign_id)
@@ -13,7 +20,7 @@ class CampaignMailer < ApplicationMailer
     mail to: @user.email, subject: "Commande confirmée", from: '"Pickalgo" <contact@pickalgo.com>'
   end
 
-    def success_later(user_id, campaign_id, pick_id)
+  def success_later(user_id, campaign_id, pick_id)
     @user = User.find(user_id)
     @campaign = Campaign.find(campaign_id)
     @pick = Pick.find(pick_id)

@@ -26,7 +26,7 @@ class AddressesController < ApplicationController
           format.html { redirect_to new_pick_reservation_path(pick, anchor: 'reservation-box')}
         end
       else
-        flash[:alert] = "Erreur: adresse non enregistrée"
+        flash[:alert] = "Erreur: information manquante"
         redirect_to new_pick_reservation_path(pick)
       end
     end

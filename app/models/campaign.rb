@@ -90,6 +90,11 @@ class Campaign < ApplicationRecord
     added_to_cart.select { |pick| pick.card.present? && pick.price < promo_price }
   end
 
+  def new_chances
+    promo_price = ab_final_price
+    self.picks.select {|pick| pick.answer == "No" && pick.price > promo_price}
+  end
+
   private
 
   def finalize_ab_campaign

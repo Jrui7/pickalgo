@@ -47,7 +47,7 @@ class Product < ApplicationRecord
 
   def extract_photos
       collection = []
-      self.photos.reverse_each do |photo|
+      self.photos.each do |photo|
         collection << photo
       end
       return collection

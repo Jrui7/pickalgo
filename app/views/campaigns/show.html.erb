@@ -87,7 +87,7 @@
           <p class="tab-content"><%= simple_format(@product.description.capitalize) %></p>
           <% end %>
           <% if @product.website %>
-            <p class="tab-content">Plus d'infos sur la page officielle du vendeur <a href="<%= @product.website %>" target="_blank">ici</a></p>
+            <p class="tab-content">Plus d'infos sur la page officielle du vendeur <a href="<%= @product.website %>" target="_blank">(consulter)</a></p>
           <% end %>
           <% if @product.video_url.present? %>
             <div class="video-container">
@@ -109,10 +109,10 @@
                   <%= @product.facebook %>
                 </div>
               <% end %>
-              <% if  @product.insta.present? %>
+              <% if  @product.instagram.present? %>
                 <div class="social-card">
                   <i class="fab fa-instagram"></i>
-                  <%= @product.insta %>
+                  <%= @product.instagram %>
                 </div>
               <% end %>
               <% if  @product.youtube.present? %>

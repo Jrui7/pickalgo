@@ -22,8 +22,24 @@
   }
 }
 
+
+.two-tests {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .test-type {
+    flex: 0 0 48%;
+    cursor: pointer;
+  }
+
+  .selected {
+    background-color: rgba(249, 180, 59, .3)
+  }
+}
+
 .test-type-inputs {
-  margin-bottom: 30px;
+  display: none;
   input {
     margin-right: 10px;
     margin-top: 0;
