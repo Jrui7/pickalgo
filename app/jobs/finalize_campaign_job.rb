@@ -12,7 +12,7 @@ class FinalizeCampaignJob < ApplicationJob
     end
 
     @new_chances.each do |pick|
-      CampaignMailer.new_chance(pick.user_id, pick.campaign_id, pick.id)
+      CampaignMailer.new_chance(pick.user_id, @campaign.id, pick.id).deliver_later
     end
     @campaign.update(finalized: true)
   end
