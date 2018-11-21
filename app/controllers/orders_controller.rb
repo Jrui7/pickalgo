@@ -1,6 +1,8 @@
 class OrdersController < ApplicationController
   before_action :set_pick, only: [:create]
   skip_after_action :verify_authorized
+  before_action :authenticate_pro!, only: [:show, :update]
+  skip_before_action :authenticate_user!, only: [:show, :update]
 
 
   def create

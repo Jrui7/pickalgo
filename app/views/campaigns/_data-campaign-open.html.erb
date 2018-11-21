@@ -1,4 +1,5 @@
 <% if @validated_picks.any? %>
+  <div class="info-detail">Veuillez choisir le prix que vous allez accorder aux testeurs en fonction du CA, volume, marges... etc qu'il vous est possible de réaliser. (Télécharger au format csv)</div>
   <%= render 'finalize-while-ongoing-modal' %>
   <div class="table-container">
     <table>
@@ -8,7 +9,9 @@
         <th>Prix promotionnel</th>
         <th>Quantités (U)</th>
         <th>CA</th>
-        <th>Valider les commandes</th>
+        <% unless @campaign.finalized == true %>
+          <th>Valider les commandes</th>
+        <% end %>
       </tr>
       <% @validated_picks.each do |pick| %>
         <%= render 'finalize-campaign-modal', pick: pick %>
@@ -19,25 +22,23 @@
           <% qt =  @validated_picks.select { |o| o.price >= pick.price  } %>
           <td><%= qt.count %></td>
           <td><%= sprintf('%.2f', pick.price*qt.count) %> €</td>
-          <td>
-            <% if @campaign.ongoing? %>
-              <%= link_to "#finalize-while-ongoing-modal", data: {toggle: "modal"} do %>
-                <div class="finalize-campaign-cta">Commandes  <span>⩾</span> <%= sprintf('%.2f', pick.price) %> €</div>
-              <% end %>
-            <% else %>
-              <% if  @campaign.finalized == false %>
+          <% unless @campaign.finalized == true %>
+            <td>
+              <% if @campaign.ongoing? %>
+                <%= link_to "#finalize-while-ongoing-modal", data: {toggle: "modal"} do %>
+                  <div class="finalize-campaign-cta">Commandes  <span>⩾</span> <%= sprintf('%.2f', pick.price) %> €</div>
+                <% end %>
+              <% else %>
                 <%= link_to "#finalize-campaign-modal-#{pick.id}", data: {toggle: "modal"} do %>
                   <div class="finalize-campaign-cta">Commandes  <span>⩾</span> <%= sprintf('%.2f', pick.price) %> €)</div>
                 <% end %>
-              <% else %>
-                Voir commandes
               <% end %>
-            <% end %>
-          </td>
+            </td>
+          <% end %>
         </tr>
       <% end %>
     </table>
   </div>
 <% else %>
-  <p class="orders">Pas encore de commande pour votre campagne.</p>
+  <div class="info-detail">Pas encore de commande pour votre campagne.</div>
 <% end %>

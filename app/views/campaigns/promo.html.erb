@@ -74,10 +74,15 @@
         </div>
       </div>
       <div class="data-block">
-        <h3>Commandes à valider</h3>
         <% if @campaign.ab_campaign? %>
+          <h3>Commandes</h3>
           <%= render 'data-campaign-ab' %>
         <% else %>
+          <h3>Commandes</h3>
+          <% unless @campaign.finalized == true %>
+          <% else %>
+            <div class="info-detail">Vous avez validé pour <%= sprintf('%.2f', @campaign.price_1) %> € les commandes des testeurs ayant proposé un prix supérieur ou égal à ce celui-ci. Retrouvez ci-dessous l'intégralité des propositions d'achat qui avaient été émises par les testeurs. (Télécharger au format csv)</div>
+          <% end %>
           <%= render 'data-campaign-open' %>
         <% end %>
 
