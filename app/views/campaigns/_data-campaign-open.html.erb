@@ -7,10 +7,10 @@
         <th>Prix original</th>
         <th>Remise</th>
         <th>Prix promotionnel</th>
-        <th>Quantités (U)</th>
+        <th>Quantités cumulées</th>
         <th>CA</th>
         <% unless @campaign.finalized == true %>
-          <th>Valider les commandes</th>
+          <th>Choisir prix</th>
         <% end %>
       </tr>
       <% @validated_picks.each do |pick| %>
@@ -26,11 +26,11 @@
             <td>
               <% if @campaign.ongoing? %>
                 <%= link_to "#finalize-while-ongoing-modal", data: {toggle: "modal"} do %>
-                  <div class="finalize-campaign-cta">Commandes  <span>⩾</span> <%= sprintf('%.2f', pick.price) %> €</div>
+                  <div class="finalize-campaign-cta">Choisir</div>
                 <% end %>
               <% else %>
                 <%= link_to "#finalize-campaign-modal-#{pick.id}", data: {toggle: "modal"} do %>
-                  <div class="finalize-campaign-cta">Commandes  <span>⩾</span> <%= sprintf('%.2f', pick.price) %> €)</div>
+                  <div class="finalize-campaign-cta">Choisir</div>
                 <% end %>
               <% end %>
             </td>
