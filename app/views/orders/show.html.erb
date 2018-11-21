@@ -91,7 +91,7 @@
           <div class="status-form">
             <%= simple_form_for [@pick, @order], url: order_path(@order) do |f| %>
                 <input class="hidden" type="radio" value="true" checked="checked" name="order[completed]" id="order_completed_true">
-                <label class="form-choice <%= 'active' if @order.completed == true %>" for="order_completed_true">Expédiée</label>
+                <label class="form-choice <%= 'active' if @order.completed == true %>" for="order_completed_true">Traitée</label>
                 <input class="hidden" type="radio" value="false" name="order[completed]" id="order_completed_false">
                 <label class="form-choice <%= 'active' if @order.completed == false %>" for="order_completed_false">A traiter</label>
 

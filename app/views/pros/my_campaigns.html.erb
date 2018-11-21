@@ -21,15 +21,19 @@
                   <td><%= campaign.product.title %></td>
                   <td><%= campaign.test_type %></td>
                   <% if campaign.finalized == true %>
-                    <td class="closed">Finalisée</td>
+                    <td class="closed"> <i class="fas fa-circle gray-icon"></i> <span>Finalisée</span></td>
                   <% else %>
                     <% if campaign.state == "ongoing" %>
-                      <td class="ongoing">En cours</td>
+                      <td class="ongoing"><i class="fas fa-circle red-icon"></i> <span>En cours</span></td>
                       <% else %>
                       <td class="closed">A finaliser</td>
                     <% end %>
                   <% end %>
-                  <td><%= link_to 'Voir', promo_path(campaign) %></td>
+                  <td><%= link_to promo_path(campaign) do %>
+                        <i class="far fa-eye"></i>
+                        <span>Consulter</span>
+                      <% end %>
+                  </td>
                 </tr>
               <% end %>
             </table>
