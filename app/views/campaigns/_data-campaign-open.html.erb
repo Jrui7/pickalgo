@@ -1,55 +1,50 @@
-<% if @validated_picks.any? %>
-  <%= render 'finalize-while-ongoing-modal' %>
-  <div class="table-container">
-    <table>
-      <tr>
-        <td><h3>Commandes</h3></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>
-          <div class="download-link">
-            <i class="fas fa-arrow-alt-circle-down"></i>
-            <span>Télécharger</span>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <th>Prix original</th>
-        <th>Remise</th>
-        <th>Prix promotionnel</th>
-        <th>Quantités cumulées</th>
-        <th>CA</th>
-        <% unless @campaign.finalized == true %>
-          <th>Choisir prix</th>
-        <% end %>
-      </tr>
-      <% @validated_picks.each do |pick| %>
-        <%= render 'finalize-campaign-modal', pick: pick %>
-        <tr class="tr-body">
-          <td><%= sprintf('%.2f', @campaign.product.price) %> €</td>
-          <td><%= ((pick.price - @campaign.product.price) / (@campaign.product.price)*100).round %> %</td>
-          <td><%= sprintf('%.2f', pick.price) %> €</td>
-          <% qt =  @validated_picks.select { |o| o.price >= pick.price  } %>
-          <td><%= qt.count %></td>
-          <td><%= sprintf('%.2f', pick.price*qt.count) %> €</td>
-          <% unless @campaign.finalized == true %>
-            <td>
-              <% if @campaign.ongoing? %>
-                <%= link_to "#finalize-while-ongoing-modal", data: {toggle: "modal"} do %>
-                  <div class="finalize-campaign-cta">Choisir</div>
-                <% end %>
-              <% else %>
-                <%= link_to "#finalize-campaign-modal-#{pick.id}", data: {toggle: "modal"} do %>
-                  <div class="finalize-campaign-cta">Choisir</div>
-                <% end %>
-              <% end %>
-            </td>
-          <% end %>
-        </tr>
+
+<table>
+  <tr>
+    <td><h3>Commandes</h3></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>
+      <%= link_to promo_path(@campaign, format: "xls"), class:"download-link" do %>
+        <i class="fas fa-arrow-alt-circle-down"></i>
+        <span>Télécharger</span>
       <% end %>
-    </table>
-  </div>
-<% else %>
-  <div class="info-detail">Pas encore de commande pour votre campagne.</div>
-<% end %>
+    </td>
+  </tr>
+  <tr>
+    <th>Prix original</th>
+    <th>Remise</th>
+    <th>Prix promotionnel</th>
+    <th>Quantités cumulées</th>
+    <th>CA</th>
+    <% unless @campaign.finalized == true %>
+      <th>Choisir prix</th>
+    <% end %>
+  </tr>
+  <% @validated_picks.each do |pick| %>
+    <%= render 'finalize-campaign-modal', pick: pick %>
+    <tr class="tr-body">
+      <td><%= sprintf('%.2f', @campaign.product.price) %> €</td>
+      <td><%= ((pick.price - @campaign.product.price) / (@campaign.product.price)*100).round %> %</td>
+      <td><%= sprintf('%.2f', pick.price) %> €</td>
+      <% qt =  @validated_picks.select { |o| o.price >= pick.price  } %>
+      <td><%= qt.count %></td>
+      <td><%= sprintf('%.2f', pick.price*qt.count) %> €</td>
+      <% unless @campaign.finalized == true %>
+        <td>
+          <% if @campaign.ongoing? %>
+            <%= link_to "#finalize-while-ongoing-modal", data: {toggle: "modal"} do %>
+              <div class="finalize-campaign-cta">Choisir</div>
+            <% end %>
+          <% else %>
+            <%= link_to "#finalize-campaign-modal-#{pick.id}", data: {toggle: "modal"} do %>
+              <div class="finalize-campaign-cta">Choisir</div>
+            <% end %>
+          <% end %>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

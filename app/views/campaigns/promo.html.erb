@@ -74,17 +74,25 @@
         </div>
       </div>
       <div class="data-block">
-        <% if @campaign.ab_campaign? %>
-          <%= render 'data-campaign-ab' %>
-        <% else %>
-          <% if @campaign.finalized == true %>
-            <div class="info-detail">Vous avez validé pour <%= sprintf('%.2f', @campaign.price_1) %> € les commandes des testeurs ayant proposé un prix supérieur ou égal à ce celui-ci. Retrouvez ci-dessous l'intégralité des propositions d'achat qui avaient été émises par les testeurs.</div>
-          <% elsif @validated_picks.any? %>
-            <div class="info-detail">Veuillez choisir le prix que vous allez accorder aux testeurs en fonction du CA, volume, marges... etc qu'il vous est possible de réaliser.</div>
+        <% if @validated_picks.any? %>
+          <% if @campaign.ab_campaign? %>
+            <div class="table-container">
+              <%= render 'data-campaign-ab' %>
+            </div>
+          <% else %>
+            <% if @campaign.finalized == true %>
+              <div class="info-detail">Vous avez validé pour <%= sprintf('%.2f', @campaign.price_1) %> € les commandes des testeurs ayant proposé un prix supérieur ou égal à ce celui-ci. Retrouvez ci-dessous l'intégralité des propositions d'achat qui avaient été émises par les testeurs.</div>
+            <% else %>
+              <div class="info-detail">Veuillez choisir le prix que vous allez accorder aux testeurs en fonction du CA, volume, marges... etc qu'il vous est possible de réaliser.</div>
+            <% end %>
+            <div class="table-container">
+              <%= render 'finalize-while-ongoing-modal' %>
+              <%= render 'data-campaign-open' %>
+            </div>
           <% end %>
-          <%= render 'data-campaign-open' %>
+        <% else %>
+          <p class="orders">Pas encore de commande pour votre campagne.</p>
         <% end %>
-
       </div>
 
     </div>

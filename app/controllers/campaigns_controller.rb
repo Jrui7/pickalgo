@@ -87,6 +87,11 @@ class CampaignsController < ApplicationController
       @validated_picks = @campaign.validated_picks
     end
 
+    respond_to do |format|
+      format.html
+      format.xls
+    end
+
   end
 
   def update

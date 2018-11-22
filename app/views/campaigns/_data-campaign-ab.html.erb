@@ -1,38 +1,32 @@
-<% if @validated_picks.any? %>
 
-  <div class="table-container">
-    <table>
-      <tr>
-        <td><h3>Commandes</h3></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>
-          <div class="download-link">
-            <i class="fas fa-arrow-alt-circle-down"></i>
-            <span>Télécharger</span>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <th>Prix original</th>
-        <th>Remise</th>
-        <th>Prix promotionnel</th>
-        <th>Quantités (U)</th>
-        <th>CA</th>
-      </tr>
-      <% @validated_picks.each do |pick| %>
-        <tr class="tr-body">
-          <td><%= sprintf('%.2f', @campaign.product.price) %> €</td>
-          <td><%= ((pick.price - @campaign.product.price) / (@campaign.product.price)*100).round %> %</td>
-          <td><%= sprintf('%.2f', pick.price) %> €</td>
-          <% qt =  @validated_picks.select { |o| o.price >= pick.price  } %>
-          <td><%= qt.count %></td>
-          <td><%= sprintf('%.2f', pick.price*qt.count) %> €</td>
-        </tr>
+<table>
+  <tr>
+    <td><h3>Commandes</h3></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>
+      <%= link_to promo_path(@campaign, format: "xls"), class:"download-link" do %>
+        <i class="fas fa-arrow-alt-circle-down"></i>
+        <span>Télécharger</span>
       <% end %>
-    </table>
-  </div>
-<% else %>
-  <p class="orders">Pas encore de commande pour votre campagne.</p>
-<% end %>
+    </td>
+  </tr>
+  <tr>
+    <th>Prix original</th>
+    <th>Remise</th>
+    <th>Prix promotionnel</th>
+    <th>Quantités (U)</th>
+    <th>CA</th>
+  </tr>
+  <% @validated_picks.each do |pick| %>
+    <tr class="tr-body">
+      <td><%= sprintf('%.2f', @campaign.product.price) %> €</td>
+      <td><%= ((pick.price - @campaign.product.price) / (@campaign.product.price)*100).round %> %</td>
+      <td><%= sprintf('%.2f', pick.price) %> €</td>
+      <% qt =  @validated_picks.select { |o| o.price >= pick.price  } %>
+      <td><%= qt.count %></td>
+      <td><%= sprintf('%.2f', pick.price*qt.count) %> €</td>
+    </tr>
+  <% end %>
+</table>

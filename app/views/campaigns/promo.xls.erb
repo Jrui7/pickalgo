@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+    <LastAuthor>Pickalgo</LastAuthor>
+    <Created><%= Time.now.strftime("%m/%d/%Y") %></Created>
+    <Version>14.0</Version>
+  </DocumentProperties>
+  <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+    <AllowPNG/>
+  </OfficeDocumentSettings>
+  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+    <WindowHeight>16720</WindowHeight>
+    <WindowWidth>33600</WindowWidth>
+    <WindowTopX>0</WindowTopX>
+    <WindowTopY>0</WindowTopY>
+    <ProtectStructure>False</ProtectStructure>
+    <ProtectWindows>False</ProtectWindows>
+  </ExcelWorkbook>
+  <Styles>
+    <Style ss:ID="Default" ss:Name="Normal">
+      <Alignment ss:Vertical="Bottom"/>
+      <Borders/>
+      <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="12" ss:Color="#000000"/>
+      <Interior/>
+      <NumberFormat/>
+      <Protection/>
+    </Style>
+    <Style ss:ID="s66">
+      <Alignment ss:Vertical="Center"/>
+      <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="12" ss:Color="#000000" ss:Bold="1"/>
+    </Style>
+    <Style ss:ID="s74">
+      <Alignment ss:Vertical="Center"/>
+      <Font ss:FontName="Helvetica" ss:Size="12" ss:Color="#FFFFFF" ss:Bold="1" ss:Italic="1"/>
+      <Interior ss:Color="#6C7AE0" ss:Pattern="Solid"/>
+    </Style>
+  </Styles>
+  <Worksheet ss:Name="Documents">
+    <Table ss:ExpandedColumnCount="5" x:FullColumns="1" x:FullRows="1" ss:DefaultColumnWidth="150" ss:DefaultRowHeight="15">
+      <Row ss:AutoFitHeight="0" ss:Height="28" ss:StyleID="s66">
+        <Cell ss:StyleID="s74"><Data ss:Type="String">Prix original (€)</Data></Cell>
+        <Cell ss:StyleID="s74"><Data ss:Type="String">Remise (%)</Data></Cell>
+        <Cell ss:StyleID="s74"><Data ss:Type="String" x:Color="#177926">Prix promotionnel</Data></Cell>
+        <Cell ss:StyleID="s74"><Data ss:Type="String">Quantités cumulées (unités)</Data></Cell>
+        <Cell ss:StyleID="s74"><Data ss:Type="String">CA (€)</Data></Cell>
+      </Row>
+    <% @validated_picks.each do |pick| %>
+      <% qt =  @validated_picks.select { |o| o.price >= pick.price  } %>
+      <Row>
+        <Cell><Data ss:Type="Number"><%= sprintf('%.2f', @campaign.product.price) %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= ((pick.price - @campaign.product.price) / (@campaign.product.price)*100).round(2) %> %</Data></Cell>
+        <Cell><Data ss:Type="Number"><%= sprintf('%.2f', pick.price) %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= qt.count %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= sprintf('%.2f', pick.price*qt.count) %></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+    <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+    </WorksheetOptions>
+  </Worksheet>
+</Workbook>
+
