@@ -22,7 +22,7 @@
       <th>Choisir un prix</th>
     <% end %>
   </tr>
-  <% @validated_picks.each do |pick| %>
+  <% @uniq.each do |pick| %>
     <%= render 'finalize-campaign-modal', pick: pick %>
     <tr class="tr-body">
       <td><%= sprintf('%.2f', @campaign.product.price) %> €</td>

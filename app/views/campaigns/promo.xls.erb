@@ -48,7 +48,7 @@
         <Cell ss:StyleID="s74"><Data ss:Type="String">Quantités vendues (unités)</Data></Cell>
         <Cell ss:StyleID="s74"><Data ss:Type="String">CA (€)</Data></Cell>
       </Row>
-    <% @validated_picks.each do |pick| %>
+    <% @uniq.each do |pick| %>
       <% qt =  @validated_picks.select { |o| o.price >= pick.price  } %>
       <Row>
         <Cell><Data ss:Type="Number"><%= sprintf('%.2f', @campaign.product.price) %></Data></Cell>
