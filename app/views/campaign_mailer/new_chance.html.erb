@@ -2,7 +2,7 @@
 
 <p><%= @user.first_name %>,</p>
 
-<p>Vous nous aviez indiqué que <%= sprintf('%.2f', @pick.price) %> € était trop élevé pour la campagne promotionnelle de <%= @campaign.product.title %>. Ce prix qui vous était présenté n'était pas le plus bas que nous avions négocié, mais nous a permis de comprendre vos attentes et celles des autres clients pour une opération de promo relative à ce produit. Pour vous remercier d'avoir participé à la campagne, vous pouvez bénéficier du prix le plus bas qui avait été proposé à un certain échantillon d'utilisateurs, ça n'est que justice ! </p>
+<p>Vous nous aviez indiqué que <%= sprintf('%.2f', @pick.price.truncate(2)) %> € était trop élevé pour la campagne promotionnelle de <%= @campaign.product.title %>. Ce prix qui vous était présenté n'était pas le plus bas que nous avions négocié, mais nous a permis de comprendre vos attentes et celles des autres clients pour une opération de promo relative à ce produit. Pour vous remercier d'avoir participé à la campagne, vous pouvez bénéficier du prix le plus bas qui avait été proposé à un certain échantillon d'utilisateurs, ça n'est que justice ! </p>
 
 <%= link_to "J'en profite", edit_pick_url(@pick.id) %>
 

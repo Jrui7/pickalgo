@@ -17,7 +17,7 @@
             <p><%= pick.campaign.product.pro.brand %></p>
           </div>
           <div class="pick-price">
-            <h3 class=test-title>Prix A/B</h3> <%= sprintf('%.2f', pick.price) %> €
+            <h3 class=test-title>Prix A/B</h3> <%= sprintf('%.2f', pick.price.truncate(2)) %> €
           </div>
         <% else %>
           <div class="title-and-price">
@@ -32,7 +32,7 @@
             <p><%= pick.campaign.product.pro.brand %></p>
           </div>
           <div class="pick-price">
-            <h3 class=test-title>Prix libre</h3> <%= sprintf('%.2f', pick.price) %> €
+            <h3 class=test-title>Prix libre</h3> <%= sprintf('%.2f', pick.price.truncate(2)) %> €
           </div>
         <% end %>
       </div>

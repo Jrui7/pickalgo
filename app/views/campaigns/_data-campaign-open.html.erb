@@ -25,12 +25,12 @@
   <% @uniq.each do |pick| %>
     <%= render 'finalize-campaign-modal', pick: pick %>
     <tr class="tr-body">
-      <td><%= sprintf('%.2f', @campaign.product.price) %> €</td>
+      <td><%= sprintf('%.2f', @campaign.product.price.truncate(2)) %> €</td>
       <td><%= ((pick.price - @campaign.product.price) / (@campaign.product.price)*100).round %> %</td>
-      <td class="new-price"><%= sprintf('%.2f', pick.price) %> €</td>
+      <td class="new-price"><%= sprintf('%.2f', pick.price.truncate(2)) %> €</td>
       <% qt =  @validated_picks.select { |o| o.price >= pick.price  } %>
       <td><%= qt.count %></td>
-      <td><%= sprintf('%.2f', pick.price*qt.count) %> €</td>
+      <td><%= sprintf('%.2f', pick.price.truncate(2) *qt.count) %> €</td>
       <% unless @campaign.finalized == true %>
         <td>
           <% if @campaign.ongoing? %>

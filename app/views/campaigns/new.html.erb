@@ -11,7 +11,7 @@
             <div class="recap-body">
               <div class="title-and-price">
                 <h3><%= @product.title.capitalize %></h3>
-                <p>Prix original: <%= sprintf('%.2f', @product.price) %> €</p>
+                <p>Prix original: <%= sprintf('%.2f', @product.price.truncate(2)) %> €</p>
               </div>
               <div class="product-category">
                 <p class="<%= @product.category.name.downcase.gsub('é', 'e') %>"><%= @product.category.name %></p>

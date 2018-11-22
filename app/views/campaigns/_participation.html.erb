@@ -9,9 +9,9 @@
     <% else %>
       <div class="type-and-price">
         <h3 class=test-title-box>Prix libre<i class="fas fa-question-circle"></i></h3>
-        <p class="price-type">Votre choix: <%= sprintf('%.2f', @pick.price) %> €</p>
+        <p class="price-type">Votre choix: <%= sprintf('%.2f', @pick.price.truncate(2)) %> €</p>
       </div>
-      <p class="pick-pending">Vous décidez de participer à la campagne pour <%= sprintf('%.2f', @pick.price) %> €. Vous pouvez encore modifier le montant de votre proposition ci-dessous.</p>
+      <p class="pick-pending">Vous décidez de participer à la campagne pour <%= sprintf('%.2f', @pick.price.truncate(2)) %> €. Vous pouvez encore modifier le montant de votre proposition ci-dessous.</p>
     <% end %>
   </div>
   <div class="pick-form">
@@ -32,7 +32,7 @@
   <div class="test-explain">
     <div class="type-and-price">
       <h3 class=test-title-box>Prix A/B<i class="fas fa-question-circle"></i></h3>
-      <p class="price-type"><%= sprintf('%.2f', @pick.price) %> €</p>
+      <p class="price-type"><%= sprintf('%.2f', @pick.price.truncate(2)) %> €</p>
     </div>
     <p class="explaination">Nous présentons à chaque testeur de façon aléatoire un des prix auquel le vendeur pense proposer sa promo. Chaque testeur nous indique ce qu'il pense du prix qui lui a été présenté. En analysant le nombre de participants pour chaque prix, nous pouvons ainsi déterminer quel prix la promo doit adopter.</p>
   </div>
@@ -42,7 +42,7 @@
         <%= f.collection_radio_buttons :answer, [["Yes", "J'en profite"] ,["No", "Prix pas assez attractif"]], :first, :last %>
       </div>
       <p class="yes-outcome">Vous vous assurez de pourvoir profiter de la promo pour un maximum de <%= sprintf('%.2f', @pick.price) %> €. En bonus, si le prix que nous avons négocié est par exemple égal à <%= sprintf('%.2f', @pick.price * 0.9) %> €, vous profiterez de la promo à  <%= sprintf('%.2f', @pick.price * 0.9) %> € !</p>
-      <p class="no-outcome">Vous aimez <%= @product.title %> mais une promo à <%= sprintf('%.2f', @pick.price) %> € ne vous convainc pas à l'acheter ? Faites le savoir en validant le sondage. Si <%= sprintf('%.2f', @pick.price) %> € est supérieur au prix que nous avons négocié pour vous, vous pourrez profiter du prix négocié à la fin de la campagne. En revanche, si <%= sprintf('%.2f', @pick.price) %> € est déjà le meilleur prix négocié, vous ne pourrez pas profiter de ce prix négocié à la fin de la campagne.</p>
+      <p class="no-outcome">Vous aimez <%= @product.title %> mais une promo à <%= sprintf('%.2f', @pick.price.truncate(2)) %> € ne vous convainc pas à l'acheter ? Faites le savoir en validant le sondage. Si <%= sprintf('%.2f', @pick.price.truncate(2)) %> € est supérieur au prix que nous avons négocié pour vous, vous pourrez profiter du prix négocié à la fin de la campagne. En revanche, si <%= sprintf('%.2f', @pick.price.truncate(2)) %> € est déjà le meilleur prix négocié, vous ne pourrez pas profiter de ce prix négocié à la fin de la campagne.</p>
 
       <%= f.button :submit, "Valider", class: "btn-blue", id:"ab-cta" %>
 

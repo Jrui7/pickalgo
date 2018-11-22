@@ -51,11 +51,11 @@
     <% @uniq.each do |pick| %>
       <% qt =  @validated_picks.select { |o| o.price >= pick.price  } %>
       <Row>
-        <Cell><Data ss:Type="Number"><%= sprintf('%.2f', @campaign.product.price) %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= sprintf('%.2f', @campaign.product.price.truncate(2)) %></Data></Cell>
         <Cell><Data ss:Type="String"><%= ((pick.price - @campaign.product.price) / (@campaign.product.price)*100).round(2) %> %</Data></Cell>
-        <Cell><Data ss:Type="Number"><%= sprintf('%.2f', pick.price) %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= sprintf('%.2f', pick.price.truncate(2)) %></Data></Cell>
         <Cell><Data ss:Type="Number"><%= qt.count %></Data></Cell>
-        <Cell><Data ss:Type="Number"><%= sprintf('%.2f', pick.price*qt.count) %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= sprintf('%.2f', pick.price.truncate(2) *qt.count) %></Data></Cell>
       </Row>
     <% end %>
     </Table>

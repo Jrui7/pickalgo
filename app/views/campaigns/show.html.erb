@@ -48,7 +48,7 @@
         <h1><%= @campaign.title.capitalize %></h1>
         <div class="brand-and-price">
           <p class="brand-name">©<%= @product.pro.brand %></p>
-          <p class="old-price"><%= sprintf('%.2f', @product.price) %> €</p>
+          <p class="old-price"><%= sprintf('%.2f', @product.price.truncate(2)) %> €</p>
         </div>
 
         <div id="timer" data-timer="<%= (@campaign.expiration_date) %>">
