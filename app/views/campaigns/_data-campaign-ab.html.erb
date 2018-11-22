@@ -1,29 +1,28 @@
 
 <table>
   <tr>
-    <td><h3>Commandes</h3></td>
-    <td></td>
-    <td></td>
-    <td></td>
     <td>
       <%= link_to promo_path(@campaign, format: "xls"), class:"download-link" do %>
         <i class="fas fa-arrow-alt-circle-down"></i>
-        <span>Télécharger</span>
+        <span>Télécharger les données</span>
       <% end %>
     </td>
+    <td></td>
+    <td></td>
+    <td></td>
   </tr>
   <tr>
     <th>Prix original</th>
     <th>Remise</th>
     <th>Prix promotionnel</th>
-    <th>Quantités (U)</th>
+    <th>Quantités vendues (U)</th>
     <th>CA</th>
   </tr>
   <% @validated_picks.each do |pick| %>
     <tr class="tr-body">
       <td><%= sprintf('%.2f', @campaign.product.price) %> €</td>
       <td><%= ((pick.price - @campaign.product.price) / (@campaign.product.price)*100).round %> %</td>
-      <td><%= sprintf('%.2f', pick.price) %> €</td>
+      <td class="new-price"><%= sprintf('%.2f', pick.price) %> €</td>
       <% qt =  @validated_picks.select { |o| o.price >= pick.price  } %>
       <td><%= qt.count %></td>
       <td><%= sprintf('%.2f', pick.price*qt.count) %> €</td>
