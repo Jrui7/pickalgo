@@ -18,7 +18,7 @@
     <th>Quantités vendues (U)</th>
     <th>CA</th>
   </tr>
-  <% @validated_picks.each do |pick| %>
+  <% @uniq.each do |pick| %>
     <tr class="tr-body">
       <td><%= sprintf('%.2f', @campaign.product.price) %> €</td>
       <td><%= ((pick.price - @campaign.product.price) / (@campaign.product.price)*100).round %> %</td>
