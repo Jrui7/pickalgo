@@ -29,7 +29,11 @@
                   <td><%= order.pick.delivery_infos["first_name"].capitalize %> <%= order.pick.delivery_infos["last_name"].capitalize %></td>
                   <td>
                     <%= link_to order_path(order.id) do %>
-                      <span><%= order.completed == true ? "Finalisée" : "A traiter" %></span>
+                      <% if order.completed == true %>
+                        <i class="fas fa-check-circle"></i> <span>Finalisée</span>
+                      <% else %>
+                        <i class="fas fa-pause-circle"></i> <span>A traiter</span>
+                      <% end %>
                     <% end %>
                   </td>
                 </tr>

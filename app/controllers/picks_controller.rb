@@ -12,6 +12,7 @@ class PicksController < ApplicationController
     if @pick.campaign.open_type?
       if @pick.update(pick_params_open)
         if @pick.card.present?
+          @pick.update(delivery_infos: @pick.user.address)
           redirect_to pick_path(@pick)
         else
           redirect_to new_pick_reservation_path(@pick.id)
@@ -22,6 +23,7 @@ class PicksController < ApplicationController
         if @pick.answer == "Yes"
           @pick.update(state: "pending")
           if @pick.card.present?
+            @pick.update(delivery_infos: @pick.user.address)
             redirect_to pick_path(@pick)
           else
             redirect_to new_pick_reservation_path(@pick.id)

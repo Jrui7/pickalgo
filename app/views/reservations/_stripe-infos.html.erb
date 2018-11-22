@@ -1,15 +1,15 @@
 <div class="info-detail">
   <% if @pick.campaign.open_type? %>
     <% if @product.expedition_costs.present? %>
-      Si nous pouvons obtenir un prix inférieur à <%= sprintf('%.2f', @product.expedition_costs + @pick.price) %>€ (livraison comprise), vous en bénéficierez à la fin de la campagne. La carte débitée sera celle renseignée ci-dessous. <b>Vous n'avez rien à payer aujourd'hui.</b>
+      Si nous pouvons obtenir un prix inférieur à <%= sprintf('%.2f', @product.expedition_costs.truncate(2) + @pick.price.truncate(2)) %>€ (livraison comprise), vous en bénéficierez à la fin de la campagne. La carte débitée sera celle renseignée ci-dessous. <b>Vous n'avez rien à payer aujourd'hui.</b>
     <% else %>
-      Si nous pouvons obtenir un prix inférieur à <%= sprintf('%.2f', @pick.price) %>€, vous en bénéficierez à la fin de la campagne. La carte débitée sera celle renseignée ci-dessous. <b>Vous n'avez rien à payer aujourd'hui.</b>
+      Si nous pouvons obtenir un prix inférieur à <%= sprintf('%.2f', @pick.price.truncate(2)) %>€, vous en bénéficierez à la fin de la campagne. La carte débitée sera celle renseignée ci-dessous. <b>Vous n'avez rien à payer aujourd'hui.</b>
     <% end %>
   <% else %>
     <% if @product.expedition_costs.present? %>
-      Confirmez votre réservation pour bénéficier du meilleur prix promotionnel. La carte renseignée ci-dessous sera débitée à la fin de la campagne d'un montant inférieur ou égal à <%= sprintf('%.2f', @product.expedition_costs + @pick.price) %>€ (livraison comprise). <b>Vous n'avez rien à payer aujourd'hui.</b>
+      Confirmez votre réservation pour bénéficier du meilleur prix promotionnel. La carte renseignée ci-dessous sera débitée à la fin de la campagne d'un montant inférieur ou égal à <%= sprintf('%.2f', @product.expedition_costs.truncate(2) + @pick.price.truncate(2)) %>€ (livraison comprise). <b>Vous n'avez rien à payer aujourd'hui.</b>
     <% else %>
-    Confirmez votre réservation pour bénéficier du meilleur prix promotionnel. La carte renseignée ci-dessous sera débitée à la fin de la campagne d'un montant inférieur ou égal à <%= sprintf('%.2f', @pick.price) %>€. <b>Vous n'avez rien à payer aujourd'hui.</b>
+    Confirmez votre réservation pour bénéficier du meilleur prix promotionnel. La carte renseignée ci-dessous sera débitée à la fin de la campagne d'un montant inférieur ou égal à <%= sprintf('%.2f', @pick.price.truncate(2)) %>€. <b>Vous n'avez rien à payer aujourd'hui.</b>
     <% end %>
   <% end %>
 </div>

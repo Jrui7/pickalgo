@@ -11,15 +11,15 @@
         <div class="pick-price">
           <% if  pick.campaign.product.expedition_costs.present? %>
             <% if pick.campaign.ab_campaign? %>
-              <%= sprintf('%.2f', pick.campaign.product.expedition_costs + pick.campaign.ab_final_price) %> €
+              <%= sprintf('%.2f', pick.campaign.product.expedition_costs.truncate(2) + pick.campaign.ab_final_price.truncate(2)) %> €
             <% else %>
-              <%= sprintf('%.2f', pick.campaign.product.expedition_costs + pick.campaign.price_1) %> €
+              <%= sprintf('%.2f', pick.campaign.product.expedition_costs.truncate(2) + pick.campaign.price_1.truncate(2)) %> €
             <% end %>
           <% else %>
             <% if pick.campaign.ab_campaign? %>
-              <%= sprintf('%.2f', pick.campaign.ab_final_price) %> €
+              <%= sprintf('%.2f', pick.campaign.ab_final_price.truncate(2)) %> €
             <% else %>
-              <%= sprintf('%.2f', pick.campaign.price_1) %> €
+              <%= sprintf('%.2f', pick.campaign.price_1.truncate(2)) %> €
             <% end %>
         <% end %>
         </div>

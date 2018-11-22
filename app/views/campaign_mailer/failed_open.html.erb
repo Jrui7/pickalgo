@@ -2,7 +2,7 @@
 
 <p><%= @user.first_name %>,</p>
 
-<p>Merci pour votre participation à la campagne pour <%= @campaign.product.title %>. Nous avons obtenu un prix supérieur à votre proposition de <%= sprintf('%.2f', @pick.price) %> € qui  n'a donc pas été retenue. Pas de regret donc !  </p>
+<p>Merci pour votre participation à la campagne pour <%= @campaign.product.title %>. Nous avons obtenu un prix supérieur à votre proposition de <%= sprintf('%.2f', @pick.price.truncate(2)) %> € qui  n'a donc pas été retenue. Pas de regret donc !  </p>
 
 <p>A très vite pour de nouvelles campagnes sur Pickalgo.</p>
 

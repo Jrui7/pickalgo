@@ -6,7 +6,7 @@ class ProceedOpenPaymentJob < ApplicationJob
       user = pick.user
       campaign = Campaign.find(campaign_id)
       price = (campaign.price_1 * 100).to_i
-      delivery = (campaign.product.expedition_costs.to_i * 100).to_i
+      delivery = (campaign.product.expedition_costs * 100).to_i
       total = price + delivery
 
       begin

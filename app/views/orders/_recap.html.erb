@@ -5,22 +5,22 @@
       <div>
       <h4><%= product.title.capitalize %></h4>
       </div>
-      Prix original: <%= sprintf('%.2f', product.price) %> €
+      Prix original: <%= sprintf('%.2f', product.price.truncate(2)) %> €
     </div>
   </div>
   <% if product.expedition_costs.present? %>
     <div class="how-much">
       <div class="text">Coût livraison:</div>
-      <p class="price"><%= sprintf('%.2f', product.expedition_costs) %> €</p>
+      <p class="price"><%= sprintf('%.2f', product.expedition_costs.truncate(2)) %> €</p>
     </div>
   <% end %>
   <div class="how-much">
     <div class="text">Prix:</div>
     <p class="price">
       <% if pick.campaign.ab_campaign? %>
-        <%= sprintf('%.2f', pick.campaign.ab_final_price) %> €
+        <%= sprintf('%.2f', pick.campaign.ab_final_price.truncate(2)) %> €
       <% else %>
-        <%= sprintf('%.2f', pick.campaign.price_1) %> €
+        <%= sprintf('%.2f', pick.campaign.price_1.truncate(2)) %> €
       <% end %>
     </p>
   </div>
@@ -29,9 +29,9 @@
       <div class="text"><b>Coût total:</b></div>
       <p class="price">
         <% if pick.campaign.ab_campaign? %>
-          <%= sprintf('%.2f', pick.campaign.product.expedition_costs + pick.campaign.ab_final_price) %> €
+          <%= sprintf('%.2f', pick.campaign.product.expedition_costs.truncate(2) + pick.campaign.ab_final_price.truncate(2)) %> €
         <% else %>
-          <%= sprintf('%.2f', pick.campaign.product.expedition_costs + pick.campaign.price_1) %> €
+          <%= sprintf('%.2f', pick.campaign.product.expedition_costs.truncate(2) + pick.campaign.price_1.truncate(2)) %> €
         <% end %>
       </p>
     </div>

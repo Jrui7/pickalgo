@@ -7,7 +7,7 @@
         <p><%= pick.campaign.product.pro.brand %></p>
       </div>
       <div class="pick-price">
-        Prix max: <%= sprintf('%.2f', pick.price) %> €
+        Prix max: <%= sprintf('%.2f', pick.price.truncate(2)) %> €
       </div>
     </div>
   </div>

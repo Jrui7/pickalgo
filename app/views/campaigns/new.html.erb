@@ -11,7 +11,7 @@
             <div class="recap-body">
               <div class="title-and-price">
                 <h3><%= @product.title.capitalize %></h3>
-                <p>Prix original: <%= sprintf('%.2f', @product.price) %> €</p>
+                <p>Prix original: <%= sprintf('%.2f', @product.price.truncate(2)) %> €</p>
               </div>
               <div class="product-category">
                 <p class="<%= @product.category.name.downcase.gsub('é', 'e') %>"><%= @product.category.name %></p>
@@ -19,7 +19,7 @@
             </div>
           </div>
           <div class="explain-block">
-            <h3>Choisissez le type de campagne que vous voulez lancer</h3>
+            <h3>Sélectionnez le type de campagne que vous souhaitez lancer:</h3>
             <div class="two-tests">
               <div class="test-type" id="ab-card">
                 <h5 class="test-title">A/B Test</h5>

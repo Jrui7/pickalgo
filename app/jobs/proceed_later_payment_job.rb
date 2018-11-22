@@ -8,11 +8,11 @@ class ProceedLaterPaymentJob < ApplicationJob
 
     if campaign.ab_campaign?
       price = (campaign.ab_final_price * 100).to_i
-      delivery = (campaign.product.expedition_costs.to_i * 100).to_i
+      delivery = (campaign.product.expedition_costs * 100).to_i
       total = price + delivery
     else
       price = (campaign.price_1 * 100).to_i
-      delivery = (campaign.product.expedition_costs.to_i * 100).to_i
+      delivery = (campaign.product.expedition_costs * 100).to_i
       total = price + delivery
     end
 

@@ -74,13 +74,25 @@
         </div>
       </div>
       <div class="data-block">
-        <h3>Commandes à valider</h3>
-        <% if @campaign.ab_campaign? %>
-          <%= render 'data-campaign-ab' %>
+        <% if @validated_picks.any? %>
+          <% if @campaign.ab_campaign? %>
+            <div class="table-container">
+              <%= render 'data-campaign-ab' %>
+            </div>
+          <% else %>
+            <% if @campaign.finalized == true %>
+              <div class="info-detail">Vous avez validé pour <%= sprintf('%.2f', @campaign.price_1.truncate(2)) %> € les commandes des testeurs ayant proposé un prix supérieur ou égal à ce celui-ci. Retrouvez ci-dessous l'intégralité des propositions d'achat qui avaient été émises par les testeurs.</div>
+            <% else %>
+              <div class="info-detail">Veuillez choisir le prix que vous allez accorder aux testeurs en fonction du CA, volume, marges... que vous souhaitez réaliser. Vous pouvez télécharger l'intégralité des données de la campagne afin de pouvoir imputer vos coûts en fonction des volumes réalisés par ligne de chiffre d'affaires, et donc calculer les marges qui en découlent.</div>
+            <% end %>
+            <div class="table-container">
+              <%= render 'finalize-while-ongoing-modal' %>
+              <%= render 'data-campaign-open' %>
+            </div>
+          <% end %>
         <% else %>
-          <%= render 'data-campaign-open' %>
+          <p class="orders">Pas encore de commande pour votre campagne.</p>
         <% end %>
-
       </div>
 
     </div>

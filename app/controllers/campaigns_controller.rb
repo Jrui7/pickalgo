@@ -83,8 +83,15 @@ class CampaignsController < ApplicationController
     @added_to_cart = @campaign.all_cart_additions
     if @campaign.finalized == true
       @validated_picks = @campaign.picks.where(state: ["paid", "error"]).order('price DESC')
+      @uniq = @validated_picks.uniq { |p| p.price }
     else
       @validated_picks = @campaign.validated_picks
+      @uniq = @validated_picks.uniq { |p| p.price }
+    end
+
+    respond_to do |format|
+      format.html
+      format.xls
     end
 
   end

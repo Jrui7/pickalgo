@@ -60,15 +60,15 @@
                   <div class="info-detail">
                     <% if @pick.campaign.open_type? %>
                       <% if @product.expedition_costs.present? %>
-                        Si nous pouvons obtenir un prix inférieur à <%= sprintf('%.2f', @product.expedition_costs + @pick.price) %>€ (livraison comprise), vous en bénéficierez à la fin de la campagne. La carte débitée sera celle renseignée ci-dessous.
+                        Si nous pouvons obtenir un prix inférieur à <%= sprintf('%.2f', @product.expedition_costs.truncate(2) + @pick.price.truncate(2)) %>€ (livraison comprise), vous en bénéficierez à la fin de la campagne. La carte débitée sera celle renseignée ci-dessous.
                       <% else %>
-                        Si nous pouvons obtenir un prix inférieur à <%= sprintf('%.2f', @pick.price) %>€, vous en bénéficierez à la fin de la campagne. La carte débitée sera celle renseignée ci-dessous.
+                        Si nous pouvons obtenir un prix inférieur à <%= sprintf('%.2f', @pick.price.truncate(2)) %>€, vous en bénéficierez à la fin de la campagne. La carte débitée sera celle renseignée ci-dessous.
                       <% end %>
                     <% else %>
                       <% if @product.expedition_costs.present? %>
-                        Vous êtes assuré de bénéficier du meilleur prix promotionnel. La carte renseignée ci-dessous sera débitée à la fin de la campagne d'un montant inférieur ou égal à <%= sprintf('%.2f', @product.expedition_costs + @pick.price) %>€ (livraison comprise).
+                        Vous êtes assuré de bénéficier du meilleur prix promotionnel. La carte renseignée ci-dessous sera débitée à la fin de la campagne d'un montant inférieur ou égal à <%= sprintf('%.2f', @product.expedition_costs.truncate(2) + @pick.price.truncate(2)) %>€ (livraison comprise).
                       <% else %>
-                      Vous êtes assuré de bénéficier du meilleur prix promotionnel. La carte renseignée ci-dessous sera débitée à la fin de la campagne d'un montant inférieur ou égal à <%= sprintf('%.2f', @pick.price) %>€.
+                      Vous êtes assuré de bénéficier du meilleur prix promotionnel. La carte renseignée ci-dessous sera débitée à la fin de la campagne d'un montant inférieur ou égal à <%= sprintf('%.2f', @pick.price.truncate(2)) %>€.
                       <% end %>
                     <% end %>
                   </div>
