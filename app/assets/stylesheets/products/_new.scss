@@ -27,6 +27,37 @@
   }
 }
 
+.two-inputs {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  flex: 0 0 40%;
+
+  p {
+    margin: 0;
+  }
+
+  label {
+    background: #b7b7b7;
+    padding: 5px 20px;
+    border-radius: 5px;
+    margin-bottom: 0;
+    text-align: center;
+    opacity: .6;
+    color: #FFF;
+    &:hover {
+      background-color: #ff9800;
+      cursor: pointer;
+    }
+    &.active {
+    background: #ff9800;
+    color: white;
+    opacity: 1;
+    }
+  }
+}
+
 
 
 .product_description {
