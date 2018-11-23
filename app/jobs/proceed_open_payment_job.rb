@@ -6,8 +6,11 @@ class ProceedOpenPaymentJob < ApplicationJob
       user = pick.user
       campaign = Campaign.find(campaign_id)
       price = (campaign.price_1 * 100).to_i
-      delivery = (campaign.product.expedition_costs * 100).to_i
+      delivery = campaign.product.expedition_costs.present? ? (campaign.product.expedition_costs * 100).to_i : 0
       total = price + delivery
+      fixed_fees = (campaign.product.pro.fixed_fees * 100)
+      variable_fees = campaign.product.pro.variable_fees * price
+      fees = (fixed_fees + variable_fees).to_i
 
       begin
         charge = Stripe::Charge.create(
@@ -18,7 +21,8 @@ class ProceedOpenPaymentJob < ApplicationJob
           currency:     'eur',
           :destination => {
             :account => "#{campaign.product.pro.stripe_uid}",
-          }
+          },
+          application_fee: fees
         )
         pick.update(state: "paid", transac_detail: charge.to_json)
         Order.create(pick_id: pick.id, campaign_id: campaign.id, pro_id: campaign.product.pro.id)
