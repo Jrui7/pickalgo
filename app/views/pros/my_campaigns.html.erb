@@ -26,7 +26,7 @@
                     <% if campaign.state == "ongoing" %>
                       <td class="ongoing"><i class="fas fa-circle red-icon"></i> <span>En cours</span></td>
                       <% else %>
-                      <td class="closed">A finaliser</td>
+                      <td class="closed"><i class="fas fa-circle green-icon"></i> <span>A finaliser</span></td>
                     <% end %>
                   <% end %>
                   <td><%= link_to promo_path(campaign) do %>
