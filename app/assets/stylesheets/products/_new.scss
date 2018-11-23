@@ -20,6 +20,11 @@
   .product_title, .product_category, .product_price, .product_price_ht, .product_expedition_costs, .product_website, .product_size_guide  {
     flex: 0 0 40%;
   }
+
+  .info-detail {
+    margin: 30px auto;
+    width: 80%;
+  }
 }
 
 
