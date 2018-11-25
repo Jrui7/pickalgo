@@ -1,7 +1,7 @@
 class Pick < ApplicationRecord
   belongs_to :campaign
   belongs_to :user
-  has_one :order
+  has_one :order, dependent: :destroy
   self.per_page = 10
 
   def self.pending_picks(user)
