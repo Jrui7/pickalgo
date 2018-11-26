@@ -18,6 +18,12 @@
                   Prix original: <%= sprintf('%.2f', @product.price.truncate(2)) %> €
                 </div>
               </div>
+              <% if @product.size == true %>
+                <div class="how-much">
+                  <div class="text">Taille:</div>
+                  <p class="price"><%= @pick.size %></p>
+                </div>
+              <% end %>
               <% if @product.expedition_costs.present? %>
                 <div class="how-much">
                   <div class="text">Livraison:</div>
