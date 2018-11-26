@@ -9,11 +9,16 @@ $(document).ready(function() {
   });
 
 
-  $("#save-cta").click(function(event){
+  $("#open-cta").click(function(event){
     if(!$("#pick_price").val()) {
        event.preventDefault();
-       $(".participation-input").addClass("shake");
+       $("#pick_price").addClass("shake").css({ 'color': 'red', 'border-color': 'red' });
      }
+
+     if( ($('#pick_size').length) && (!$("#pick_size").val()) ) {
+        event.preventDefault();
+        $("#pick_size").addClass("shake").css({ 'color': 'red', 'border-color': 'red' });
+      }
      else {
        form.submit();
      }
@@ -25,6 +30,12 @@ $(document).ready(function() {
        event.preventDefault();
        $(".participation-input").addClass("shake");
      }
+
+     if( ($('#pick_size').length) && (!$("#pick_size").val()) ) {
+        event.preventDefault();
+        $("#pick_size").addClass("shake").css({ 'color': 'red', 'border-color': 'red' });
+      }
+
      else {
        form.submit();
      }
