@@ -23,7 +23,7 @@
       <span>Campagne active</span>
     </div>
     <%= link_to promo_path(campaign) do %>
-      <div class="new_campaign_buttom btn-white">Voir</div>
+      <div class="new_campaign_buttom btn-white">Voir détails</div>
     <% end %>
   <% else %>
     <div class="status-overview">
@@ -31,7 +31,7 @@
       <span>Pas de campagne active</span>
     </div>
     <%= link_to new_product_campaign_path(product) do %>
-      <div class="new_campaign_buttom btn-white">Lancer une campagne</div>
+      <div class="new_campaign_buttom btn-blue">Lancer une campagne</div>
     <% end %>
   <% end %>
 </div>

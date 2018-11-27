@@ -12,8 +12,9 @@
 
 
 .product-feed {
-  padding: 0 20px;
   min-height: 100vh;
+  width: 59%;
+  margin: 0 auto;
 }
 
 .product-iterration {
@@ -94,7 +95,7 @@
 .edit-links {
   margin-left: 15px;
   a {
-    color: $orange;
+    color: #72777a;
     border-radius: 50%;
     &:hover {
     animation: pulse-shadow 2s infinite;
@@ -105,6 +106,22 @@
 #product_description, #pro_bio {
   height: 130px;
 }
+
+@media all and (max-width: 1280px) {
+
+  .product-feed {
+    width: 80%;
+  }
+
+}
+
+
+@media screen and (max-width: 768px) {
+  .product-feed {
+    width: 100%;
+  }
+
+ }
 
 @media screen and (max-width: 480px) {
   .product-feed {
