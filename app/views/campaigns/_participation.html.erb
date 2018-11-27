@@ -21,9 +21,15 @@
           <%= f.input :price, label: false, placeholder: "Votre prix" %>
           <span class="icon fas fa-euro-sign"></span>
         </div>
+        <% if @campaign.product.size == true %>
+          <div class="input-and-icon">
+            <%= f.input :size, label: false, placeholder: "Taille choisie (voir description)" %>
+            <span class="icon fas fa-cut"></span>
+          </div>
+        <% end %>
       </div>
 
-      <%= f.button :submit, "Valider", class: "btn-blue", id:"save-cta" %>
+      <%= f.button :submit, "Valider", class: "btn-blue", id:"open-cta" %>
 
     <% end %>
   </div>
@@ -43,6 +49,13 @@
       </div>
       <p class="yes-outcome">Vous vous assurez de pourvoir profiter de la promo pour un maximum de <%= sprintf('%.2f', @pick.price) %> €. En bonus, si le prix que nous avons négocié est par exemple égal à <%= sprintf('%.2f', @pick.price * 0.9) %> €, vous profiterez de la promo à  <%= sprintf('%.2f', @pick.price * 0.9) %> € !</p>
       <p class="no-outcome">Vous aimez <%= @product.title %> mais une promo à <%= sprintf('%.2f', @pick.price.truncate(2)) %> € ne vous convainc pas à l'acheter ? Faites le savoir en validant le sondage. Si <%= sprintf('%.2f', @pick.price.truncate(2)) %> € est supérieur au prix que nous avons négocié pour vous, vous pourrez profiter du prix négocié à la fin de la campagne. En revanche, si <%= sprintf('%.2f', @pick.price.truncate(2)) %> € est déjà le meilleur prix négocié, vous ne pourrez pas profiter de ce prix négocié à la fin de la campagne.</p>
+
+      <% if @campaign.product.size == true %>
+        <div class="input-and-icon">
+          <%= f.input :size, label: false, placeholder: "Taille choisie (voir description)" %>
+          <span class="icon fas fa-cut"></span>
+        </div>
+      <% end %>
 
       <%= f.button :submit, "Valider", class: "btn-blue", id:"ab-cta" %>
 

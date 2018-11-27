@@ -7,6 +7,12 @@
       <%= f.input :price_ht, label: "Prix original HT (€)", placeholder: "Exemple: 74,92" %>
     <%= f.input :expedition_costs, label: "Livraison (€)", placeholder: "Coûts de livraison pour le client" %>
     <%= f.input :website, label: "Site internet", placeholder: "Ex: https://wwww.votre_site/votre_produit.com" %>
+    <div class="info-detail">Pour les produits ou l'utilisateur doit choisir une taille (ex: T-shirt), merci de fournir un lien vers le guide des tailles du produit, ou d'apporter des précisions dans la rubrique description.</div>
+    <div class="two-inputs">
+      <p>L'utilisateur doit-il chosir une taille ?</p>
+      <span><input type="radio" value="true" name="product[size]" class="hidden" id="product_size_true"><label class="collection_radio_buttons size-radio-input <%= 'active' if @product.size == true %>" for="product_size_true">Oui</label></span>
+      <span><input type="radio" value="false" name="product[size]" class="hidden" id="product_size_false"><label class="collection_radio_buttons size-radio-input <%= 'active' if @product.size == false %>" for="product_size_false">Non</label></span>
+    </div>
     <%= f.input :size_guide, label: "Guide des tailles", placeholder: "url du site / guide des tailles" %>
   </div>
   <%= f.input :description, placeholder: "Décrivez votre produit: utilisation, composition, entretien, dimensions..." %>

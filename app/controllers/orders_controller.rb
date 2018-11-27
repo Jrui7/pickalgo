@@ -52,7 +52,7 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     if @order.update(order_params)
       flash[:notice] = "Modification enregistrée"
-      redirect_to order_path(@order)
+      redirect_to all_orders_pro_path(current_pro)
     else
       flash[:alert] = "Erreur"
       render :show

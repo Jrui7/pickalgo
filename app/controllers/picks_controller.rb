@@ -50,9 +50,9 @@ class PicksController < ApplicationController
     authorize @pick
     @user = @pick.user
     if @pick.campaign.ab_campaign?
-      @pick.update(state: "removed", delivery_infos: {},  answer: nil)
+      @pick.update(state: "removed", size: nil, delivery_infos: {},  answer: nil)
     else
-      @pick.update(state: "removed", delivery_infos: {}, price: nil)
+      @pick.update(state: "removed", size: nil, delivery_infos: {}, price: nil)
     end
 
     respond_to do |format|
@@ -68,11 +68,11 @@ class PicksController < ApplicationController
   end
 
   def pick_params_ab
-    params.require(:pick).permit(:answer).reject { |_, v| v.blank? }
+    params.require(:pick).permit(:answer, :size)
   end
 
   def pick_params_open
-    params.require(:pick).permit(:price).merge(state: "pending").reject { |_, v| v.blank? }
+    params.require(:pick).permit(:price, :size).merge(state: "pending")
   end
 
 end
