@@ -1,6 +1,6 @@
 <%= link_to my_campaigns_user_path(@user.id) do %>
   <div class="complete-link">
-      <%= image_tag "blue-icon.png", class: "pending-icon pick-icon" %>
+      <i class="fas fa-flask pending-icon"></i>
       <% if Pick.pending_picks(@user.id).any?  %>
         <div class="picks-pending-circle">
           <%= Pick.pending_picks(@user.id).count %>

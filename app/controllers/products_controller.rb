@@ -31,6 +31,7 @@ class ProductsController < ApplicationController
    if @product.save
      redirect_to new_product_campaign_path(@product)
    else
+      flash[:alert] = "Informations manquantes"
      render :new
    end
  end

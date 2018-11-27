@@ -15,6 +15,7 @@
 .left-and-right {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .carousel-inner {
@@ -56,8 +57,11 @@
   }
 
   .right-campaign {
-    flex: 0 0 45%;
-    padding: 0 0 0 40px;
+    flex: 0 0 40%;
+    margin-left: 5%;
+    border: 1px solid #efefef;
+    background-color: #FFFFFF;
+    padding: 10px 20px;
   }
 
   .brand-and-price {

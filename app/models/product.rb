@@ -10,6 +10,11 @@ class Product < ApplicationRecord
       message: "Nom du produit requis"
   }
 
+  validates :size,
+      presence: {
+      message: "A renseigner"
+  }
+
   validates :price,
       presence: {
       message: "A quel prix votre produit est vendeu hors promo ?"
