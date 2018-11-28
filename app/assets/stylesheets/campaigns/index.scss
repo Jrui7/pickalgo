@@ -34,7 +34,8 @@
   }
 
   .selected {
-    background-color: rgba(249, 180, 59, .3)
+    background-color: rgba(249, 180, 59, .3);
+    border: 2px solid #b5b6b7;
   }
 }
 
@@ -302,9 +303,6 @@ tr.tr-body:nth-child(even) {
     border-radius: 3px;
     padding: 0 10px 0 10px;
 
-      .pick-icon {
-        height: 15px;
-      }
 
     p {
       margin: 0 0 0 7px;

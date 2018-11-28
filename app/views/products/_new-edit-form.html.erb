@@ -9,7 +9,7 @@
     <%= f.input :website, label: "Site internet", placeholder: "Ex: https://wwww.votre_site/votre_produit.com" %>
     <div class="info-detail">Pour les produits ou l'utilisateur doit choisir une taille (ex: T-shirt), merci de fournir un lien vers le guide des tailles du produit, ou d'apporter des précisions dans la rubrique description.</div>
     <div class="two-inputs">
-      <p>L'utilisateur doit-il chosir une taille ?</p>
+      <p>L'utilisateur doit-il chosir une taille ? *</p>
       <span><input type="radio" value="true" name="product[size]" class="hidden" id="product_size_true"><label class="collection_radio_buttons size-radio-input <%= 'active' if @product.size == true %>" for="product_size_true">Oui</label></span>
       <span><input type="radio" value="false" name="product[size]" class="hidden" id="product_size_false"><label class="collection_radio_buttons size-radio-input <%= 'active' if @product.size == false %>" for="product_size_false">Non</label></span>
     </div>

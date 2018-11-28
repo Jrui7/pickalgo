@@ -15,6 +15,7 @@
 .left-and-right {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .carousel-inner {
@@ -56,8 +57,9 @@
   }
 
   .right-campaign {
-    flex: 0 0 45%;
-    padding: 0 0 0 40px;
+    flex: 0 0 40%;
+    margin-left: 5%;
+    padding: 10px 20px;
   }
 
   .brand-and-price {
@@ -123,8 +125,8 @@
   }
 
   .official-infos {
-    margin-top: 70px;
     width: 55%;
+    margin-top: 40px;
   }
 
   .tab-title {
@@ -148,41 +150,73 @@
   }
 
   .participation-input {
-    margin: 40px 0;
+    margin: 40px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .form-group {
+      flex: 0 0 45%;
+    }
     span {
       margin-right: 20px;
       margin-bottom: 20px;
     }
 
     input {
-      margin-right: 10px;
-      margin-top: -5px;
+      margin-top: 5px;
       vertical-align: middle;
     }
 
-    label {
-      margin: 0;
+    .pick-form-answer {
+      background: #FFF;
+      border: 2px solid #e8e8e8;
+      padding: 5px 20px;
+      border-radius: 20px;
+      box-shadow: 0 1px 1px 0 rgba(90, 122, 190, 0.1), 0 10px 20px 0 rgba(90, 122, 190, 0.2);
+      transition-duration: .5s;
+      margin-bottom: 0;
+      text-align: center;
+      &:hover {
+        background-color: rgba(249, 180, 59, 0.3);
+        border: 2px solid #b5b6b7;
+        cursor: pointer;
+        transform: translateY(-2px);
+      }
+      &.active {
+      background: #ff9800;
+      border: 2px solid transparent;
+      color: #FFF;
+      opacity: 1;
+      }
     }
+
   }
 
-  #ab-cta {
-    margin: 40px 0 0 0;
+  .ab-size {
+    margin: 10px 0 40px;
+    width: 40%;
+  }
+
+  #ab-cta, #open-cta {
+    padding: 10px 50px !important;
+    margin-top: 20px;
   }
 
   .yes-outcome {
     text-align: justify;
     display: none;
-    margin-top: 20px;
+    margin-top: 0;
     font-size: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 
   .no-outcome {
    text-align: justify;
    display: none;
-   margin-top: 20px;
+   margin-top: 0;
    font-size: 15px;
-   margin-bottom: 20px;
+   margin-bottom: 30px;
   }
 
 
@@ -190,10 +224,6 @@
 
   .explaination {
     padding-right: 20px;
-  }
-
-  #tab-1, #tab-2 {
-    padding: 0 10px;
   }
 
   }
@@ -230,6 +260,11 @@
     .right-campaign {
       flex: 0 0 100%;
       padding: 0 10px;
+      margin-left: 0;
+    }
+
+    #ab-cta, #open-cta {
+      margin-top: 20px;
     }
 
     .carousel-indicators {
@@ -242,6 +277,10 @@
 
     .video-container {
       width: 100%;
+    }
+
+    .ab-size {
+      width: 70%;
     }
 
 

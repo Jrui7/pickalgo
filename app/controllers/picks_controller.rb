@@ -11,23 +11,13 @@ class PicksController < ApplicationController
     authorize @pick
     if @pick.campaign.open_type?
       if @pick.update(pick_params_open)
-        if @pick.card.present?
-          @pick.update(delivery_infos: @pick.user.address)
-          redirect_to pick_path(@pick)
-        else
-          redirect_to new_pick_reservation_path(@pick.id)
-        end
+        redirect_to new_pick_reservation_path(@pick.id)
       end
     else
       if @pick.update(pick_params_ab)
         if @pick.answer == "Yes"
           @pick.update(state: "pending")
-          if @pick.card.present?
-            @pick.update(delivery_infos: @pick.user.address)
-            redirect_to pick_path(@pick)
-          else
-            redirect_to new_pick_reservation_path(@pick.id)
-          end
+          redirect_to new_pick_reservation_path(@pick.id)
         else
           @pick.update(state: nil)
           redirect_to campaigns_path

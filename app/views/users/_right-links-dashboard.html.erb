@@ -10,7 +10,7 @@
     <% end %>
     <%= link_to my_campaigns_user_path(@user) do %>
        <div class="pick-menu link <%= 'selected-category' if @page == 'my_campaigns'  %>">
-       <%= image_tag "blue-icon.png", class:"pick-icon" %> Mes campagnes
+       <i class="fas fa-flask"></i> Mes campagnes
        </div>
      <% end %>
      <%= link_to my_orders_user_path(@user) do %>
