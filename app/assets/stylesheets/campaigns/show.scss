@@ -59,8 +59,6 @@
   .right-campaign {
     flex: 0 0 40%;
     margin-left: 5%;
-    border: 1px solid #efefef;
-    background-color: #FFFFFF;
     padding: 10px 20px;
   }
 
@@ -153,24 +151,31 @@
 
   .participation-input {
     margin: 40px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .form-group {
+      flex: 0 0 45%;
+    }
     span {
       margin-right: 20px;
       margin-bottom: 20px;
     }
 
     input {
-      margin-right: 10px;
-      margin-top: -5px;
+      margin-top: 5px;
       vertical-align: middle;
     }
 
     label {
       margin: 0;
     }
+
   }
 
-  #ab-cta {
-    margin: 40px 0 0 0;
+  #ab-cta, #open-cta {
+    padding: 10px 50px !important;
   }
 
   .yes-outcome {
@@ -234,6 +239,11 @@
     .right-campaign {
       flex: 0 0 100%;
       padding: 0 10px;
+      margin-left: 0;
+    }
+
+    #ab-cta, #open-cta {
+      margin-top: 20px;
     }
 
     .carousel-indicators {
