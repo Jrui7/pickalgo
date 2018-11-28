@@ -46,10 +46,7 @@
       <p class="no-outcome">Vous aimez <%= @product.title %> mais une promo à <%= sprintf('%.2f', @pick.price.truncate(2)) %> € ne vous convainc pas à l'acheter ? Faites le savoir en validant le sondage. Si <%= sprintf('%.2f', @pick.price.truncate(2)) %> € est supérieur au prix que nous avons négocié pour vous, vous pourrez profiter du prix négocié à la fin de la campagne. En revanche, si <%= sprintf('%.2f', @pick.price.truncate(2)) %> € est déjà le meilleur prix négocié, vous ne pourrez pas profiter de ce prix négocié à la fin de la campagne.</p>
 
       <% if @campaign.product.size == true %>
-        <div class="input-and-icon">
-          <%= f.input :size, label: false, placeholder: "Taille choisie (voir description)" %>
-          <span class="icon fas fa-cut"></span>
-        </div>
+        <%= f.input :size, label: "Taille", placeholder: "(voir description)" %>
       <% end %>
 
       <%= f.button :submit, "Valider", class: "btn-blue", id:"ab-cta" %>

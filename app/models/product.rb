@@ -10,10 +10,6 @@ class Product < ApplicationRecord
       message: "Nom du produit requis"
   }
 
-  validates :size,
-      presence: {
-      message: "A renseigner"
-  }
 
   validates :price,
       presence: {

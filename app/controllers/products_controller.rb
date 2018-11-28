@@ -31,7 +31,7 @@ class ProductsController < ApplicationController
    if @product.save
      redirect_to new_product_campaign_path(@product)
    else
-      flash[:alert] = "Informations manquantes"
+     flash[:alert] = "Informations manquantes"
      render :new
    end
  end
@@ -43,6 +43,7 @@ class ProductsController < ApplicationController
    if @product.update(product_params)
       redirect_to products_path
     else
+      flash[:alert] = "Informations manquantes"
       render :edit
    end
  end

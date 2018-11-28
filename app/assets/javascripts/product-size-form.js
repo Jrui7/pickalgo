@@ -7,4 +7,7 @@ $(document).ready(function(){
     $(".size-radio-input").removeClass("active");
     $(this).toggleClass("active");
   });
+
+
+
 });

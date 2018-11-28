@@ -19,9 +19,6 @@ $(document).ready(function() {
         event.preventDefault();
         $("#pick_size").addClass("shake").css({ 'color': 'red', 'border-color': 'red' });
       }
-     else {
-       form.submit();
-     }
 
   })
 
@@ -36,9 +33,6 @@ $(document).ready(function() {
         $("#pick_size").addClass("shake").css({ 'color': 'red', 'border-color': 'red' });
       }
 
-     else {
-       form.submit();
-     }
 
   })
 
