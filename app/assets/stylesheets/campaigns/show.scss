@@ -125,7 +125,6 @@
   }
 
   .official-infos {
-    margin-top: 70px;
     width: 55%;
   }
 
@@ -150,7 +149,7 @@
   }
 
   .participation-input {
-    margin: 40px 0;
+    margin: 40px 0 0 0;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -168,30 +167,52 @@
       vertical-align: middle;
     }
 
-    label {
-      margin: 0;
+    .pick-form-answer {
+      background: #FFF;
+      border: 2px solid #e8e8e8;
+      padding: 5px 20px;
+      border-radius: 5px;
+      margin-bottom: 0;
+      text-align: center;
+      &:hover {
+        background-color: rgba(249, 180, 59, 0.3);
+        border: 2px solid #b5b6b7;
+        cursor: pointer;
+      }
+      &.active {
+      background: #ff9800;
+      border: 2px solid transparent;
+      color: #FFF;
+      opacity: 1;
+      }
     }
 
   }
 
+  .ab-size {
+    margin: 15px 0 40px;
+    width: 40%;
+  }
+
   #ab-cta, #open-cta {
     padding: 10px 50px !important;
+    margin-top: 20px;
   }
 
   .yes-outcome {
     text-align: justify;
     display: none;
-    margin-top: 20px;
+    margin-top: 0;
     font-size: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 
   .no-outcome {
    text-align: justify;
    display: none;
-   margin-top: 20px;
+   margin-top: 0;
    font-size: 15px;
-   margin-bottom: 20px;
+   margin-bottom: 30px;
   }
 
 
@@ -199,10 +220,6 @@
 
   .explaination {
     padding-right: 20px;
-  }
-
-  #tab-1, #tab-2 {
-    padding: 0 10px;
   }
 
   }
@@ -256,6 +273,10 @@
 
     .video-container {
       width: 100%;
+    }
+
+    .ab-size {
+      width: 70%;
     }
 
 
