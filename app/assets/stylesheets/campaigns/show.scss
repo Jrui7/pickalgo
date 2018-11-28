@@ -126,6 +126,7 @@
 
   .official-infos {
     width: 55%;
+    margin-top: 40px;
   }
 
   .tab-title {
@@ -171,13 +172,16 @@
       background: #FFF;
       border: 2px solid #e8e8e8;
       padding: 5px 20px;
-      border-radius: 5px;
+      border-radius: 20px;
+      box-shadow: 0 1px 1px 0 rgba(90, 122, 190, 0.1), 0 10px 20px 0 rgba(90, 122, 190, 0.2);
+      transition-duration: .5s;
       margin-bottom: 0;
       text-align: center;
       &:hover {
         background-color: rgba(249, 180, 59, 0.3);
         border: 2px solid #b5b6b7;
         cursor: pointer;
+        transform: translateY(-2px);
       }
       &.active {
       background: #ff9800;
@@ -190,7 +194,7 @@
   }
 
   .ab-size {
-    margin: 15px 0 40px;
+    margin: 10px 0 40px;
     width: 40%;
   }
 
