@@ -18,7 +18,10 @@
           </div>
           <%= render "my_picks", picks: @picks %>
         <% else %>
-          <h4>Vous ne participez actuellement à aucune campagne</h4>
+          <h4 class="no-data">Vous ne participez actuellement à aucune campagne</h4>
+          <%= link_to campaigns_path, class: "return-link" do %>
+            <div class="btn-orange">Campagnes en cours</div>
+          <% end %>
         <% end %>
       </div>
     </div>

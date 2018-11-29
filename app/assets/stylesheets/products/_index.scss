@@ -3,12 +3,16 @@
 
 .top-bloc {
   margin-bottom: 70px;
+  text-align: center;
 }
 
 .title-and-cta {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
+  margin-bottom: 30px;
+  h5 {
+    margin: 0 30px 0 0;
+  }
   a {
     display: flex;
     padding: 5px 20px;

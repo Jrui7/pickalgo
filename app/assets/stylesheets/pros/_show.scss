@@ -142,6 +142,12 @@
   .general-infos {
     flex: 0 0 100%;
   }
+
+  .text-part, .right-part {
+    flex: 0 0 100%;
+    padding: 15px 10px;
+    border: none;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -153,13 +159,15 @@
     }
 
     #save-cta, #password-cta {
-      margin: 10px 10px 0 auto;
+      margin: 30px 0px 0 auto;
     }
   }
 
-  .text-part, .right-part {
-    flex: 0 0 100%;
-    padding: 15px 10px;
+
+  .right-part {
+    .form-inputs {
+      padding: 0;
+    }
   }
 
 }

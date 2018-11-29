@@ -28,7 +28,7 @@ $(document).ready(function() {
        $(".participation-input").addClass("shake");
      }
 
-     if( ($('#pick_size').length) && (!$("#pick_size").val()) ) {
+     if( ($('#pick_size').length) && ($("#pick_answer_no").prop('checked')==false) && (!$("#pick_size").val()) ) {
         event.preventDefault();
         $("#pick_size").addClass("shake").css({ 'color': 'red', 'border-color': 'red' });
       }

@@ -1,6 +1,7 @@
 .infos-container{
   max-width: 1100px;
   margin: 0 auto;
+  padding: 50px 0;
 
 }
 
@@ -9,11 +10,22 @@
 .content-box{
   min-height: calc(100vh - 200px);
   flex: 0 0 75%;
+  background: #FFF;
+  border: 1px solid rgba(0, 0, 0, 0.0625);
+  border-radius: 5px;
+  padding: 20px 30px;
 
   h1{
     margin-bottom: 30px;
     font-size: 30px;
     font-weight: bold;
+    color: #495057;
+  }
+
+  h2 {
+    margin: 30px 0;
+    font-size: 25px;
+    text-align: left;
   }
 
   .intro{
