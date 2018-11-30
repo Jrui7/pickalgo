@@ -22,6 +22,16 @@
   }
 }
 
+.checkbox-container {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  i {
+    color: darkgray;
+    opacity: .2;
+    font-size: 40px;
+  }
+}
 
 .two-tests {
   display: flex;
@@ -31,11 +41,18 @@
   .test-type {
     flex: 0 0 48%;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .selected {
     background-color: rgba(249, 180, 59, .3);
     border: 2px solid #b5b6b7;
+    i {
+      opacity: 1;
+      color: $orange;
+    }
   }
 }
 
