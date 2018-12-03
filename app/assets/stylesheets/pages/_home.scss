@@ -162,6 +162,9 @@
 
   #how-it-works {
     background-color: #f1f3f7;
+    &:focus {
+      outline: none;
+    }
   }
 
 
