@@ -156,10 +156,12 @@
   }
 
 
-  #how-it-works, #target {
-    &:focus {
-      outline: none;
-    }
+  #test-type {
+    background-color: #FAFAFA;
+  }
+
+  #how-it-works {
+    background-color: #f1f3f7;
   }
 
 
@@ -188,9 +190,6 @@
     list-style-type: none;
   }
 
-  #conclusion, .regular {
-    background-color: #f1f3f7;
-  }
 
   .testimonies-container{
     background-color: #FFF;
