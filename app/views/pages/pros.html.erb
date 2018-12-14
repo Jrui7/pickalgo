@@ -21,8 +21,8 @@
     </header>
     <div class="banner-container">
       <div class="banner-content">
-        <h1>Objectif <span id="typer">.</span></h1>
-        <p class="concept">Le prix optimal de votre prochaine promo ne s'invente pas: il se découvre. Pickalgo c'est l'outil indispensable pour tester et lancer des promos qui atteignent leurs objectifs de façon efficiente.
+        <h1>Anticipez la courbe de sensibilité de vos promos</h1>
+        <p class="concept">Avec Pickalgo testez vos promos en zone non exposée pour déterminer le meilleur prix à pratiquer lors de votre prochaine promo.
         </p>
         <div class="cta-links">
           <%= link_to "Plus d'infos", more_infos_path, class:"btn-white cta-link go-to"%>
@@ -94,7 +94,3 @@
   <%= render 'shared/footer' %>
 
 </div>
-
-<% content_for(:after_js) do %>
-  <%= javascript_include_tag 'home'%>
-<% end %>
