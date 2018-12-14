@@ -1,5 +1,5 @@
-<% content_for :meta_title, "Atteignez efficiement vos objectifs" %>
-<% content_for :meta_description, "Sur Pickalgo impliquez vos clients dans la conception de vos promos. Vous découvrirez ainsi le prix qui permettra à votre promo d'atteindre son objectif de la façon la plus efficiente." %>
+<% content_for :meta_title, "Anticipez la courbe de sensibilité de vos promos" %>
+<% content_for :meta_description, "Avec Pickalgo testez vos promos en zone non exposée pour déterminer le meilleur prix à pratiquer pour réussir votre prochaine promo." %>
 <%= render 'right-links-pro' %>
 <div class="page-container">
   <div class="nav-and-banner" style="background-image: linear-gradient(rgba(241, 243, 247,1) 50%, transparent 100%), url('https://res.cloudinary.com/djmp0ivep/image/upload/v1538480440/tags.jpg');">
@@ -21,8 +21,8 @@
     </header>
     <div class="banner-container">
       <div class="banner-content">
-        <h1>Objectif <span id="typer">.</span></h1>
-        <p class="concept">Le prix optimal de votre prochaine promo ne s'invente pas: il se découvre. Pickalgo c'est l'outil indispensable pour tester et lancer des promos qui atteignent leurs objectifs de façon efficiente.
+        <h1>Anticipez, testez, réussissez</h1>
+        <p class="concept">Anticipez la courbe de sensibilité de vos promos. Avec Pickalgo testez vos promos en zone non exposée pour déterminer le meilleur prix à pratiquer pour réussir votre prochaine promo.
         </p>
         <div class="cta-links">
           <%= link_to "Plus d'infos", more_infos_path, class:"btn-white cta-link go-to"%>
@@ -33,11 +33,11 @@
   </div>
 
   <div id=target>
-    <h2 class="steps-title">Atteindre votre objectif en 4 étapes</h2>
+    <h2 class="steps-title">Tester pour anticiper</h2>
     <p class="what">Sur Pickalgo impliquez vos clients dans la conception de vos promos. Vous découvrirez le prix et les volumes qui permettront à votre promo d'atteindre son objectif de la façon la plus efficiente.</p>
     <div class="step-pro reverse" id="first">
       <div class="text">
-        <h3><i class="fas fa-flask"></i> Choisissez votre test</h3>
+        <h3><i class="fas fa-flask"></i> Tests en zone non exposée</h3>
         <div class="sub-title"></div>
         <div class="test-type">
           <h5 class="test-title">A/B Test</h5>
@@ -64,15 +64,15 @@
       <%= image_tag "select.svg", class:"step-pro-image"  %>
     </div>
     <div class="text">
-      <h3><i class="fas fa-filter"></i> Collectez des données fiables</h3>
+      <h3><i class="fas fa-chart-area"></i> Collectez des données fiables</h3>
       <div class="step-text">Contrairement à une étude de marché traditionnelle, les participants sont réellement prêts à acquerir votre produit. Collectez des données fiables et qualifiées matérialisées par des propositions d'achats de la part des clients intéressés par votre produit et votre promo.</div>
     </div>
   </div>
   <div class="step-pro reverse" id="third">
     <div class="text">
-      <h3><i class="fas fa-chart-area"></i> Nous analysons - vous décidez</h3>
+      <h3><i class="fas fa-filter"></i> Optimisez la transformation</h3>
       <div class="step-text">
-        Au bout de 7 jours la collecte est clôturée. Les données récoltées nous permettent de mesurer l'impact de chaque prix sur les volumes et le chiffre d'affaires. Déterminez facilement quel prix vous permettra de générer les volumes nécessaires à l'atteinte de votre objectif.
+        Au bout de 7 jours la collecte est clôturée. Les données récoltées vous permettent de mesurer l'impact de chaque prix sur les volumes et le chiffre d'affaires. Déterminez facilement quel prix vous permettra de générer les volumes nécessaires à l'atteinte de votre objectif.
       </div>
     </div>
     <div class="step-pro-image-container">
@@ -94,7 +94,3 @@
   <%= render 'shared/footer' %>
 
 </div>
-
-<% content_for(:after_js) do %>
-  <%= javascript_include_tag 'home'%>
-<% end %>
