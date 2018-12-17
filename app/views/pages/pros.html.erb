@@ -34,25 +34,18 @@
 
   <div id=target>
     <h2 class="steps-title">Apprentissage constant</h2>
-    <p class="what">Les données d'hier ne font pas forcément les hypothèses pertinentes d'aujourd'hui. Avec Pickago apprenez facilement et constamment pour adapter le prix de vos promos à la réalité présente de votre marché.</p>
+    <p class="what">Les données d'hier ne font pas forcément les hypothèses pertinentes d'aujourd'hui. Avec Pickago apprenez facilement et constamment pour adapter le prix de vos promos à la réalité actuelle de votre marché.</p>
     <div class="step-pro reverse" id="first">
       <div class="text">
-        <h3><i class="fas fa-flask"></i> Un test pour chaque besoin</h3>
-        <div class="sub-title"></div>
-        <div class="test-type">
-          <h5 class="test-title">A/B Test</h5>
-          <p>Vous hésitez entre plusieurs prix pour votre promo. Lequel serait le plus efficient ? Nous présentons vos prix de façon alternative à chaque participant à la campagne de test pour le déterminer.</p>
-          <%= link_to more_infos_path do %>
-            <div class="btn more-infos">En savoir plus</div>
-          <% end %>
-        </div>
-        <div class="test-type">
-          <h5 class="test-title">Test ouvert</h5>
-          <p>Les testeurs intéressés nous communiquent le prix maximal qu'ils sont prêts à payer pour votre produit.</p>
-          <%= link_to more_infos_path do %>
-            <div class="btn more-infos">En savoir plus</div>
-          <% end %>
-        </div>
+        <h3><i class="fas fa-flask"></i> Testez en zone non exposée</h3>
+        <div class="step-text">
+        <p><i class="fas fa-plus"></i> Testez simultanément différents prix pour découvrir lequel est le plus adapté à l'atteinte de votre objectif.</p>
+        <p><i class="fas fa-plus"></i> Découvrez le prix maximal que vos clients sont prêts à payer pour votre produit.</p>
+        <p><i class="fas fa-plus"></i> Confirmez ou infirmez l'exhaustivité de vos hypothèses sans impacter votre image de marque.</p>
+      </div>
+        <%= link_to more_infos_path do %>
+          <div class="btn more-infos">En savoir plus</div>
+        <% end %>
       </div>
       <div class="step-pro-image-container">
         <%= image_tag "choice.svg", class:"step-pro-image"  %>
@@ -84,9 +77,9 @@
       <%= image_tag "lift-off.svg", class:"step-pro-image"  %>
     </div>
     <div class="text">
-      <h3><i class="fas fa-play-circle"></i> En route vers votre objectif</h3>
+      <h3><i class="fas fa-play-circle"></i> En route vers vos objectifs</h3>
       <div class="step-text">
-        Fort des enseignements de la campagne de test, lancez votre promo à plus grande échelle: vous avez l'assurance de proposer le prix optimal pour atteindre vos objectifs de la façon la plus efficiente.
+        Fort des enseignements de vos tests, lancez des promos avec l'assurance de proposer le prix optimal pour atteindre vos objectifs de la façon la plus efficiente.
       </div>
     </div>
   </div>

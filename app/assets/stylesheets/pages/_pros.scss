@@ -30,6 +30,14 @@
   .step-text {
     font-size: 20px;
     text-align: justify;
+    p {
+      font-size: 20px;
+      .fas {
+        font-size: 15px;
+        margin-right: 10px;
+        color: $orange;
+      }
+    }
   }
 
   h3 {
