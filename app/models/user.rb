@@ -49,7 +49,7 @@ class User < ApplicationRecord
   end
 
   def validate_invite
-    if self.invite != "XDMp2018"
+    if self.invite != "XDMp2020"
       self.errors[:base] << "Code is invalide"
     end
   end
