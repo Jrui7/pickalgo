@@ -249,7 +249,7 @@ GEM
       redis (>= 3.3.5, < 5)
     sidekiq-failures (1.0.0)
       sidekiq (>= 4.0.0)
-    simple_form (4.0.1)
+    simple_form (5.0.0)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
     spring (2.0.2)
